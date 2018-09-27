@@ -11,6 +11,7 @@
 		84211A50215B1E50003BE4A5 /* RongSDKUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A4F215B1E50003BE4A5 /* RongSDKUsed.m */; };
 		84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A55215B22A8003BE4A5 /* skRongListViewController.m */; };
 		84211A59215B2345003BE4A5 /* skRongChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A58215B2345003BE4A5 /* skRongChatViewController.m */; };
+		84211A5C215CB67F003BE4A5 /* skColorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A5B215CB67F003BE4A5 /* skColorConfig.m */; };
 		84537B792154897E00E4CB29 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84537B782154897E00E4CB29 /* AppDelegate.mm */; };
 		84537B812154897F00E4CB29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84537B802154897F00E4CB29 /* Assets.xcassets */; };
 		84537B842154897F00E4CB29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84537B822154897F00E4CB29 /* LaunchScreen.storyboard */; };
@@ -29,6 +30,8 @@
 		84211A55215B22A8003BE4A5 /* skRongListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skRongListViewController.m; sourceTree = "<group>"; };
 		84211A57215B2345003BE4A5 /* skRongChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skRongChatViewController.h; sourceTree = "<group>"; };
 		84211A58215B2345003BE4A5 /* skRongChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skRongChatViewController.m; sourceTree = "<group>"; };
+		84211A5A215CB67F003BE4A5 /* skColorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skColorConfig.h; sourceTree = "<group>"; };
+		84211A5B215CB67F003BE4A5 /* skColorConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skColorConfig.m; sourceTree = "<group>"; };
 		84537B742154897E00E4CB29 /* SkyerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84537B772154897E00E4CB29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84537B782154897E00E4CB29 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 		84537B902154913B00E4CB29 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				84211A5A215CB67F003BE4A5 /* skColorConfig.h */,
+				84211A5B215CB67F003BE4A5 /* skColorConfig.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -435,6 +440,7 @@
 				84537BA82154E36000E4CB29 /* skLoginViewController.m in Sources */,
 				84537BA42154D83200E4CB29 /* skBaseNavViewController.m in Sources */,
 				84537B792154897E00E4CB29 /* AppDelegate.mm in Sources */,
+				84211A5C215CB67F003BE4A5 /* skColorConfig.m in Sources */,
 				84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */,
 				84211A50215B1E50003BE4A5 /* RongSDKUsed.m in Sources */,
 				84537BA32154D83200E4CB29 /* skBaseViewController.m in Sources */,

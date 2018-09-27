@@ -12,6 +12,8 @@
 #import <MJRefresh/MJRefresh.h>
 #import <SkyerTools/SkyerTools.h>
 #import "skConfig.h"
+#import "skColorConfig.h"
 #import <RongIMKit/RongIMKit.h>
 #import "skBaseNavViewController.h"
+#import <SkyerTools/SkMacro.h>
 #endif
