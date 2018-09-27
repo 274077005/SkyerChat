@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		112442D770BB7AD1EC085B29 /* Pods_SkyerChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEEFA8DB78EAE898D127450E /* Pods_SkyerChat.framework */; };
+		84211A50215B1E50003BE4A5 /* RongSDKUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A4F215B1E50003BE4A5 /* RongSDKUsed.m */; };
+		84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A55215B22A8003BE4A5 /* skRongListViewController.m */; };
+		84211A59215B2345003BE4A5 /* skRongChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A58215B2345003BE4A5 /* skRongChatViewController.m */; };
+		84537B792154897E00E4CB29 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84537B782154897E00E4CB29 /* AppDelegate.mm */; };
+		84537B812154897F00E4CB29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84537B802154897F00E4CB29 /* Assets.xcassets */; };
+		84537B842154897F00E4CB29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84537B822154897F00E4CB29 /* LaunchScreen.storyboard */; };
+		84537B872154897F00E4CB29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84537B862154897F00E4CB29 /* main.m */; };
+		84537BA32154D83200E4CB29 /* skBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84537B9F2154D83200E4CB29 /* skBaseViewController.m */; };
+		84537BA42154D83200E4CB29 /* skBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84537BA22154D83200E4CB29 /* skBaseNavViewController.m */; };
+		84537BA82154E36000E4CB29 /* skLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84537BA72154E36000E4CB29 /* skLoginViewController.m */; };
+		84537BAB2154E9CE00E4CB29 /* skConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84537BAA2154E9CE00E4CB29 /* skConfig.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		61CC84636590AF7642696194 /* Pods-SkyerChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyerChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat.release.xcconfig"; sourceTree = "<group>"; };
+		84211A4E215B1E50003BE4A5 /* RongSDKUsed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RongSDKUsed.h; sourceTree = "<group>"; };
+		84211A4F215B1E50003BE4A5 /* RongSDKUsed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RongSDKUsed.m; sourceTree = "<group>"; };
+		84211A54215B22A8003BE4A5 /* skRongListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skRongListViewController.h; sourceTree = "<group>"; };
+		84211A55215B22A8003BE4A5 /* skRongListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skRongListViewController.m; sourceTree = "<group>"; };
+		84211A57215B2345003BE4A5 /* skRongChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skRongChatViewController.h; sourceTree = "<group>"; };
+		84211A58215B2345003BE4A5 /* skRongChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skRongChatViewController.m; sourceTree = "<group>"; };
+		84537B742154897E00E4CB29 /* SkyerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84537B772154897E00E4CB29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		84537B782154897E00E4CB29 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		84537B802154897F00E4CB29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84537B832154897F00E4CB29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84537B852154897F00E4CB29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84537B862154897F00E4CB29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84537B9F2154D83200E4CB29 /* skBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skBaseViewController.m; sourceTree = "<group>"; };
+		84537BA02154D83200E4CB29 /* skBaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skBaseNavViewController.h; sourceTree = "<group>"; };
+		84537BA12154D83200E4CB29 /* skBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skBaseViewController.h; sourceTree = "<group>"; };
+		84537BA22154D83200E4CB29 /* skBaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skBaseNavViewController.m; sourceTree = "<group>"; };
+		84537BA52154DACC00E4CB29 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		84537BA62154E36000E4CB29 /* skLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skLoginViewController.h; sourceTree = "<group>"; };
+		84537BA72154E36000E4CB29 /* skLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skLoginViewController.m; sourceTree = "<group>"; };
+		84537BA92154E9CE00E4CB29 /* skConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skConfig.h; sourceTree = "<group>"; };
+		84537BAA2154E9CE00E4CB29 /* skConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skConfig.m; sourceTree = "<group>"; };
+		B6DA27ABCCC17497FB97EBFC /* Pods-SkyerChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyerChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat.debug.xcconfig"; sourceTree = "<group>"; };
+		EEEFA8DB78EAE898D127450E /* Pods_SkyerChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyerChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84537B712154897E00E4CB29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				112442D770BB7AD1EC085B29 /* Pods_SkyerChat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0AC0C2F2605A1DEDA43C8644 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6DA27ABCCC17497FB97EBFC /* Pods-SkyerChat.debug.xcconfig */,
+				61CC84636590AF7642696194 /* Pods-SkyerChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		84537B6B2154897E00E4CB29 = {
+			isa = PBXGroup;
+			children = (
+				84537B762154897E00E4CB29 /* SkyerChat */,
+				84537B752154897E00E4CB29 /* Products */,
+				0AC0C2F2605A1DEDA43C8644 /* Pods */,
+				C5C31213F0C654707237B7DF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		84537B752154897E00E4CB29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84537B742154897E00E4CB29 /* SkyerChat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84537B762154897E00E4CB29 /* SkyerChat */ = {
+			isa = PBXGroup;
+			children = (
+				84537B8D2154913000E4CB29 /* AppDelegate */,
+				84537B8E2154913B00E4CB29 /* Classes */,
+				84537B9E2154D83200E4CB29 /* Base */,
+				84537B912154913B00E4CB29 /* Config */,
+				84537B8F2154913B00E4CB29 /* SDK */,
+				84537B902154913B00E4CB29 /* Tools */,
+				84537B802154897F00E4CB29 /* Assets.xcassets */,
+				84537B822154897F00E4CB29 /* LaunchScreen.storyboard */,
+				84537B852154897F00E4CB29 /* Info.plist */,
+				84537B862154897F00E4CB29 /* main.m */,
+				84537BA52154DACC00E4CB29 /* PrefixHeader.pch */,
+			);
+			path = SkyerChat;
+			sourceTree = "<group>";
+		};
+		84537B8D2154913000E4CB29 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				84537B772154897E00E4CB29 /* AppDelegate.h */,
+				84537B782154897E00E4CB29 /* AppDelegate.mm */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		84537B8E2154913B00E4CB29 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				84537B9A2154929C00E4CB29 /* 首页模块 */,
+				84537B922154929C00E4CB29 /* 登录模块 */,
+				84537B962154929C00E4CB29 /* 聊天模块 */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		84537B8F2154913B00E4CB29 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				84211A4E215B1E50003BE4A5 /* RongSDKUsed.h */,
+				84211A4F215B1E50003BE4A5 /* RongSDKUsed.m */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		84537B902154913B00E4CB29 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		84537B912154913B00E4CB29 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				84537BA92154E9CE00E4CB29 /* skConfig.h */,
+				84537BAA2154E9CE00E4CB29 /* skConfig.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		84537B922154929C00E4CB29 /* 登录模块 */ = {
+			isa = PBXGroup;
+			children = (
+				84537B932154929C00E4CB29 /* Controller */,
+				84537B942154929C00E4CB29 /* Model */,
+				84537B952154929C00E4CB29 /* View */,
+			);
+			path = "登录模块";
+			sourceTree = "<group>";
+		};
+		84537B932154929C00E4CB29 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84537BA62154E36000E4CB29 /* skLoginViewController.h */,
+				84537BA72154E36000E4CB29 /* skLoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84537B942154929C00E4CB29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84537B952154929C00E4CB29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84537B962154929C00E4CB29 /* 聊天模块 */ = {
+			isa = PBXGroup;
+			children = (
+				84537B972154929C00E4CB29 /* Controller */,
+				84537B982154929C00E4CB29 /* Model */,
+				84537B992154929C00E4CB29 /* View */,
+			);
+			path = "聊天模块";
+			sourceTree = "<group>";
+		};
+		84537B972154929C00E4CB29 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84537B982154929C00E4CB29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84537B992154929C00E4CB29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84537B9A2154929C00E4CB29 /* 首页模块 */ = {
+			isa = PBXGroup;
+			children = (
+				84537B9B2154929C00E4CB29 /* Controller */,
+				84537B9C2154929C00E4CB29 /* Model */,
+				84537B9D2154929C00E4CB29 /* View */,
+			);
+			path = "首页模块";
+			sourceTree = "<group>";
+		};
+		84537B9B2154929C00E4CB29 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84537B9C2154929C00E4CB29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84537B9D2154929C00E4CB29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84537B9E2154D83200E4CB29 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				84537BA12154D83200E4CB29 /* skBaseViewController.h */,
+				84537B9F2154D83200E4CB29 /* skBaseViewController.m */,
+				84537BA02154D83200E4CB29 /* skBaseNavViewController.h */,
+				84537BA22154D83200E4CB29 /* skBaseNavViewController.m */,
+				84211A54215B22A8003BE4A5 /* skRongListViewController.h */,
+				84211A55215B22A8003BE4A5 /* skRongListViewController.m */,
+				84211A57215B2345003BE4A5 /* skRongChatViewController.h */,
+				84211A58215B2345003BE4A5 /* skRongChatViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C5C31213F0C654707237B7DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEEFA8DB78EAE898D127450E /* Pods_SkyerChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84537B732154897E00E4CB29 /* SkyerChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84537B8A2154897F00E4CB29 /* Build configuration list for PBXNativeTarget "SkyerChat" */;
+			buildPhases = (
+				BFB5626EE3F293EC9428588F /* [CP] Check Pods Manifest.lock */,
+				84537B702154897E00E4CB29 /* Sources */,
+				84537B712154897E00E4CB29 /* Frameworks */,
+				84537B722154897E00E4CB29 /* Resources */,
+				25B7F6577B3BFFDF99B60C6E /* [CP] Embed Pods Frameworks */,
+				2AC4982C188E550E47927B7F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkyerChat;
+			productName = SkyerChat;
+			productReference = 84537B742154897E00E4CB29 /* SkyerChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84537B6C2154897E00E4CB29 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = www.skyer.com;
+				TargetAttributes = {
+					84537B732154897E00E4CB29 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 84537B6F2154897E00E4CB29 /* Build configuration list for PBXProject "SkyerChat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84537B6B2154897E00E4CB29;
+			productRefGroup = 84537B752154897E00E4CB29 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84537B732154897E00E4CB29 /* SkyerChat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84537B722154897E00E4CB29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84537B842154897F00E4CB29 /* LaunchScreen.storyboard in Resources */,
+				84537B812154897F00E4CB29 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25B7F6577B3BFFDF99B60C6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyerTools/SkyerTools.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyerTools.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AC4982C188E550E47927B7F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat-resources.sh",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/JResource.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/en.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/zh-Hans.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/jrmf.cer",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/AlipaySDK/AlipaySDK.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/WalletResource.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RongCloud.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Emoji.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCConfig.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JResource.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jrmf.cer",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AlipaySDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WalletResource.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFB5626EE3F293EC9428588F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkyerChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84537B702154897E00E4CB29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84537B872154897F00E4CB29 /* main.m in Sources */,
+				84537BA82154E36000E4CB29 /* skLoginViewController.m in Sources */,
+				84537BA42154D83200E4CB29 /* skBaseNavViewController.m in Sources */,
+				84537B792154897E00E4CB29 /* AppDelegate.mm in Sources */,
+				84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */,
+				84211A50215B1E50003BE4A5 /* RongSDKUsed.m in Sources */,
+				84537BA32154D83200E4CB29 /* skBaseViewController.m in Sources */,
+				84537BAB2154E9CE00E4CB29 /* skConfig.m in Sources */,
+				84211A59215B2345003BE4A5 /* skRongChatViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84537B822154897F00E4CB29 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84537B832154897F00E4CB29 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84537B882154897F00E4CB29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		84537B892154897F00E4CB29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84537B8B2154897F00E4CB29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6DA27ABCCC17497FB97EBFC /* Pods-SkyerChat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2WV2GYU6;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = SkyerChat/PrefixHeader.pch;
+				INFOPLIST_FILE = SkyerChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = skyer.SkyerChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = Debug;
+		};
+		84537B8C2154897F00E4CB29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61CC84636590AF7642696194 /* Pods-SkyerChat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2WV2GYU6;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = SkyerChat/PrefixHeader.pch;
+				INFOPLIST_FILE = SkyerChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = skyer.SkyerChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84537B6F2154897E00E4CB29 /* Build configuration list for PBXProject "SkyerChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84537B882154897F00E4CB29 /* Debug */,
+				84537B892154897F00E4CB29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84537B8A2154897F00E4CB29 /* Build configuration list for PBXNativeTarget "SkyerChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84537B8B2154897F00E4CB29 /* Debug */,
+				84537B8C2154897F00E4CB29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84537B6C2154897E00E4CB29 /* Project object */;
+}
