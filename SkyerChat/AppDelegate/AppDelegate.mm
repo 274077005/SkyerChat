@@ -10,6 +10,7 @@
 #import "skLoginViewController.h"
 #import "skRongChatViewController.h"
 #import "RongSDKUsed.h"
+#import "skNetConfig.h"
 
 #define token1 @"1z0W1QQcqqNwjSdFzuVkswWLRykpsFQ9HOLtXuW3Ld01fnSA4ysB8rdhCJaVoF1pbNdUMtpHhzo="
 #define token2 @"2+sZh/+2Pd1ZZSX75AwIafZmEahWqpbwXM/mW6z5RPpseaZcfJjbPdNxmTWks3kVK3DXTI33QOdtVxZXmdtzNQ=="
@@ -24,14 +25,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [skNetConfig initNetConfig];
+    
+    NSLog(@"url地址=%@",skModelNet.apiServer);
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor=[UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     [[RongSDKUsed shareInstance] initRongWithAppkey:skRongAppKey];
     
-    //O5u+vUkXZTNrFYyDFtGlJtLIRJO5+zC36wze+Bh+9cNNrIGzSOo+QgKmk0Z5RRJ6ve/RoSenI7k=
-    //K5i+kgPtKHxwjSdFzuVkswWLRykpsFQ9HOLtXuW3Ld22lUPmXmtoR+YZ4ZohpevXv3qxgmans+U=
     [[RongSDKUsed shareInstance] skRongConnectWithToken:token2 success:^(NSString *userId) {
         
     } error:^(RCConnectErrorCode status) {
@@ -44,8 +47,20 @@
     skRongChatViewController *skLoginView=[[skRongChatViewController alloc] init];
     skBaseNavViewController *skLoginViewNav=[[skBaseNavViewController alloc] initWithRootViewController:skLoginView];
     self.window.rootViewController=skLoginViewNav;
-    
+    [self sendRegister];
     return YES;
+}
+-(void)sendRegister{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"phoneNo":@"17677252521",
+                        @"type":@1,
+        
+    };
+    [skAfTool SKPOST:skUrl(@"/intf/bizUser/sendRegister") pubParame:skPubPar busParame:dic showHUD:NO showErrMsg:YES success:^(id  _Nullable responseObject) {
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
 }
 
 

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		112442D770BB7AD1EC085B29 /* Pods_SkyerChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEEFA8DB78EAE898D127450E /* Pods_SkyerChat.framework */; };
-		84211A50215B1E50003BE4A5 /* RongSDKUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A4F215B1E50003BE4A5 /* RongSDKUsed.m */; };
+		840D420121607F670026DFBE /* NSDictionary+skDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 840D420021607F670026DFBE /* NSDictionary+skDictionary.m */; };
 		84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A55215B22A8003BE4A5 /* skRongListViewController.m */; };
 		84211A59215B2345003BE4A5 /* skRongChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A58215B2345003BE4A5 /* skRongChatViewController.m */; };
 		84211A5C215CB67F003BE4A5 /* skColorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A5B215CB67F003BE4A5 /* skColorConfig.m */; };
@@ -20,12 +20,19 @@
 		84537BA42154D83200E4CB29 /* skBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84537BA22154D83200E4CB29 /* skBaseNavViewController.m */; };
 		84537BA82154E36000E4CB29 /* skLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84537BA72154E36000E4CB29 /* skLoginViewController.m */; };
 		84537BAB2154E9CE00E4CB29 /* skConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84537BAA2154E9CE00E4CB29 /* skConfig.m */; };
+		84A78E7E215F574A0013F614 /* skAFNetworkingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E7C215F574A0013F614 /* skAFNetworkingTool.m */; };
+		84A78E81215F5C390013F614 /* skResponeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E80215F5C390013F614 /* skResponeModel.m */; };
+		84A78E85215F5DA70013F614 /* RongSDKUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E83215F5DA70013F614 /* RongSDKUsed.m */; };
+		84B21DAA21605E1D00DCCF9C /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B21DA921605E1D00DCCF9C /* UserModel.m */; };
+		84D160D5215F6FBF002188DB /* skNetConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D160D3215F6FBF002188DB /* skNetConfigModel.m */; };
+		84D160D6215F6FBF002188DB /* skNetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D160D4215F6FBF002188DB /* skNetConfig.m */; };
+		84D160D9216058A8002188DB /* skParamsForRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D160D8216058A8002188DB /* skParamsForRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		61CC84636590AF7642696194 /* Pods-SkyerChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyerChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat.release.xcconfig"; sourceTree = "<group>"; };
-		84211A4E215B1E50003BE4A5 /* RongSDKUsed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RongSDKUsed.h; sourceTree = "<group>"; };
-		84211A4F215B1E50003BE4A5 /* RongSDKUsed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RongSDKUsed.m; sourceTree = "<group>"; };
+		840D41FF21607F670026DFBE /* NSDictionary+skDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+skDictionary.h"; sourceTree = "<group>"; };
+		840D420021607F670026DFBE /* NSDictionary+skDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+skDictionary.m"; sourceTree = "<group>"; };
 		84211A54215B22A8003BE4A5 /* skRongListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skRongListViewController.h; sourceTree = "<group>"; };
 		84211A55215B22A8003BE4A5 /* skRongListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skRongListViewController.m; sourceTree = "<group>"; };
 		84211A57215B2345003BE4A5 /* skRongChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skRongChatViewController.h; sourceTree = "<group>"; };
@@ -48,6 +55,20 @@
 		84537BA72154E36000E4CB29 /* skLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skLoginViewController.m; sourceTree = "<group>"; };
 		84537BA92154E9CE00E4CB29 /* skConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skConfig.h; sourceTree = "<group>"; };
 		84537BAA2154E9CE00E4CB29 /* skConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skConfig.m; sourceTree = "<group>"; };
+		84A78E7A215F574A0013F614 /* skAFNetworkingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skAFNetworkingTool.h; sourceTree = "<group>"; };
+		84A78E7C215F574A0013F614 /* skAFNetworkingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skAFNetworkingTool.m; sourceTree = "<group>"; };
+		84A78E7F215F5C380013F614 /* skResponeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skResponeModel.h; sourceTree = "<group>"; };
+		84A78E80215F5C390013F614 /* skResponeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skResponeModel.m; sourceTree = "<group>"; };
+		84A78E83215F5DA70013F614 /* RongSDKUsed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RongSDKUsed.m; sourceTree = "<group>"; };
+		84A78E84215F5DA70013F614 /* RongSDKUsed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RongSDKUsed.h; sourceTree = "<group>"; };
+		84B21DA821605E1D00DCCF9C /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		84B21DA921605E1D00DCCF9C /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		84D160D1215F6FBF002188DB /* skNetConfigModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skNetConfigModel.h; sourceTree = "<group>"; };
+		84D160D2215F6FBF002188DB /* skNetConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skNetConfig.h; sourceTree = "<group>"; };
+		84D160D3215F6FBF002188DB /* skNetConfigModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skNetConfigModel.m; sourceTree = "<group>"; };
+		84D160D4215F6FBF002188DB /* skNetConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skNetConfig.m; sourceTree = "<group>"; };
+		84D160D7216058A8002188DB /* skParamsForRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skParamsForRequest.h; sourceTree = "<group>"; };
+		84D160D8216058A8002188DB /* skParamsForRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skParamsForRequest.m; sourceTree = "<group>"; };
 		B6DA27ABCCC17497FB97EBFC /* Pods-SkyerChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyerChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat.debug.xcconfig"; sourceTree = "<group>"; };
 		EEEFA8DB78EAE898D127450E /* Pods_SkyerChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyerChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -131,8 +152,7 @@
 		84537B8F2154913B00E4CB29 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
-				84211A4E215B1E50003BE4A5 /* RongSDKUsed.h */,
-				84211A4F215B1E50003BE4A5 /* RongSDKUsed.m */,
+				84A78E82215F5DA70013F614 /* 融云聊天集成 */,
 			);
 			path = SDK;
 			sourceTree = "<group>";
@@ -140,8 +160,9 @@
 		84537B902154913B00E4CB29 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				84211A5A215CB67F003BE4A5 /* skColorConfig.h */,
-				84211A5B215CB67F003BE4A5 /* skColorConfig.m */,
+				84A78E78215F574A0013F614 /* 封装的AF网络请求 */,
+				840D41FF21607F670026DFBE /* NSDictionary+skDictionary.h */,
+				840D420021607F670026DFBE /* NSDictionary+skDictionary.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -149,8 +170,11 @@
 		84537B912154913B00E4CB29 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				84D160D0215F6FBF002188DB /* 网络配置 */,
 				84537BA92154E9CE00E4CB29 /* skConfig.h */,
 				84537BAA2154E9CE00E4CB29 /* skConfig.m */,
+				84211A5A215CB67F003BE4A5 /* skColorConfig.h */,
+				84211A5B215CB67F003BE4A5 /* skColorConfig.m */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -177,6 +201,8 @@
 		84537B942154929C00E4CB29 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84B21DA821605E1D00DCCF9C /* UserModel.h */,
+				84B21DA921605E1D00DCCF9C /* UserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,6 +289,39 @@
 				84211A58215B2345003BE4A5 /* skRongChatViewController.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		84A78E78215F574A0013F614 /* 封装的AF网络请求 */ = {
+			isa = PBXGroup;
+			children = (
+				84A78E7A215F574A0013F614 /* skAFNetworkingTool.h */,
+				84A78E7C215F574A0013F614 /* skAFNetworkingTool.m */,
+				84A78E7F215F5C380013F614 /* skResponeModel.h */,
+				84A78E80215F5C390013F614 /* skResponeModel.m */,
+				84D160D7216058A8002188DB /* skParamsForRequest.h */,
+				84D160D8216058A8002188DB /* skParamsForRequest.m */,
+			);
+			path = "封装的AF网络请求";
+			sourceTree = "<group>";
+		};
+		84A78E82215F5DA70013F614 /* 融云聊天集成 */ = {
+			isa = PBXGroup;
+			children = (
+				84A78E83215F5DA70013F614 /* RongSDKUsed.m */,
+				84A78E84215F5DA70013F614 /* RongSDKUsed.h */,
+			);
+			path = "融云聊天集成";
+			sourceTree = "<group>";
+		};
+		84D160D0215F6FBF002188DB /* 网络配置 */ = {
+			isa = PBXGroup;
+			children = (
+				84D160D1215F6FBF002188DB /* skNetConfigModel.h */,
+				84D160D3215F6FBF002188DB /* skNetConfigModel.m */,
+				84D160D2215F6FBF002188DB /* skNetConfig.h */,
+				84D160D4215F6FBF002188DB /* skNetConfig.m */,
+			);
+			path = "网络配置";
 			sourceTree = "<group>";
 		};
 		C5C31213F0C654707237B7DF /* Frameworks */ = {
@@ -436,16 +495,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D160D9216058A8002188DB /* skParamsForRequest.m in Sources */,
 				84537B872154897F00E4CB29 /* main.m in Sources */,
 				84537BA82154E36000E4CB29 /* skLoginViewController.m in Sources */,
+				84D160D5215F6FBF002188DB /* skNetConfigModel.m in Sources */,
+				84A78E81215F5C390013F614 /* skResponeModel.m in Sources */,
 				84537BA42154D83200E4CB29 /* skBaseNavViewController.m in Sources */,
+				84B21DAA21605E1D00DCCF9C /* UserModel.m in Sources */,
+				84A78E7E215F574A0013F614 /* skAFNetworkingTool.m in Sources */,
+				840D420121607F670026DFBE /* NSDictionary+skDictionary.m in Sources */,
+				84A78E85215F5DA70013F614 /* RongSDKUsed.m in Sources */,
 				84537B792154897E00E4CB29 /* AppDelegate.mm in Sources */,
 				84211A5C215CB67F003BE4A5 /* skColorConfig.m in Sources */,
 				84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */,
-				84211A50215B1E50003BE4A5 /* RongSDKUsed.m in Sources */,
 				84537BA32154D83200E4CB29 /* skBaseViewController.m in Sources */,
 				84537BAB2154E9CE00E4CB29 /* skConfig.m in Sources */,
 				84211A59215B2345003BE4A5 /* skRongChatViewController.m in Sources */,
+				84D160D6215F6FBF002188DB /* skNetConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

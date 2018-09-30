@@ -9,5 +9,9 @@
 #import "skConfig.h"
 
 @implementation skConfig
-
+-(void)text{
+    [skAFNetworkingTool shareInstance];
+    [UserModel sharedUserModel];
+    
+}
 @end
