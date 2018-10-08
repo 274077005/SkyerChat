@@ -74,9 +74,9 @@
 
 - (void)SKPOST:(NSString *_Nullable)URLString
      pubParame:(NSDictionary *_Nullable)pubParame
-     busParame:(NSDictionary *_Nullable)busParame
+     busParame:(NSString *_Nullable)busParame
        showHUD:(Boolean)isShow
-    showErrMsg:(BOOL) showErr
+    showErrMsg:(Boolean) showErr
        success:(SuccessRespone)success
        failure:(FailureRespone)failure
 {
@@ -122,9 +122,9 @@
     //配置https证书
     
     [[manager dataTaskWithRequest:request uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
     } downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
     } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         NSString *jsonStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];

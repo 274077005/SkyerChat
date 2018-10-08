@@ -56,7 +56,9 @@
                         @"type":@1,
         
     };
-    [skAfTool SKPOST:skUrl(@"/intf/bizUser/sendRegister") pubParame:skPubPar busParame:dic showHUD:NO showErrMsg:YES success:^(id  _Nullable responseObject) {
+    skModelNet.phoneNo=@"17677252521";
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizUser/sendRegister") pubParame:skPubParType(portNameSendRegister) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:YES success:^(id  _Nullable responseObject) {
         
     } failure:^(NSError * _Nullable error) {
         

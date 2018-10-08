@@ -56,9 +56,9 @@ typedef void (^ _Nullable ReachableViaWiFi)(void); // WiFi网络的Block
  */
 - (void)SKPOST:(NSString *_Nullable)URLString
      pubParame:(NSDictionary *_Nullable)pubParame
-     busParame:(NSDictionary *_Nullable)busParame
+     busParame:(NSString *_Nullable)busParame
        showHUD:(Boolean)isShow
-    showErrMsg:(BOOL) showErr
+    showErrMsg:(Boolean) showErr
        success:(SuccessRespone)success
        failure:(FailureRespone)failure;
 @end

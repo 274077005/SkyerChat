@@ -27,4 +27,7 @@
 #define skUrl(port) [NSString stringWithFormat:@"%@%@",skModelNet.apiServer,port]
 //公共参数
 #define skPubPar [skParamsForRequest skPubParams]
+//需要加验证的
+#define skPubParType(type) [skParamsForRequest skPubParams:type]
+
 @end

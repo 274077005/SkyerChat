@@ -12,6 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDictionary (skDictionary)
 
+/**
+ 词典转json
+
+ @param dict 词典
+ @return json字符串
+ */
+-(NSString *)skDicToJson:(NSDictionary *)dict;
 @end
 
 NS_ASSUME_NONNULL_END

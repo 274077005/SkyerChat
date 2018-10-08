@@ -9,8 +9,10 @@
 #import "skParamsForRequest.h"
 
 @implementation skParamsForRequest
-
 +(NSDictionary *)skPubParams{
+    return [self skPubParams:portNameResetDefault];
+}
++(NSDictionary *)skPubParams:(portName)type{
     
     /*
      1）    appid 客户端ID，必填；
@@ -23,7 +25,10 @@
      8）    nonce 随机数，非必填，需要进行数据签名的接口必填；
      9）    sign 数据签名，非必填，需要进行数据签名的接口必填；
      */
+    NSString *nonce=[NSString stringWithFormat:@"%d",arc4random() % 10000000];
+    skModelNet.nonce=nonce;
     NSDictionary *dic;
+    
     if (skUser.isLogin) {
         dic=@{
               @"appid":skModelNet.appId,
@@ -33,7 +38,7 @@
               @"usertype":@"5",
               @"userno":skUser.userNo,
               @"token":skUser.token,
-              @"nonce":@"569965",
+              @"nonce":nonce,
               @"sign":@""
               };
     }else{
@@ -45,11 +50,36 @@
               @"usertype":@"",
               @"userno":@"",
               @"token":@"",
-              @"nonce":@"",
-              @"sign":@""
+              @"nonce":nonce,
+              @"sign":[self makeSige:type],
               };
     }
     
     return dic;
+}
+
+
++(NSString *)makeSige:(portName)type{
+    
+    NSString *sige;
+    switch (type) {
+        case portNameResetPasswd://重置密码
+            sige=[NSString stringWithFormat:@"%@%@%@%@%@",skModelNet.phoneNo,skModelNet.passwd,skModelNet.smsCode,skModelNet.nonce,skModelNet.appSecret];
+            break;
+        case portNameLogin://登录
+            sige=[NSString stringWithFormat:@"%@%@%@%@",skModelNet.phoneNo,skModelNet.passwd,skModelNet.nonce,skModelNet.appSecret];
+            break;
+        case portNameSendRegister://发生验证码
+            sige=[NSString stringWithFormat:@"%@%@%@",skModelNet.phoneNo,skModelNet.nonce,skModelNet.appSecret];
+            break;
+        case portNameSmsLogin://验证码登录
+            sige=[NSString stringWithFormat:@"%@%@%@%@",skModelNet.phoneNo,skModelNet.smsCode,skModelNet.nonce,skModelNet.appSecret];
+            break;
+            
+        default:
+            break;
+    }
+    
+    return [sige MD5];
 }
 @end

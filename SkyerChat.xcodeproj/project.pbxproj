@@ -94,6 +94,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		843B40B2216B320B00356306 /* Cagetory */ = {
+			isa = PBXGroup;
+			children = (
+				840D41FF21607F670026DFBE /* NSDictionary+skDictionary.h */,
+				840D420021607F670026DFBE /* NSDictionary+skDictionary.m */,
+			);
+			path = Cagetory;
+			sourceTree = "<group>";
+		};
 		84537B6B2154897E00E4CB29 = {
 			isa = PBXGroup;
 			children = (
@@ -160,9 +169,8 @@
 		84537B902154913B00E4CB29 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				843B40B2216B320B00356306 /* Cagetory */,
 				84A78E78215F574A0013F614 /* 封装的AF网络请求 */,
-				840D41FF21607F670026DFBE /* NSDictionary+skDictionary.h */,
-				840D420021607F670026DFBE /* NSDictionary+skDictionary.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
