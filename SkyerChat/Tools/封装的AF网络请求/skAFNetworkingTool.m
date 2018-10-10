@@ -100,7 +100,7 @@
     
     AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
     
-    responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",nil];
+    responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/html",nil];
     
     NSDictionary *headerFieldValueDictionary = pubParame;
     
@@ -115,7 +115,9 @@
         }
         
     }
-    
+    if (isShow) {
+        [SkHUD skyerShowProgOnWindow:@"请求中"];
+    }
     manager.operationQueue.maxConcurrentOperationCount = 1;
     
     manager.responseSerializer = responseSerializer;
@@ -126,14 +128,54 @@
     } downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
         
     } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        NSString *jsonStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"获得的json==%@",jsonStr);
         
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+        if (isShow) {
+            [SkHUD skyerRemoveProgress];
+        }
+        
+        if (!error) {
+            NSString *jsonStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            
+            NSLog(@"获得的json==%@",jsonStr);
+            
+            NSDictionary *dic=[self dictionaryWithJsonString:jsonStr];
+            skResponeModel *model=[skResponeModel mj_objectWithKeyValues:dic];
+            success(model);
+            
+            if (model.returnCode!=0) {//0是正常的,或许有抢登的
+                if (showErr) {
+                    [SkToast SkToastShow:model.message withHight:300];
+                }
+            }
+            
+        }else{
+            [SkToast SkToastShow:@"网络异常" withHight:300];
+            NSLog(@"返回了什么错误=%@",error);
+            failure(error);
+        }
         
     }] resume];
 }
 
-
+- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString
+{
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    if(err)
+    {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
 
 @end

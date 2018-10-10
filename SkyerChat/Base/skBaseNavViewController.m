@@ -32,7 +32,7 @@
     if (self.viewControllers.count > 0) {
 
         UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-        [btn setImage:[UIImage imageNamed:@"backbai66"] forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:@"bar-返回-黑"] forState:UIControlStateNormal];
         
         [btn setImageEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 0)];
 

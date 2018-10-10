@@ -13,34 +13,38 @@
 /**
  主色调
  */
-#define colorMain skUIColorFromRGB(0x11ccff)
+#define KcolorMain skUIColorFromRGB(0x11ccff)
 /**
  辅助色调红
  */
-#define colorRed skUIColorFromRGB(0xff4455)
+#define KcolorRed skUIColorFromRGB(0xff4455)
 /**
  辅助色调绿
  */
-#define colorGreen skUIColorFromRGB(0x22aa33)
+#define KcolorGreen skUIColorFromRGB(0x22aa33)
 /**
  辅助色调粉
  */
-#define colorPink skUIColorFromRGB(0xffaa11)
+#define KcolorPink skUIColorFromRGB(0xffaa11)
 /**
  字体颜色黑
  */
-#define colorTextBlack skUIColorFromRGB(0x000000)
+#define KcolorTextBlack skUIColorFromRGB(0x000000)
 /**
  字体颜色浅
  */
-#define colorTextLight skUIColorFromRGB(0x999999)
+#define KcolorTextLight skUIColorFromRGB(0x999999)
 /**
  背景颜色
  */
-#define colorBackground skUIColorFromRGB(0xf5f5f5)
+#define KcolorBackground skUIColorFromRGB(0xf5f5f5)
 /**
  线条颜色
  */
-#define colorLine skUIColorFromRGB(0xd8d8d8)
+#define KcolorLine skUIColorFromRGB(0xd8d8d8)
+/**
+ 按钮颜色
+ */
+#define KcolorButton skUIColorFromRGB(0x157CFF)
 
 @end

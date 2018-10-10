@@ -11,6 +11,7 @@
 #import "skRongChatViewController.h"
 #import "RongSDKUsed.h"
 #import "skNetConfig.h"
+#import "SKKeyboard.h"
 
 #define token1 @"1z0W1QQcqqNwjSdFzuVkswWLRykpsFQ9HOLtXuW3Ld01fnSA4ysB8rdhCJaVoF1pbNdUMtpHhzo="
 #define token2 @"2+sZh/+2Pd1ZZSX75AwIafZmEahWqpbwXM/mW6z5RPpseaZcfJjbPdNxmTWks3kVK3DXTI33QOdtVxZXmdtzNQ=="
@@ -26,6 +27,8 @@
     // Override point for customization after application launch.
     
     [skNetConfig initNetConfig];
+    //初始化键盘管理器
+    [SKKeyboard skMangerKeyboard];
     
     NSLog(@"url地址=%@",skModelNet.apiServer);
     
@@ -44,21 +47,21 @@
     }];
     
     
-    skRongChatViewController *skLoginView=[[skRongChatViewController alloc] init];
+    skLoginViewController *skLoginView=[[skLoginViewController alloc] init];
     skBaseNavViewController *skLoginViewNav=[[skBaseNavViewController alloc] initWithRootViewController:skLoginView];
     self.window.rootViewController=skLoginViewNav;
-    [self sendRegister];
+//    [self sendRegister];
     return YES;
 }
 -(void)sendRegister{
     ///intf/bizUser/sendRegister
     NSDictionary *dic=@{@"phoneNo":@"17677252521",
-                        @"type":@1,
-        
+                        @"type":@1
     };
+    
     skModelNet.phoneNo=@"17677252521";
     
-    [skAfTool SKPOST:skUrl(@"/intf/bizUser/sendRegister") pubParame:skPubParType(portNameSendRegister) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:YES success:^(id  _Nullable responseObject) {
+    [skAfTool SKPOST:skUrl(@"/intf/bizUser/sendRegister") pubParame:skPubParType(portNameSendRegister) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:YES success:^(skResponeModel*  _Nullable responseObject) {
         
     } failure:^(NSError * _Nullable error) {
         

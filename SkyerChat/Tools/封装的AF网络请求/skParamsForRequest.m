@@ -51,7 +51,7 @@
               @"userno":@"",
               @"token":@"",
               @"nonce":nonce,
-              @"sign":[self makeSige:type],
+              @"sign":type==0?@"":[self makeSige:type],
               };
     }
     

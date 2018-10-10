@@ -8,10 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		112442D770BB7AD1EC085B29 /* Pods_SkyerChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEEFA8DB78EAE898D127450E /* Pods_SkyerChat.framework */; };
-		840D420121607F670026DFBE /* NSDictionary+skDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 840D420021607F670026DFBE /* NSDictionary+skDictionary.m */; };
+		8419CDB0216C826300DBE8F4 /* modelRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDAF216C826300DBE8F4 /* modelRegister.m */; };
+		8419CDBA216D949E00DBE8F4 /* SKKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDB5216D949E00DBE8F4 /* SKKeyboard.m */; };
+		8419CDBB216D949E00DBE8F4 /* skClassMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDB9216D949E00DBE8F4 /* skClassMethod.m */; };
+		8419CDC2216DA55A00DBE8F4 /* skForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDC1216DA55A00DBE8F4 /* skForgetPasswordViewController.m */; };
+		8419CDC5216DA5AE00DBE8F4 /* ForgetPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDC4216DA5AE00DBE8F4 /* ForgetPasswordView.m */; };
+		8419CDC7216DA5BC00DBE8F4 /* ForgetPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8419CDC6216DA5BC00DBE8F4 /* ForgetPasswordView.xib */; };
 		84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A55215B22A8003BE4A5 /* skRongListViewController.m */; };
 		84211A59215B2345003BE4A5 /* skRongChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A58215B2345003BE4A5 /* skRongChatViewController.m */; };
 		84211A5C215CB67F003BE4A5 /* skColorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A5B215CB67F003BE4A5 /* skColorConfig.m */; };
+		843B40B6216B337400356306 /* NSDictionary+skDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B40B5216B337400356306 /* NSDictionary+skDictionary.m */; };
+		843B40B9216B4E4600356306 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B40B8216B4E4600356306 /* LoginView.m */; };
+		843B40BB216B4E5200356306 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843B40BA216B4E5200356306 /* LoginView.xib */; };
+		843B40C2216C552300356306 /* skRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B40C1216C552300356306 /* skRegisterViewController.m */; };
+		843B40C4216C553D00356306 /* RegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843B40C3216C553D00356306 /* RegisterView.xib */; };
+		843B40C7216C555200356306 /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B40C6216C555200356306 /* RegisterView.m */; };
 		84537B792154897E00E4CB29 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84537B782154897E00E4CB29 /* AppDelegate.mm */; };
 		84537B812154897F00E4CB29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84537B802154897F00E4CB29 /* Assets.xcassets */; };
 		84537B842154897F00E4CB29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84537B822154897F00E4CB29 /* LaunchScreen.storyboard */; };
@@ -31,14 +42,33 @@
 
 /* Begin PBXFileReference section */
 		61CC84636590AF7642696194 /* Pods-SkyerChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyerChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat.release.xcconfig"; sourceTree = "<group>"; };
-		840D41FF21607F670026DFBE /* NSDictionary+skDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+skDictionary.h"; sourceTree = "<group>"; };
-		840D420021607F670026DFBE /* NSDictionary+skDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+skDictionary.m"; sourceTree = "<group>"; };
+		8419CDAE216C826300DBE8F4 /* modelRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = modelRegister.h; sourceTree = "<group>"; };
+		8419CDAF216C826300DBE8F4 /* modelRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = modelRegister.m; sourceTree = "<group>"; };
+		8419CDB5216D949E00DBE8F4 /* SKKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKKeyboard.m; sourceTree = "<group>"; };
+		8419CDB6216D949E00DBE8F4 /* SKKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKeyboard.h; sourceTree = "<group>"; };
+		8419CDB8216D949E00DBE8F4 /* skClassMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skClassMethod.h; sourceTree = "<group>"; };
+		8419CDB9216D949E00DBE8F4 /* skClassMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skClassMethod.m; sourceTree = "<group>"; };
+		8419CDC0216DA55A00DBE8F4 /* skForgetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skForgetPasswordViewController.h; sourceTree = "<group>"; };
+		8419CDC1216DA55A00DBE8F4 /* skForgetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skForgetPasswordViewController.m; sourceTree = "<group>"; };
+		8419CDC3216DA5AE00DBE8F4 /* ForgetPasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordView.h; sourceTree = "<group>"; };
+		8419CDC4216DA5AE00DBE8F4 /* ForgetPasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordView.m; sourceTree = "<group>"; };
+		8419CDC6216DA5BC00DBE8F4 /* ForgetPasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordView.xib; sourceTree = "<group>"; };
 		84211A54215B22A8003BE4A5 /* skRongListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skRongListViewController.h; sourceTree = "<group>"; };
 		84211A55215B22A8003BE4A5 /* skRongListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skRongListViewController.m; sourceTree = "<group>"; };
 		84211A57215B2345003BE4A5 /* skRongChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skRongChatViewController.h; sourceTree = "<group>"; };
 		84211A58215B2345003BE4A5 /* skRongChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skRongChatViewController.m; sourceTree = "<group>"; };
 		84211A5A215CB67F003BE4A5 /* skColorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skColorConfig.h; sourceTree = "<group>"; };
 		84211A5B215CB67F003BE4A5 /* skColorConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skColorConfig.m; sourceTree = "<group>"; };
+		843B40B4216B337400356306 /* NSDictionary+skDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+skDictionary.h"; sourceTree = "<group>"; };
+		843B40B5216B337400356306 /* NSDictionary+skDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+skDictionary.m"; sourceTree = "<group>"; };
+		843B40B7216B4E4600356306 /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		843B40B8216B4E4600356306 /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		843B40BA216B4E5200356306 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		843B40C0216C552300356306 /* skRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skRegisterViewController.h; sourceTree = "<group>"; };
+		843B40C1216C552300356306 /* skRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skRegisterViewController.m; sourceTree = "<group>"; };
+		843B40C3216C553D00356306 /* RegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterView.xib; sourceTree = "<group>"; };
+		843B40C5216C555200356306 /* RegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterView.h; sourceTree = "<group>"; };
+		843B40C6216C555200356306 /* RegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterView.m; sourceTree = "<group>"; };
 		84537B742154897E00E4CB29 /* SkyerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84537B772154897E00E4CB29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84537B782154897E00E4CB29 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -94,13 +124,105 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		843B40B2216B320B00356306 /* Cagetory */ = {
+		8419CDB4216D949E00DBE8F4 /* 键盘监听 */ = {
 			isa = PBXGroup;
 			children = (
-				840D41FF21607F670026DFBE /* NSDictionary+skDictionary.h */,
-				840D420021607F670026DFBE /* NSDictionary+skDictionary.m */,
+				8419CDB5216D949E00DBE8F4 /* SKKeyboard.m */,
+				8419CDB6216D949E00DBE8F4 /* SKKeyboard.h */,
+			);
+			path = "键盘监听";
+			sourceTree = "<group>";
+		};
+		8419CDB7216D949E00DBE8F4 /* 类方法 */ = {
+			isa = PBXGroup;
+			children = (
+				8419CDB8216D949E00DBE8F4 /* skClassMethod.h */,
+				8419CDB9216D949E00DBE8F4 /* skClassMethod.m */,
+			);
+			path = "类方法";
+			sourceTree = "<group>";
+		};
+		8419CDBC216DA50000DBE8F4 /* 忘记密码 */ = {
+			isa = PBXGroup;
+			children = (
+				8419CDBD216DA50000DBE8F4 /* Controller */,
+				8419CDBE216DA50000DBE8F4 /* Model */,
+				8419CDBF216DA50000DBE8F4 /* View */,
+			);
+			path = "忘记密码";
+			sourceTree = "<group>";
+		};
+		8419CDBD216DA50000DBE8F4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8419CDC0216DA55A00DBE8F4 /* skForgetPasswordViewController.h */,
+				8419CDC1216DA55A00DBE8F4 /* skForgetPasswordViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8419CDBE216DA50000DBE8F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8419CDBF216DA50000DBE8F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8419CDC3216DA5AE00DBE8F4 /* ForgetPasswordView.h */,
+				8419CDC4216DA5AE00DBE8F4 /* ForgetPasswordView.m */,
+				8419CDC6216DA5BC00DBE8F4 /* ForgetPasswordView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		843B40B3216B337400356306 /* Cagetory */ = {
+			isa = PBXGroup;
+			children = (
+				843B40B4216B337400356306 /* NSDictionary+skDictionary.h */,
+				843B40B5216B337400356306 /* NSDictionary+skDictionary.m */,
 			);
 			path = Cagetory;
+			sourceTree = "<group>";
+		};
+		843B40BC216C54DF00356306 /* 注册模块 */ = {
+			isa = PBXGroup;
+			children = (
+				843B40BD216C54DF00356306 /* Controller */,
+				843B40BE216C54DF00356306 /* Model */,
+				843B40BF216C54DF00356306 /* View */,
+			);
+			path = "注册模块";
+			sourceTree = "<group>";
+		};
+		843B40BD216C54DF00356306 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				843B40C0216C552300356306 /* skRegisterViewController.h */,
+				843B40C1216C552300356306 /* skRegisterViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		843B40BE216C54DF00356306 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8419CDAE216C826300DBE8F4 /* modelRegister.h */,
+				8419CDAF216C826300DBE8F4 /* modelRegister.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		843B40BF216C54DF00356306 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				843B40C3216C553D00356306 /* RegisterView.xib */,
+				843B40C5216C555200356306 /* RegisterView.h */,
+				843B40C6216C555200356306 /* RegisterView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		84537B6B2154897E00E4CB29 = {
@@ -151,6 +273,8 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8419CDBC216DA50000DBE8F4 /* 忘记密码 */,
+				843B40BC216C54DF00356306 /* 注册模块 */,
 				84537B9A2154929C00E4CB29 /* 首页模块 */,
 				84537B922154929C00E4CB29 /* 登录模块 */,
 				84537B962154929C00E4CB29 /* 聊天模块 */,
@@ -169,7 +293,9 @@
 		84537B902154913B00E4CB29 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				843B40B2216B320B00356306 /* Cagetory */,
+				8419CDB4216D949E00DBE8F4 /* 键盘监听 */,
+				8419CDB7216D949E00DBE8F4 /* 类方法 */,
+				843B40B3216B337400356306 /* Cagetory */,
 				84A78E78215F574A0013F614 /* 封装的AF网络请求 */,
 			);
 			path = Tools;
@@ -218,6 +344,9 @@
 		84537B952154929C00E4CB29 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				843B40B7216B4E4600356306 /* LoginView.h */,
+				843B40B8216B4E4600356306 /* LoginView.m */,
+				843B40BA216B4E5200356306 /* LoginView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -400,6 +529,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8419CDC7216DA5BC00DBE8F4 /* ForgetPasswordView.xib in Resources */,
+				843B40BB216B4E5200356306 /* LoginView.xib in Resources */,
+				843B40C4216C553D00356306 /* RegisterView.xib in Resources */,
 				84537B842154897F00E4CB29 /* LaunchScreen.storyboard in Resources */,
 				84537B812154897F00E4CB29 /* Assets.xcassets in Resources */,
 			);
@@ -460,6 +592,7 @@
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/jrmf.cer",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/AlipaySDK/AlipaySDK.bundle",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/WalletResource.bundle",
+				"${PODS_ROOT}/mob_sharesdk/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -472,6 +605,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jrmf.cer",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AlipaySDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WalletResource.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -505,13 +639,21 @@
 			files = (
 				84D160D9216058A8002188DB /* skParamsForRequest.m in Sources */,
 				84537B872154897F00E4CB29 /* main.m in Sources */,
+				8419CDB0216C826300DBE8F4 /* modelRegister.m in Sources */,
+				843B40B9216B4E4600356306 /* LoginView.m in Sources */,
+				8419CDC2216DA55A00DBE8F4 /* skForgetPasswordViewController.m in Sources */,
 				84537BA82154E36000E4CB29 /* skLoginViewController.m in Sources */,
 				84D160D5215F6FBF002188DB /* skNetConfigModel.m in Sources */,
 				84A78E81215F5C390013F614 /* skResponeModel.m in Sources */,
+				8419CDBB216D949E00DBE8F4 /* skClassMethod.m in Sources */,
 				84537BA42154D83200E4CB29 /* skBaseNavViewController.m in Sources */,
 				84B21DAA21605E1D00DCCF9C /* UserModel.m in Sources */,
+				843B40C2216C552300356306 /* skRegisterViewController.m in Sources */,
+				8419CDC5216DA5AE00DBE8F4 /* ForgetPasswordView.m in Sources */,
+				8419CDBA216D949E00DBE8F4 /* SKKeyboard.m in Sources */,
+				843B40C7216C555200356306 /* RegisterView.m in Sources */,
 				84A78E7E215F574A0013F614 /* skAFNetworkingTool.m in Sources */,
-				840D420121607F670026DFBE /* NSDictionary+skDictionary.m in Sources */,
+				843B40B6216B337400356306 /* NSDictionary+skDictionary.m in Sources */,
 				84A78E85215F5DA70013F614 /* RongSDKUsed.m in Sources */,
 				84537B792154897E00E4CB29 /* AppDelegate.mm in Sources */,
 				84211A5C215CB67F003BE4A5 /* skColorConfig.m in Sources */,

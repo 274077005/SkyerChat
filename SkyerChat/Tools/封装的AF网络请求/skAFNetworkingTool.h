@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-typedef void (^ _Nullable SuccessRespone)(id _Nullable responseObject);     // 成功Block
+typedef void (^ _Nullable SuccessRespone)(skResponeModel* _Nullable responseObject);     // 成功Block
 typedef void (^ _Nullable FailureRespone)(NSError * _Nullable error);        // 失败Blcok
 
 typedef void (^ _Nullable Unknown)(void);          // 未知网络状态的Block
