@@ -73,7 +73,7 @@
     [self.model.btnEnableSignal subscribeNext:^(NSString*  _Nullable x) {
         @strongify(self)//验证点击按钮有效
         UIButton *btn=self.viewRegister.btnReigster;
-        
+        NSLog(@"xxx=%@",x);
         btn.enabled=[x boolValue];
         
         if ([x boolValue]) {
@@ -86,6 +86,7 @@
     
     [[_viewRegister.btnReigster rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)//注册
+        [self userRegister];
     }];
     [[_viewRegister.btnXieyi rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)//协议
@@ -151,6 +152,33 @@
             [self.viewRegister.labGetCode setText:@"获取验证码"];
             self.model.isGetCode=YES;
         }
+    }];
+}
+
+/**
+ 用户注册
+ */
+-(void)userRegister{
+    NSString *pwd=[NSString stringWithFormat:@"%@%@",_model.password,skModelNet.appSecret];
+    
+    NSDictionary *dic=@{@"phoneNo":_model.phone,
+                        @"passwd":[pwd MD5],
+                        @"smsCode":_model.code
+                        };
+    
+    skModelNet.phoneNo=_model.phone;
+    skModelNet.passwd=[pwd MD5];
+    skModelNet.smsCode=_model.code;
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizUser/register") pubParame:skPubParType(portNameResetPasswd) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
     }];
 }
 @end

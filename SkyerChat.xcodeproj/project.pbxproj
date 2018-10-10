@@ -14,6 +14,12 @@
 		8419CDC2216DA55A00DBE8F4 /* skForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDC1216DA55A00DBE8F4 /* skForgetPasswordViewController.m */; };
 		8419CDC5216DA5AE00DBE8F4 /* ForgetPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDC4216DA5AE00DBE8F4 /* ForgetPasswordView.m */; };
 		8419CDC7216DA5BC00DBE8F4 /* ForgetPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8419CDC6216DA5BC00DBE8F4 /* ForgetPasswordView.xib */; };
+		8419CDCA216DAF6100DBE8F4 /* UserLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDC9216DAF6100DBE8F4 /* UserLogin.m */; };
+		8419CDD5216DD80C00DBE8F4 /* skTabarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDCF216DD80C00DBE8F4 /* skTabarViewController.m */; };
+		8419CDE6216DD90C00DBE8F4 /* skUserChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDE5216DD90C00DBE8F4 /* skUserChatViewController.m */; };
+		8419CDE9216DD96E00DBE8F4 /* skAddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDE8216DD96E00DBE8F4 /* skAddressBookViewController.m */; };
+		8419CDEC216DD99800DBE8F4 /* skActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDEB216DD99800DBE8F4 /* skActivityViewController.m */; };
+		8419CDEF216DD9B700DBE8F4 /* skUserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDEE216DD9B700DBE8F4 /* skUserCenterViewController.m */; };
 		84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A55215B22A8003BE4A5 /* skRongListViewController.m */; };
 		84211A59215B2345003BE4A5 /* skRongChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A58215B2345003BE4A5 /* skRongChatViewController.m */; };
 		84211A5C215CB67F003BE4A5 /* skColorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84211A5B215CB67F003BE4A5 /* skColorConfig.m */; };
@@ -53,6 +59,18 @@
 		8419CDC3216DA5AE00DBE8F4 /* ForgetPasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordView.h; sourceTree = "<group>"; };
 		8419CDC4216DA5AE00DBE8F4 /* ForgetPasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordView.m; sourceTree = "<group>"; };
 		8419CDC6216DA5BC00DBE8F4 /* ForgetPasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordView.xib; sourceTree = "<group>"; };
+		8419CDC8216DAF6100DBE8F4 /* UserLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserLogin.h; sourceTree = "<group>"; };
+		8419CDC9216DAF6100DBE8F4 /* UserLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserLogin.m; sourceTree = "<group>"; };
+		8419CDCE216DD80C00DBE8F4 /* skTabarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skTabarViewController.h; sourceTree = "<group>"; };
+		8419CDCF216DD80C00DBE8F4 /* skTabarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skTabarViewController.m; sourceTree = "<group>"; };
+		8419CDE4216DD90C00DBE8F4 /* skUserChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skUserChatViewController.h; sourceTree = "<group>"; };
+		8419CDE5216DD90C00DBE8F4 /* skUserChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skUserChatViewController.m; sourceTree = "<group>"; };
+		8419CDE7216DD96E00DBE8F4 /* skAddressBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAddressBookViewController.h; sourceTree = "<group>"; };
+		8419CDE8216DD96E00DBE8F4 /* skAddressBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAddressBookViewController.m; sourceTree = "<group>"; };
+		8419CDEA216DD99800DBE8F4 /* skActivityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skActivityViewController.h; sourceTree = "<group>"; };
+		8419CDEB216DD99800DBE8F4 /* skActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skActivityViewController.m; sourceTree = "<group>"; };
+		8419CDED216DD9B700DBE8F4 /* skUserCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skUserCenterViewController.h; sourceTree = "<group>"; };
+		8419CDEE216DD9B700DBE8F4 /* skUserCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skUserCenterViewController.m; sourceTree = "<group>"; };
 		84211A54215B22A8003BE4A5 /* skRongListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skRongListViewController.h; sourceTree = "<group>"; };
 		84211A55215B22A8003BE4A5 /* skRongListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skRongListViewController.m; sourceTree = "<group>"; };
 		84211A57215B2345003BE4A5 /* skRongChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skRongChatViewController.h; sourceTree = "<group>"; };
@@ -178,6 +196,138 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8419CDCB216DD80C00DBE8F4 /* 选项卡 */ = {
+			isa = PBXGroup;
+			children = (
+				8419CDCC216DD80C00DBE8F4 /* Controller */,
+				8419CDD0216DD80C00DBE8F4 /* Model */,
+				8419CDD2216DD80C00DBE8F4 /* View */,
+			);
+			path = "选项卡";
+			sourceTree = "<group>";
+		};
+		8419CDCC216DD80C00DBE8F4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8419CDCE216DD80C00DBE8F4 /* skTabarViewController.h */,
+				8419CDCF216DD80C00DBE8F4 /* skTabarViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8419CDD0216DD80C00DBE8F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8419CDD2216DD80C00DBE8F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8419CDD8216DD8BE00DBE8F4 /* 个人信息 */ = {
+			isa = PBXGroup;
+			children = (
+				8419CDD9216DD8BE00DBE8F4 /* Controller */,
+				8419CDDA216DD8BE00DBE8F4 /* Model */,
+				8419CDDB216DD8BE00DBE8F4 /* View */,
+			);
+			path = "个人信息";
+			sourceTree = "<group>";
+		};
+		8419CDD9216DD8BE00DBE8F4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8419CDED216DD9B700DBE8F4 /* skUserCenterViewController.h */,
+				8419CDEE216DD9B700DBE8F4 /* skUserCenterViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8419CDDA216DD8BE00DBE8F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8419CDDB216DD8BE00DBE8F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8419CDDC216DD8BE00DBE8F4 /* 活动模块 */ = {
+			isa = PBXGroup;
+			children = (
+				8419CDDD216DD8BE00DBE8F4 /* Controller */,
+				8419CDDE216DD8BE00DBE8F4 /* Model */,
+				8419CDDF216DD8BE00DBE8F4 /* View */,
+			);
+			path = "活动模块";
+			sourceTree = "<group>";
+		};
+		8419CDDD216DD8BE00DBE8F4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8419CDEA216DD99800DBE8F4 /* skActivityViewController.h */,
+				8419CDEB216DD99800DBE8F4 /* skActivityViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8419CDDE216DD8BE00DBE8F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8419CDDF216DD8BE00DBE8F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8419CDE0216DD8C800DBE8F4 /* 通讯录模块 */ = {
+			isa = PBXGroup;
+			children = (
+				8419CDE1216DD8C800DBE8F4 /* Controller */,
+				8419CDE2216DD8C800DBE8F4 /* Model */,
+				8419CDE3216DD8C800DBE8F4 /* View */,
+			);
+			path = "通讯录模块";
+			sourceTree = "<group>";
+		};
+		8419CDE1216DD8C800DBE8F4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8419CDE7216DD96E00DBE8F4 /* skAddressBookViewController.h */,
+				8419CDE8216DD96E00DBE8F4 /* skAddressBookViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8419CDE2216DD8C800DBE8F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8419CDE3216DD8C800DBE8F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		843B40B3216B337400356306 /* Cagetory */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +423,10 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8419CDE0216DD8C800DBE8F4 /* 通讯录模块 */,
+				8419CDD8216DD8BE00DBE8F4 /* 个人信息 */,
+				8419CDDC216DD8BE00DBE8F4 /* 活动模块 */,
+				8419CDCB216DD80C00DBE8F4 /* 选项卡 */,
 				8419CDBC216DA50000DBE8F4 /* 忘记密码 */,
 				843B40BC216C54DF00356306 /* 注册模块 */,
 				84537B9A2154929C00E4CB29 /* 首页模块 */,
@@ -337,6 +491,8 @@
 			children = (
 				84B21DA821605E1D00DCCF9C /* UserModel.h */,
 				84B21DA921605E1D00DCCF9C /* UserModel.m */,
+				8419CDC8216DAF6100DBE8F4 /* UserLogin.h */,
+				8419CDC9216DAF6100DBE8F4 /* UserLogin.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -364,6 +520,8 @@
 		84537B972154929C00E4CB29 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8419CDE4216DD90C00DBE8F4 /* skUserChatViewController.h */,
+				8419CDE5216DD90C00DBE8F4 /* skUserChatViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -639,6 +797,7 @@
 			files = (
 				84D160D9216058A8002188DB /* skParamsForRequest.m in Sources */,
 				84537B872154897F00E4CB29 /* main.m in Sources */,
+				8419CDCA216DAF6100DBE8F4 /* UserLogin.m in Sources */,
 				8419CDB0216C826300DBE8F4 /* modelRegister.m in Sources */,
 				843B40B9216B4E4600356306 /* LoginView.m in Sources */,
 				8419CDC2216DA55A00DBE8F4 /* skForgetPasswordViewController.m in Sources */,
@@ -646,22 +805,27 @@
 				84D160D5215F6FBF002188DB /* skNetConfigModel.m in Sources */,
 				84A78E81215F5C390013F614 /* skResponeModel.m in Sources */,
 				8419CDBB216D949E00DBE8F4 /* skClassMethod.m in Sources */,
+				8419CDE9216DD96E00DBE8F4 /* skAddressBookViewController.m in Sources */,
 				84537BA42154D83200E4CB29 /* skBaseNavViewController.m in Sources */,
 				84B21DAA21605E1D00DCCF9C /* UserModel.m in Sources */,
 				843B40C2216C552300356306 /* skRegisterViewController.m in Sources */,
 				8419CDC5216DA5AE00DBE8F4 /* ForgetPasswordView.m in Sources */,
 				8419CDBA216D949E00DBE8F4 /* SKKeyboard.m in Sources */,
 				843B40C7216C555200356306 /* RegisterView.m in Sources */,
+				8419CDEC216DD99800DBE8F4 /* skActivityViewController.m in Sources */,
 				84A78E7E215F574A0013F614 /* skAFNetworkingTool.m in Sources */,
 				843B40B6216B337400356306 /* NSDictionary+skDictionary.m in Sources */,
 				84A78E85215F5DA70013F614 /* RongSDKUsed.m in Sources */,
 				84537B792154897E00E4CB29 /* AppDelegate.mm in Sources */,
 				84211A5C215CB67F003BE4A5 /* skColorConfig.m in Sources */,
+				8419CDE6216DD90C00DBE8F4 /* skUserChatViewController.m in Sources */,
 				84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */,
+				8419CDD5216DD80C00DBE8F4 /* skTabarViewController.m in Sources */,
 				84537BA32154D83200E4CB29 /* skBaseViewController.m in Sources */,
 				84537BAB2154E9CE00E4CB29 /* skConfig.m in Sources */,
 				84211A59215B2345003BE4A5 /* skRongChatViewController.m in Sources */,
 				84D160D6215F6FBF002188DB /* skNetConfig.m in Sources */,
+				8419CDEF216DD9B700DBE8F4 /* skUserCenterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
