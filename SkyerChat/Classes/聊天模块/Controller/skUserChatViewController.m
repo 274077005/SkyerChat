@@ -16,9 +16,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"聊天列表";
     // Do any additional setup after loading the view.
+    //设置需要显示哪些类型的会话
+    [self setDisplayConversationTypeArray:@[@(ConversationType_PRIVATE),
+                                        @(ConversationType_DISCUSSION),
+                                        @(ConversationType_CHATROOM),
+                                        @(ConversationType_GROUP),
+                                        @(ConversationType_APPSERVICE),
+                                        @(ConversationType_SYSTEM)]];
+    
 }
-
 /*
 #pragma mark - Navigation
 

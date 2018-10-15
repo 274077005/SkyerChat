@@ -7,11 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "skLoginViewController.h"
-#import "skRongChatViewController.h"
 #import "RongSDKUsed.h"
 #import "skNetConfig.h"
 #import "SKKeyboard.h"
+#import "skNavigationConfig.h"
+#import "skRootViewController.h"
 
 #define token1 @"1z0W1QQcqqNwjSdFzuVkswWLRykpsFQ9HOLtXuW3Ld01fnSA4ysB8rdhCJaVoF1pbNdUMtpHhzo="
 #define token2 @"2+sZh/+2Pd1ZZSX75AwIafZmEahWqpbwXM/mW6z5RPpseaZcfJjbPdNxmTWks3kVK3DXTI33QOdtVxZXmdtzNQ=="
@@ -25,47 +25,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    //设置状态栏
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [skNetConfig initNetConfig];
+    NSLog(@"url地址=%@",skModelNet.apiServer);
     //初始化键盘管理器
     [SKKeyboard skMangerKeyboard];
-    
-    NSLog(@"url地址=%@",skModelNet.apiServer);
-    
+    //导航栏设置
+    [skNavigationConfig skNavigationInit];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor=[UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     [[RongSDKUsed shareInstance] initRongWithAppkey:skRongAppKey];
+    [skRootViewController skRootLoginViewController];
+//    [skRootViewController skRootTabarViewController];
     
-    [[RongSDKUsed shareInstance] skRongConnectWithToken:token2 success:^(NSString *userId) {
-        
-    } error:^(RCConnectErrorCode status) {
-        
-    } tokenIncorrect:^{
-        
-    }];
-    
-    
-    skLoginViewController *skLoginView=[[skLoginViewController alloc] init];
-    skBaseNavViewController *skLoginViewNav=[[skBaseNavViewController alloc] initWithRootViewController:skLoginView];
-    self.window.rootViewController=skLoginViewNav;
-//    [self sendRegister];
     return YES;
-}
--(void)sendRegister{
-    ///intf/bizUser/sendRegister
-    NSDictionary *dic=@{@"phoneNo":@"17677252521",
-                        @"type":@1
-    };
-    
-    skModelNet.phoneNo=@"17677252521";
-    
-    [skAfTool SKPOST:skUrl(@"/intf/bizUser/sendRegister") pubParame:skPubParType(portNameSendRegister) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:YES success:^(skResponeModel*  _Nullable responseObject) {
-        
-    } failure:^(NSError * _Nullable error) {
-        
-    }];
 }
 
 

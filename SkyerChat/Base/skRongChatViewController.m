@@ -17,9 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.conversationType=ConversationType_PRIVATE;
-    self.targetId=@"1";
-    self.title=@"skyer1";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,9 +33,6 @@
     // Pass the selected object to the new view controller.
 }
 */
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
-}
 
 
 @end

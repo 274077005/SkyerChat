@@ -7,6 +7,7 @@
 //
 
 #import "skBaseViewController.h"
+#import "SFHFKeychainUtils.h"
 
 @interface skLoginViewController : skBaseViewController
 

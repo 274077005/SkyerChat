@@ -15,6 +15,9 @@
 @interface skConfig : NSObject
 //融云的appkey
 #define skRongAppKey @"qd46yzrfqiozf"
+//账号密码保存
+#define skLoginUserName @"LoginUserName"
+#define skLoginUserPWD @"LoginUserPWD"
 //封装的af单例
 #define skAfTool [skAFNetworkingTool shareInstance]
 //xib获取

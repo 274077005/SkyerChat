@@ -10,6 +10,7 @@
 #import "LoginView.h"
 #import "UserLogin.h"
 #import "skRegisterViewController.h"
+#import "skRootViewController.h"
 
 @interface skLoginViewController ()
 @property (nonatomic,strong) LoginView *viewLogin;
@@ -63,7 +64,7 @@
         NSLog(@"x==%@",x);
         UIButton *btn=self.viewLogin.btnLogin;
         btn.enabled=[x boolValue];
-        
+
         if ([x boolValue]) {
             [btn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
         }else{
@@ -79,6 +80,19 @@
     // Do any additional setup after loading the view.
     [self.view addSubview:self.viewLogin];
     [self racAction];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self rememberUser];
+}
+#pragma mark - 获取原始密码
+-(void)rememberUser{
+    NSString *userName=[SFHFKeychainUtils getPasswordForUsername:skLoginUserName andServiceName:skLoginUserName error:nil];
+    NSString *userPWD=[SFHFKeychainUtils getPasswordForUsername:skLoginUserPWD andServiceName:skLoginUserPWD error:nil];
+    self.viewLogin.txtPhone.text=userName;
+    self.viewLogin.txtPassword.text=userPWD;
+    self.userLogin.loginPhone=userName;
+    self.userLogin.loginPwd=userPWD;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,7 +111,7 @@
 */
 -(void)userLoginAction{
     ///intf/bizUser/sendRegister
-    NSString *passwd=[NSString stringWithFormat:@"%@%@",_userLogin.loginPhone,skModelNet.appSecret];
+    NSString *passwd=[NSString stringWithFormat:@"%@%@",_userLogin.loginPwd,skModelNet.appSecret];
     
     NSDictionary *dic=@{@"phoneNo":_userLogin.loginPhone,
                         @"passwd":[passwd MD5]
@@ -109,7 +123,12 @@
     [skAfTool SKPOST:skUrl(@"/intf/bizUser/login") pubParame:skPubParType(portNameLogin) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
+            [UserModel mj_objectWithKeyValues:responseObject.data];
+            [SFHFKeychainUtils storeUsername:skLoginUserName andPassword:self.userLogin.loginPhone forServiceName:skLoginUserName updateExisting:YES error:nil];
             
+            [SFHFKeychainUtils storeUsername:skLoginUserPWD andPassword:self.userLogin.loginPwd forServiceName:skLoginUserPWD updateExisting:YES error:nil];
+            skUser.isLogin=YES;
+            [skRootViewController skRootTabarViewController];
         }
         
     } failure:^(NSError * _Nullable error) {

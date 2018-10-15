@@ -22,4 +22,5 @@
 #import "NSDictionary+skDictionary.h"
 #import "ReactiveObjC.h"
 #import "skClassMethod.h"
+#import "Masonry.h"
 #endif

@@ -9,6 +9,9 @@
 #import "skRegisterViewController.h"
 #import "RegisterView.h"
 #import "modelRegister.h"
+#import "SFHFKeychainUtils.h"
+#import "skRootViewController.h"
+#import "UserModel.h"
 
 @interface skRegisterViewController ()
 @property (nonatomic,strong) RegisterView *viewRegister;
@@ -174,7 +177,13 @@
     [skAfTool SKPOST:skUrl(@"/intf/bizUser/register") pubParame:skPubParType(portNameResetPasswd) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
+            [UserModel mj_objectWithKeyValues:responseObject.data];
             
+            [SFHFKeychainUtils storeUsername:skLoginUserName andPassword:self.model.phone forServiceName:skLoginUserName updateExisting:YES error:nil];
+            
+            [SFHFKeychainUtils storeUsername:skLoginUserPWD andPassword:self.model.password forServiceName:skLoginUserPWD updateExisting:YES error:nil];
+            skUser.isLogin=YES;
+            [skRootViewController skRootTabarViewController];
         }
         
     } failure:^(NSError * _Nullable error) {
