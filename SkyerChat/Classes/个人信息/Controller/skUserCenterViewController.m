@@ -160,7 +160,8 @@
                 case 0:
                 {
                     NSLog(@"用户头像=%@",skUser.portrait);
-                    [self.cellHeader.btnHeadImage sd_setImageWithURL:[NSURL URLWithString:skUser.portrait] forState:(UIControlStateNormal) placeholderImage:[UIImage imageNamed:@"touxian"]];
+                    [self.cellHeader.btnHeadImage sd_setBackgroundImageWithURL:[NSURL URLWithString:skUser.portrait] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"touxian"]];
+                    self.cellHeader.labUserName.text=skUser.nickName;
                     return self.cellHeader;
                 }
                     break;

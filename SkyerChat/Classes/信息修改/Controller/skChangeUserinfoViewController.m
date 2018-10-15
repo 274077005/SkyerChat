@@ -11,6 +11,7 @@
 #import "skChangeUserinfoNikeNameTableViewCell.h"
 #import "skImagePicker.h"
 #import "skChangeUserinfoModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface skChangeUserinfoViewController ()
 
@@ -80,6 +81,7 @@
                 cell = skXibView(@"skChangeUserinfoHeaderTableViewCell");
             }
             
+            [cell.imageHeader sd_setImageWithURL:[NSURL URLWithString:skUser.portrait] placeholderImage:[UIImage imageNamed:@"touxian"]];
             return cell;
         }
             break;
