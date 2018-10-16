@@ -92,6 +92,7 @@
             if (cell == nil) {
                 cell = skXibView(@"skChangeUserinfoNikeNameTableViewCell");
             }
+            cell.labNikeName.text=skUser.nickName;
             return cell;
         }
             break;
@@ -115,7 +116,30 @@
             break;
         case 1:
         {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"修改昵称" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            //以下方法就可以实现在提示框中输入文本；
             
+            //在AlertView中添加一个输入框
+            [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                
+                textField.placeholder = @"输入昵称";
+                textField.text=skUser.nickName;
+                
+            }];
+            
+            //添加一个确定按钮 并获取AlertView中的第一个输入框 将其文本赋值给BUTTON的title
+            [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                UITextField *envirnmentNameTextField = alertController.textFields.firstObject;
+                [self changeUserInfo:nil andNikeName:envirnmentNameTextField.text];
+                
+            }]];
+            
+            //添加一个取消按钮
+            [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+            
+            //present出AlertView
+            [self presentViewController:alertController animated:true completion:nil];
         }
             break;
             
@@ -147,7 +171,7 @@
 -(void)changeUserInfo:(UIImage *)image andNikeName:(NSString *)name{
     
     NSDictionary *dic=@{@"nickName":name,
-                        @"portraitBase64":[self imageBase64:image]
+                        @"portraitBase64":image?[self imageBase64:image]:@""
                         };
     
     [skAfTool SKPOST:skUrl(@"/intf/bizUser/update") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
@@ -156,8 +180,13 @@
             
             skChangeUserinfoModel *model=[skChangeUserinfoModel mj_objectWithKeyValues:responseObject.data];
             
-            skUser.portrait=model.portrait;
-            skUser.nickName=model.nickName;
+            if (image) {
+                skUser.portrait=model.portrait;
+            }
+            if (name.length>0) {
+                skUser.nickName=model.nickName;
+            }
+            
             
             [self.tableView reloadData];
         }

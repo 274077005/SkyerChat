@@ -14,6 +14,7 @@
 
 @interface skAddressBookViewController ()
 @property (nonatomic,strong) NSArray *arrList;
+@property (nonatomic,strong) skAddressBookSearch *viewSearch;
 @end
 
 @implementation skAddressBookViewController
@@ -34,7 +35,19 @@
         make.bottom.mas_equalTo(self.mas_bottomLayoutGuideTop);
     }];
 }
-
+-(skAddressBookSearch *)viewSearch{
+    if (nil==_viewSearch) {
+        _viewSearch=skXibView(@"skAddressBookSearch");
+        @weakify(self)
+        [[_viewSearch.txtSearch rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+            @strongify(self)
+            if (x.length>0) {
+                [self getAddressBookList:x];
+            }
+        }];
+    }
+    return _viewSearch;
+}
 /*
 #pragma mark - Navigation
 
@@ -56,14 +69,7 @@
     return 50;
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    
-    skAddressBookSearch *view=skXibView(@"skAddressBookSearch");
-    @weakify(self)
-    [[view.txtSearch rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
-        @strongify(self)
-        [self getAddressBookList:x];
-    }];
-    return view;
+    return self.viewSearch;
 }
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
@@ -91,7 +97,7 @@
     
     NSDictionary *dic=@{@"keyword":keyword};
     
-    [skAfTool SKPOST:skUrl(@"/intf/bizLinker/list") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+    [skAfTool SKPOST:skUrl(@"/intf/bizLinker/list") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
             

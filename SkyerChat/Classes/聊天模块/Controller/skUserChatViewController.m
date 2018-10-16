@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"聊天列表";
+    self.title=@"聊天";
     // Do any additional setup after loading the view.
     //设置需要显示哪些类型的会话
     [self setDisplayConversationTypeArray:@[@(ConversationType_PRIVATE),

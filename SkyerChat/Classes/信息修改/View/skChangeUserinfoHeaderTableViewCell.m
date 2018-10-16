@@ -14,7 +14,6 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
     [self.imageHeader skSetBoardRadius:22 Width:2 andBorderColor:[UIColor whiteColor]];
 }
 
