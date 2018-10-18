@@ -14,11 +14,13 @@
 +(void)skRootLoginViewController{
     skLoginViewController *skLoginView=[[skLoginViewController alloc] init];
     skBaseNavViewController *skLoginViewNav=[[skBaseNavViewController alloc] initWithRootViewController:skLoginView];
+    skUser.isLogin=NO;
     skKeyWindow.rootViewController=skLoginViewNav;
 }
 
 +(void)skRootTabarViewController{
     skTabarViewController *skLoginView=[[skTabarViewController alloc] init];
+    skUser.isLogin=YES;
     skKeyWindow.rootViewController=skLoginView;
 }
 

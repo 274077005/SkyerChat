@@ -11,6 +11,7 @@
 #import "skAddressBookSearch.h"
 #import "skAddressBookModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "skAddFriendViewController.h"
 
 @interface skAddressBookViewController ()
 @property (nonatomic,strong) NSArray *arrList;
@@ -22,6 +23,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title=@"通讯录";
+    
+    @weakify(self)
+    [[[self skCreatBtn:@"bar-更多-白" btnTitleOrImage:(btntypeImage) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self)
+        skAddFriendViewController *view=[[skAddFriendViewController alloc] init];
+        [self.navigationController pushViewController:view animated:YES];
+    }];
+    
     [self addTableView];
     [self getAddressBookList:@""];
     

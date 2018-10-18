@@ -11,6 +11,7 @@
 #import "UserLogin.h"
 #import "skRegisterViewController.h"
 #import "skRootViewController.h"
+#import "RongSDKUsed.h"
 
 @interface skLoginViewController ()
 @property (nonatomic,strong) LoginView *viewLogin;
@@ -124,10 +125,21 @@
         
         if (responseObject.returnCode==0) {
             [UserModel mj_objectWithKeyValues:responseObject.data];
+            
             [SFHFKeychainUtils storeUsername:skLoginUserName andPassword:self.userLogin.loginPhone forServiceName:skLoginUserName updateExisting:YES error:nil];
             
             [SFHFKeychainUtils storeUsername:skLoginUserPWD andPassword:self.userLogin.loginPwd forServiceName:skLoginUserPWD updateExisting:YES error:nil];
+            
             skUser.isLogin=YES;
+            
+            [[RongSDKUsed shareInstance] skRongConnectWithToken:skUser.token success:^(NSString *userId) {
+                
+            } error:^(RCConnectErrorCode status) {
+                
+            } tokenIncorrect:^{
+                
+            }];
+            
             [skRootViewController skRootTabarViewController];
         }
         

@@ -43,6 +43,8 @@
 	<string>App需要您的同意,才能访问媒体资料库</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>App需要您的同意,才能访问蓝牙</string>
+	<key>NSContactsUsageDescription</key>
+	<string>App需要您的同意,才能访问通讯录</string>
 	<key>NSCameraUsageDescription</key>
 	<string>App需要您的同意,才能访问摄像头</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>

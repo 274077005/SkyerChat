@@ -64,6 +64,7 @@
 - (void)onRCIMConnectionStatusChanged:(RCConnectionStatus)status {
     if (status == ConnectionStatus_KICKED_OFFLINE_BY_OTHER_CLIENT) {
         NSLog(@"强登了");
+        [skRootViewController skRootLoginViewController];
     }
 }
 

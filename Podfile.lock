@@ -31,6 +31,7 @@ PODS:
     - mob_sharesdk/ShareSDK
     - MOBFoundation
   - MOBFoundation (3.1.9)
+  - PPGetAddressBook (0.2.8)
   - ReactiveObjC (3.1.0)
   - RongCloudIM/CallKit (2.8.32):
     - RongCloudIM/CallLib
@@ -62,6 +63,7 @@ DEPENDENCIES:
   - mob_sharesdk
   - mob_sharesdk/ShareSDKPlatforms/QQ
   - mob_sharesdk/ShareSDKPlatforms/WeChatFull
+  - PPGetAddressBook (from `https://github.com/jkpang/PPGetAddressBook.git`)
   - ReactiveObjC
   - RongCloudIM/CallKit
   - RongCloudIM/CallLib
@@ -86,6 +88,15 @@ SPEC REPOS:
     - SDWebImage
     - SkyerTools
 
+EXTERNAL SOURCES:
+  PPGetAddressBook:
+    :git: https://github.com/jkpang/PPGetAddressBook.git
+
+CHECKOUT OPTIONS:
+  PPGetAddressBook:
+    :commit: ed620972b46ed71916294c9cebc2c0dad7fa82f5
+    :git: https://github.com/jkpang/PPGetAddressBook.git
+
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
@@ -95,11 +106,12 @@ SPEC CHECKSUMS:
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   mob_sharesdk: fc8a9aab921c08e5e88a5b1f36229c6d406a2ff8
   MOBFoundation: 11500153c10d83e4ac341f6ad6301b3998ce6db2
+  PPGetAddressBook: e4b6b0a87e852df5d5b90c44ecd9ded7f6f1ccf6
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   RongCloudIM: 48bfc2fcb8d7cae8ce1e19cb5fb26d6d90616375
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SkyerTools: 2aa8614b85ced2d15f139762379e91ecda837a47
 
-PODFILE CHECKSUM: 7b21f813945ccc4e467914e870fc2ef2c5597a71
+PODFILE CHECKSUM: 2c0e7d38fe18542abf76212faf51dac5c35073f0
 
 COCOAPODS: 1.5.2

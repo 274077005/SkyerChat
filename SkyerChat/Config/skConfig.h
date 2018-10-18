@@ -14,7 +14,7 @@
 
 @interface skConfig : NSObject
 //融云的appkey
-#define skRongAppKey @"qd46yzrfqiozf"
+#define skRongAppKey @"n19jmcy5n8zf9"
 //账号密码保存
 #define skLoginUserName @"LoginUserName"
 #define skLoginUserPWD @"LoginUserPWD"

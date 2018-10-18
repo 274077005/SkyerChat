@@ -27,6 +27,7 @@ target 'SkyerChat' do
     pod 'RongCloudIM/CallLib'
     pod 'RongCloudIM/CallKit'
     pod 'RongCloudIM/RedPacket'
+    pod 'PPGetAddressBook',:git => 'https://github.com/jkpang/PPGetAddressBook.git'
     
     # 主模块(必须)
     pod 'mob_sharesdk'

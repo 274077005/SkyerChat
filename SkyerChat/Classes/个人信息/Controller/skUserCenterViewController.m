@@ -12,6 +12,7 @@
 #import "UserCenterTitleTableViewCell.h"
 #import <SDWebImage/UIButton+WebCache.h>
 #import "skChangeUserinfoViewController.h"
+#import "UserCenterLoginOutTableViewCell.h"
 
 @interface skUserCenterViewController ()
 @property (nonatomic,strong) UserCenterHeaderTableViewCell *cellHeader;
@@ -234,14 +235,13 @@
             break;
         case 3:
         {
-            static NSString *cellIdentifier = @"UserCenterTitleTableViewCell";
+            static NSString *cellIdentifier = @"UserCenterLoginOutTableViewCell";
             
-            UserCenterTitleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+            UserCenterLoginOutTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
             
             if (cell == nil) {
-                cell = skXibView(@"UserCenterTitleTableViewCell");
+                cell = skXibView(@"UserCenterLoginOutTableViewCell");
             }
-            cell.labTitle.text=@"邀请用户";
             return cell;
         }
             break;
