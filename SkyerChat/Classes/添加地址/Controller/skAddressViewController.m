@@ -22,8 +22,13 @@
     if (nil==_addModel) {
         
         _addModel=[[AddAddressModel alloc] init];
-        
         _addModel.receiver=self.model.receiver;
+        _addModel.phone=self.model.phone;
+        _addModel.district=self.model.district;
+        _addModel.address=self.model.address;
+        _addModel.isDefault=self.model.isDefault;
+        _addModel.addressName=self.model.addressName;
+        
         
     }
     return _addModel;
@@ -34,6 +39,12 @@
     // Do any additional setup after loading the view.
     self.title=@"收货地址";
     [self addTableView];
+    
+    @weakify(self)
+    [[[self skCreatBtn:@"确定" btnTitleOrImage:(btntypeTitle) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self)
+        [self ReceiverAddressCreate];
+    }];
 }
 -(void)addTableView{
     [self.view addSubview:self.tableView];
@@ -105,40 +116,46 @@
                 case 0:
                 {
                     cell.txtTitle.placeholder=@"真实姓名";
-                    cell.txtTitle.text=self.model.receiver;
+                    cell.txtTitle.text=self.addModel.receiver;
                     
-                    RAC(self.addModel,receiver)=cell.txtTitle.rac_textSignal;
+//                    RAC(self.addModel,receiver)=cell.txtTitle.rac_textSignal;
                     
                 }
                     break;
                 case 1:
                 {
                     cell.txtTitle.placeholder=@"手机号码";
-                    cell.txtTitle.text=self.model.phone;
-                    
-                    RAC(self.addModel,phone)=cell.txtTitle.rac_textSignal;
+                    cell.txtTitle.text=self.addModel.phone;
+                    [[cell.txtTitle rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+                        self.addModel.phone=x;
+                    }];
                 }
                     break;
                 case 2:
                 {
                     cell.txtTitle.placeholder=@"邮编地址";
-                    cell.txtTitle.text=self.model.address;
-                    
-                    RAC(self.addModel,district)=cell.txtTitle.rac_textSignal;
+                    cell.txtTitle.text=self.addModel.address;
+                    [[cell.txtTitle rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+                        self.addModel.address=x;
+                    }];
                 }
                     break;
                 case 3:
                 {
                     cell.txtTitle.placeholder=@"我的地址";
-                    cell.txtTitle.text=self.model.addressName;
-                    RAC(self.addModel,addressName)=cell.txtTitle.rac_textSignal;
+                    cell.txtTitle.text=self.addModel.addressName;
+                    [[cell.txtTitle rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+                        self.addModel.addressName=x;
+                    }];
                 }
                     break;
                 case 4:
                 {
                     cell.txtTitle.placeholder=@"我的省份";
-                    cell.txtTitle.text=self.model.district;
-                    RAC(self.addModel,district)=cell.txtTitle.rac_textSignal;
+                    cell.txtTitle.text=self.addModel.district;
+                    [[cell.txtTitle rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+                        self.addModel.district=x;
+                    }];
                 }
                     break;
                     
@@ -158,6 +175,12 @@
                 cell = skXibView(@"AddressCenterTableViewCell");
             }
             cell.labTitle.text=@"设为默认收货地址";
+            if (self.addModel.isDefault) {
+                [cell setAccessoryType:(UITableViewCellAccessoryCheckmark)];
+            }else{
+                [cell setAccessoryType:(UITableViewCellAccessoryNone)];
+            }
+            
             return cell;
         }
             break;
@@ -186,7 +209,27 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    switch (indexPath.section) {
+        case 0:
+            {
+                
+            }
+            break;
+        case 1:
+        {
+            self.addModel.isDefault=!self.addModel.isDefault;
+            [self.tableView reloadData];
+        }
+            break;
+        case 2:
+        {
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 -(void)ReceiverAddressCreate{
@@ -203,7 +246,7 @@
     [skAfTool SKPOST:skUrl(@"/intf/bizReceiverAddress/create") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
-            
+            [self.navigationController popViewControllerAnimated:YES];
         }
         
     } failure:^(NSError * _Nullable error) {
