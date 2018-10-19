@@ -50,9 +50,17 @@
 		84537BA42154D83200E4CB29 /* skBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84537BA22154D83200E4CB29 /* skBaseNavViewController.m */; };
 		84537BA82154E36000E4CB29 /* skLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84537BA72154E36000E4CB29 /* skLoginViewController.m */; };
 		84537BAB2154E9CE00E4CB29 /* skConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84537BAA2154E9CE00E4CB29 /* skConfig.m */; };
+		845617AF217830F900E3A511 /* UserinfoSetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845617AD217830F900E3A511 /* UserinfoSetTableViewCell.m */; };
+		845617B0217830F900E3A511 /* UserinfoSetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845617AE217830F900E3A511 /* UserinfoSetTableViewCell.xib */; };
 		84A78E7E215F574A0013F614 /* skAFNetworkingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E7C215F574A0013F614 /* skAFNetworkingTool.m */; };
 		84A78E81215F5C390013F614 /* skResponeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E80215F5C390013F614 /* skResponeModel.m */; };
 		84A78E85215F5DA70013F614 /* RongSDKUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E83215F5DA70013F614 /* RongSDKUsed.m */; };
+		84ADFC29217877F4008D7BE5 /* skUserinfoSetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ADFC28217877F4008D7BE5 /* skUserinfoSetModel.m */; };
+		84ADFC3021798127008D7BE5 /* skAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ADFC2F21798127008D7BE5 /* skAddressViewController.m */; };
+		84ADFC342179850F008D7BE5 /* AddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ADFC322179850F008D7BE5 /* AddressTableViewCell.m */; };
+		84ADFC352179850F008D7BE5 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ADFC332179850F008D7BE5 /* AddressTableViewCell.xib */; };
+		84ADFC3921798BC0008D7BE5 /* AddressCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ADFC3721798BC0008D7BE5 /* AddressCenterTableViewCell.m */; };
+		84ADFC3A21798BC0008D7BE5 /* AddressCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ADFC3821798BC0008D7BE5 /* AddressCenterTableViewCell.xib */; };
 		84B21DAA21605E1D00DCCF9C /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B21DA921605E1D00DCCF9C /* UserModel.m */; };
 		84CCF573216F4B4C004DE670 /* skImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF571216F4B4C004DE670 /* skImagePicker.m */; };
 		84CCF57B216F505A004DE670 /* skChangeUserinfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF57A216F505A004DE670 /* skChangeUserinfoViewController.m */; };
@@ -63,6 +71,9 @@
 		84CCF58821743347004DE670 /* skChangeUserinfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF58721743347004DE670 /* skChangeUserinfoModel.m */; };
 		84CCF58C21747CA1004DE670 /* skAddressBookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF58A21747CA1004DE670 /* skAddressBookTableViewCell.m */; };
 		84CCF58D21747CA1004DE670 /* skAddressBookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CCF58B21747CA1004DE670 /* skAddressBookTableViewCell.xib */; };
+		84CFE3A1217827BC0061B625 /* skUserInfoSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CFE3A0217827BC0061B625 /* skUserInfoSetViewController.m */; };
+		84CFE3AA217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CFE3A8217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.m */; };
+		84CFE3AB217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CFE3A9217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.xib */; };
 		84D160D5215F6FBF002188DB /* skNetConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D160D3215F6FBF002188DB /* skNetConfigModel.m */; };
 		84D160D6215F6FBF002188DB /* skNetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D160D4215F6FBF002188DB /* skNetConfig.m */; };
 		84D160D9216058A8002188DB /* skParamsForRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D160D8216058A8002188DB /* skParamsForRequest.m */; };
@@ -153,12 +164,25 @@
 		84537BA72154E36000E4CB29 /* skLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skLoginViewController.m; sourceTree = "<group>"; };
 		84537BA92154E9CE00E4CB29 /* skConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skConfig.h; sourceTree = "<group>"; };
 		84537BAA2154E9CE00E4CB29 /* skConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skConfig.m; sourceTree = "<group>"; };
+		845617AC217830F900E3A511 /* UserinfoSetTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserinfoSetTableViewCell.h; sourceTree = "<group>"; };
+		845617AD217830F900E3A511 /* UserinfoSetTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserinfoSetTableViewCell.m; sourceTree = "<group>"; };
+		845617AE217830F900E3A511 /* UserinfoSetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserinfoSetTableViewCell.xib; sourceTree = "<group>"; };
 		84A78E7A215F574A0013F614 /* skAFNetworkingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skAFNetworkingTool.h; sourceTree = "<group>"; };
 		84A78E7C215F574A0013F614 /* skAFNetworkingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skAFNetworkingTool.m; sourceTree = "<group>"; };
 		84A78E7F215F5C380013F614 /* skResponeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skResponeModel.h; sourceTree = "<group>"; };
 		84A78E80215F5C390013F614 /* skResponeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skResponeModel.m; sourceTree = "<group>"; };
 		84A78E83215F5DA70013F614 /* RongSDKUsed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RongSDKUsed.m; sourceTree = "<group>"; };
 		84A78E84215F5DA70013F614 /* RongSDKUsed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RongSDKUsed.h; sourceTree = "<group>"; };
+		84ADFC27217877F4008D7BE5 /* skUserinfoSetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skUserinfoSetModel.h; sourceTree = "<group>"; };
+		84ADFC28217877F4008D7BE5 /* skUserinfoSetModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skUserinfoSetModel.m; sourceTree = "<group>"; };
+		84ADFC2E21798127008D7BE5 /* skAddressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAddressViewController.h; sourceTree = "<group>"; };
+		84ADFC2F21798127008D7BE5 /* skAddressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAddressViewController.m; sourceTree = "<group>"; };
+		84ADFC312179850F008D7BE5 /* AddressTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressTableViewCell.h; sourceTree = "<group>"; };
+		84ADFC322179850F008D7BE5 /* AddressTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressTableViewCell.m; sourceTree = "<group>"; };
+		84ADFC332179850F008D7BE5 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		84ADFC3621798BC0008D7BE5 /* AddressCenterTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressCenterTableViewCell.h; sourceTree = "<group>"; };
+		84ADFC3721798BC0008D7BE5 /* AddressCenterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressCenterTableViewCell.m; sourceTree = "<group>"; };
+		84ADFC3821798BC0008D7BE5 /* AddressCenterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressCenterTableViewCell.xib; sourceTree = "<group>"; };
 		84B21DA821605E1D00DCCF9C /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		84B21DA921605E1D00DCCF9C /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		84CCF571216F4B4C004DE670 /* skImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skImagePicker.m; sourceTree = "<group>"; };
@@ -176,6 +200,11 @@
 		84CCF58921747CA1004DE670 /* skAddressBookTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAddressBookTableViewCell.h; sourceTree = "<group>"; };
 		84CCF58A21747CA1004DE670 /* skAddressBookTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAddressBookTableViewCell.m; sourceTree = "<group>"; };
 		84CCF58B21747CA1004DE670 /* skAddressBookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skAddressBookTableViewCell.xib; sourceTree = "<group>"; };
+		84CFE39F217827BC0061B625 /* skUserInfoSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skUserInfoSetViewController.h; sourceTree = "<group>"; };
+		84CFE3A0217827BC0061B625 /* skUserInfoSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skUserInfoSetViewController.m; sourceTree = "<group>"; };
+		84CFE3A7217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserinfoSetNewMessageTableViewCell.h; sourceTree = "<group>"; };
+		84CFE3A8217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserinfoSetNewMessageTableViewCell.m; sourceTree = "<group>"; };
+		84CFE3A9217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserinfoSetNewMessageTableViewCell.xib; sourceTree = "<group>"; };
 		84D160D1215F6FBF002188DB /* skNetConfigModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skNetConfigModel.h; sourceTree = "<group>"; };
 		84D160D2215F6FBF002188DB /* skNetConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skNetConfig.h; sourceTree = "<group>"; };
 		84D160D3215F6FBF002188DB /* skNetConfigModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skNetConfigModel.m; sourceTree = "<group>"; };
@@ -538,6 +567,8 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				84ADFC2A21797F53008D7BE5 /* 收货地址 */,
+				84CFE39B217826370061B625 /* 信息设置 */,
 				84D802312175C09A00E1894F /* 添加好友 */,
 				84CCF575216F502C004DE670 /* 信息修改 */,
 				8419CDE0216DD8C800DBE8F4 /* 通讯录模块 */,
@@ -730,6 +761,45 @@
 			path = "融云聊天集成";
 			sourceTree = "<group>";
 		};
+		84ADFC2A21797F53008D7BE5 /* 收货地址 */ = {
+			isa = PBXGroup;
+			children = (
+				84ADFC2B21797F53008D7BE5 /* Controller */,
+				84ADFC2C21797F53008D7BE5 /* Model */,
+				84ADFC2D21797F53008D7BE5 /* View */,
+			);
+			path = "收货地址";
+			sourceTree = "<group>";
+		};
+		84ADFC2B21797F53008D7BE5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84ADFC2E21798127008D7BE5 /* skAddressViewController.h */,
+				84ADFC2F21798127008D7BE5 /* skAddressViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84ADFC2C21797F53008D7BE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84ADFC2D21797F53008D7BE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84ADFC312179850F008D7BE5 /* AddressTableViewCell.h */,
+				84ADFC322179850F008D7BE5 /* AddressTableViewCell.m */,
+				84ADFC332179850F008D7BE5 /* AddressTableViewCell.xib */,
+				84ADFC3621798BC0008D7BE5 /* AddressCenterTableViewCell.h */,
+				84ADFC3721798BC0008D7BE5 /* AddressCenterTableViewCell.m */,
+				84ADFC3821798BC0008D7BE5 /* AddressCenterTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		84CCF570216F4B4C004DE670 /* 图片选择器 */ = {
 			isa = PBXGroup;
 			children = (
@@ -776,6 +846,47 @@
 				84CCF581216F5178004DE670 /* skChangeUserinfoNikeNameTableViewCell.h */,
 				84CCF582216F5178004DE670 /* skChangeUserinfoNikeNameTableViewCell.m */,
 				84CCF583216F5178004DE670 /* skChangeUserinfoNikeNameTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84CFE39B217826370061B625 /* 信息设置 */ = {
+			isa = PBXGroup;
+			children = (
+				84CFE39C217826370061B625 /* Controller */,
+				84CFE39D217826370061B625 /* Model */,
+				84CFE39E217826370061B625 /* View */,
+			);
+			path = "信息设置";
+			sourceTree = "<group>";
+		};
+		84CFE39C217826370061B625 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84CFE39F217827BC0061B625 /* skUserInfoSetViewController.h */,
+				84CFE3A0217827BC0061B625 /* skUserInfoSetViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84CFE39D217826370061B625 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84ADFC27217877F4008D7BE5 /* skUserinfoSetModel.h */,
+				84ADFC28217877F4008D7BE5 /* skUserinfoSetModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84CFE39E217826370061B625 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84CFE3A7217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.h */,
+				84CFE3A8217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.m */,
+				84CFE3A9217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.xib */,
+				845617AC217830F900E3A511 /* UserinfoSetTableViewCell.h */,
+				845617AD217830F900E3A511 /* UserinfoSetTableViewCell.m */,
+				845617AE217830F900E3A511 /* UserinfoSetTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -902,13 +1013,17 @@
 				8419CDC7216DA5BC00DBE8F4 /* ForgetPasswordView.xib in Resources */,
 				843B40BB216B4E5200356306 /* LoginView.xib in Resources */,
 				843B40C4216C553D00356306 /* RegisterView.xib in Resources */,
+				84ADFC3A21798BC0008D7BE5 /* AddressCenterTableViewCell.xib in Resources */,
 				84537B842154897F00E4CB29 /* LaunchScreen.storyboard in Resources */,
 				84CCF58D21747CA1004DE670 /* skAddressBookTableViewCell.xib in Resources */,
+				845617B0217830F900E3A511 /* UserinfoSetTableViewCell.xib in Resources */,
 				84CCF580216F50AC004DE670 /* skChangeUserinfoHeaderTableViewCell.xib in Resources */,
 				842CFAA6216F283E00A847AB /* UserCenterTitleTableViewCell.xib in Resources */,
 				842CFAA1216F233B00A847AB /* UserCenterOrderTableViewCell.xib in Resources */,
+				84ADFC352179850F008D7BE5 /* AddressTableViewCell.xib in Resources */,
 				84D802302175990800E1894F /* UserCenterLoginOutTableViewCell.xib in Resources */,
 				842CFA9C216F21B500A847AB /* UserCenterHeaderTableViewCell.xib in Resources */,
+				84CFE3AB217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.xib in Resources */,
 				84537B812154897F00E4CB29 /* Assets.xcassets in Resources */,
 				84D8023F2175D3BD00E1894F /* skAddFriendTableViewCell.xib in Resources */,
 			);
@@ -1022,8 +1137,10 @@
 				842CFA9B216F21B500A847AB /* UserCenterHeaderTableViewCell.m in Sources */,
 				842CFA8B216EDF1800A847AB /* SFHFKeychainUtils.m in Sources */,
 				84D8023E2175D3BD00E1894F /* skAddFriendTableViewCell.m in Sources */,
+				84ADFC3021798127008D7BE5 /* skAddressViewController.m in Sources */,
 				8419CDCA216DAF6100DBE8F4 /* UserLogin.m in Sources */,
 				8419CDB0216C826300DBE8F4 /* modelRegister.m in Sources */,
+				84CFE3AA217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.m in Sources */,
 				84011AA921748BB60005436B /* skAddressBookModel.m in Sources */,
 				84CCF58821743347004DE670 /* skChangeUserinfoModel.m in Sources */,
 				843B40B9216B4E4600356306 /* LoginView.m in Sources */,
@@ -1033,11 +1150,14 @@
 				84D160D5215F6FBF002188DB /* skNetConfigModel.m in Sources */,
 				842CFA92216EF40D00A847AB /* skNavigationConfig.m in Sources */,
 				84A78E81215F5C390013F614 /* skResponeModel.m in Sources */,
+				84CFE3A1217827BC0061B625 /* skUserInfoSetViewController.m in Sources */,
+				84ADFC29217877F4008D7BE5 /* skUserinfoSetModel.m in Sources */,
 				8419CDBB216D949E00DBE8F4 /* skClassMethod.m in Sources */,
 				8419CDE9216DD96E00DBE8F4 /* skAddressBookViewController.m in Sources */,
 				84537BA42154D83200E4CB29 /* skBaseNavViewController.m in Sources */,
 				84B21DAA21605E1D00DCCF9C /* UserModel.m in Sources */,
 				84D802372175C0CD00E1894F /* skAddFriendViewController.m in Sources */,
+				84ADFC342179850F008D7BE5 /* AddressTableViewCell.m in Sources */,
 				843B40C2216C552300356306 /* skRegisterViewController.m in Sources */,
 				8419CDC5216DA5AE00DBE8F4 /* ForgetPasswordView.m in Sources */,
 				8419CDBA216D949E00DBE8F4 /* SKKeyboard.m in Sources */,
@@ -1056,6 +1176,7 @@
 				84211A5C215CB67F003BE4A5 /* skColorConfig.m in Sources */,
 				8419CDE6216DD90C00DBE8F4 /* skUserChatViewController.m in Sources */,
 				84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */,
+				84ADFC3921798BC0008D7BE5 /* AddressCenterTableViewCell.m in Sources */,
 				84D8023A2175C1AC00E1894F /* skLinkFriendModel.m in Sources */,
 				84CCF57B216F505A004DE670 /* skChangeUserinfoViewController.m in Sources */,
 				8419CDD5216DD80C00DBE8F4 /* skTabarViewController.m in Sources */,
@@ -1066,6 +1187,7 @@
 				84D160D6215F6FBF002188DB /* skNetConfig.m in Sources */,
 				8419CDEF216DD9B700DBE8F4 /* skUserCenterViewController.m in Sources */,
 				84D8022F2175990800E1894F /* UserCenterLoginOutTableViewCell.m in Sources */,
+				845617AF217830F900E3A511 /* UserinfoSetTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

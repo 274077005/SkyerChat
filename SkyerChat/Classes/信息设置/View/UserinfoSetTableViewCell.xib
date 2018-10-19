@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UserinfoSetTableViewCell" rowHeight="50" id="KGk-i7-Jjw" customClass="UserinfoSetTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="286" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHy-ua-zbm">
+                        <rect key="frame" x="16" y="16" width="26" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签名" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8T-Sz-EOU">
+                        <rect key="frame" x="86" y="5" width="200" height="38.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="wwF-YO-ASE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuJ-Zt-VAv">
+                        <rect key="frame" x="0.0" y="48.5" width="321" height="1"/>
+                        <color key="backgroundColor" white="0.87749565969999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="hE6-Tq-sZh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ZuJ-Zt-VAv" secondAttribute="trailing" constant="-35" id="022-Ud-oZZ"/>
+                    <constraint firstItem="ZuJ-Zt-VAv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1vt-z6-Vlm"/>
+                    <constraint firstItem="lHy-ua-zbm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="44u-Mr-fRZ"/>
+                    <constraint firstItem="lHy-ua-zbm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Xv6-iT-X9X"/>
+                    <constraint firstItem="l8T-Sz-EOU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Y9z-kN-1ga"/>
+                    <constraint firstAttribute="bottom" secondItem="ZuJ-Zt-VAv" secondAttribute="bottom" id="c0S-mN-mtA"/>
+                    <constraint firstAttribute="trailing" secondItem="l8T-Sz-EOU" secondAttribute="trailing" id="ldM-5W-dy1"/>
+                    <constraint firstItem="ZuJ-Zt-VAv" firstAttribute="top" secondItem="l8T-Sz-EOU" secondAttribute="bottom" constant="5" id="weC-Wz-9cJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="labName" destination="l8T-Sz-EOU" id="07Q-kR-HFC"/>
+                <outlet property="labTitle" destination="lHy-ua-zbm" id="wQv-oC-iXF"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="157.42128935532236"/>
+        </tableViewCell>
+    </objects>
+</document>
