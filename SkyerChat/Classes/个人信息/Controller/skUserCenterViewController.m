@@ -14,7 +14,7 @@
 #import "skChangeUserinfoViewController.h"
 #import "UserCenterLoginOutTableViewCell.h"
 #import "skUserInfoSetViewController.h"
-#import "skAddressViewController.h"
+#import "skAddressListViewController.h"
 
 @interface skUserCenterViewController ()
 @property (nonatomic,strong) UserCenterHeaderTableViewCell *cellHeader;
@@ -282,7 +282,7 @@
                     break;
                 case 2:
                 {
-                    skAddressViewController *view=[skAddressViewController alloc];
+                    skAddressListViewController *view=[skAddressListViewController alloc];
                     [self.navigationController pushViewController:view animated:YES];
                 }
                     break;

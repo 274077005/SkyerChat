@@ -1,5 +1,5 @@
 //
-//  skAddressViewController.h
+//  skAddressListViewController.h
 //  SkyerChat
 //
 //  Created by admin on 2018/10/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface skAddressViewController : skBaseViewController
+@interface skAddressListViewController : skBaseViewController
 
 @end
 
