@@ -41,17 +41,35 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="4"/>
                         </userDefinedRuntimeAttributes>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5V-dv-NZx">
+                        <rect key="frame" x="0.0" y="48.5" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.87749565969999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Rwt-aG-HQy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="gvW-YN-p7H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5AV-np-gvP"/>
+                    <constraint firstAttribute="trailing" secondItem="t5V-dv-NZx" secondAttribute="trailing" constant="-34" id="CXx-qn-GIU"/>
                     <constraint firstItem="gvW-YN-p7H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="PSn-LR-9L8"/>
                     <constraint firstItem="iRs-OG-ChZ" firstAttribute="leading" secondItem="gvW-YN-p7H" secondAttribute="trailing" constant="8" id="gE4-rK-N8z"/>
                     <constraint firstItem="iRs-OG-ChZ" firstAttribute="centerY" secondItem="gvW-YN-p7H" secondAttribute="centerY" id="j3p-2l-ilq"/>
                     <constraint firstItem="Ogc-Ce-Qu0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="nS7-aG-33Q"/>
+                    <constraint firstItem="t5V-dv-NZx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="rBR-fO-2ng"/>
+                    <constraint firstAttribute="bottom" secondItem="t5V-dv-NZx" secondAttribute="bottom" id="ta0-fb-2dQ"/>
                     <constraint firstItem="Ogc-Ce-Qu0" firstAttribute="top" secondItem="gvW-YN-p7H" secondAttribute="bottom" constant="5" id="wi2-mh-uwc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="labAddress" destination="Ogc-Ce-Qu0" id="zxm-Eh-PbK"/>
+                <outlet property="labAddressName" destination="gvW-YN-p7H" id="Dkj-ND-eph"/>
+                <outlet property="labSelect" destination="iRs-OG-ChZ" id="9MT-9z-rmt"/>
+            </connections>
             <point key="canvasLocation" x="137.59999999999999" y="157.42128935532236"/>
         </tableViewCell>
     </objects>

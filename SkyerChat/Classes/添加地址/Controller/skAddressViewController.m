@@ -41,10 +41,20 @@
     [self addTableView];
     
     @weakify(self)
-    [[[self skCreatBtn:@"确定" btnTitleOrImage:(btntypeTitle) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+    
+    
+    NSString *title=self.model.raId?@"修改":@"添加";
+    
+    [[[self skCreatBtn:title btnTitleOrImage:(btntypeTitle) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)
-        [self ReceiverAddressCreate];
+        if (self.model.raId) {
+            [self ReceiverAddressUpdata];
+        }else{
+            [self ReceiverAddressCreate];
+        }
+        
     }];
+    
 }
 -(void)addTableView{
     [self.view addSubview:self.tableView];
@@ -66,6 +76,11 @@
 */
 #pragma mark - 代理方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if (self.model.raId) {
+        return 3;
+    }else{
+        return 2;
+    }
     return 3;
 }
 
@@ -117,8 +132,9 @@
                 {
                     cell.txtTitle.placeholder=@"真实姓名";
                     cell.txtTitle.text=self.addModel.receiver;
-                    
-//                    RAC(self.addModel,receiver)=cell.txtTitle.rac_textSignal;
+                    [[cell.txtTitle rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+                        self.addModel.receiver=x;
+                    }];
                     
                 }
                     break;
@@ -133,7 +149,7 @@
                     break;
                 case 2:
                 {
-                    cell.txtTitle.placeholder=@"邮编地址";
+                    cell.txtTitle.placeholder=@"详细地址";
                     cell.txtTitle.text=self.addModel.address;
                     [[cell.txtTitle rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
                         self.addModel.address=x;
@@ -142,7 +158,7 @@
                     break;
                 case 3:
                 {
-                    cell.txtTitle.placeholder=@"我的地址";
+                    cell.txtTitle.placeholder=@"地址名称";
                     cell.txtTitle.text=self.addModel.addressName;
                     [[cell.txtTitle rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
                         self.addModel.addressName=x;
@@ -221,8 +237,22 @@
             [self.tableView reloadData];
         }
             break;
-        case 2:
+        case 2://删除
         {
+            if (self.model.raId) {
+                UIAlertController *alertView=[UIAlertController alertControllerWithTitle:@"删除地址" message:@"是否确定删除该地址" preferredStyle:(UIAlertControllerStyleAlert)];
+                UIAlertAction *action=[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
+                UIAlertAction *action1=[UIAlertAction actionWithTitle:@"删除" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+                    [self ReceiverAddressDelect];
+                }];
+                [alertView addAction:action];
+                [alertView addAction:action1];
+                [self presentViewController:alertView animated:YES completion:^{
+                    
+                }];
+            }else{
+                [self.navigationController popViewControllerAnimated:YES];
+            }
             
         }
             break;
@@ -232,6 +262,24 @@
     }
 }
 
+#pragma - 删除
+-(void)ReceiverAddressDelect{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"raId":[NSNumber numberWithInteger:self.model.raId]
+                        };
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizReceiverAddress/delete") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+
+#pragma - 添加地址
 -(void)ReceiverAddressCreate{
     ///intf/bizUser/sendRegister
     NSDictionary *dic=@{@"receiver":self.addModel.receiver,
@@ -253,5 +301,28 @@
         
     }];
 }
-
+#pragma - 修改地址
+-(void)ReceiverAddressUpdata{
+    ///intf/bizUser/sendRegister
+    
+    NSDictionary *dic=@{@"raId":[NSNumber numberWithInteger:self.model.raId],
+                        @"receiver":self.addModel.receiver,
+                        @"phone":self.addModel.phone,
+                        @"district":self.addModel.district,
+                        @"address":self.addModel.address,
+                        @"isDefault":[NSNumber numberWithBool:self.addModel.isDefault],
+                        @"addressName":self.addModel.addressName
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizReceiverAddress/update") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
 @end

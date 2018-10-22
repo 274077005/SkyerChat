@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface skAddressViewController : skBaseViewController
 @property (nonatomic,strong) skAddressModel *model;
+
 @end
 
 NS_ASSUME_NONNULL_END

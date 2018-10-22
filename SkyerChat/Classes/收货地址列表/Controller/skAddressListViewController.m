@@ -32,10 +32,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title=@"收货地址";
-    [self receiverAddress];
     [self addTableView];
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [self receiverAddress];
+}
 /*
 #pragma mark - Navigation
 
@@ -58,7 +59,7 @@
             
             skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
             
-            self.arrList=[skAddressModel mj_keyValuesArrayWithObjectArray:modelList.list];
+            self.arrList=[skAddressModel mj_objectArrayWithKeyValuesArray:modelList.list];
             
             [self.tableView reloadData];
         }
@@ -109,6 +110,10 @@
             if (cell == nil) {
                 cell = skXibView(@"AddressListTableViewCell");
             }
+            skAddressModel *model=self.arrList[indexPath.row];
+            cell.labAddressName.text=model.addressName;
+            cell.labAddress.text=model.address;
+            cell.labSelect.hidden=!model.isDefault;
             return cell;
         }
             break;

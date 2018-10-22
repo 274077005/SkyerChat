@@ -14,6 +14,7 @@
 #import "skChangeUserinfoViewController.h"
 #import "UserCenterLoginOutTableViewCell.h"
 #import "skUserInfoSetViewController.h"
+#import "skSafeViewController.h"
 #import "skAddressListViewController.h"
 
 @interface skUserCenterViewController ()
@@ -277,6 +278,8 @@
                     break;
                 case 1:
                 {
+                    skSafeViewController *view=[[skSafeViewController alloc] init];
+                    [self.navigationController pushViewController:view animated:YES];
                     
                 }
                     break;
@@ -299,6 +302,16 @@
             break;
         case 3:
         {
+            UIAlertController *alertView=[UIAlertController alertControllerWithTitle:@"退出登录" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction *action=[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
+            UIAlertAction *action1=[UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+                [skRootViewController skRootLoginViewController];
+            }];
+            [alertView addAction:action];
+            [alertView addAction:action1];
+            [self presentViewController:alertView animated:YES completion:^{
+                
+            }];
             
         }
             break;

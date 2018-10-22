@@ -25,7 +25,8 @@
         @weakify(self)
         [[_messageCell.btnChangMessageState rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
-            [self changeUser:self.messageCell.btnChangMessageState.isOn workUnit:@"" monthIncome:@"" hobbies:@"" sign:@""];
+            [self changeUser:self.messageCell.btnChangMessageState.isOn workUnit:self.model.workUnit monthIncome:self.model.monthIncome hobbies:self.model.hobbies sign:self.model.sign];
+            
         }];
     }
     return _messageCell;
@@ -264,7 +265,7 @@
                         };
     
     
-    [skAfTool SKPOST:skUrl(@"/intf/bizUser/update") pubParame:skPubParType(portNameSendRegister) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+    [skAfTool SKPOST:skUrl(@"/intf/bizUser/update") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
             [self getUser];
@@ -278,7 +279,7 @@
     ///intf/bizUser/sendRegister
     NSDictionary *dic=@{@"userNo":skUser.userNo};
     
-    [skAfTool SKPOST:skUrl(@"/intf/bizUser/getUser") pubParame:skPubParType(portNameSendRegister) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+    [skAfTool SKPOST:skUrl(@"/intf/bizUser/getUser") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
             self.model=[skUserinfoSetModel mj_objectWithKeyValues:responseObject.data];

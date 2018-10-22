@@ -150,7 +150,7 @@
     NSDictionary *dic=@{@"phoneNo":skUser.phoneNo
                         };
     
-    [skAfTool SKPOST:skUrl(@"/intf/bizLinker/create") pubParame:skPubParType(portNameSendRegister) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+    [skAfTool SKPOST:skUrl(@"/intf/bizLinker/create") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
             

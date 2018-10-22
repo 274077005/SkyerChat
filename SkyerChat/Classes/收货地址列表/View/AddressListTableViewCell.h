@@ -11,6 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AddressListTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *labAddressName;
+@property (weak, nonatomic) IBOutlet UILabel *labAddress;
+@property (weak, nonatomic) IBOutlet UILabel *labSelect;
 
 @end
 

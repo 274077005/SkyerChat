@@ -29,7 +29,7 @@
     skModelNet.nonce=nonce;
     NSDictionary *dic;
     
-    if (skUser.isLogin) {
+    if (type==0) {
         dic=@{
               @"appid":skModelNet.appId,
               @"clienttype":@"1",
