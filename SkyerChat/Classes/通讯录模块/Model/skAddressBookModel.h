@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "AddressBookNavTitleView.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface skAddressBookModel : NSObject
@@ -16,6 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , copy) NSString              * userNo;
 @property (nonatomic , copy) NSString              * portrait;
 @property (nonatomic , copy) NSString              * joinTime;
+
+@property (nonatomic,strong) AddressBookNavTitleView *viewTitle;
+
+-(void)setBarButtonItem:(UINavigationItem*)navigationItem;
+
 @end
 
 NS_ASSUME_NONNULL_END

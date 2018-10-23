@@ -66,6 +66,8 @@
 		849959FC217EC3E100FD8A20 /* skAuthenticationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849959FA217EC3E100FD8A20 /* skAuthenticationTableViewCell.m */; };
 		849959FD217EC3E100FD8A20 /* skAuthenticationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849959FB217EC3E100FD8A20 /* skAuthenticationTableViewCell.xib */; };
 		84995A00217EC62300FD8A20 /* skAuthenticationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 849959FF217EC62300FD8A20 /* skAuthenticationModel.m */; };
+		84995A03217F03BF00FD8A20 /* AddressBookNavTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84995A02217F03BF00FD8A20 /* AddressBookNavTitleView.m */; };
+		84995A05217F03CC00FD8A20 /* AddressBookNavTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84995A04217F03CC00FD8A20 /* AddressBookNavTitleView.xib */; };
 		84A78E7E215F574A0013F614 /* skAFNetworkingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E7C215F574A0013F614 /* skAFNetworkingTool.m */; };
 		84A78E81215F5C390013F614 /* skResponeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E80215F5C390013F614 /* skResponeModel.m */; };
 		84A78E85215F5DA70013F614 /* RongSDKUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E83215F5DA70013F614 /* RongSDKUsed.m */; };
@@ -211,6 +213,9 @@
 		849959FB217EC3E100FD8A20 /* skAuthenticationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skAuthenticationTableViewCell.xib; sourceTree = "<group>"; };
 		849959FE217EC62300FD8A20 /* skAuthenticationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAuthenticationModel.h; sourceTree = "<group>"; };
 		849959FF217EC62300FD8A20 /* skAuthenticationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAuthenticationModel.m; sourceTree = "<group>"; };
+		84995A01217F03BF00FD8A20 /* AddressBookNavTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressBookNavTitleView.h; sourceTree = "<group>"; };
+		84995A02217F03BF00FD8A20 /* AddressBookNavTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressBookNavTitleView.m; sourceTree = "<group>"; };
+		84995A04217F03CC00FD8A20 /* AddressBookNavTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressBookNavTitleView.xib; sourceTree = "<group>"; };
 		84A78E7A215F574A0013F614 /* skAFNetworkingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skAFNetworkingTool.h; sourceTree = "<group>"; };
 		84A78E7C215F574A0013F614 /* skAFNetworkingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skAFNetworkingTool.m; sourceTree = "<group>"; };
 		84A78E7F215F5C380013F614 /* skResponeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skResponeModel.h; sourceTree = "<group>"; };
@@ -502,6 +507,9 @@
 				84011A9F217483560005436B /* skAddressBookSearch.h */,
 				84011AA0217483560005436B /* skAddressBookSearch.m */,
 				84011AA2217483620005436B /* skAddressBookSearch.xib */,
+				84995A01217F03BF00FD8A20 /* AddressBookNavTitleView.h */,
+				84995A02217F03BF00FD8A20 /* AddressBookNavTitleView.m */,
+				84995A04217F03CC00FD8A20 /* AddressBookNavTitleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1224,6 +1232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84995A05217F03CC00FD8A20 /* AddressBookNavTitleView.xib in Resources */,
 				84CCF585216F5178004DE670 /* skChangeUserinfoNikeNameTableViewCell.xib in Resources */,
 				849959FD217EC3E100FD8A20 /* skAuthenticationTableViewCell.xib in Resources */,
 				849959EE217D7F3D00FD8A20 /* skSafeTableViewCell.xib in Resources */,
@@ -1400,6 +1409,7 @@
 				849959F1217DC2B100FD8A20 /* skChangePasswordModel.m in Sources */,
 				8419CDEC216DD99800DBE8F4 /* skActivityViewController.m in Sources */,
 				84995A00217EC62300FD8A20 /* skAuthenticationModel.m in Sources */,
+				84995A03217F03BF00FD8A20 /* AddressBookNavTitleView.m in Sources */,
 				84CCF584216F5178004DE670 /* skChangeUserinfoNikeNameTableViewCell.m in Sources */,
 				8419CDF2216ED9D300DBE8F4 /* skRootViewController.m in Sources */,
 				84CCF58C21747CA1004DE670 /* skAddressBookTableViewCell.m in Sources */,

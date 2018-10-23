@@ -12,19 +12,48 @@
 #import "skAddressBookModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "skAddFriendViewController.h"
+#import "AddressBookNavTitleView.h"
+
 
 @interface skAddressBookViewController ()
 @property (nonatomic,strong) NSArray *arrList;
 @property (nonatomic,strong) skAddressBookSearch *viewSearch;
+@property (nonatomic,strong) skAddressBookModel *model;
+
+
 @end
 
 @implementation skAddressBookViewController
+- (skAddressBookModel *)model{
+    if (nil==_model) {
+        
+        _model=[[skAddressBookModel alloc] init];
+        @weakify(self)
+        [[_model.viewTitle.btnQun rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            
+            [self setLabState];
+        }];
+        [[_model.viewTitle.btnKehu rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            
+            [self setLabState];
+        }];
+    }
+    return _model;
+}
+-(void)setLabState{
+    [self.model.viewTitle.labQun setHidden:!self.model.viewTitle.labQun.hidden];
+    [self.model.viewTitle.labKehu setHidden:!self.model.viewTitle.labKehu.hidden];
+    
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title=@"通讯录";
-    
+    NSLog(@"%@",self.model.userNo);
     @weakify(self)
     [[[self skCreatBtn:@"bar-更多-白" btnTitleOrImage:(btntypeImage) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)
@@ -32,10 +61,13 @@
         [self.navigationController pushViewController:view animated:YES];
     }];
     
+
     [self addTableView];
     [self getAddressBookList:@""];
-    
+    [self.model setBarButtonItem:self.navigationItem];
 }
+
+
 -(void)addTableView{
     [self.view addSubview:self.tableView];
     self.tableView.backgroundColor=KcolorBackground;
@@ -113,7 +145,7 @@
             
             skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
             
-            self.arrList= [skAddressBookModel mj_keyValuesArrayWithObjectArray:modelList.list];
+            self.arrList= [skAddressBookModel mj_objectArrayWithKeyValuesArray:modelList.list];
             
             [self.tableView reloadData];
             

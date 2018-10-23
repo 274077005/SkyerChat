@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AddressBookNavTitleView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMt-eQ-iG7">
+                    <rect key="frame" x="187" y="0.0" width="1" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="S8I-4o-AQd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ax-3p-2PK">
+                    <rect key="frame" x="112" y="10" width="60" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Etr-Wj-bEr"/>
+                        <constraint firstAttribute="width" constant="60" id="fGz-qD-8qw"/>
+                    </constraints>
+                    <state key="normal" title="群">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTi-eS-bwu">
+                    <rect key="frame" x="134.5" y="30" width="15" height="2"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="15" id="Cf4-4j-JmM"/>
+                        <constraint firstAttribute="height" constant="2" id="F6I-AD-gbw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBs-Uu-wlE">
+                    <rect key="frame" x="203" y="10" width="60" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="ZqX-jq-AKa"/>
+                        <constraint firstAttribute="width" constant="60" id="jsG-XS-pDn"/>
+                    </constraints>
+                    <state key="normal" title="客户">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIM-td-qYF">
+                    <rect key="frame" x="218" y="30" width="30" height="2"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="1k8-qF-7jI"/>
+                        <constraint firstAttribute="height" constant="2" id="aBC-41-Mt9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.066666666669999999" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="lTi-eS-bwu" firstAttribute="top" secondItem="4ax-3p-2PK" secondAttribute="bottom" id="2dB-l5-9Tj"/>
+                <constraint firstItem="lMt-eQ-iG7" firstAttribute="leading" secondItem="4ax-3p-2PK" secondAttribute="trailing" constant="15" id="61J-WT-jvH"/>
+                <constraint firstItem="aIM-td-qYF" firstAttribute="centerX" secondItem="VBs-Uu-wlE" secondAttribute="centerX" id="8ze-aZ-7xU"/>
+                <constraint firstItem="lMt-eQ-iG7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9Jf-NX-btM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="lMt-eQ-iG7" secondAttribute="bottom" id="DKO-Pc-3Y7"/>
+                <constraint firstItem="4ax-3p-2PK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Gcb-eM-9Ni"/>
+                <constraint firstItem="lMt-eQ-iG7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KE6-9y-4jh"/>
+                <constraint firstItem="VBs-Uu-wlE" firstAttribute="leading" secondItem="lMt-eQ-iG7" secondAttribute="trailing" constant="15" id="Msd-Sv-U2K"/>
+                <constraint firstItem="lTi-eS-bwu" firstAttribute="centerX" secondItem="4ax-3p-2PK" secondAttribute="centerX" id="Vv8-Jc-Izf"/>
+                <constraint firstItem="VBs-Uu-wlE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="WxD-cM-gBc"/>
+                <constraint firstItem="lMt-eQ-iG7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="iNS-th-ZHH"/>
+                <constraint firstItem="aIM-td-qYF" firstAttribute="top" secondItem="VBs-Uu-wlE" secondAttribute="bottom" id="oj8-30-zzf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btnKehu" destination="VBs-Uu-wlE" id="TfW-9v-ARX"/>
+                <outlet property="btnQun" destination="4ax-3p-2PK" id="91D-DD-laA"/>
+                <outlet property="labKehu" destination="aIM-td-qYF" id="o4H-b9-fnb"/>
+                <outlet property="labQun" destination="lTi-eS-bwu" id="gIp-T1-Flb"/>
+            </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="-129.53523238380811"/>
+        </view>
+        <barButtonItem title="Item" id="eug-48-dc4"/>
+    </objects>
+</document>

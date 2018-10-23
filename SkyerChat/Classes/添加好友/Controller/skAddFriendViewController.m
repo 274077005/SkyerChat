@@ -134,7 +134,7 @@
             
             skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
             
-            self.arrList= [skAddressBookModel mj_keyValuesArrayWithObjectArray:modelList.list];
+            self.arrList= [skAddressBookModel mj_objectArrayWithKeyValuesArray:modelList.list];
             
             [self.tableView reloadData];
             

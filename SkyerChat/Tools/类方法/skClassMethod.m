@@ -42,4 +42,29 @@
         }
     }
 }
+
++(void)skAlertView:(NSString *)alertViewTitle
+  alertViewMessage:(NSString *)alertViewMessage
+       cancleTitle:(NSString *)cancleTitle
+      defaultTitle:(NSString *)defaultTitle
+     cancleHandler:(void (^ __nullable)(UIAlertAction *action))cancleHandler
+       sureHandler:(void (^ __nullable)(UIAlertAction *action))sureHandler{
+    
+    UIAlertController *alertView=[UIAlertController alertControllerWithTitle:alertViewTitle message:alertViewMessage preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    UIAlertAction *action0=[UIAlertAction actionWithTitle:cancleTitle style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+        cancleHandler(action);
+    }];
+    
+    UIAlertAction *action1=[UIAlertAction actionWithTitle:defaultTitle style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        sureHandler(action);
+    }];
+    
+    [alertView addAction:action0];
+    [alertView addAction:action1];
+    [skVSView.navigationController presentViewController:alertView animated:YES completion:^{
+        
+    }];
+}
+
 @end

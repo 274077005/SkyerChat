@@ -76,6 +76,7 @@
 -(void)addTableView{
     [self.view addSubview:self.tableView];
     self.tableView.backgroundColor=KcolorBackground;
+    self.tableView.bounces = NO;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
         make.left.right.mas_equalTo(0);
@@ -223,5 +224,4 @@
         }
     }];
 }
-
 @end
