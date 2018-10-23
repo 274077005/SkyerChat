@@ -1,20 +1,18 @@
 //
-//  skChangePwdCodeTableViewCell.m
+//  skAuthenticationTableViewCell.m
 //  SkyerChat
 //
-//  Created by admin on 2018/10/22.
+//  Created by admin on 2018/10/23.
 //  Copyright © 2018 www.skyer.com. All rights reserved.
 //
 
-#import "skChangePwdCodeTableViewCell.h"
-#import "UIView+skBoard.h"
+#import "skAuthenticationTableViewCell.h"
 
-@implementation skChangePwdCodeTableViewCell
+@implementation skAuthenticationTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    [self.labCode skSetBoardRadius:5 Width:0 andBorderColor:[UIColor clearColor]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -9,6 +9,7 @@
 #import "skSafeViewController.h"
 #import "skSafeTableViewCell.h"
 #import "skChangePasswordViewController.h"
+#import "skAuthenticationViewController.h"
 
 @interface skSafeViewController ()
 
@@ -131,6 +132,22 @@
                 skChangePasswordViewController *view=[[skChangePasswordViewController alloc] init];
                 [self.navigationController pushViewController:view animated:YES];
             }
+            break;
+        case 1:
+        {
+            
+            switch (indexPath.row) {
+                case 0:
+                    {
+                        skAuthenticationViewController *view=[[skAuthenticationViewController alloc] init];
+                        [self.navigationController pushViewController:view animated:YES];
+                    }
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
             break;
             
         default:

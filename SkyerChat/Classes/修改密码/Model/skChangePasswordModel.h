@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) NSString *code;
 @property (nonatomic,strong) NSString *pwd1;
 @property (nonatomic,strong) NSString *pwd2;
-@property (nonatomic,assign) Boolean isGetCode;
+@property (nonatomic,assign) Boolean isGetCode;//如果是1就要等待60秒再能获取验证码
+@property (nonatomic,strong) RACSignal *btnEnableSignal;
 @end
 
 NS_ASSUME_NONNULL_END

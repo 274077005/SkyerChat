@@ -12,6 +12,7 @@
 #import "skRegisterViewController.h"
 #import "skRootViewController.h"
 #import "RongSDKUsed.h"
+#import "skChangePasswordViewController.h"
 
 @interface skLoginViewController ()
 @property (nonatomic,strong) LoginView *viewLogin;
@@ -44,6 +45,8 @@
     }];
     [[_viewLogin.btnForgetPassword rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)//忘记密码
+        skChangePasswordViewController *view=[[skChangePasswordViewController alloc] init];
+        [self.navigationController pushViewController:view animated:YES];
     }];
     [[_viewLogin.btnRegister rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)//注册

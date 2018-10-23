@@ -17,7 +17,12 @@
 @end
 
 @implementation skChangePasswordViewController
-
+-(skChangePasswordModel *)model{
+    if (nil==_model) {
+        _model=[[skChangePasswordModel alloc] init];
+    }
+    return _model;
+}
 
 - (skChangePwdCodeTableViewCell *)cellCode{
     if (nil==_cellCode) {
@@ -36,9 +41,37 @@
     // Do any additional setup after loading the view.
     self.title=@"重置密码";
     [self addTableView];
-    [[[self skCreatBtn:@"确定" btnTitleOrImage:(btntypeTitle) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpOutside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+    [[[self skCreatBtn:@"确定" btnTitleOrImage:(btntypeTitle) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         [self resetPasswd];
     }];
+    
+    
+    
+    @weakify(self)
+    [self.model.btnEnableSignal subscribeNext:^(NSString*  _Nullable x) {
+        
+        @strongify(self)//验证点击按钮有效
+        UIButton *btn=self.cellCode.btnCode;
+        NSLog(@"xxx=%@",x);
+        btn.enabled=[x boolValue];
+        
+        if ([x boolValue]) {
+            [btn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+        }else{
+            [btn setTitleColor:[UIColor lightGrayColor] forState:(UIControlStateNormal)];
+        }
+        
+        UILabel *lab=self.cellCode.labCode;
+        if ([x boolValue]) {
+            [lab setTextColor:[UIColor whiteColor]];
+        }else{
+            [lab setTextColor:[UIColor lightGrayColor]];
+        }
+        
+    }];
+    
+    
+    
 }
 -(void)addTableView{
     [self.view addSubview:self.tableView];
@@ -83,18 +116,21 @@
             case 0:
             {
                 cell.textTitle.placeholder=@"请输入手机号码";
+                cell.textTitle.keyboardType=UIKeyboardTypePhonePad;
                 RAC(self.model,phone) = cell.textTitle.rac_textSignal;
             }
                 break;
             case 2:
             {
                 cell.textTitle.placeholder=@"请输入6-16位密码";
+                cell.textTitle.secureTextEntry=YES;
                 RAC(self.model,pwd1) = cell.textTitle.rac_textSignal;
             }
                 break;
             case 3:
             {
                 cell.textTitle.placeholder=@"确认新密码";
+                cell.textTitle.secureTextEntry=YES;
                 RAC(self.model,pwd2) = cell.textTitle.rac_textSignal;
             }
                 break;
@@ -115,19 +151,28 @@
 #pragma mark - 重置密码
 -(void)resetPasswd{
     if (![skClassMethod skValiMobile:self.model.phone]) {
+        [SkToast SkToastShow:@"请输入正确的手机号码" withHight:300];
+        return;
+    }
+    if (self.model.pwd1.length<6&&self.model.pwd1.length>16) {
+        [SkToast SkToastShow:@"密码长度不符" withHight:300];
+        return;
+    }
+    if (![self.model.pwd1 isEqualToString:self.model.pwd2]) {
+        [SkToast SkToastShow:@"两次密码不相同" withHight:300];
         return;
     }
     
-    
+    NSString *pwd=[NSString stringWithFormat:@"%@%@",self.model.pwd1,skModelNet.appSecret];
     
     ///intf/bizUser/sendRegister
     NSDictionary *dic=@{@"phoneNo":self.model.phone,
-                        @"passwd":[self.model.pwd1 MD5],
+                        @"passwd":[pwd MD5],
                         @"smsCode":self.model.code
                         };
     
     skModelNet.phoneNo=self.model.phone;
-    skModelNet.passwd=[self.model.pwd1 MD5];
+    skModelNet.passwd=[pwd MD5];
     skModelNet.smsCode=self.model.code;
     
     [skAfTool SKPOST:skUrl(@"/intf/bizUser/resetPasswd") pubParame:skPubParType(portNameResetPasswd) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
