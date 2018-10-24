@@ -7,6 +7,7 @@
 //
 
 #import "RongSDKUsed.h"
+#import "GroupModel.h"
 
 @implementation RongSDKUsed
 
@@ -52,20 +53,55 @@
     NSLog(@"用户信息提供者ID=%@",userId);
     
     RCUserInfo *user=[[RCUserInfo alloc] init];
-    user.userId=userId;
-    user.name=@"skyer";
+    if ([userId isEqualToString:skUser.userNo]) {
+        user.userId=userId;
+        user.portraitUri=skUser.portrait;
+        user.name=skUser.nickName;
+    }
+    
     
     return completion(user);
 }
 //群组信息提供者
 - (void)getGroupInfoWithGroupId:(NSString *)groupId completion:(void (^)(RCGroup *groupInfo))completion{
+    NSLog(@"群组信息提供者=%@",groupId);
     
+    [self getGroupSimple:groupId completion:^(RCGroup *groupInfo) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [[RCIM sharedRCIM] refreshGroupInfoCache:groupInfo withGroupId:groupId];
+        });
+        completion(groupInfo);
+    }];
 }
 - (void)onRCIMConnectionStatusChanged:(RCConnectionStatus)status {
     if (status == ConnectionStatus_KICKED_OFFLINE_BY_OTHER_CLIENT) {
         NSLog(@"强登了");
         [skRootViewController skRootLoginViewController];
     }
+}
+
+-(void)getGroupSimple:(NSString *)groupId completion:(void (^)(RCGroup *groupInfo))completion{
+    
+    NSDictionary *dic=@{@"groupId":@"",
+                        @"groupNo":groupId
+                        };
+    RCGroup *group=[[RCGroup alloc] init];
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroup/getGroupSimple") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            GroupModel *model=[GroupModel mj_objectWithKeyValues:responseObject.data];
+            
+            group.groupName=model.groupName;
+            group.groupId=groupId;
+            group.portraitUri=model.groupIcon;
+            
+            return completion(group);
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
 }
 
 @end

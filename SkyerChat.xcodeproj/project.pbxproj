@@ -68,6 +68,11 @@
 		84995A00217EC62300FD8A20 /* skAuthenticationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 849959FF217EC62300FD8A20 /* skAuthenticationModel.m */; };
 		84995A03217F03BF00FD8A20 /* AddressBookNavTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84995A02217F03BF00FD8A20 /* AddressBookNavTitleView.m */; };
 		84995A05217F03CC00FD8A20 /* AddressBookNavTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84995A04217F03CC00FD8A20 /* AddressBookNavTitleView.xib */; };
+		84995A08217FFEF300FD8A20 /* skGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84995A07217FFEF300FD8A20 /* skGroupModel.m */; };
+		84995A0C21800D9B00FD8A20 /* PersonalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84995A0A21800D9B00FD8A20 /* PersonalTableViewCell.m */; };
+		84995A0D21800D9B00FD8A20 /* PersonalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84995A0B21800D9B00FD8A20 /* PersonalTableViewCell.xib */; };
+		84995A14218015E400FD8A20 /* skGroupChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84995A13218015E400FD8A20 /* skGroupChatViewController.m */; };
+		84995A1B21804E0500FD8A20 /* GroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84995A1A21804E0500FD8A20 /* GroupModel.m */; };
 		84A78E7E215F574A0013F614 /* skAFNetworkingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E7C215F574A0013F614 /* skAFNetworkingTool.m */; };
 		84A78E81215F5C390013F614 /* skResponeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E80215F5C390013F614 /* skResponeModel.m */; };
 		84A78E85215F5DA70013F614 /* RongSDKUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E83215F5DA70013F614 /* RongSDKUsed.m */; };
@@ -216,6 +221,15 @@
 		84995A01217F03BF00FD8A20 /* AddressBookNavTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressBookNavTitleView.h; sourceTree = "<group>"; };
 		84995A02217F03BF00FD8A20 /* AddressBookNavTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressBookNavTitleView.m; sourceTree = "<group>"; };
 		84995A04217F03CC00FD8A20 /* AddressBookNavTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressBookNavTitleView.xib; sourceTree = "<group>"; };
+		84995A06217FFEF300FD8A20 /* skGroupModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skGroupModel.h; sourceTree = "<group>"; };
+		84995A07217FFEF300FD8A20 /* skGroupModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skGroupModel.m; sourceTree = "<group>"; };
+		84995A0921800D9B00FD8A20 /* PersonalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalTableViewCell.h; sourceTree = "<group>"; };
+		84995A0A21800D9B00FD8A20 /* PersonalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalTableViewCell.m; sourceTree = "<group>"; };
+		84995A0B21800D9B00FD8A20 /* PersonalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalTableViewCell.xib; sourceTree = "<group>"; };
+		84995A12218015E400FD8A20 /* skGroupChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skGroupChatViewController.h; sourceTree = "<group>"; };
+		84995A13218015E400FD8A20 /* skGroupChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skGroupChatViewController.m; sourceTree = "<group>"; };
+		84995A1921804E0500FD8A20 /* GroupModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupModel.h; sourceTree = "<group>"; };
+		84995A1A21804E0500FD8A20 /* GroupModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupModel.m; sourceTree = "<group>"; };
 		84A78E7A215F574A0013F614 /* skAFNetworkingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skAFNetworkingTool.h; sourceTree = "<group>"; };
 		84A78E7C215F574A0013F614 /* skAFNetworkingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skAFNetworkingTool.m; sourceTree = "<group>"; };
 		84A78E7F215F5C380013F614 /* skResponeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skResponeModel.h; sourceTree = "<group>"; };
@@ -494,6 +508,8 @@
 			children = (
 				84011AA721748BB60005436B /* skAddressBookModel.h */,
 				84011AA821748BB60005436B /* skAddressBookModel.m */,
+				84995A06217FFEF300FD8A20 /* skGroupModel.h */,
+				84995A07217FFEF300FD8A20 /* skGroupModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -510,6 +526,9 @@
 				84995A01217F03BF00FD8A20 /* AddressBookNavTitleView.h */,
 				84995A02217F03BF00FD8A20 /* AddressBookNavTitleView.m */,
 				84995A04217F03CC00FD8A20 /* AddressBookNavTitleView.xib */,
+				84995A0921800D9B00FD8A20 /* PersonalTableViewCell.h */,
+				84995A0A21800D9B00FD8A20 /* PersonalTableViewCell.m */,
+				84995A0B21800D9B00FD8A20 /* PersonalTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -629,6 +648,8 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				84995A152180188000FD8A20 /* 单聊页面 */,
+				84995A0E218015C100FD8A20 /* 群聊界面 */,
 				849959F2217EC2EE00FD8A20 /* 实名认证 */,
 				849959E3217D7EF900FD8A20 /* 账户安全 */,
 				84637F43217D71E0009DB4FF /* 修改密码 */,
@@ -918,6 +939,72 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		84995A0E218015C100FD8A20 /* 群聊界面 */ = {
+			isa = PBXGroup;
+			children = (
+				84995A0F218015C100FD8A20 /* Controller */,
+				84995A10218015C100FD8A20 /* Model */,
+				84995A11218015C100FD8A20 /* View */,
+			);
+			path = "群聊界面";
+			sourceTree = "<group>";
+		};
+		84995A0F218015C100FD8A20 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84995A12218015E400FD8A20 /* skGroupChatViewController.h */,
+				84995A13218015E400FD8A20 /* skGroupChatViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84995A10218015C100FD8A20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84995A1921804E0500FD8A20 /* GroupModel.h */,
+				84995A1A21804E0500FD8A20 /* GroupModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84995A11218015C100FD8A20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84995A152180188000FD8A20 /* 单聊页面 */ = {
+			isa = PBXGroup;
+			children = (
+				84995A162180188000FD8A20 /* Controller */,
+				84995A172180188000FD8A20 /* Model */,
+				84995A182180188000FD8A20 /* View */,
+			);
+			path = "单聊页面";
+			sourceTree = "<group>";
+		};
+		84995A162180188000FD8A20 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84995A172180188000FD8A20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84995A182180188000FD8A20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		84A78E78215F574A0013F614 /* 封装的AF网络请求 */ = {
 			isa = PBXGroup;
 			children = (
@@ -936,8 +1023,8 @@
 		84A78E82215F5DA70013F614 /* 融云聊天集成 */ = {
 			isa = PBXGroup;
 			children = (
-				84A78E83215F5DA70013F614 /* RongSDKUsed.m */,
 				84A78E84215F5DA70013F614 /* RongSDKUsed.h */,
+				84A78E83215F5DA70013F614 /* RongSDKUsed.m */,
 			);
 			path = "融云聊天集成";
 			sourceTree = "<group>";
@@ -1235,6 +1322,7 @@
 				84995A05217F03CC00FD8A20 /* AddressBookNavTitleView.xib in Resources */,
 				84CCF585216F5178004DE670 /* skChangeUserinfoNikeNameTableViewCell.xib in Resources */,
 				849959FD217EC3E100FD8A20 /* skAuthenticationTableViewCell.xib in Resources */,
+				84995A0D21800D9B00FD8A20 /* PersonalTableViewCell.xib in Resources */,
 				849959EE217D7F3D00FD8A20 /* skSafeTableViewCell.xib in Resources */,
 				84011AA3217483620005436B /* skAddressBookSearch.xib in Resources */,
 				84637F53217D751A009DB4FF /* skChangePwdCodeTableViewCell.xib in Resources */,
@@ -1389,13 +1477,16 @@
 				849959ED217D7F3D00FD8A20 /* skSafeTableViewCell.m in Sources */,
 				842CFA92216EF40D00A847AB /* skNavigationConfig.m in Sources */,
 				84A78E81215F5C390013F614 /* skResponeModel.m in Sources */,
+				84995A14218015E400FD8A20 /* skGroupChatViewController.m in Sources */,
 				84E65CD42179CC0D00A379E0 /* AddressTableViewCell.m in Sources */,
 				84CFE3A1217827BC0061B625 /* skUserInfoSetViewController.m in Sources */,
 				84ADFC29217877F4008D7BE5 /* skUserinfoSetModel.m in Sources */,
 				8419CDBB216D949E00DBE8F4 /* skClassMethod.m in Sources */,
+				84995A08217FFEF300FD8A20 /* skGroupModel.m in Sources */,
 				8419CDE9216DD96E00DBE8F4 /* skAddressBookViewController.m in Sources */,
 				84637F52217D751A009DB4FF /* skChangePwdCodeTableViewCell.m in Sources */,
 				84537BA42154D83200E4CB29 /* skBaseNavViewController.m in Sources */,
+				84995A0C21800D9B00FD8A20 /* PersonalTableViewCell.m in Sources */,
 				84B21DAA21605E1D00DCCF9C /* UserModel.m in Sources */,
 				84D802372175C0CD00E1894F /* skAddFriendViewController.m in Sources */,
 				843B40C2216C552300356306 /* skRegisterViewController.m in Sources */,
@@ -1428,6 +1519,7 @@
 				8419CDD5216DD80C00DBE8F4 /* skTabarViewController.m in Sources */,
 				84537BA32154D83200E4CB29 /* skBaseViewController.m in Sources */,
 				84537BAB2154E9CE00E4CB29 /* skConfig.m in Sources */,
+				84995A1B21804E0500FD8A20 /* GroupModel.m in Sources */,
 				84211A59215B2345003BE4A5 /* skRongChatViewController.m in Sources */,
 				84CCF573216F4B4C004DE670 /* skImagePicker.m in Sources */,
 				84D160D6215F6FBF002188DB /* skNetConfig.m in Sources */,
@@ -1577,7 +1669,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = skyer.SkyerChat;
+				PRODUCT_BUNDLE_IDENTIFIER = skyer.SkyerChat.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;
@@ -1600,7 +1692,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = skyer.SkyerChat;
+				PRODUCT_BUNDLE_IDENTIFIER = skyer.SkyerChat.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;

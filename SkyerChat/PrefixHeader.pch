@@ -15,6 +15,7 @@
 #import "skColorConfig.h"
 #import <RongIMKit/RongIMKit.h>
 #import "skBaseNavViewController.h"
+#import "skRongChatViewController.h"
 #import "skRootViewController.h"
 #import <SkyerTools/SkMacro.h>
 #import "AFNetworking.h"

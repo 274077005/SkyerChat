@@ -7,11 +7,11 @@
 //
 
 #import "skBaseViewController.h"
-#import "skRongChatViewController.h"
+#import "skRongListViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface skUserChatViewController : skRongChatViewController
+@interface skUserChatViewController : skRongListViewController
 
 @end
 

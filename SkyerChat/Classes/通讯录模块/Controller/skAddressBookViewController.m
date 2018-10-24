@@ -13,6 +13,9 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "skAddFriendViewController.h"
 #import "AddressBookNavTitleView.h"
+#import "skGroupModel.h"
+#import "PersonalTableViewCell.h"
+#import "skGroupChatViewController.h"
 
 
 @interface skAddressBookViewController ()
@@ -20,10 +23,22 @@
 @property (nonatomic,strong) skAddressBookSearch *viewSearch;
 @property (nonatomic,strong) skAddressBookModel *model;
 
+@property (nonatomic,strong) NSMutableArray <skGroupModel *>*arrGroupList;
+@property (nonatomic,assign) NSInteger rowGroup;
 
 @end
 
 @implementation skAddressBookViewController
+
+- (NSMutableArray *)arrGroupList{
+    if (nil==_arrGroupList) {
+        _arrGroupList=[[NSMutableArray alloc] init];
+        
+    }
+    return _arrGroupList;
+}
+
+
 - (skAddressBookModel *)model{
     if (nil==_model) {
         
@@ -63,8 +78,20 @@
     
 
     [self addTableView];
-    [self getAddressBookList:@""];
-    [self.model setBarButtonItem:self.navigationItem];
+//    [self getAddressBookList:@""];
+//    [self.model setBarButtonItem:self.navigationItem];
+    
+    [self bizGroupMyGroup];
+    
+    [self createRefreshHeaderViewWithBlock:^{
+        self.rowGroup=0;
+        [self bizGroupMyGroup];
+    }];
+    [self createRefreshFooterViewWithBlock:^{
+        self.rowGroup+=10;
+        [self bizGroupMyGroup];
+    }];
+    
 }
 
 
@@ -100,33 +127,102 @@
 }
 */
 #pragma mark - 代理方法
-
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.arrList.count;
+    switch (section) {
+        case 0:
+            return 1;
+            break;
+        case 1:
+            return self.arrGroupList.count;
+            break;
+            
+        default:
+            
+            break;
+    }
+    return self.arrGroupList.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 50;
+    if (section==0) {
+        return 50;
+    }
+    return 10;
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    return self.viewSearch;
+    if (section==0) {
+        return self.viewSearch;
+    }
+    return nil;
 }
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    static NSString *cellIdentifier = @"skAddressBookTableViewCell";
-    skAddressBookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = skXibView(@"skAddressBookTableViewCell");
+    switch (indexPath.section) {
+        case 0:
+        {
+            static NSString *cellIdentifier = @"PersonalTableViewCell";
+            PersonalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+            if (cell == nil) {
+                cell = skXibView(@"PersonalTableViewCell");
+            }
+            
+            return cell;
+        }
+            break;
+        case 1:
+        {
+            static NSString *cellIdentifier = @"skAddressBookTableViewCell";
+            skAddressBookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+            if (cell == nil) {
+                cell = skXibView(@"skAddressBookTableViewCell");
+            }
+            skGroupModel *model=self.arrGroupList[indexPath.row];
+            
+            [cell.imageTitle sd_setImageWithURL:[NSURL URLWithString:model.groupIcon] placeholderImage:[UIImage imageNamed:@"touxian"]];
+            
+            cell.labTitle.text=model.groupName;
+            
+            cell.labMessage.text = model.groupNo;
+            
+            return cell;
+        }
+            break;
+            
+        default:
+            break;
     }
-    skAddressBookModel *model=self.arrList[indexPath.row];
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.portrait] placeholderImage:[UIImage imageNamed:@"touxian"]];
-    return cell;
+    
+    
+    return nil;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    switch (indexPath.section) {
+        case 0:
+        {
+            
+        }
+            break;
+        case 1:
+        {
+            skGroupModel *model1=[self.arrGroupList objectAtIndex:indexPath.row];
+            skGroupChatViewController *view=[[skGroupChatViewController alloc] initWithConversationType:(ConversationType_GROUP) targetId:model1.groupNo];
+            
+            view.title=model1.groupName;
+            
+            [self.navigationController pushViewController:view animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 
@@ -155,4 +251,29 @@
         
     }];
 }
+
+
+-(void)bizGroupMyGroup{
+    NSDictionary *dic=@{@"page":@"0",
+                        @"rows":[NSNumber numberWithInteger:self.rowGroup]
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroup/myGroups") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
+        [self footerEndRefreshing];
+        [self headerEndRefreshing];
+        if (responseObject.returnCode==0) {
+            
+            skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
+            
+            self.arrGroupList=[skGroupModel mj_objectArrayWithKeyValuesArray:modelList.list];
+            [self.tableView reloadData];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        [self footerEndRefreshing];
+        [self headerEndRefreshing];
+    }];
+}
+
 @end
