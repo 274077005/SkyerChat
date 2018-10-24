@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RongSDKUsed : NSObject <RCIMConnectionStatusDelegate,RCIMUserInfoDataSource,RCIMGroupInfoDataSource>
+@interface RongSDKUsed : NSObject <RCIMConnectionStatusDelegate,RCIMUserInfoDataSource,RCIMGroupInfoDataSource,RCIMGroupUserInfoDataSource,RCIMGroupMemberDataSource,RCIMReceiveMessageDelegate>
 
 
 + (RongSDKUsed *)shareInstance;
