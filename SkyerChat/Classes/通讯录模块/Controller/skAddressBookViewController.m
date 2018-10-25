@@ -12,10 +12,10 @@
 #import "skAddressBookModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "skAddFriendViewController.h"
-#import "AddressBookNavTitleView.h"
 #import "skGroupModel.h"
 #import "PersonalTableViewCell.h"
 #import "skGroupChatViewController.h"
+#import "skMyClientViewController.h"
 
 
 @interface skAddressBookViewController ()
@@ -39,29 +39,6 @@
 }
 
 
-- (skAddressBookModel *)model{
-    if (nil==_model) {
-        
-        _model=[[skAddressBookModel alloc] init];
-        @weakify(self)
-        [[_model.viewTitle.btnQun rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            @strongify(self)
-            
-            [self setLabState];
-        }];
-        [[_model.viewTitle.btnKehu rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            @strongify(self)
-            
-            [self setLabState];
-        }];
-    }
-    return _model;
-}
--(void)setLabState{
-    [self.model.viewTitle.labQun setHidden:!self.model.viewTitle.labQun.hidden];
-    [self.model.viewTitle.labKehu setHidden:!self.model.viewTitle.labKehu.hidden];
-    
-}
 
 
 - (void)viewDidLoad {
@@ -183,7 +160,7 @@
             }
             skGroupModel *model=self.arrGroupList[indexPath.row];
         
-            [cell.imageTitle sd_setImageWithURL:[NSURL URLWithString:model.groupNo] placeholderImage:[UIImage imageNamed:@"touxiang"]];
+            [cell.imageTitle sd_setImageWithURL:[NSURL URLWithString:model.groupNo] placeholderImage:[UIImage imageNamed:@"default_group_portrait"]];
             
             cell.labTitle.text=model.groupName;
             
@@ -206,7 +183,8 @@
     switch (indexPath.section) {
         case 0:
         {
-            
+            skMyClientViewController *view=[[skMyClientViewController alloc] init];
+            [self.navigationController pushViewController:view animated:YES];
         }
             break;
         case 1:

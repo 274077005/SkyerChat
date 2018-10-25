@@ -10,14 +10,32 @@
 #import "PPGetAddressBook.h"
 #import "skAddFriendTableViewCell.h"
 #import "skAddressBookModel.h"
+#import "skLinkFriendModel.h"
 
 @interface skAddFriendViewController ()
-@property (nonatomic,strong) NSDictionary *dicArrList;
-@property (nonatomic,strong) NSArray *arrCodeList;
+
 @property (nonatomic,strong) NSArray *arrList;
+@property (nonatomic,strong) NSMutableArray *arrListPhone;
+@property (nonatomic,strong) NSMutableArray *arrListPhoneBack;
+
 @end
 
 @implementation skAddFriendViewController
+
+- (NSMutableArray *)arrListPhone{
+    if (nil==_arrListPhone) {
+        _arrListPhone=[[NSMutableArray alloc] init];
+    }
+    return _arrListPhone;
+}
+- (NSMutableArray *)arrListPhoneBack{
+    if (nil==_arrListPhoneBack) {
+        _arrListPhoneBack=[[NSMutableArray alloc] init];
+    }
+    return _arrListPhoneBack;
+}
+
+
 -(void)addTableView{
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -32,17 +50,12 @@
     self.title=@"添加好友";
     [PPGetAddressBook requestAddressBookAuthorization];
     //获取按联系人姓名首字拼音A~Z排序(已经对姓名的第二个字做了处理)
-    [PPGetAddressBook getOrderAddressBook:^(NSDictionary<NSString *,NSArray *> *addressBookDict, NSArray *nameKeys) {
-        
-        self.dicArrList=addressBookDict;
-        self.arrCodeList=nameKeys;
+    
+    [PPGetAddressBook getOriginalAddressBook:^(NSArray<PPPersonModel *> *addressBookArray) {
+        self.arrList=addressBookArray;
         [self.tableView reloadData];
-        //addressBookDict: 装着所有联系人的字典
-        //nameKeys: A~Z拼音字母数组;
-        //刷新 tableView
-        
+        [self findByPhoneNos];
     } authorizationFailure:^{
-        NSLog(@"请在iPhone的“设置-隐私-通讯录”选项中，允许PPAddressBook访问您的通讯录");
         UIAlertController *view=[UIAlertController alertControllerWithTitle:@"允许访问权限" message:@"设置-隐私-通讯录”选项中，允许APP访问您的通讯录" preferredStyle:(UIAlertControllerStyleAlert)];
         
         UIAlertAction *action=[UIAlertAction actionWithTitle:@"明白" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
@@ -51,9 +64,15 @@
         [view addAction:action];
     }];
     
-    
     [self addTableView];
-    [self getAddressBookList:@""];
+    
+    [self createRefreshHeaderViewWithBlock:^{
+        
+    }];
+    [self createRefreshFooterViewWithBlock:^{
+        
+    }];
+    
 }
 
 /*
@@ -66,31 +85,13 @@
 }
 */
 #pragma mark - 代理方法
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.arrCodeList.count;
-}
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSString *key=self.arrCodeList[section];
-    NSArray *arr=[self.dicArrList objectForKey:key];
-    
-    return arr.count;
+    return self.arrList.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 20;
-}
-- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    
-    UILabel *lab=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 20)];
-    lab.text=self.arrCodeList[section];
-    lab.textAlignment=1;
-    lab.backgroundColor=KcolorBackground;
-    
-    return lab;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -101,9 +102,7 @@
         cell = skXibView(@"skAddFriendTableViewCell");
     }
     
-    NSString *key=self.arrCodeList[indexPath.section];
-    NSArray *arr=[self.dicArrList objectForKey:key];
-    PPPersonModel *model=[arr objectAtIndex:indexPath.row];
+    PPPersonModel *model=[self.arrList objectAtIndex:indexPath.row];
     cell.labName.text=model.name;
     cell.btnPhone.text=[model.mobileArray firstObject];
     
@@ -119,31 +118,6 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-/**
- 获取通讯录列表
- 
- @param keyword 关键字
- */
--(void)getAddressBookList:(NSString *)keyword{
-    
-    NSDictionary *dic=@{@"keyword":keyword};
-    
-    [skAfTool SKPOST:skUrl(@"/intf/bizLinker/list") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
-        
-        if (responseObject.returnCode==0) {
-            
-            skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
-            
-            self.arrList= [skAddressBookModel mj_objectArrayWithKeyValuesArray:modelList.list];
-            
-            [self.tableView reloadData];
-            
-        }
-        
-    } failure:^(NSError * _Nullable error) {
-        
-    }];
-}
 
 -(void)addFriend{
     ///intf/bizUser/sendRegister
@@ -154,6 +128,42 @@
         
         if (responseObject.returnCode==0) {
             
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+
+
+-(void)findByPhoneNos{
+    ///intf/bizUser/sendRegister
+    
+    for (int i =0; i<self.arrList.count; ++i) {
+        PPPersonModel *model=[self.arrList objectAtIndex:i];
+        NSString *phone=[model.mobileArray firstObject];
+        if (!phone) {
+            phone=@"1";
+        }
+        [self.arrListPhone addObject:phone];
+    }
+    
+    
+    NSDictionary *dic=@{@"phoneNos":self.arrListPhone
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizLinker/findByPhoneNos") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            
+            skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
+            
+            [skLinkFriendModel mj_objectArrayWithKeyValuesArray:modelList.list];
+            
+            
+            
+            [self.tableView reloadData];
         }
         
     } failure:^(NSError * _Nullable error) {

@@ -19,12 +19,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="286" height="49.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang" translatesAutoresizingMaskIntoConstraints="NO" id="hbq-uu-Q7D">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_portrait_msg" translatesAutoresizingMaskIntoConstraints="NO" id="hbq-uu-Q7D">
                         <rect key="frame" x="16" y="5" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="EVZ-Zi-y1P"/>
                             <constraint firstAttribute="width" constant="40" id="ea4-jr-mxg"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="4"/>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的客户" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8S6-Pz-jhh">
                         <rect key="frame" x="64" y="16" width="62" height="18"/>
@@ -41,10 +44,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="imageTitle" destination="hbq-uu-Q7D" id="rk9-FC-d9l"/>
+            </connections>
             <point key="canvasLocation" x="137.59999999999999" y="138.53073463268368"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="touxiang" width="54.5" height="54.5"/>
+        <image name="default_portrait_msg" width="46" height="46"/>
     </resources>
 </document>

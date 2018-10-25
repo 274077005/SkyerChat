@@ -10,12 +10,4 @@
 
 
 @implementation skAddressBookModel
-//设置导航栏
-- (void)setBarButtonItem:(UINavigationItem*)navigationItem
-{
-    self.viewTitle= skXibView(@"AddressBookNavTitleView");
-    
-    navigationItem.titleView =self.viewTitle;
-    
-}
 @end

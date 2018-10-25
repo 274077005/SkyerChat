@@ -147,7 +147,7 @@
     
     NSDictionary *dic=@{@"userNo":userNo};
     
-    [skAfTool SKPOST:skUrl(@"/intf/bizUser/getUser") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
+    [skAfTool SKPOST:skUrl(@"/intf/bizUser/getUserSimple") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
             SingleModel *model=[SingleModel mj_objectWithKeyValues:responseObject.data];

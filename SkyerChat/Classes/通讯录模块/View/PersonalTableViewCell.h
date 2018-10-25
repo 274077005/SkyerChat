@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PersonalTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imageTitle;
 
 @end
 

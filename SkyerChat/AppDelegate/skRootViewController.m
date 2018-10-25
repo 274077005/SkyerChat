@@ -22,6 +22,7 @@
     skTabarViewController *skLoginView=[[skTabarViewController alloc] init];
     skUser.isLogin=YES;
     skKeyWindow.rootViewController=skLoginView;
+    
 }
 
 @end

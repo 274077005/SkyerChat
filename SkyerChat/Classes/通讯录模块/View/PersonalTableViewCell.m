@@ -7,12 +7,14 @@
 //
 
 #import "PersonalTableViewCell.h"
+#import "UIView+skBoard.h"
 
 @implementation PersonalTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    [self.imageTitle skSetBoardRadius:4 Width:0 andBorderColor:[UIColor clearColor]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

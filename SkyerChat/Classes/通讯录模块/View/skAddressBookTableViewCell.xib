@@ -25,6 +25,9 @@
                             <constraint firstAttribute="height" constant="40" id="XOn-1o-XRJ"/>
                             <constraint firstAttribute="width" constant="40" id="lC9-lR-1Sw"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="4"/>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcc-TG-f2i">
                         <rect key="frame" x="64" y="8" width="31" height="18"/>
