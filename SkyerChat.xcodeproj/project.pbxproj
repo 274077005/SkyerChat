@@ -15,9 +15,6 @@
 		8419CDB0216C826300DBE8F4 /* modelRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDAF216C826300DBE8F4 /* modelRegister.m */; };
 		8419CDBA216D949E00DBE8F4 /* SKKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDB5216D949E00DBE8F4 /* SKKeyboard.m */; };
 		8419CDBB216D949E00DBE8F4 /* skClassMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDB9216D949E00DBE8F4 /* skClassMethod.m */; };
-		8419CDC2216DA55A00DBE8F4 /* skForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDC1216DA55A00DBE8F4 /* skForgetPasswordViewController.m */; };
-		8419CDC5216DA5AE00DBE8F4 /* ForgetPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDC4216DA5AE00DBE8F4 /* ForgetPasswordView.m */; };
-		8419CDC7216DA5BC00DBE8F4 /* ForgetPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8419CDC6216DA5BC00DBE8F4 /* ForgetPasswordView.xib */; };
 		8419CDCA216DAF6100DBE8F4 /* UserLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDC9216DAF6100DBE8F4 /* UserLogin.m */; };
 		8419CDD5216DD80C00DBE8F4 /* skTabarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDCF216DD80C00DBE8F4 /* skTabarViewController.m */; };
 		8419CDE6216DD90C00DBE8F4 /* skUserChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDE5216DD90C00DBE8F4 /* skUserChatViewController.m */; };
@@ -74,6 +71,7 @@
 		84995A14218015E400FD8A20 /* skGroupChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84995A13218015E400FD8A20 /* skGroupChatViewController.m */; };
 		84995A1B21804E0500FD8A20 /* GroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84995A1A21804E0500FD8A20 /* GroupModel.m */; };
 		84995A1E2180734E00FD8A20 /* SingleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84995A1D2180734E00FD8A20 /* SingleModel.m */; };
+		84995A21218199DE00FD8A20 /* skSingleChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84995A20218199DE00FD8A20 /* skSingleChatViewController.m */; };
 		84A78E7E215F574A0013F614 /* skAFNetworkingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E7C215F574A0013F614 /* skAFNetworkingTool.m */; };
 		84A78E81215F5C390013F614 /* skResponeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E80215F5C390013F614 /* skResponeModel.m */; };
 		84A78E85215F5DA70013F614 /* RongSDKUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E83215F5DA70013F614 /* RongSDKUsed.m */; };
@@ -128,11 +126,6 @@
 		8419CDB6216D949E00DBE8F4 /* SKKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKeyboard.h; sourceTree = "<group>"; };
 		8419CDB8216D949E00DBE8F4 /* skClassMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skClassMethod.h; sourceTree = "<group>"; };
 		8419CDB9216D949E00DBE8F4 /* skClassMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skClassMethod.m; sourceTree = "<group>"; };
-		8419CDC0216DA55A00DBE8F4 /* skForgetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skForgetPasswordViewController.h; sourceTree = "<group>"; };
-		8419CDC1216DA55A00DBE8F4 /* skForgetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skForgetPasswordViewController.m; sourceTree = "<group>"; };
-		8419CDC3216DA5AE00DBE8F4 /* ForgetPasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordView.h; sourceTree = "<group>"; };
-		8419CDC4216DA5AE00DBE8F4 /* ForgetPasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordView.m; sourceTree = "<group>"; };
-		8419CDC6216DA5BC00DBE8F4 /* ForgetPasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordView.xib; sourceTree = "<group>"; };
 		8419CDC8216DAF6100DBE8F4 /* UserLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserLogin.h; sourceTree = "<group>"; };
 		8419CDC9216DAF6100DBE8F4 /* UserLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserLogin.m; sourceTree = "<group>"; };
 		8419CDCE216DD80C00DBE8F4 /* skTabarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skTabarViewController.h; sourceTree = "<group>"; };
@@ -233,6 +226,8 @@
 		84995A1A21804E0500FD8A20 /* GroupModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupModel.m; sourceTree = "<group>"; };
 		84995A1C2180734E00FD8A20 /* SingleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleModel.h; sourceTree = "<group>"; };
 		84995A1D2180734E00FD8A20 /* SingleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleModel.m; sourceTree = "<group>"; };
+		84995A1F218199DE00FD8A20 /* skSingleChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skSingleChatViewController.h; sourceTree = "<group>"; };
+		84995A20218199DE00FD8A20 /* skSingleChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skSingleChatViewController.m; sourceTree = "<group>"; };
 		84A78E7A215F574A0013F614 /* skAFNetworkingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skAFNetworkingTool.h; sourceTree = "<group>"; };
 		84A78E7C215F574A0013F614 /* skAFNetworkingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skAFNetworkingTool.m; sourceTree = "<group>"; };
 		84A78E7F215F5C380013F614 /* skResponeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skResponeModel.h; sourceTree = "<group>"; };
@@ -338,42 +333,6 @@
 				8419CDB9216D949E00DBE8F4 /* skClassMethod.m */,
 			);
 			path = "类方法";
-			sourceTree = "<group>";
-		};
-		8419CDBC216DA50000DBE8F4 /* 忘记密码 */ = {
-			isa = PBXGroup;
-			children = (
-				8419CDBD216DA50000DBE8F4 /* Controller */,
-				8419CDBE216DA50000DBE8F4 /* Model */,
-				8419CDBF216DA50000DBE8F4 /* View */,
-			);
-			path = "忘记密码";
-			sourceTree = "<group>";
-		};
-		8419CDBD216DA50000DBE8F4 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				8419CDC0216DA55A00DBE8F4 /* skForgetPasswordViewController.h */,
-				8419CDC1216DA55A00DBE8F4 /* skForgetPasswordViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		8419CDBE216DA50000DBE8F4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		8419CDBF216DA50000DBE8F4 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				8419CDC3216DA5AE00DBE8F4 /* ForgetPasswordView.h */,
-				8419CDC4216DA5AE00DBE8F4 /* ForgetPasswordView.m */,
-				8419CDC6216DA5BC00DBE8F4 /* ForgetPasswordView.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		8419CDCB216DD80C00DBE8F4 /* 选项卡 */ = {
@@ -665,7 +624,6 @@
 				8419CDD8216DD8BE00DBE8F4 /* 个人信息 */,
 				8419CDDC216DD8BE00DBE8F4 /* 活动模块 */,
 				8419CDCB216DD80C00DBE8F4 /* 选项卡 */,
-				8419CDBC216DA50000DBE8F4 /* 忘记密码 */,
 				843B40BC216C54DF00356306 /* 注册模块 */,
 				84537B9A2154929C00E4CB29 /* 首页模块 */,
 				84537B922154929C00E4CB29 /* 登录模块 */,
@@ -990,6 +948,8 @@
 		84995A162180188000FD8A20 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				84995A1F218199DE00FD8A20 /* skSingleChatViewController.h */,
+				84995A20218199DE00FD8A20 /* skSingleChatViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1331,7 +1291,6 @@
 				849959EE217D7F3D00FD8A20 /* skSafeTableViewCell.xib in Resources */,
 				84011AA3217483620005436B /* skAddressBookSearch.xib in Resources */,
 				84637F53217D751A009DB4FF /* skChangePwdCodeTableViewCell.xib in Resources */,
-				8419CDC7216DA5BC00DBE8F4 /* ForgetPasswordView.xib in Resources */,
 				843B40BB216B4E5200356306 /* LoginView.xib in Resources */,
 				843B40C4216C553D00356306 /* RegisterView.xib in Resources */,
 				84637F4E217D744C009DB4FF /* skChangePasswordTableViewCell.xib in Resources */,
@@ -1473,7 +1432,6 @@
 				84EEBAC12179C4F000EDBA1E /* skAddAddressTableViewCell.m in Sources */,
 				849959E9217D7F1000FD8A20 /* skSafeViewController.m in Sources */,
 				843B40B9216B4E4600356306 /* LoginView.m in Sources */,
-				8419CDC2216DA55A00DBE8F4 /* skForgetPasswordViewController.m in Sources */,
 				84637F422179D1C1009DB4FF /* AddAddressModel.m in Sources */,
 				84537BA82154E36000E4CB29 /* skLoginViewController.m in Sources */,
 				842CFAA5216F283E00A847AB /* UserCenterTitleTableViewCell.m in Sources */,
@@ -1496,7 +1454,6 @@
 				84D802372175C0CD00E1894F /* skAddFriendViewController.m in Sources */,
 				843B40C2216C552300356306 /* skRegisterViewController.m in Sources */,
 				849959F8217EC32C00FD8A20 /* skAuthenticationViewController.m in Sources */,
-				8419CDC5216DA5AE00DBE8F4 /* ForgetPasswordView.m in Sources */,
 				8419CDBA216D949E00DBE8F4 /* SKKeyboard.m in Sources */,
 				84011AA1217483560005436B /* skAddressBookSearch.m in Sources */,
 				84E65CD12179CC0D00A379E0 /* AddressCenterTableViewCell.m in Sources */,
@@ -1531,6 +1488,7 @@
 				84D160D6215F6FBF002188DB /* skNetConfig.m in Sources */,
 				8419CDEF216DD9B700DBE8F4 /* skUserCenterViewController.m in Sources */,
 				84D8022F2175990800E1894F /* UserCenterLoginOutTableViewCell.m in Sources */,
+				84995A21218199DE00FD8A20 /* skSingleChatViewController.m in Sources */,
 				845617AF217830F900E3A511 /* UserinfoSetTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

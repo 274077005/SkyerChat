@@ -7,6 +7,8 @@
 //
 
 #import "skUserChatViewController.h"
+#import "skGroupChatViewController.h"
+#import "skSingleChatViewController.h"
 
 
 @interface skUserChatViewController ()
@@ -26,6 +28,9 @@
                                         @(ConversationType_GROUP),
                                         @(ConversationType_APPSERVICE),
                                         @(ConversationType_SYSTEM)]];
+    //设置需要将哪些类型的会话在会话列表中聚合显示
+    [self setCollectionConversationType:@[@(ConversationType_SYSTEM),
+                                          @(ConversationType_PUSHSERVICE)]];
     
 }
 /*
@@ -41,6 +46,32 @@
 - (void)onSelectedTableRow:(RCConversationModelType)conversationModelType
          conversationModel:(RCConversationModel *)model
                atIndexPath:(NSIndexPath *)indexPath {
+    
+    RCConversationType type=model.conversationType;
+    
+    switch (type) {
+        case ConversationType_PRIVATE://单聊
+        {
+            skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
+            conversationVC.conversationType = model.conversationType;
+            conversationVC.targetId = model.targetId;
+            conversationVC.title = model.conversationTitle;
+            [self.navigationController pushViewController:conversationVC animated:YES];
+        }
+            break;
+        case ConversationType_GROUP://群组
+        {
+            skGroupChatViewController *conversationVC = [[skGroupChatViewController alloc]init];
+            conversationVC.conversationType = model.conversationType;
+            conversationVC.targetId = model.targetId;
+            conversationVC.title = model.conversationTitle;
+            [self.navigationController pushViewController:conversationVC animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
     
     
 

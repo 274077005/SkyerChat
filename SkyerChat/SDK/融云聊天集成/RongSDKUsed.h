@@ -12,6 +12,8 @@
 
 
 + (RongSDKUsed *)shareInstance;
+
+-(void)skSuccessLoginRong;
 /**
  初始化融云
  

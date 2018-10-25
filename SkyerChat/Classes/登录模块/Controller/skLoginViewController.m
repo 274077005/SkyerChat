@@ -11,7 +11,6 @@
 #import "UserLogin.h"
 #import "skRegisterViewController.h"
 #import "skRootViewController.h"
-#import "RongSDKUsed.h"
 #import "skChangePasswordViewController.h"
 
 @interface skLoginViewController ()
@@ -88,6 +87,13 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self rememberUser];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController.navigationBar setBarTintColor:KcolorMain];
 }
 #pragma mark - 获取原始密码
 -(void)rememberUser{
@@ -115,7 +121,7 @@
 */
 -(void)userLoginAction{
     ///intf/bizUser/sendRegister
-    NSString *passwd=[NSString stringWithFormat:@"%@%@",_userLogin.loginPwd,skModelNet.appSecret];
+    NSString *passwd=[NSString stringWithFormat:@"%@%@",_userLogin.loginPwd,skSaltMd5String];
     
     NSDictionary *dic=@{@"phoneNo":_userLogin.loginPhone,
                         @"passwd":[passwd MD5]

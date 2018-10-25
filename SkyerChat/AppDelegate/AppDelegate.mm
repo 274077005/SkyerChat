@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "RongSDKUsed.h"
 #import "skNetConfig.h"
 #import "SKKeyboard.h"
 #import "skNavigationConfig.h"

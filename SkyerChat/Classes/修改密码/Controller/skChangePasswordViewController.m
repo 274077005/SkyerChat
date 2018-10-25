@@ -164,7 +164,7 @@
         return;
     }
     
-    NSString *pwd=[NSString stringWithFormat:@"%@%@",self.model.pwd1,skModelNet.appSecret];
+    NSString *pwd=[NSString stringWithFormat:@"%@%@",self.model.pwd1,skSaltMd5String];
     
     ///intf/bizUser/sendRegister
     NSDictionary *dic=@{@"phoneNo":self.model.phone,

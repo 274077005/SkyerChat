@@ -20,14 +20,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="第三方-微信" translatesAutoresizingMaskIntoConstraints="NO" id="gBb-zq-rkg">
-                        <rect key="frame" x="10" y="5" width="40" height="40"/>
+                        <rect key="frame" x="16" y="5" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="XOn-1o-XRJ"/>
                             <constraint firstAttribute="width" constant="40" id="lC9-lR-1Sw"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcc-TG-f2i">
-                        <rect key="frame" x="58" y="8" width="31" height="18"/>
+                        <rect key="frame" x="64" y="8" width="31" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="qVL-86-LnO"/>
                         </constraints>
@@ -36,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公告" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckA-3P-3Hh">
-                        <rect key="frame" x="58" y="26" width="31" height="14.5"/>
+                        <rect key="frame" x="64" y="26" width="31" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="2u0-vN-KBk" secondAttribute="bottom" id="JmK-dl-x6k"/>
-                    <constraint firstItem="gBb-zq-rkg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Kcs-ZL-bCP"/>
+                    <constraint firstItem="gBb-zq-rkg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Kcs-ZL-bCP"/>
                     <constraint firstItem="ckA-3P-3Hh" firstAttribute="trailing" secondItem="Dcc-TG-f2i" secondAttribute="trailing" id="O9Y-6B-TO5"/>
                     <constraint firstItem="ckA-3P-3Hh" firstAttribute="top" secondItem="Dcc-TG-f2i" secondAttribute="bottom" id="VpP-Au-neI"/>
                     <constraint firstItem="Dcc-TG-f2i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="cRK-xV-eMQ"/>

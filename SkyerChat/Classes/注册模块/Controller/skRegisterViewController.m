@@ -162,7 +162,7 @@
  用户注册
  */
 -(void)userRegister{
-    NSString *pwd=[NSString stringWithFormat:@"%@%@",_model.password,skModelNet.appSecret];
+    NSString *pwd=[NSString stringWithFormat:@"%@%@",_model.password,skSaltMd5String];
     
     NSDictionary *dic=@{@"phoneNo":_model.phone,
                         @"passwd":[pwd MD5],
@@ -183,6 +183,13 @@
             
             [SFHFKeychainUtils storeUsername:skLoginUserPWD andPassword:self.model.password forServiceName:skLoginUserPWD updateExisting:YES error:nil];
             skUser.isLogin=YES;
+            [[RongSDKUsed shareInstance] skRongConnectWithToken:skUser.token success:^(NSString *userId) {
+                
+            } error:^(RCConnectErrorCode status) {
+                
+            } tokenIncorrect:^{
+                
+            }];
             [skRootViewController skRootTabarViewController];
         }
         

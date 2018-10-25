@@ -183,7 +183,7 @@
             }
             skGroupModel *model=self.arrGroupList[indexPath.row];
         
-//            [cell.imageTitle sd_setImageWithURL:[NSURL URLWithString:model.groupNo] placeholderImage:[UIImage imageNamed:@"touxian"]];
+            [cell.imageTitle sd_setImageWithURL:[NSURL URLWithString:model.groupNo] placeholderImage:[UIImage imageNamed:@"touxiang"]];
             
             cell.labTitle.text=model.groupName;
             

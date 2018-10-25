@@ -33,44 +33,7 @@
           tokenIncorrect:(void (^)(void))tokenIncorrectBlock{
     [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
         NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
-        //设置会话列表头像和会话页面头像
-        
-        [[RCIM sharedRCIM] setConnectionStatusDelegate:self];
-        
-        [RCIM sharedRCIM].globalConversationPortraitSize = CGSizeMake(46, 46);
-        //    [RCIM sharedRCIM].portraitImageViewCornerRadius = 10;
-        //开启用户信息和群组信息的持久化
-        [RCIM sharedRCIM].enablePersistentUserInfoCache = YES;
-        //设置用户信息源和群组信息源
-        [RCIM sharedRCIM].userInfoDataSource = self;
-        [RCIM sharedRCIM].groupInfoDataSource = self;
-        
-        //设置接收消息代理
-        [RCIM sharedRCIM].receiveMessageDelegate = self;
-        //    [RCIM sharedRCIM].globalMessagePortraitSize = CGSizeMake(46, 46);
-        //开启输入状态监听
-        [RCIM sharedRCIM].enableTypingStatus = YES;
-        
-        //开启发送已读回执
-        [RCIM sharedRCIM].enabledReadReceiptConversationTypeList =
-        @[ @(ConversationType_PRIVATE), @(ConversationType_DISCUSSION), @(ConversationType_GROUP) ];
-        
-        //开启多端未读状态同步
-        [RCIM sharedRCIM].enableSyncReadStatus = YES;
-        
-        //设置显示未注册的消息
-        //如：新版本增加了某种自定义消息，但是老版本不能识别，开发者可以在旧版本中预先自定义这种未识别的消息的显示
-        [RCIM sharedRCIM].showUnkownMessage = YES;
-        [RCIM sharedRCIM].showUnkownMessageNotificaiton = YES;
-        
-        //群成员数据源
-        [RCIM sharedRCIM].groupMemberDataSource = self;
-        
-        //开启消息@功能（只支持群聊和讨论组, App需要实现群成员数据源groupMemberDataSource）
-        [RCIM sharedRCIM].enableMessageMentioned = YES;
-        
-        //开启消息撤回功能
-        [RCIM sharedRCIM].enableMessageRecall = YES;
+        [self skSuccessLoginRong];
         successBlock(userId);
     } error:^(RCConnectErrorCode status) {
         NSLog(@"登陆的错误码为:%ld", status);
@@ -83,6 +46,50 @@
         tokenIncorrectBlock();
     }];
 }
+
+-(void)skSuccessLoginRong{
+    //设置会话列表头像和会话页面头像
+    
+    [[RCIM sharedRCIM] setConnectionStatusDelegate:self];
+    
+    [RCIM sharedRCIM].globalConversationPortraitSize = CGSizeMake(40, 40);
+    //    [RCIM sharedRCIM].portraitImageViewCornerRadius = 10;
+    //开启用户信息和群组信息的持久化
+    [RCIM sharedRCIM].enablePersistentUserInfoCache = YES;
+    //设置用户信息源和群组信息源
+    [RCIM sharedRCIM].userInfoDataSource = self;
+    [RCIM sharedRCIM].groupInfoDataSource = self;
+    
+    //设置接收消息代理
+    [RCIM sharedRCIM].receiveMessageDelegate = self;
+    //    [RCIM sharedRCIM].globalMessagePortraitSize = CGSizeMake(46, 46);
+    //开启输入状态监听
+    [RCIM sharedRCIM].enableTypingStatus = YES;
+    
+    //开启发送已读回执
+    [RCIM sharedRCIM].enabledReadReceiptConversationTypeList =
+    @[ @(ConversationType_PRIVATE), @(ConversationType_DISCUSSION), @(ConversationType_GROUP) ];
+    
+    //开启多端未读状态同步
+    [RCIM sharedRCIM].enableSyncReadStatus = YES;
+    
+    //设置显示未注册的消息
+    //如：新版本增加了某种自定义消息，但是老版本不能识别，开发者可以在旧版本中预先自定义这种未识别的消息的显示
+    [RCIM sharedRCIM].showUnkownMessage = YES;
+    [RCIM sharedRCIM].showUnkownMessageNotificaiton = YES;
+    
+    //群成员数据源
+    [RCIM sharedRCIM].groupMemberDataSource = self;
+    
+    //开启消息@功能（只支持群聊和讨论组, App需要实现群成员数据源groupMemberDataSource）
+    [RCIM sharedRCIM].enableMessageMentioned = YES;
+    
+    //开启消息撤回功能
+    [RCIM sharedRCIM].enableMessageRecall = YES;
+}
+
+
+
 //用户信息提供者
 - (void)getUserInfoWithUserId:(NSString *)userId completion:(void (^)(RCUserInfo *userInfo))completion{
     
@@ -114,8 +121,7 @@
 
 -(void)getGroupSimple:(NSString *)groupId completion:(void (^)(RCGroup *groupInfo))completion{
     
-    NSDictionary *dic=@{@"groupId":@"",
-                        @"groupNo":groupId
+    NSDictionary *dic=@{@"groupNo":groupId
                         };
     
     
@@ -159,4 +165,5 @@
         
     }];
 }
+
 @end

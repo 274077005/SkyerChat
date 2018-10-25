@@ -1,18 +1,18 @@
 //
-//  skForgetPasswordViewController.m
+//  skSingleChatViewController.m
 //  SkyerChat
 //
-//  Created by admin on 2018/10/10.
-//  Copyright © 2018年 www.skyer.com. All rights reserved.
+//  Created by admin on 2018/10/25.
+//  Copyright © 2018 www.skyer.com. All rights reserved.
 //
 
-#import "skForgetPasswordViewController.h"
+#import "skSingleChatViewController.h"
 
-@interface skForgetPasswordViewController ()
+@interface skSingleChatViewController ()
 
 @end
 
-@implementation skForgetPasswordViewController
+@implementation skSingleChatViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
