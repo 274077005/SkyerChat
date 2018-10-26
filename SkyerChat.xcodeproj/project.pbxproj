@@ -18,7 +18,7 @@
 		8419CDCA216DAF6100DBE8F4 /* UserLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDC9216DAF6100DBE8F4 /* UserLogin.m */; };
 		8419CDD5216DD80C00DBE8F4 /* skTabarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDCF216DD80C00DBE8F4 /* skTabarViewController.m */; };
 		8419CDE6216DD90C00DBE8F4 /* skUserChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDE5216DD90C00DBE8F4 /* skUserChatViewController.m */; };
-		8419CDE9216DD96E00DBE8F4 /* skAddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDE8216DD96E00DBE8F4 /* skAddressBookViewController.m */; };
+		8419CDE9216DD96E00DBE8F4 /* skGroupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDE8216DD96E00DBE8F4 /* skGroupListViewController.m */; };
 		8419CDEC216DD99800DBE8F4 /* skActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDEB216DD99800DBE8F4 /* skActivityViewController.m */; };
 		8419CDEF216DD9B700DBE8F4 /* skUserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDEE216DD9B700DBE8F4 /* skUserCenterViewController.m */; };
 		8419CDF2216ED9D300DBE8F4 /* skRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDF1216ED9D300DBE8F4 /* skRootViewController.m */; };
@@ -94,6 +94,9 @@
 		84D160D5215F6FBF002188DB /* skNetConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D160D3215F6FBF002188DB /* skNetConfigModel.m */; };
 		84D160D6215F6FBF002188DB /* skNetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D160D4215F6FBF002188DB /* skNetConfig.m */; };
 		84D160D9216058A8002188DB /* skParamsForRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D160D8216058A8002188DB /* skParamsForRequest.m */; };
+		84D7DB5C2182A08000131373 /* AddressBookTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D7DB5B2182A08000131373 /* AddressBookTitleView.m */; };
+		84D7DB5E2182A09000131373 /* AddressBookTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D7DB5D2182A09000131373 /* AddressBookTitleView.xib */; };
+		84D7DB652182B2C500131373 /* skAddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D7DB642182B2C500131373 /* skAddressBookViewController.m */; };
 		84D8022F2175990800E1894F /* UserCenterLoginOutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D8022D2175990800E1894F /* UserCenterLoginOutTableViewCell.m */; };
 		84D802302175990800E1894F /* UserCenterLoginOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D8022E2175990800E1894F /* UserCenterLoginOutTableViewCell.xib */; };
 		84D802372175C0CD00E1894F /* skAddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D802362175C0CD00E1894F /* skAddFriendViewController.m */; };
@@ -134,8 +137,8 @@
 		8419CDCF216DD80C00DBE8F4 /* skTabarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skTabarViewController.m; sourceTree = "<group>"; };
 		8419CDE4216DD90C00DBE8F4 /* skUserChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skUserChatViewController.h; sourceTree = "<group>"; };
 		8419CDE5216DD90C00DBE8F4 /* skUserChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skUserChatViewController.m; sourceTree = "<group>"; };
-		8419CDE7216DD96E00DBE8F4 /* skAddressBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAddressBookViewController.h; sourceTree = "<group>"; };
-		8419CDE8216DD96E00DBE8F4 /* skAddressBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAddressBookViewController.m; sourceTree = "<group>"; };
+		8419CDE7216DD96E00DBE8F4 /* skGroupListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skGroupListViewController.h; sourceTree = "<group>"; };
+		8419CDE8216DD96E00DBE8F4 /* skGroupListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skGroupListViewController.m; sourceTree = "<group>"; };
 		8419CDEA216DD99800DBE8F4 /* skActivityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skActivityViewController.h; sourceTree = "<group>"; };
 		8419CDEB216DD99800DBE8F4 /* skActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skActivityViewController.m; sourceTree = "<group>"; };
 		8419CDED216DD9B700DBE8F4 /* skUserCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skUserCenterViewController.h; sourceTree = "<group>"; };
@@ -270,6 +273,11 @@
 		84D160D4215F6FBF002188DB /* skNetConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skNetConfig.m; sourceTree = "<group>"; };
 		84D160D7216058A8002188DB /* skParamsForRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skParamsForRequest.h; sourceTree = "<group>"; };
 		84D160D8216058A8002188DB /* skParamsForRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skParamsForRequest.m; sourceTree = "<group>"; };
+		84D7DB5A2182A08000131373 /* AddressBookTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressBookTitleView.h; sourceTree = "<group>"; };
+		84D7DB5B2182A08000131373 /* AddressBookTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressBookTitleView.m; sourceTree = "<group>"; };
+		84D7DB5D2182A09000131373 /* AddressBookTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressBookTitleView.xib; sourceTree = "<group>"; };
+		84D7DB632182B2C500131373 /* skAddressBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAddressBookViewController.h; sourceTree = "<group>"; };
+		84D7DB642182B2C500131373 /* skAddressBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAddressBookViewController.m; sourceTree = "<group>"; };
 		84D8022C2175990800E1894F /* UserCenterLoginOutTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCenterLoginOutTableViewCell.h; sourceTree = "<group>"; };
 		84D8022D2175990800E1894F /* UserCenterLoginOutTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCenterLoginOutTableViewCell.m; sourceTree = "<group>"; };
 		84D8022E2175990800E1894F /* UserCenterLoginOutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCenterLoginOutTableViewCell.xib; sourceTree = "<group>"; };
@@ -452,21 +460,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		8419CDE0216DD8C800DBE8F4 /* 通讯录模块 */ = {
+		8419CDE0216DD8C800DBE8F4 /* 群用户 */ = {
 			isa = PBXGroup;
 			children = (
 				8419CDE1216DD8C800DBE8F4 /* Controller */,
 				8419CDE2216DD8C800DBE8F4 /* Model */,
 				8419CDE3216DD8C800DBE8F4 /* View */,
 			);
-			path = "通讯录模块";
+			path = "群用户";
 			sourceTree = "<group>";
 		};
 		8419CDE1216DD8C800DBE8F4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8419CDE7216DD96E00DBE8F4 /* skAddressBookViewController.h */,
-				8419CDE8216DD96E00DBE8F4 /* skAddressBookViewController.m */,
+				8419CDE7216DD96E00DBE8F4 /* skGroupListViewController.h */,
+				8419CDE8216DD96E00DBE8F4 /* skGroupListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -494,6 +502,9 @@
 				84995A0921800D9B00FD8A20 /* PersonalTableViewCell.h */,
 				84995A0A21800D9B00FD8A20 /* PersonalTableViewCell.m */,
 				84995A0B21800D9B00FD8A20 /* PersonalTableViewCell.xib */,
+				84D7DB5A2182A08000131373 /* AddressBookTitleView.h */,
+				84D7DB5B2182A08000131373 /* AddressBookTitleView.m */,
+				84D7DB5D2182A09000131373 /* AddressBookTitleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -613,6 +624,7 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				84D7DB5F2182AA0100131373 /* 通讯录 */,
 				84995A222181BD7D00FD8A20 /* 我的客户 */,
 				84995A152180188000FD8A20 /* 单聊页面 */,
 				84995A0E218015C100FD8A20 /* 群聊界面 */,
@@ -624,7 +636,7 @@
 				84CFE39B217826370061B625 /* 信息设置 */,
 				84D802312175C09A00E1894F /* 添加好友 */,
 				84CCF575216F502C004DE670 /* 信息修改 */,
-				8419CDE0216DD8C800DBE8F4 /* 通讯录模块 */,
+				8419CDE0216DD8C800DBE8F4 /* 群用户 */,
 				8419CDD8216DD8BE00DBE8F4 /* 个人信息 */,
 				8419CDDC216DD8BE00DBE8F4 /* 活动模块 */,
 				8419CDCB216DD80C00DBE8F4 /* 选项卡 */,
@@ -1138,6 +1150,39 @@
 			path = "网络配置";
 			sourceTree = "<group>";
 		};
+		84D7DB5F2182AA0100131373 /* 通讯录 */ = {
+			isa = PBXGroup;
+			children = (
+				84D7DB602182AA0100131373 /* Controller */,
+				84D7DB612182AA0100131373 /* Model */,
+				84D7DB622182AA0100131373 /* View */,
+			);
+			path = "通讯录";
+			sourceTree = "<group>";
+		};
+		84D7DB602182AA0100131373 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84D7DB632182B2C500131373 /* skAddressBookViewController.h */,
+				84D7DB642182B2C500131373 /* skAddressBookViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84D7DB612182AA0100131373 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84D7DB622182AA0100131373 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		84D802312175C09A00E1894F /* 添加好友 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1349,6 +1394,7 @@
 				842CFA9C216F21B500A847AB /* UserCenterHeaderTableViewCell.xib in Resources */,
 				84CFE3AB217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.xib in Resources */,
 				84E65CD22179CC0D00A379E0 /* AddressTableViewCell.xib in Resources */,
+				84D7DB5E2182A09000131373 /* AddressBookTitleView.xib in Resources */,
 				84537B812154897F00E4CB29 /* Assets.xcassets in Resources */,
 				84D8023F2175D3BD00E1894F /* skAddFriendTableViewCell.xib in Resources */,
 			);
@@ -1484,12 +1530,13 @@
 				84A78E81215F5C390013F614 /* skResponeModel.m in Sources */,
 				84995A14218015E400FD8A20 /* skGroupChatViewController.m in Sources */,
 				84E65CD42179CC0D00A379E0 /* AddressTableViewCell.m in Sources */,
+				84D7DB5C2182A08000131373 /* AddressBookTitleView.m in Sources */,
 				84CFE3A1217827BC0061B625 /* skUserInfoSetViewController.m in Sources */,
 				84ADFC29217877F4008D7BE5 /* skUserinfoSetModel.m in Sources */,
 				8419CDBB216D949E00DBE8F4 /* skClassMethod.m in Sources */,
 				84995A08217FFEF300FD8A20 /* skGroupModel.m in Sources */,
 				84995A2B2181C43000FD8A20 /* myClientModel.m in Sources */,
-				8419CDE9216DD96E00DBE8F4 /* skAddressBookViewController.m in Sources */,
+				8419CDE9216DD96E00DBE8F4 /* skGroupListViewController.m in Sources */,
 				84637F52217D751A009DB4FF /* skChangePwdCodeTableViewCell.m in Sources */,
 				84537BA42154D83200E4CB29 /* skBaseNavViewController.m in Sources */,
 				84995A0C21800D9B00FD8A20 /* PersonalTableViewCell.m in Sources */,
@@ -1525,6 +1572,7 @@
 				84995A2F2181C5C900FD8A20 /* myClientTableViewCell.m in Sources */,
 				84537BA32154D83200E4CB29 /* skBaseViewController.m in Sources */,
 				84537BAB2154E9CE00E4CB29 /* skConfig.m in Sources */,
+				84D7DB652182B2C500131373 /* skAddressBookViewController.m in Sources */,
 				84995A1B21804E0500FD8A20 /* GroupModel.m in Sources */,
 				84211A59215B2345003BE4A5 /* skRongChatViewController.m in Sources */,
 				84CCF573216F4B4C004DE670 /* skImagePicker.m in Sources */,

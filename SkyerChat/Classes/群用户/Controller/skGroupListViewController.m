@@ -6,7 +6,7 @@
 //  Copyright © 2018年 www.skyer.com. All rights reserved.
 //
 
-#import "skAddressBookViewController.h"
+#import "skGroupListViewController.h"
 #import "skAddressBookTableViewCell.h"
 #import "skAddressBookSearch.h"
 #import "skAddressBookModel.h"
@@ -16,19 +16,49 @@
 #import "PersonalTableViewCell.h"
 #import "skGroupChatViewController.h"
 #import "skMyClientViewController.h"
+#import "AddressBookTitleView.h"
 
-
-@interface skAddressBookViewController ()
+@interface skGroupListViewController ()
 @property (nonatomic,strong) NSArray *arrList;
 @property (nonatomic,strong) skAddressBookSearch *viewSearch;
 @property (nonatomic,strong) skAddressBookModel *model;
-
 @property (nonatomic,strong) NSMutableArray <skGroupModel *>*arrGroupList;
 @property (nonatomic,assign) NSInteger rowGroup;
-
+@property (nonatomic,strong) AddressBookTitleView *viewTitle;
 @end
 
-@implementation skAddressBookViewController
+@implementation skGroupListViewController
+
+
+- (AddressBookTitleView *)viewTitle{
+    
+    if (nil==_viewTitle) {
+        _viewTitle=skXibView(@"AddressBookTitleView");
+        [_viewTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(skScreenWidth-140, 30));
+        }];
+        @weakify(self)
+        [[_viewTitle.btnQun rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            NSLog(@"群聊");
+            [self labSize];
+        }];
+        [[_viewTitle.btnKehu rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            NSLog(@"客户");
+            [self labSize];
+        }];
+    }
+    return _viewTitle;
+}
+
+-(void)labSize{
+    
+    [self.viewTitle.labQun setHidden:!self.viewTitle.labQun.isHidden];
+    [self.viewTitle.btnQun setTitleColor:self.viewTitle.labQun.isHidden?[UIColor lightTextColor]:[UIColor whiteColor] forState:(UIControlStateNormal)];
+    [self.viewTitle.labKehu setHidden:!self.viewTitle.labKehu.isHidden];
+    [self.viewTitle.btnKehu setTitleColor:self.viewTitle.labKehu.isHidden?[UIColor lightTextColor]:[UIColor whiteColor] forState:(UIControlStateNormal)];
+}
 
 - (NSMutableArray *)arrGroupList{
     if (nil==_arrGroupList) {
@@ -44,7 +74,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title=@"通讯录";
+//    self.title=@"通讯录";
+    self.navigationItem.titleView=self.viewTitle;
     NSLog(@"%@",self.model.userNo);
     @weakify(self)
     [[[self skCreatBtn:@"bar-更多-白" btnTitleOrImage:(btntypeImage) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
@@ -55,8 +86,6 @@
     
 
     [self addTableView];
-//    [self getAddressBookList:@""];
-//    [self.model setBarButtonItem:self.navigationItem];
     
     [self bizGroupMyGroup];
     
@@ -104,103 +133,45 @@
 }
 */
 #pragma mark - 代理方法
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
-}
+
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    switch (section) {
-        case 0:
-            return 1;
-            break;
-        case 1:
-            return self.arrGroupList.count;
-            break;
-            
-        default:
-            
-            break;
-    }
     return self.arrGroupList.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section==0) {
-        return 50;
-    }
-    return 10;
+    return 50;
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    if (section==0) {
-        return self.viewSearch;
-    }
-    return nil;
+    return self.viewSearch;
 }
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    switch (indexPath.section) {
-        case 0:
-        {
-            static NSString *cellIdentifier = @"PersonalTableViewCell";
-            PersonalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            if (cell == nil) {
-                cell = skXibView(@"PersonalTableViewCell");
-            }
-            
-            return cell;
-        }
-            break;
-        case 1:
-        {
-            static NSString *cellIdentifier = @"skAddressBookTableViewCell";
-            skAddressBookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            if (cell == nil) {
-                cell = skXibView(@"skAddressBookTableViewCell");
-            }
-            skGroupModel *model=self.arrGroupList[indexPath.row];
-        
-            [cell.imageTitle sd_setImageWithURL:[NSURL URLWithString:model.groupNo] placeholderImage:[UIImage imageNamed:@"default_group_portrait"]];
-            
-            cell.labTitle.text=model.groupName;
-            
-            cell.labMessage.text = model.groupNo;
-            
-            return cell;
-        }
-            break;
-            
-        default:
-            break;
+    static NSString *cellIdentifier = @"skAddressBookTableViewCell";
+    skAddressBookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = skXibView(@"skAddressBookTableViewCell");
     }
+    skGroupModel *model=self.arrGroupList[indexPath.row];
     
+    [cell.imageTitle sd_setImageWithURL:[NSURL URLWithString:model.groupNo] placeholderImage:[UIImage imageNamed:@"default_group_portrait"]];
     
-    return nil;
+    cell.labTitle.text=model.groupName;
+    
+    cell.labMessage.text = model.groupNo;
+    
+    return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    switch (indexPath.section) {
-        case 0:
-        {
-            skMyClientViewController *view=[[skMyClientViewController alloc] init];
-            [self.navigationController pushViewController:view animated:YES];
-        }
-            break;
-        case 1:
-        {
-            skGroupModel *model1=[self.arrGroupList objectAtIndex:indexPath.row];
-            skGroupChatViewController *view=[[skGroupChatViewController alloc] initWithConversationType:(ConversationType_GROUP) targetId:model1.groupNo];
-            
-            view.title=model1.groupName;
-            
-            [self.navigationController pushViewController:view animated:YES];
-        }
-            break;
-            
-        default:
-            break;
-    }
+    skGroupModel *model1=[self.arrGroupList objectAtIndex:indexPath.row];
+    skGroupChatViewController *view=[[skGroupChatViewController alloc] initWithConversationType:(ConversationType_GROUP) targetId:model1.groupNo];
+    
+    view.title=model1.groupName;
+    
+    [self.navigationController pushViewController:view animated:YES];
 }
 
 

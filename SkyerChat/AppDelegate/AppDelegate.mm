@@ -12,8 +12,6 @@
 #import "skNavigationConfig.h"
 #import "skRootViewController.h"
 
-#define token1 @"1z0W1QQcqqNwjSdFzuVkswWLRykpsFQ9HOLtXuW3Ld01fnSA4ysB8rdhCJaVoF1pbNdUMtpHhzo="
-#define token2 @"2+sZh/+2Pd1ZZSX75AwIafZmEahWqpbwXM/mW6z5RPpseaZcfJjbPdNxmTWks3kVK3DXTI33QOdtVxZXmdtzNQ=="
 
 @interface AppDelegate ()
 

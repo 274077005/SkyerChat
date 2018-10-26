@@ -8,9 +8,10 @@
 
 #import "skTabarViewController.h"
 #import "skUserChatViewController.h"
-#import "skAddressBookViewController.h"
+#import "skGroupListViewController.h"
 #import "skActivityViewController.h"
 #import "skUserCenterViewController.h"
+#import "skAddressBookViewController.h"
 
 @interface skTabarViewController ()
 
