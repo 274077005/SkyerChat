@@ -7,16 +7,31 @@
 //
 
 #import "skActivityViewController.h"
+#import "SDCycleScrollView.h"
 
-@interface skActivityViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface skActivityViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,SDCycleScrollViewDelegate>
 @property (nonatomic,strong) UICollectionView *collectionView;
+
+@property (nonatomic,strong) SDCycleScrollView *viewCycle;
 @end
 
 @implementation skActivityViewController
 
+- (SDCycleScrollView *)viewCycle{
+    if (nil==_viewCycle) {
+        _viewCycle = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, skScreenWidth, 100) delegate:self placeholderImage:[UIImage imageNamed:@""]];
+        _viewCycle.imageURLStringsGroup = @[];
+    }
+    return _viewCycle;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.view addSubview:self.collectionView];
+    
+    
 }
 -(UICollectionView *)collectionView{
     if (nil==_collectionView) {
@@ -29,7 +44,7 @@
         //设置尾部的尺寸大小
         layout.footerReferenceSize = CGSizeMake(self.view.frame.size.width, 137);
         //该方法也可以设置itemSize
-        layout.itemSize =CGSizeMake((skScreenWidth-30)/2, 50);
+        layout.itemSize =CGSizeMake((skScreenWidth-30)/2, 100);
         _collectionView=[[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
         
         [self.view addSubview:_collectionView];
@@ -95,7 +110,7 @@
 //设置每个item的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake((skScreenWidth-30)/2, 50);
+    return CGSizeMake((skScreenWidth-30)/2, 100);
 }
 
 //footer的size

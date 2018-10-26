@@ -28,7 +28,7 @@ target 'SkyerChat' do
     pod 'RongCloudIM/CallKit'
     pod 'RongCloudIM/RedPacket'
     pod 'PPGetAddressBook',:git => 'https://github.com/jkpang/PPGetAddressBook.git'
-    
+    pod 'SDCycleScrollView','~> 1.75'
     # 主模块(必须)
     pod 'mob_sharesdk'
     # 平台SDK模块(对照一下平台，需要的加上。如果只需要QQ、微信、新浪微博，只需要以下3行)

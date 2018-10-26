@@ -43,6 +43,8 @@ PODS:
   - RongCloudIM/IMLib (2.8.32)
   - RongCloudIM/RedPacket (2.8.32):
     - RongCloudIM/IMKit
+  - SDCycleScrollView (1.75):
+    - SDWebImage (>= 4.0.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
@@ -70,6 +72,7 @@ DEPENDENCIES:
   - RongCloudIM/IMKit
   - RongCloudIM/IMLib
   - RongCloudIM/RedPacket
+  - SDCycleScrollView (~> 1.75)
   - SDWebImage
   - SkyerTools
 
@@ -85,6 +88,7 @@ SPEC REPOS:
     - MOBFoundation
     - ReactiveObjC
     - RongCloudIM
+    - SDCycleScrollView
     - SDWebImage
     - SkyerTools
 
@@ -109,9 +113,10 @@ SPEC CHECKSUMS:
   PPGetAddressBook: e4b6b0a87e852df5d5b90c44ecd9ded7f6f1ccf6
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   RongCloudIM: 48bfc2fcb8d7cae8ce1e19cb5fb26d6d90616375
+  SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SkyerTools: 2aa8614b85ced2d15f139762379e91ecda837a47
 
-PODFILE CHECKSUM: 2c0e7d38fe18542abf76212faf51dac5c35073f0
+PODFILE CHECKSUM: 9f3a7b14d4e2219aebe57e59ea439bc2809d54bf
 
 COCOAPODS: 1.5.2
