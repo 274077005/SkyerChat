@@ -22,6 +22,9 @@
     // Do any additional setup after loading the view.
     self.title=@"客户";
     [self addTableView];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self getAddressBookList:@""];
 }
 -(void)addTableView{

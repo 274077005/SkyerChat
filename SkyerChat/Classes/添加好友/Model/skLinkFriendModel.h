@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface skLinkFriendModel : NSObject
+@property (nonatomic , copy) NSString              * nickName;
 @property (nonatomic , copy) NSString              * userNo;
 @property (nonatomic , assign) BOOL              isAdded;
 @property (nonatomic , copy) NSString              * phoneNo;

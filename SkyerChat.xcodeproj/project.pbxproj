@@ -94,6 +94,10 @@
 		84D160D5215F6FBF002188DB /* skNetConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D160D3215F6FBF002188DB /* skNetConfigModel.m */; };
 		84D160D6215F6FBF002188DB /* skNetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D160D4215F6FBF002188DB /* skNetConfig.m */; };
 		84D160D9216058A8002188DB /* skParamsForRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D160D8216058A8002188DB /* skParamsForRequest.m */; };
+		84D5CD682182EE8C00DB762E /* skMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D5CD672182EE8C00DB762E /* skMenuViewController.m */; };
+		84D5CD712182F47E00DB762E /* menuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D5CD6F2182F47E00DB762E /* menuTableViewCell.m */; };
+		84D5CD722182F47E00DB762E /* menuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D5CD702182F47E00DB762E /* menuTableViewCell.xib */; };
+		84D5CD752182FAC000DB762E /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D5CD732182FAC000DB762E /* UIView+Shadow.m */; };
 		84D7DB5C2182A08000131373 /* AddressBookTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D7DB5B2182A08000131373 /* AddressBookTitleView.m */; };
 		84D7DB5E2182A09000131373 /* AddressBookTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D7DB5D2182A09000131373 /* AddressBookTitleView.xib */; };
 		84D7DB652182B2C500131373 /* skAddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D7DB642182B2C500131373 /* skAddressBookViewController.m */; };
@@ -273,6 +277,13 @@
 		84D160D4215F6FBF002188DB /* skNetConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skNetConfig.m; sourceTree = "<group>"; };
 		84D160D7216058A8002188DB /* skParamsForRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skParamsForRequest.h; sourceTree = "<group>"; };
 		84D160D8216058A8002188DB /* skParamsForRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skParamsForRequest.m; sourceTree = "<group>"; };
+		84D5CD662182EE8C00DB762E /* skMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skMenuViewController.h; sourceTree = "<group>"; };
+		84D5CD672182EE8C00DB762E /* skMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skMenuViewController.m; sourceTree = "<group>"; };
+		84D5CD6E2182F47E00DB762E /* menuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = menuTableViewCell.h; sourceTree = "<group>"; };
+		84D5CD6F2182F47E00DB762E /* menuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = menuTableViewCell.m; sourceTree = "<group>"; };
+		84D5CD702182F47E00DB762E /* menuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = menuTableViewCell.xib; sourceTree = "<group>"; };
+		84D5CD732182FAC000DB762E /* UIView+Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
+		84D5CD742182FAC000DB762E /* UIView+Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
 		84D7DB5A2182A08000131373 /* AddressBookTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressBookTitleView.h; sourceTree = "<group>"; };
 		84D7DB5B2182A08000131373 /* AddressBookTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressBookTitleView.m; sourceTree = "<group>"; };
 		84D7DB5D2182A09000131373 /* AddressBookTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressBookTitleView.xib; sourceTree = "<group>"; };
@@ -530,6 +541,8 @@
 		843B40B3216B337400356306 /* Cagetory */ = {
 			isa = PBXGroup;
 			children = (
+				84D5CD742182FAC000DB762E /* UIView+Shadow.h */,
+				84D5CD732182FAC000DB762E /* UIView+Shadow.m */,
 				843B40B4216B337400356306 /* NSDictionary+skDictionary.h */,
 				843B40B5216B337400356306 /* NSDictionary+skDictionary.m */,
 			);
@@ -624,6 +637,7 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				84D5CD622182EE6300DB762E /* 弹出菜单 */,
 				84D7DB5F2182AA0100131373 /* 通讯录 */,
 				84995A222181BD7D00FD8A20 /* 我的客户 */,
 				84995A152180188000FD8A20 /* 单聊页面 */,
@@ -1150,6 +1164,42 @@
 			path = "网络配置";
 			sourceTree = "<group>";
 		};
+		84D5CD622182EE6300DB762E /* 弹出菜单 */ = {
+			isa = PBXGroup;
+			children = (
+				84D5CD632182EE6300DB762E /* Controller */,
+				84D5CD642182EE6300DB762E /* Model */,
+				84D5CD652182EE6300DB762E /* View */,
+			);
+			path = "弹出菜单";
+			sourceTree = "<group>";
+		};
+		84D5CD632182EE6300DB762E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84D5CD662182EE8C00DB762E /* skMenuViewController.h */,
+				84D5CD672182EE8C00DB762E /* skMenuViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84D5CD642182EE6300DB762E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84D5CD652182EE6300DB762E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84D5CD6E2182F47E00DB762E /* menuTableViewCell.h */,
+				84D5CD6F2182F47E00DB762E /* menuTableViewCell.m */,
+				84D5CD702182F47E00DB762E /* menuTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		84D7DB5F2182AA0100131373 /* 通讯录 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1373,6 +1423,7 @@
 			files = (
 				84CCF585216F5178004DE670 /* skChangeUserinfoNikeNameTableViewCell.xib in Resources */,
 				849959FD217EC3E100FD8A20 /* skAuthenticationTableViewCell.xib in Resources */,
+				84D5CD722182F47E00DB762E /* menuTableViewCell.xib in Resources */,
 				84995A0D21800D9B00FD8A20 /* PersonalTableViewCell.xib in Resources */,
 				849959EE217D7F3D00FD8A20 /* skSafeTableViewCell.xib in Resources */,
 				84011AA3217483620005436B /* skAddressBookSearch.xib in Resources */,
@@ -1504,6 +1555,7 @@
 			files = (
 				84EEBABD2179C3E600EDBA1E /* skAddressModel.m in Sources */,
 				84D160D9216058A8002188DB /* skParamsForRequest.m in Sources */,
+				84D5CD752182FAC000DB762E /* UIView+Shadow.m in Sources */,
 				84011AA6217489E60005436B /* skResponeList.m in Sources */,
 				84537B872154897F00E4CB29 /* main.m in Sources */,
 				842CFA9B216F21B500A847AB /* UserCenterHeaderTableViewCell.m in Sources */,
@@ -1522,6 +1574,7 @@
 				843B40B9216B4E4600356306 /* LoginView.m in Sources */,
 				84637F422179D1C1009DB4FF /* AddAddressModel.m in Sources */,
 				84537BA82154E36000E4CB29 /* skLoginViewController.m in Sources */,
+				84D5CD712182F47E00DB762E /* menuTableViewCell.m in Sources */,
 				842CFAA5216F283E00A847AB /* UserCenterTitleTableViewCell.m in Sources */,
 				84EEBAB92179C03A00EDBA1E /* AddressListTableViewCell.m in Sources */,
 				84D160D5215F6FBF002188DB /* skNetConfigModel.m in Sources */,
@@ -1535,6 +1588,7 @@
 				84ADFC29217877F4008D7BE5 /* skUserinfoSetModel.m in Sources */,
 				8419CDBB216D949E00DBE8F4 /* skClassMethod.m in Sources */,
 				84995A08217FFEF300FD8A20 /* skGroupModel.m in Sources */,
+				84D5CD682182EE8C00DB762E /* skMenuViewController.m in Sources */,
 				84995A2B2181C43000FD8A20 /* myClientModel.m in Sources */,
 				8419CDE9216DD96E00DBE8F4 /* skGroupListViewController.m in Sources */,
 				84637F52217D751A009DB4FF /* skChangePwdCodeTableViewCell.m in Sources */,

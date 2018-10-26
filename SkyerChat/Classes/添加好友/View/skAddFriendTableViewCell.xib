@@ -29,14 +29,8 @@
                         <state key="normal" title="添加"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufE-rM-lmz">
-                        <rect key="frame" x="16" y="13.5" width="92" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15607794212" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRn-6v-6FM">
-                        <rect key="frame" x="116" y="13.5" width="88.5" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="16" y="13" width="31" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -55,19 +49,15 @@
                     <constraint firstItem="yZI-on-4sJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9cM-fM-n8L"/>
                     <constraint firstItem="ufE-rM-lmz" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Awu-as-Dl9"/>
                     <constraint firstItem="ufE-rM-lmz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="IR6-XU-WIQ"/>
-                    <constraint firstItem="xRn-6v-6FM" firstAttribute="leading" secondItem="ufE-rM-lmz" secondAttribute="trailing" constant="8" id="JZ1-cy-BCb"/>
                     <constraint firstAttribute="trailing" secondItem="M7P-xG-Wim" secondAttribute="trailing" constant="16" id="PWw-zF-sEf"/>
                     <constraint firstAttribute="trailing" secondItem="yZI-on-4sJ" secondAttribute="trailing" id="PYi-iV-HFg"/>
-                    <constraint firstItem="xRn-6v-6FM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="y3P-tT-s64"/>
                     <constraint firstItem="M7P-xG-Wim" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yBG-WX-SJw"/>
-                    <constraint firstItem="xRn-6v-6FM" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="yST-wD-pXf"/>
                     <constraint firstAttribute="bottom" secondItem="yZI-on-4sJ" secondAttribute="bottom" id="zUY-QX-QM4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="btnAddFriend" destination="M7P-xG-Wim" id="bb8-4W-VYO"/>
-                <outlet property="btnPhone" destination="xRn-6v-6FM" id="1kI-HJ-w1E"/>
                 <outlet property="labName" destination="ufE-rM-lmz" id="gxy-Oe-4g7"/>
             </connections>
             <point key="canvasLocation" x="56" y="48.575712143928037"/>

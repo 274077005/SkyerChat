@@ -47,7 +47,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title=@"添加好友";
+    self.title=@"添加手机通讯录好友";
     [PPGetAddressBook requestAddressBookAuthorization];
     //获取按联系人姓名首字拼音A~Z排序(已经对姓名的第二个字做了处理)
     
@@ -66,12 +66,12 @@
     
     [self addTableView];
     
-    [self createRefreshHeaderViewWithBlock:^{
-        
-    }];
-    [self createRefreshFooterViewWithBlock:^{
-        
-    }];
+//    [self createRefreshHeaderViewWithBlock:^{
+//        
+//    }];
+//    [self createRefreshFooterViewWithBlock:^{
+//        
+//    }];
     
 }
 
@@ -88,7 +88,7 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.arrList.count;
+    return self.arrListPhoneBack.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
@@ -102,15 +102,25 @@
         cell = skXibView(@"skAddFriendTableViewCell");
     }
     
-    PPPersonModel *model=[self.arrList objectAtIndex:indexPath.row];
-    cell.labName.text=model.name;
-    cell.btnPhone.text=[model.mobileArray firstObject];
+    skLinkFriendModel *model=[self.arrListPhoneBack objectAtIndex:indexPath.row];
+    cell.labName.text=model.nickName;
+    Boolean isAdd=model.isAdded;
     
-    if ([self.arrList containsObject:[model.mobileArray firstObject]]) {
+    if (isAdd) {
         [cell.btnAddFriend setTitle:@"已添加" forState:(UIControlStateNormal)];
-        [cell.btnAddFriend setBackgroundColor:[UIColor grayColor]];
+        [cell.btnAddFriend setTitleColor:[UIColor lightGrayColor] forState:(UIControlStateNormal)];
+        [cell.btnAddFriend setEnabled:NO];
+    }else{
+        [cell.btnAddFriend setTitle:@"添加" forState:(UIControlStateNormal)];
+        [cell.btnAddFriend setTitleColor:[UIColor blueColor] forState:(UIControlStateNormal)];
+        [cell.btnAddFriend setEnabled:YES];
     }
-    
+    @weakify(self)
+    [[cell.btnAddFriend rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self)
+        NSString *userNo=model.userNo;
+        [self bizLinkerAddFriend:userNo];
+    }];
     return cell;
 }
 
@@ -119,21 +129,6 @@
 }
 
 
--(void)addFriend{
-    ///intf/bizUser/sendRegister
-    NSDictionary *dic=@{@"phoneNo":skUser.phoneNo
-                        };
-    
-    [skAfTool SKPOST:skUrl(@"/intf/bizLinker/create") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
-        
-        if (responseObject.returnCode==0) {
-            
-        }
-        
-    } failure:^(NSError * _Nullable error) {
-        
-    }];
-}
 
 
 -(void)findByPhoneNos{
@@ -159,10 +154,29 @@
             
             skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
             
-            [skLinkFriendModel mj_objectArrayWithKeyValuesArray:modelList.list];
+           self.arrListPhoneBack =[skLinkFriendModel mj_objectArrayWithKeyValuesArray:modelList.list];
             
+            NSLog(@"====%@",self.arrListPhoneBack);
             
-            
+            [self.tableView reloadData];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+
+
+-(void)bizLinkerAddFriend:(NSString *)userNo{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"userNo":userNo
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizLinker/create") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            [SkToast SkToastShow:@"添加好友成功" withHight:300];
             [self.tableView reloadData];
         }
         
