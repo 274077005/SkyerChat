@@ -33,6 +33,10 @@
 		842CFAA1216F233B00A847AB /* UserCenterOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842CFA9F216F233B00A847AB /* UserCenterOrderTableViewCell.xib */; };
 		842CFAA5216F283E00A847AB /* UserCenterTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CFAA3216F283E00A847AB /* UserCenterTitleTableViewCell.m */; };
 		842CFAA6216F283E00A847AB /* UserCenterTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842CFAA4216F283E00A847AB /* UserCenterTitleTableViewCell.xib */; };
+		842EAADE2187E81C00CA9E25 /* viewShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 842EAADD2187E81C00CA9E25 /* viewShop.m */; };
+		842EAAE02187E82900CA9E25 /* viewShop.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842EAADF2187E82900CA9E25 /* viewShop.xib */; };
+		842EAAE32188338300CA9E25 /* activityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 842EAAE22188338300CA9E25 /* activityModel.m */; };
+		842EAAEA218861D100CA9E25 /* skGroupChatDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842EAAE9218861D100CA9E25 /* skGroupChatDetailsViewController.m */; };
 		843B40B6216B337400356306 /* NSDictionary+skDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B40B5216B337400356306 /* NSDictionary+skDictionary.m */; };
 		843B40B9216B4E4600356306 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B40B8216B4E4600356306 /* LoginView.m */; };
 		843B40BB216B4E5200356306 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843B40BA216B4E5200356306 /* LoginView.xib */; };
@@ -168,6 +172,13 @@
 		842CFAA2216F283E00A847AB /* UserCenterTitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCenterTitleTableViewCell.h; sourceTree = "<group>"; };
 		842CFAA3216F283E00A847AB /* UserCenterTitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCenterTitleTableViewCell.m; sourceTree = "<group>"; };
 		842CFAA4216F283E00A847AB /* UserCenterTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCenterTitleTableViewCell.xib; sourceTree = "<group>"; };
+		842EAADC2187E81C00CA9E25 /* viewShop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = viewShop.h; sourceTree = "<group>"; };
+		842EAADD2187E81C00CA9E25 /* viewShop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = viewShop.m; sourceTree = "<group>"; };
+		842EAADF2187E82900CA9E25 /* viewShop.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = viewShop.xib; sourceTree = "<group>"; };
+		842EAAE12188338300CA9E25 /* activityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = activityModel.h; sourceTree = "<group>"; };
+		842EAAE22188338300CA9E25 /* activityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = activityModel.m; sourceTree = "<group>"; };
+		842EAAE8218861D100CA9E25 /* skGroupChatDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skGroupChatDetailsViewController.h; sourceTree = "<group>"; };
+		842EAAE9218861D100CA9E25 /* skGroupChatDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skGroupChatDetailsViewController.m; sourceTree = "<group>"; };
 		843B40B4216B337400356306 /* NSDictionary+skDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+skDictionary.h"; sourceTree = "<group>"; };
 		843B40B5216B337400356306 /* NSDictionary+skDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+skDictionary.m"; sourceTree = "<group>"; };
 		843B40B7216B4E4600356306 /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
@@ -460,6 +471,8 @@
 		8419CDDE216DD8BE00DBE8F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				842EAAE12188338300CA9E25 /* activityModel.h */,
+				842EAAE22188338300CA9E25 /* activityModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,6 +480,9 @@
 		8419CDDF216DD8BE00DBE8F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				842EAADC2187E81C00CA9E25 /* viewShop.h */,
+				842EAADD2187E81C00CA9E25 /* viewShop.m */,
+				842EAADF2187E82900CA9E25 /* viewShop.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -536,6 +552,39 @@
 				842CFA91216EF40D00A847AB /* skNavigationConfig.m */,
 			);
 			path = "导航栏设置";
+			sourceTree = "<group>";
+		};
+		842EAAE42188617700CA9E25 /* 群聊详情 */ = {
+			isa = PBXGroup;
+			children = (
+				842EAAE52188617700CA9E25 /* Controller */,
+				842EAAE62188617700CA9E25 /* Model */,
+				842EAAE72188617700CA9E25 /* View */,
+			);
+			path = "群聊详情";
+			sourceTree = "<group>";
+		};
+		842EAAE52188617700CA9E25 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				842EAAE8218861D100CA9E25 /* skGroupChatDetailsViewController.h */,
+				842EAAE9218861D100CA9E25 /* skGroupChatDetailsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		842EAAE62188617700CA9E25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		842EAAE72188617700CA9E25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		843B40B3216B337400356306 /* Cagetory */ = {
@@ -637,6 +686,7 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				842EAAE42188617700CA9E25 /* 群聊详情 */,
 				84D5CD622182EE6300DB762E /* 弹出菜单 */,
 				84D7DB5F2182AA0100131373 /* 通讯录 */,
 				84995A222181BD7D00FD8A20 /* 我的客户 */,
@@ -1431,6 +1481,7 @@
 				843B40BB216B4E5200356306 /* LoginView.xib in Resources */,
 				843B40C4216C553D00356306 /* RegisterView.xib in Resources */,
 				84637F4E217D744C009DB4FF /* skChangePasswordTableViewCell.xib in Resources */,
+				842EAAE02187E82900CA9E25 /* viewShop.xib in Resources */,
 				84537B842154897F00E4CB29 /* LaunchScreen.storyboard in Resources */,
 				84995A302181C5C900FD8A20 /* myClientTableViewCell.xib in Resources */,
 				84CCF58D21747CA1004DE670 /* skAddressBookTableViewCell.xib in Resources */,
@@ -1600,6 +1651,7 @@
 				84D802372175C0CD00E1894F /* skAddFriendViewController.m in Sources */,
 				843B40C2216C552300356306 /* skRegisterViewController.m in Sources */,
 				849959F8217EC32C00FD8A20 /* skAuthenticationViewController.m in Sources */,
+				842EAAEA218861D100CA9E25 /* skGroupChatDetailsViewController.m in Sources */,
 				8419CDBA216D949E00DBE8F4 /* SKKeyboard.m in Sources */,
 				84011AA1217483560005436B /* skAddressBookSearch.m in Sources */,
 				84E65CD12179CC0D00A379E0 /* AddressCenterTableViewCell.m in Sources */,
@@ -1609,6 +1661,7 @@
 				849959F1217DC2B100FD8A20 /* skChangePasswordModel.m in Sources */,
 				8419CDEC216DD99800DBE8F4 /* skActivityViewController.m in Sources */,
 				84995A00217EC62300FD8A20 /* skAuthenticationModel.m in Sources */,
+				842EAADE2187E81C00CA9E25 /* viewShop.m in Sources */,
 				84CCF584216F5178004DE670 /* skChangeUserinfoNikeNameTableViewCell.m in Sources */,
 				8419CDF2216ED9D300DBE8F4 /* skRootViewController.m in Sources */,
 				84CCF58C21747CA1004DE670 /* skAddressBookTableViewCell.m in Sources */,
@@ -1634,6 +1687,7 @@
 				84CCF573216F4B4C004DE670 /* skImagePicker.m in Sources */,
 				84D160D6215F6FBF002188DB /* skNetConfig.m in Sources */,
 				84995A282181C11E00FD8A20 /* skMyClientViewController.m in Sources */,
+				842EAAE32188338300CA9E25 /* activityModel.m in Sources */,
 				8419CDEF216DD9B700DBE8F4 /* skUserCenterViewController.m in Sources */,
 				84D8022F2175990800E1894F /* UserCenterLoginOutTableViewCell.m in Sources */,
 				84995A21218199DE00FD8A20 /* skSingleChatViewController.m in Sources */,

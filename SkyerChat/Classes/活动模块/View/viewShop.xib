@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="viewShop">
+            <rect key="frame" x="0.0" y="0.0" width="146" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDK-oB-4B8">
+                    <rect key="frame" x="0.0" y="120" width="146" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itb-Eg-V7x">
+                            <rect key="frame" x="8" y="8" width="130" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="KlE-IP-gzN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfT-b9-cCu">
+                            <rect key="frame" x="8" y="36" width="8" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="1" green="0.035314427760000003" blue="0.020246718390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iim-rd-riR">
+                            <rect key="frame" x="20" y="33" width="34.5" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Itb-Eg-V7x" firstAttribute="leading" secondItem="EDK-oB-4B8" secondAttribute="leading" constant="8" id="25G-SC-AHq"/>
+                        <constraint firstAttribute="height" constant="60" id="6fh-Vs-Prd"/>
+                        <constraint firstItem="Itb-Eg-V7x" firstAttribute="top" secondItem="EDK-oB-4B8" secondAttribute="top" constant="8" id="8ZY-N7-SA2"/>
+                        <constraint firstAttribute="trailing" secondItem="Itb-Eg-V7x" secondAttribute="trailing" constant="8" id="9lG-hm-nL7"/>
+                        <constraint firstItem="CfT-b9-cCu" firstAttribute="leading" secondItem="EDK-oB-4B8" secondAttribute="leading" constant="8" id="AWo-LM-Hvl"/>
+                        <constraint firstItem="CfT-b9-cCu" firstAttribute="top" secondItem="Itb-Eg-V7x" secondAttribute="bottom" constant="8" id="mXB-e4-rn8"/>
+                        <constraint firstItem="iim-rd-riR" firstAttribute="top" secondItem="Itb-Eg-V7x" secondAttribute="bottom" constant="5" id="p8a-u6-lGm"/>
+                        <constraint firstItem="iim-rd-riR" firstAttribute="leading" secondItem="CfT-b9-cCu" secondAttribute="trailing" constant="4" id="t1x-GA-pep"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="第三方-微信" translatesAutoresizingMaskIntoConstraints="NO" id="cPe-zJ-Exu">
+                    <rect key="frame" x="0.0" y="0.0" width="146" height="120"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cPe-zJ-Exu" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="C1E-RD-3OF"/>
+                <constraint firstItem="EDK-oB-4B8" firstAttribute="top" secondItem="cPe-zJ-Exu" secondAttribute="bottom" id="P62-8j-enR"/>
+                <constraint firstItem="cPe-zJ-Exu" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="YMM-rY-N5W"/>
+                <constraint firstItem="EDK-oB-4B8" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="a8T-cz-WS2"/>
+                <constraint firstItem="EDK-oB-4B8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fSM-zk-u0j"/>
+                <constraint firstItem="cPe-zJ-Exu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vcj-de-fvc"/>
+                <constraint firstItem="EDK-oB-4B8" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="vhI-aJ-mCX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imageShop" destination="cPe-zJ-Exu" id="Nlp-Bo-fbz"/>
+                <outlet property="labNameShop" destination="Itb-Eg-V7x" id="TfU-2N-wLO"/>
+                <outlet property="labPriceShop" destination="iim-rd-riR" id="y8F-RY-gxc"/>
+            </connections>
+            <point key="canvasLocation" x="-70.400000000000006" y="-52.173913043478265"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="第三方-微信" width="40" height="40"/>
+    </resources>
+</document>

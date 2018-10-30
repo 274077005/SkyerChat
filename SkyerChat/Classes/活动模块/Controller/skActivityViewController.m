@@ -8,19 +8,29 @@
 
 #import "skActivityViewController.h"
 #import "SDCycleScrollView.h"
+#import "viewShop.h"
+#import "activityModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 
 @interface skActivityViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,SDCycleScrollViewDelegate>
 @property (nonatomic,strong) UICollectionView *collectionView;
 
 @property (nonatomic,strong) SDCycleScrollView *viewCycle;
+
+@property (nonatomic,strong) NSArray *arrList;
+
+@property (nonatomic,assign) NSInteger rows;
+
+@property (nonatomic,strong) NSArray *arrListActivivt;
+
 @end
 
 @implementation skActivityViewController
 
 - (SDCycleScrollView *)viewCycle{
     if (nil==_viewCycle) {
-        _viewCycle = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, skScreenWidth, 100) delegate:self placeholderImage:[UIImage imageNamed:@""]];
-        _viewCycle.imageURLStringsGroup = @[];
+        _viewCycle = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, skScreenWidth, 150) delegate:self placeholderImage:[UIImage imageNamed:@""]];
     }
     return _viewCycle;
 }
@@ -31,7 +41,27 @@
     // Do any additional setup after loading the view.
     [self.view addSubview:self.collectionView];
     
-    
+    self.title=@"活动";
+    [self honorForLee];
+    [self myGroupGoods];
+    self.collectionView.mj_header = [MJRefreshNormalHeader  headerWithRefreshingBlock:^{
+        self.rows=10;
+        [self myGroupGoods];
+    }];
+    self.collectionView.mj_footer = [MJRefreshBackNormalFooter  footerWithRefreshingBlock:^{
+        self.rows+=10;
+        [self myGroupGoods];
+    }];
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 -(UICollectionView *)collectionView{
     if (nil==_collectionView) {
@@ -40,13 +70,13 @@
         //设置collectionView滚动方向
         [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
         //设置headerView的尺寸大小
-        layout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, 100);
+        layout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, 150);
         //设置尾部的尺寸大小
-        layout.footerReferenceSize = CGSizeMake(self.view.frame.size.width, 137);
+//        layout.footerReferenceSize = CGSizeMake(self.view.frame.size.width, 137);
         //该方法也可以设置itemSize
-        layout.itemSize =CGSizeMake((skScreenWidth-30)/2, 100);
+        layout.itemSize =CGSizeMake((skScreenWidth-30)/2, 180);
         _collectionView=[[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
-        
+        _collectionView.backgroundColor=KcolorBackground;
         [self.view addSubview:_collectionView];
         
         
@@ -55,14 +85,13 @@
             make.right.left.mas_equalTo(0);
             make.bottom.mas_equalTo(self.mas_bottomLayoutGuideTop);
         }];
-        _collectionView.backgroundColor = [UIColor clearColor];
         //3.注册collectionViewCell
         //注意，此处的ReuseIdentifier 必须和 cellForItemAtIndexPath 方法中 一致 均为 cellId
         [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellId"];
         //注册headerView  此处的ReuseIdentifier 必须和 cellForItemAtIndexPath 方法中 一致  均为reusableView
         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderReusableView"];
         
-        [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterReusableView"];
+//        [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterReusableView"];
         
         //4.设置代理
         _collectionView.delegate = self;
@@ -90,7 +119,7 @@
 //每个section的item个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return self.arrListActivivt.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -104,13 +133,23 @@
         }
     }
     
+    activityModel *model=[self.arrListActivivt objectAtIndex:indexPath.row];
+    
+    viewShop *viewS=skXibView(@"viewShop");
+    [viewS.imageShop sd_setImageWithURL:[NSURL URLWithString:model.goodsPic] placeholderImage:[UIImage imageNamed:@""]];
+    viewS.labNameShop.text=model.goodsName;
+    viewS.labPriceShop.text=[NSString stringWithFormat:@"%ld",model.goodsPrice];
+    
+    
+    viewS.frame=cell.bounds;
+    [cell.contentView addSubview:viewS];
     return cell;
 }
 
 //设置每个item的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake((skScreenWidth-30)/2, 100);
+    return CGSizeMake((skScreenWidth-30)/2, 180);
 }
 
 //footer的size
@@ -151,15 +190,16 @@
     if (kind ==UICollectionElementKindSectionHeader){
         
         UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderReusableView" forIndexPath:indexPath];
-        
+    
+        [headerView addSubview:self.viewCycle];
         return headerView;
     }
     
-    if (kind ==UICollectionElementKindSectionFooter) {
-        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterReusableView" forIndexPath:indexPath];
-        
-        return headerView;
-    }
+//    if (kind ==UICollectionElementKindSectionFooter) {
+//        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterReusableView" forIndexPath:indexPath];
+//
+//        return headerView;
+//    }
     return nil;
 }
 
@@ -168,5 +208,60 @@
 {
     NSLog(@"点击了=%ld",indexPath.row);
     [self.collectionView reloadData];
+}
+
+
+-(void)honorForLee{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"isTopOnly":[NSNumber numberWithBool:YES],
+                        @"page":[NSNumber numberWithInteger:1],
+                        @"rows":[NSNumber numberWithInteger:5]
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGoods/honorForLee") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
+            self.arrList=[activityModel mj_objectArrayWithKeyValuesArray:modelList.list];
+            NSMutableArray *arrImage=[[NSMutableArray alloc] init];
+            for (int i =0; i < self.arrList.count; ++i) {
+                activityModel *model=[self.arrList objectAtIndex:i];
+                NSString *imageUrl=model.goodsPic;
+                [arrImage addObject:imageUrl];
+            }
+            self.viewCycle.imageURLStringsGroup = arrImage;
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+
+-(void)myGroupGoods{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{
+                        @"page":[NSNumber numberWithInteger:1],
+                        @"rows":[NSNumber numberWithInteger:self.rows]
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGoods/myGroupGoods") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            [self.collectionView.mj_footer endRefreshing];
+            [self.collectionView.mj_header endRefreshing];
+            
+            skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
+            
+            self.arrListActivivt=[activityModel mj_objectArrayWithKeyValuesArray:modelList.list];
+            
+            [self.collectionView reloadData];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        [self.collectionView.mj_footer endRefreshing];
+        [self.collectionView.mj_header endRefreshing];
+    }];
 }
 @end

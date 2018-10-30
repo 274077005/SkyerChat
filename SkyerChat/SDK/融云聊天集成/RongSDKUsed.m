@@ -34,6 +34,13 @@
     [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
         NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
         [self skSuccessLoginRong];
+        RCUserInfo *user=[[RCUserInfo alloc] init];
+        user.name=skUser.nickName;
+        user.portraitUri=skUser.portrait;
+        user.userId=userId;
+        [[RCIM sharedRCIM] setCurrentUserInfo:user];
+        [[RCIM sharedRCIM] setEnableMessageAttachUserInfo:YES];
+        
         successBlock(userId);
     } error:^(RCConnectErrorCode status) {
         NSLog(@"登陆的错误码为:%ld", status);
@@ -111,6 +118,10 @@
         });
         completion(groupInfo);
     }];
+}
+- (void)getAllMembersOfGroup:(NSString *)groupId
+                      result:(void (^)(NSArray<NSString *> *userIdList))resultBlock{
+    
 }
 - (void)onRCIMConnectionStatusChanged:(RCConnectionStatus)status {
     if (status == ConnectionStatus_KICKED_OFFLINE_BY_OTHER_CLIENT) {

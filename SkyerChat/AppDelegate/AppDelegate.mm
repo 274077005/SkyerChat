@@ -35,6 +35,13 @@
     [self.window makeKeyAndVisible];
     
     [[RongSDKUsed shareInstance] initRongWithAppkey:skRongAppKey];
+    [[RongSDKUsed shareInstance] skRongConnectWithToken:skUser.token success:^(NSString *userId) {
+        
+    } error:^(RCConnectErrorCode status) {
+        
+    } tokenIncorrect:^{
+        
+    }];
     [skRootViewController skRootLoginViewController];
 //    [skRootViewController skRootTabarViewController];
     
