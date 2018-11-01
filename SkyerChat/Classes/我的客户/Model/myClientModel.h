@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , copy) NSString              * userNo;
 @property (nonatomic , copy) NSString              * portrait;
 @property (nonatomic , copy) NSString              * joinTime;
+@property (nonatomic , copy) NSString              * nickName;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -32,12 +32,25 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyr-ce-vbh">
+                        <rect key="frame" x="0.0" y="48.5" width="321" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Y9t-Xz-Fdg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="kmm-6N-Ysd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Aa6-9x-aAO"/>
                     <constraint firstItem="iOM-Br-TYc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Sc5-eC-Rio"/>
+                    <constraint firstAttribute="bottom" secondItem="Lyr-ce-vbh" secondAttribute="bottom" id="XyJ-GL-7rP"/>
+                    <constraint firstAttribute="trailing" secondItem="Lyr-ce-vbh" secondAttribute="trailing" constant="-35" id="ZYv-MG-X2O"/>
                     <constraint firstItem="iOM-Br-TYc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="f7f-bj-ciM"/>
                     <constraint firstItem="kmm-6N-Ysd" firstAttribute="leading" secondItem="iOM-Br-TYc" secondAttribute="trailing" constant="8" id="nCo-73-sK4"/>
+                    <constraint firstItem="Lyr-ce-vbh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="oxZ-hv-N9e"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>

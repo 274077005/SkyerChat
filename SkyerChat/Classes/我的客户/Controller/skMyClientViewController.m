@@ -11,6 +11,7 @@
 #import "myClientTableViewCell.h"
 #import "myClientModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "skSingleChatViewController.h"
 @interface skMyClientViewController ()
 @property (nonatomic,strong) NSArray *arrList;
 @end
@@ -64,13 +65,17 @@
     }
     myClientModel *model=[self.arrList objectAtIndex:indexPath.row];
     
-    cell.labNikeName.text=model.userNo;
+    cell.labNikeName.text=model.nickName?model.nickName:model.userNo;
     [cell.imageTitle sd_setImageWithURL:[NSURL URLWithString:model.portrait] placeholderImage:[UIImage imageNamed:@"default_portrait_msg"]];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    myClientModel *model=[self.arrList objectAtIndex:indexPath.row];
+    skSingleChatViewController *view=[[skSingleChatViewController alloc] initWithConversationType:(ConversationType_PRIVATE) targetId:model.userNo];
+    view.title=model.nickName?model.nickName:model.userNo;
+    [self.navigationController pushViewController:view animated:YES];
 }
 /**
  获取通讯录列表
@@ -79,7 +84,7 @@
  */
 -(void)getAddressBookList:(NSString *)keyword{
     
-    NSDictionary *dic=@{@"keyword":keyword};
+    NSDictionary *dic=@{@"keywordss":keyword};
     
     [skAfTool SKPOST:skUrl(@"/intf/bizLinker/list") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
         
