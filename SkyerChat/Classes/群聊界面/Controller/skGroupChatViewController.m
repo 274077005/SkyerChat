@@ -8,12 +8,21 @@
 
 #import "skGroupChatViewController.h"
 #import "skGroupChatDetailsViewController.h"
+#import "GroupDesModel.h"
 
 @interface skGroupChatViewController ()
-
+@property (nonatomic,strong) GroupDesModel *model;
 @end
 
 @implementation skGroupChatViewController
+
+
+- (GroupDesModel *)model{
+    if (nil==_model) {
+        _model=[[GroupDesModel alloc] init];
+    }
+    return _model;
+}
 -(UIButton *)skCreatBtn:(NSString *)title btnTitleOrImage:(btntype)TitleOrImage btnLeftOrRight:(btnState)LeftOrRight{
     
     UIButton *but = [[UIButton alloc] init];
@@ -45,9 +54,13 @@
     @weakify(self)
     [[[self skCreatBtn:@"bar-更多-白" btnTitleOrImage:(btntypeImage) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)
-        skGroupChatDetailsViewController *view=[[skGroupChatDetailsViewController alloc] init];
-        [self.navigationController pushViewController:view animated:YES];
+        if (self.model) {
+            skGroupChatDetailsViewController *view=[[skGroupChatDetailsViewController alloc] init];
+            view.model=self.model;
+            [self.navigationController pushViewController:view animated:YES];
+        }
     }];
+    [self bizGroupgetGroup];
 }
 
 /*
@@ -59,5 +72,20 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(void)bizGroupgetGroup{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"groupNo":self.targetId
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroup/getGroup") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            self.model=[GroupDesModel mj_objectWithKeyValues:responseObject.data];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
 @end

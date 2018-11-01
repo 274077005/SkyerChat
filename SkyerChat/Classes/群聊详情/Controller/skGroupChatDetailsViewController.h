@@ -7,11 +7,12 @@
 //
 
 #import "skBaseViewController.h"
+#import "GroupDesModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface skGroupChatDetailsViewController : skBaseViewController
-
+@property (nonatomic,strong) GroupDesModel *model;
 @end
 
 NS_ASSUME_NONNULL_END
