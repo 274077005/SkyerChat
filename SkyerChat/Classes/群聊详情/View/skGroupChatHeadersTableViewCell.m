@@ -7,6 +7,8 @@
 //
 
 #import "skGroupChatHeadersTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 
 #define KCellID @"skGroupChatHeadersViewID"
 #define KHedderID @"skGroupChatHeadersViewHedderID"
@@ -31,18 +33,17 @@
         //设置collectionView滚动方向
         [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
         //设置headerView的尺寸大小
-//        layout.headerReferenceSize = CGSizeMake(self.frame.size.width, 120);
+//        layout.headerReferenceSize = CGSizeMake(self.frame.size.width, 20);
         //设置尾部的尺寸大小
-        //        layout.footerReferenceSize = CGSizeMake(self.view.frame.size.width, 137);
-        //该方法也可以设置itemSize
+        layout.footerReferenceSize = CGSizeMake(self.frame.size.width, 30);
+//        该方法也可以设置itemSize
         
         
-        layout.itemSize =CGSizeMake((skScreenWidth-60)/5, 50);
+        layout.itemSize =CGSizeMake((skScreenWidth-60)/5, 60);
         _collectionView=[[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
-        _collectionView.backgroundColor=KcolorBackground;
         
         [self.contentView addSubview:_collectionView];
-        
+        [_collectionView setBackgroundColor:[UIColor whiteColor]];
         
         [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(0);
@@ -55,8 +56,8 @@
         //注册headerView  此处的ReuseIdentifier 必须和 cellForItemAtIndexPath 方法中 一致  均为reusableView
         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:KHedderID];
         
-        //        [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:KFooterID];
-        
+        [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:KFooterID];
+        _collectionView.bounces = NO;
         //4.设置代理
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
@@ -74,7 +75,12 @@
 //每个section的item个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    if (self.arrModelList.count<10) {
+        return self.arrModelList.count+1;
+    }else{
+        return 10;
+    }
+    return 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -87,14 +93,32 @@
             [view removeFromSuperview];
         }
     }
-    cell.contentView.backgroundColor=[UIColor redColor];
+    
+    UIImageView *imageHeaderView=[[UIImageView alloc] init];
+    [cell.contentView addSubview:imageHeaderView];
+    [imageHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(50, 50));
+        make.center.mas_equalTo(cell.contentView.center);
+    }];
+    NSString *imageName=@"聊天-更多";
+    if (indexPath.row<self.arrModelList.count) {
+        groupUserModel *model=[self.arrModelList objectAtIndex:indexPath.row];
+        imageName=model.portrait;
+        [imageHeaderView sd_setImageWithURL:[NSURL URLWithString:imageName] placeholderImage:[UIImage imageNamed:@"default_portrait_msg"]];
+    }else{
+        imageHeaderView.image=[UIImage imageNamed:imageName];
+    }
+    
+    [imageHeaderView skSetBoardRadius:25 Width:1 andBorderColor:[UIColor whiteColor]];
+
+    [cell addSubview:imageHeaderView];
     return cell;
 }
 
 //设置每个item的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake((skScreenWidth-60)/5, 50);
+    return CGSizeMake((skScreenWidth-60)/5, 60);
 }
 
 //footer的size
@@ -139,11 +163,21 @@
         return headerView;
     }
     
-    //    if (kind ==UICollectionElementKindSectionFooter) {
-    //        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:KFooterID forIndexPath:indexPath];
-    //
-    //        return headerView;
-    //    }
+        if (kind ==UICollectionElementKindSectionFooter) {
+            UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:KFooterID forIndexPath:indexPath];
+    
+            UIButton *btn=[[UIButton alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 30)];
+            [btn setBackgroundColor:KcolorBackground];
+            [btn setTitle:@"查看更多群成员>" forState:(UIControlStateNormal)];
+            [btn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+            [btn setTitleColor:[UIColor grayColor] forState:(UIControlStateNormal)];
+            [btn setBackgroundColor:[UIColor whiteColor]];
+            [headerView addSubview:btn];
+            [[btn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+                
+            }];
+            return headerView;
+        }
     return nil;
 }
 

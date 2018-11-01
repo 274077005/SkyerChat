@@ -56,6 +56,7 @@
         @strongify(self)
         if (self.model) {
             skGroupChatDetailsViewController *view=[[skGroupChatDetailsViewController alloc] init];
+            view.model=self.model;
             [self.navigationController pushViewController:view animated:YES];
         }
     }];
@@ -77,7 +78,7 @@
                         };
     
     
-    [skAfTool SKPOST:skUrl(@"/intf/bizGroup/getGroup") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroup/getGroup") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
             self.model=[GroupDesModel mj_objectWithKeyValues:responseObject.data];
