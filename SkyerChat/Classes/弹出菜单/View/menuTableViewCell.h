@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface menuTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *labTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labLine;
 
 @end
 

@@ -37,7 +37,7 @@
               @"intfName":@"",
               @"usertype":@"5",
               @"userno":skUser.userNo,
-              @"token":skUser.token,
+              @"token":skUser.token?skUser.token:@"",
               @"nonce":nonce,
               @"sign":@""
               };

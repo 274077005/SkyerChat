@@ -23,13 +23,18 @@
 -(void)addTableView{
     [self.view addSubview:self.tableView];
     self.tableView.backgroundColor=[UIColor whiteColor];
-    [self.tableView skSetShadowWithColor:[UIColor lightGrayColor] andSizeMake:CGSizeMake(0, 0) Radius:2];
+    
+
     self.tableView.bounces = NO;
+    CGFloat hight=self.arrTitle.count*40;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(50);
         make.right.mas_equalTo(-30);
-        make.size.mas_equalTo(CGSizeMake(120, 200));
+        make.size.mas_equalTo(CGSizeMake(120, hight));
     }];
+    
+//    [self.tableView skSetShadowWithColor:KcolorMain andSizeMake:CGSizeMake(0, 0) Radius:5];
+    [self.tableView skSetBoardRadius:5 Width:1 andBorderColor:[UIColor groupTableViewBackgroundColor]];
 }
 /*
 #pragma mark - Navigation
@@ -58,6 +63,9 @@
         cell = skXibView(@"menuTableViewCell");
     }
     cell.labTitle.text=self.arrTitle[indexPath.row];
+    if (indexPath.row==self.arrTitle.count-1) {
+        [cell.labLine setHidden:YES];
+    }
     return cell;
     
 }

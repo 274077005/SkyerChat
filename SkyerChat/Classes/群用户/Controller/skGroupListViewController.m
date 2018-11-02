@@ -99,8 +99,20 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 50;
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 30;
+}
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     return self.viewSearch;
+}
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UILabel *labTitel=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 30)];
+    labTitel.text=[NSString stringWithFormat:@"拥有%ld个群组",self.arrGroupList.count];
+    labTitel.font=[UIFont systemFontOfSize:15];
+    labTitel.textColor=[UIColor whiteColor];
+    labTitel.textAlignment=1;
+    labTitel.backgroundColor=skUIColorFromRGB(0xEEEEEE);
+    return labTitel;
 }
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     

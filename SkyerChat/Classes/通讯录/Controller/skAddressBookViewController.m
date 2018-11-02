@@ -18,6 +18,7 @@
 @interface skAddressBookViewController ()
 @property (nonatomic,strong) SkChildViews *viewChild;
 @property (nonatomic,strong) AddressBookTitleView *viewTitle;
+
 @end
 
 @implementation skAddressBookViewController
@@ -71,7 +72,7 @@
         
         skMenuViewController *viewCharge=[[skMenuViewController alloc] init];
         //关键语句，必须有
-        viewCharge.arrTitle=@[@"新建聊天群",@"合并聊天群",@"解散聊天群",@"新建独立房间",@"添加好友"];
+        viewCharge.arrTitle=@[@"新建聊天群",@"合并聊天群",@"添加好友"];
         viewCharge.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.1];
         viewCharge.modalPresentationStyle = UIModalPresentationOverFullScreen;
         [viewCharge setChargeType:^(NSInteger index) {
@@ -89,7 +90,8 @@
                     break;
                 case 2:
                 {
-                    
+                    skAddFriendViewController *view=[[skAddFriendViewController alloc] init];
+                    [self.navigationController pushViewController:view animated:YES];
                 }
                     break;
                 case 3:
@@ -99,8 +101,7 @@
                     break;
                 case 4:
                 {
-                    skAddFriendViewController *view=[[skAddFriendViewController alloc] init];
-                    [self.navigationController pushViewController:view animated:YES];
+                    
                 }
                     break;
                     

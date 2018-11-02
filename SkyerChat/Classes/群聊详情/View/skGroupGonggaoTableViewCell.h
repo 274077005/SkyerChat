@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface skGroupGonggaoTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *labContain;
+@property (weak, nonatomic) IBOutlet UILabel *labTitle;
 
 @end
 

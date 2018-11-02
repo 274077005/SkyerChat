@@ -12,8 +12,10 @@
 #import "myClientModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "skSingleChatViewController.h"
+#import "skAddressBookSearch.h"
 @interface skMyClientViewController ()
 @property (nonatomic,strong) NSArray *arrList;
+@property (nonatomic,strong) skAddressBookSearch *viewSearch;
 @end
 
 @implementation skMyClientViewController
@@ -37,6 +39,18 @@
         make.bottom.mas_equalTo(self.mas_bottomLayoutGuideTop);
     }];
 }
+-(skAddressBookSearch *)viewSearch{
+    if (nil==_viewSearch) {
+        _viewSearch=skXibView(@"skAddressBookSearch");
+        @weakify(self)
+        [[_viewSearch.txtSearch rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+            @strongify(self)
+            if (x.length>0) {
+            }
+        }];
+    }
+    return _viewSearch;
+}
 /*
 #pragma mark - Navigation
 
@@ -54,7 +68,24 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 50;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 30;
+}
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return self.viewSearch;
+}
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UILabel *labTitel=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 30)];
+    labTitel.text=[NSString stringWithFormat:@"拥有%ld个客户",self.arrList.count];
+    labTitel.font=[UIFont systemFontOfSize:15];
+    labTitel.textColor=[UIColor whiteColor];
+    labTitel.textAlignment=1;
+    labTitel.backgroundColor=skUIColorFromRGB(0xEEEEEE);
+    return labTitel;
+}
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     

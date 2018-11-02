@@ -27,7 +27,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-gd-RPW">
                         <rect key="frame" x="16" y="38.5" width="84" height="1"/>
-                        <color key="backgroundColor" white="0.87749565969999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="ZDQ-qq-Sm4"/>
                         </constraints>
@@ -47,6 +47,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="labLine" destination="rh3-gd-RPW" id="S6m-GV-Pkh"/>
                 <outlet property="labTitle" destination="gfe-rR-VLb" id="aYD-I9-kRu"/>
             </connections>
             <point key="canvasLocation" x="-120" y="46.776611694152926"/>

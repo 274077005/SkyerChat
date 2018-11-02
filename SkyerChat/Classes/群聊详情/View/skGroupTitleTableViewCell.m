@@ -1,14 +1,14 @@
 //
-//  skGroupChatTitleTableViewCell.m
+//  skGroupTitleTableViewCell.m
 //  SkyerChat
 //
-//  Created by admin on 2018/10/31.
+//  Created by admin on 2018/11/2.
 //  Copyright © 2018 www.skyer.com. All rights reserved.
 //
 
-#import "skGroupChatTitleTableViewCell.h"
+#import "skGroupTitleTableViewCell.h"
 
-@implementation skGroupChatTitleTableViewCell
+@implementation skGroupTitleTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

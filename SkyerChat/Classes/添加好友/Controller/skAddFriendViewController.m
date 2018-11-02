@@ -11,17 +11,25 @@
 #import "skAddFriendTableViewCell.h"
 #import "skAddressBookModel.h"
 #import "skLinkFriendModel.h"
+#import "UIImageView+WebCache.h"
 
 @interface skAddFriendViewController ()
 
 @property (nonatomic,strong) NSArray *arrList;
 @property (nonatomic,strong) NSMutableArray *arrListPhone;
 @property (nonatomic,strong) NSMutableArray *arrListPhoneBack;
+@property (nonatomic,strong) NSMutableDictionary *dicPhone;
+
 
 @end
 
 @implementation skAddFriendViewController
-
+- (NSMutableDictionary *)dicPhone{
+    if (nil==_dicPhone) {
+        _dicPhone=[[NSMutableDictionary alloc] init];
+    }
+    return _dicPhone;
+}
 - (NSMutableArray *)arrListPhone{
     if (nil==_arrListPhone) {
         _arrListPhone=[[NSMutableArray alloc] init];
@@ -38,6 +46,7 @@
 
 -(void)addTableView{
     [self.view addSubview:self.tableView];
+    self.tableView.backgroundColor=KcolorBackground;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
         make.left.right.mas_equalTo(0);
@@ -53,8 +62,9 @@
     
     [PPGetAddressBook getOriginalAddressBook:^(NSArray<PPPersonModel *> *addressBookArray) {
         self.arrList=addressBookArray;
-        [self.tableView reloadData];
+        
         [self findByPhoneNos];
+        
     } authorizationFailure:^{
         UIAlertController *view=[UIAlertController alertControllerWithTitle:@"允许访问权限" message:@"设置-隐私-通讯录”选项中，允许APP访问您的通讯录" preferredStyle:(UIAlertControllerStyleAlert)];
         
@@ -91,7 +101,7 @@
     return self.arrListPhoneBack.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 56;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -103,8 +113,10 @@
     }
     
     skLinkFriendModel *model=[self.arrListPhoneBack objectAtIndex:indexPath.row];
-    cell.labName.text=model.nickName;
+    cell.labName.text=model.nickName?model.nickName:model.userNo;
     Boolean isAdd=model.isAdded;
+    
+    cell.labPhone.text=[NSString stringWithFormat:@"[手机联系人]%@",[self.dicPhone objectForKey:model.phoneNo]];
     
     if (isAdd) {
         [cell.btnAddFriend setTitle:@"已添加" forState:(UIControlStateNormal)];
@@ -112,9 +124,12 @@
         [cell.btnAddFriend setEnabled:NO];
     }else{
         [cell.btnAddFriend setTitle:@"添加" forState:(UIControlStateNormal)];
-        [cell.btnAddFriend setTitleColor:[UIColor blueColor] forState:(UIControlStateNormal)];
+        [cell.btnAddFriend setTitleColor:KcolorMain forState:(UIControlStateNormal)];
+        [cell.btnAddFriend skSetBoardRadius:3 Width:1 andBorderColor:KcolorMain];
         [cell.btnAddFriend setEnabled:YES];
     }
+    [cell.imageHeader sd_setImageWithURL:[NSURL URLWithString:model.portrait]];
+    [cell.imageHeader skSetBoardRadius:22 Width:0 andBorderColor:[UIColor clearColor]];
     @weakify(self)
     [[cell.btnAddFriend rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)
@@ -128,18 +143,17 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-
-
-
 -(void)findByPhoneNos{
     ///intf/bizUser/sendRegister
     
     for (int i =0; i<self.arrList.count; ++i) {
         PPPersonModel *model=[self.arrList objectAtIndex:i];
         NSString *phone=[model.mobileArray firstObject];
+        NSString *name=model.name;
         if (!phone) {
             phone=@"1";
         }
+        [self.dicPhone setValue:name forKey:phone];
         [self.arrListPhone addObject:phone];
     }
     
@@ -155,8 +169,6 @@
             skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
             
            self.arrListPhoneBack =[skLinkFriendModel mj_objectArrayWithKeyValuesArray:modelList.list];
-            
-            NSLog(@"====%@",self.arrListPhoneBack);
             
             [self.tableView reloadData];
         }

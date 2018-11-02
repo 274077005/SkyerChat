@@ -20,7 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , copy) NSString              * createUserNo;
 @property (nonatomic , copy) NSString              * createNickname;
 @property (nonatomic , copy) NSString              * groupNo;
+@property (nonatomic , copy) NSString              * groupIcon;
 @property (nonatomic , assign) BOOL              status;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIButton *btnAddFriend;
 @property (weak, nonatomic) IBOutlet UILabel *labName;
+@property (weak, nonatomic) IBOutlet UIImageView *imageHeader;
+@property (weak, nonatomic) IBOutlet UILabel *labPhone;
 
 @end
 

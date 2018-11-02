@@ -54,7 +54,7 @@
     @weakify(self)
     [[[self skCreatBtn:@"bar-更多-白" btnTitleOrImage:(btntypeImage) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)
-        if (self.model) {
+        if (self.model.groupNo) {
             skGroupChatDetailsViewController *view=[[skGroupChatDetailsViewController alloc] init];
             view.model=self.model;
             [self.navigationController pushViewController:view animated:YES];
