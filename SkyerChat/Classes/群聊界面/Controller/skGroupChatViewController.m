@@ -76,8 +76,7 @@
     ///intf/bizUser/sendRegister
     NSDictionary *dic=@{@"groupNo":self.targetId
                         };
-    
-    
+
     [skAfTool SKPOST:skUrl(@"/intf/bizGroup/getGroup") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {

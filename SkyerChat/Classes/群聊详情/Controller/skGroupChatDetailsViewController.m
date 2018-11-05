@@ -193,6 +193,32 @@
         return;
     }
     
+    if ([modelCell.title isEqualToString:@"群名称"]) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"群名称" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        //以下方法就可以实现在提示框中输入文本；
+        
+        //在AlertView中添加一个输入框
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            
+            textField.placeholder = @"输入群名称";
+            textField.text=self.model.groupName;
+            
+        }];
+        
+        //添加一个确定按钮 并获取AlertView中的第一个输入框 将其文本赋值给BUTTON的title
+        [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            UITextField *envirnmentNameTextField = alertController.textFields.firstObject;
+            [self bizGroupupdate:envirnmentNameTextField.text image:nil];
+        }]];
+        
+        //添加一个取消按钮
+        [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+        
+        //present出AlertView
+        [self presentViewController:alertController animated:true completion:nil];
+    }
+    
     NSString *viewString=modelCell.goViewName;
     UIViewController *view=[[NSClassFromString(viewString) alloc] init];
     [self.navigationController pushViewController:view animated:YES];
@@ -204,11 +230,19 @@
 -(void)bizGroupupdate:(NSString *)name image:(UIImage*)image{
     
     ///intf/bizUser/sendRegister
-    NSDictionary *dic=@{@"groupName":name.length>0?name:self.model.groupName,
-                        @"groupNo":self.model.groupNo,
-                        @"groupIconBase64":[self imageBase64:image]
-                        };
-    
+    NSDictionary *dic;
+    if (name.length>0) {
+        dic=@{@"groupName":name.length>0?name:self.model.groupName,
+              @"groupNo":self.model.groupNo
+              };
+    }
+    if (image) {
+        dic=@{
+              @"groupName":name.length>0?name:self.model.groupName,
+              @"groupNo":self.model.groupNo,
+              @"groupIconBase64":[self imageBase64:image]
+              };
+    }
     
     [skAfTool SKPOST:skUrl(@"/intf/bizGroup/update") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
