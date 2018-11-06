@@ -15,7 +15,17 @@
 #define KFooterID @"skGroupChatHeadersViewFooterID"
 
 @implementation skGroupChatHeadersTableViewCell
-
+-(UIButton *)btnMore{
+    if (nil==_btnMore) {
+        _btnMore=[[UIButton alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 30)];
+        [_btnMore setBackgroundColor:KcolorBackground];
+        [_btnMore setTitle:@"查看更多群成员>" forState:(UIControlStateNormal)];
+        [_btnMore.titleLabel setFont:[UIFont systemFontOfSize:14]];
+        [_btnMore setTitleColor:[UIColor grayColor] forState:(UIControlStateNormal)];
+        [_btnMore setBackgroundColor:[UIColor whiteColor]];
+    }
+    return _btnMore;
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -166,16 +176,9 @@
         if (kind ==UICollectionElementKindSectionFooter) {
             UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:KFooterID forIndexPath:indexPath];
     
-            UIButton *btn=[[UIButton alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 30)];
-            [btn setBackgroundColor:KcolorBackground];
-            [btn setTitle:@"查看更多群成员>" forState:(UIControlStateNormal)];
-            [btn.titleLabel setFont:[UIFont systemFontOfSize:14]];
-            [btn setTitleColor:[UIColor grayColor] forState:(UIControlStateNormal)];
-            [btn setBackgroundColor:[UIColor whiteColor]];
-            [headerView addSubview:btn];
-            [[btn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-                
-            }];
+            
+            [headerView addSubview:self.btnMore];
+            
             return headerView;
         }
     return nil;

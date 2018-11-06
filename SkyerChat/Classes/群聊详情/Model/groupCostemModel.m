@@ -32,7 +32,7 @@
     groupCellModel *model0=[[groupCellModel alloc] init];
     model0.title=@"群公告";
     model0.goViewName=@"";
-    model0.type=cellTypeTitle;
+    model0.type=cellTypeNormal;
     
     groupCellModel *model1=[[groupCellModel alloc] init];
     model1.title=@"群头像";
@@ -64,11 +64,11 @@
     model5.goViewName=@"";
     model5.type=cellTypeNormal;
     
-    groupCellModel *model6=[[groupCellModel alloc] init];
-    model6.title=@"解散群";
-    model6.goViewName=@"";
-    model6.type=cellTypeNormal;
-    NSArray *arr2=@[model3,model4,model5,model6];
+//    groupCellModel *model6=[[groupCellModel alloc] init];
+//    model6.title=@"解散群";
+//    model6.goViewName=@"";
+//    model6.type=cellTypeNormal;
+    NSArray *arr2=@[model3,model4,model5];
     [self.arrList addObject:arr2];
     
 }

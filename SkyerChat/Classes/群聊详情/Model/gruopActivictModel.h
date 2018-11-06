@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+//活动的数据模型
 @interface gruopActivictModel : NSObject
 @property (nonatomic , copy) NSString              * goodsNo;
 @property (nonatomic , assign) NSInteger              goodsId;

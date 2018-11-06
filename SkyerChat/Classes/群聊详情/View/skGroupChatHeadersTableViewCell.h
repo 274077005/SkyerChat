@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface skGroupChatHeadersTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,strong) NSArray *arrModelList;
+@property (nonatomic,strong) UIButton *btnMore;
 @end
 
 NS_ASSUME_NONNULL_END

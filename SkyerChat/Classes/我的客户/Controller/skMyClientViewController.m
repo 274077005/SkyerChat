@@ -45,8 +45,7 @@
         @weakify(self)
         [[_viewSearch.txtSearch rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
             @strongify(self)
-            if (x.length>0) {
-            }
+            [self getAddressBookList:x];
         }];
     }
     return _viewSearch;
@@ -114,8 +113,11 @@
  @param keyword 关键字
  */
 -(void)getAddressBookList:(NSString *)keyword{
-    
     NSDictionary *dic=@{@"keywordss":keyword};
+    if (keyword.length>0) {
+        dic=@{@"keyword":keyword};
+    }
+    
     
     [skAfTool SKPOST:skUrl(@"/intf/bizLinker/list") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
         
@@ -126,7 +128,6 @@
             self.arrList= [myClientModel mj_objectArrayWithKeyValuesArray:modelList.list];
             
             [self.tableView reloadData];
-            
         }
         
     } failure:^(NSError * _Nullable error) {

@@ -43,8 +43,6 @@
 //    self.title=@"通讯录";
     [self addTableView];
     
-    [self bizGroupMyGroup];
-    
     [self createRefreshHeaderViewWithBlock:^{
         self.rowGroup=0;
         [self bizGroupMyGroup];
@@ -55,7 +53,10 @@
     }];
     
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self bizGroupMyGroup];
+}
 
 -(void)addTableView{
     [self.view addSubview:self.tableView];

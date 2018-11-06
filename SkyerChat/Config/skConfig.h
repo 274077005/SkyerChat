@@ -19,6 +19,7 @@
 //账号密码保存
 #define skLoginUserName @"LoginUserName"
 #define skLoginUserPWD @"LoginUserPWD"
+#define skLoginUserAuto @"LoginUserAuto"
 //封装的af单例
 #define skAfTool [skAFNetworkingTool shareInstance]
 //xib获取

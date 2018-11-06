@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
  进入选下卡首页
  */
 +(void)skRootTabarViewController;
+
++(void)skAutoLogin;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -83,10 +83,14 @@
     // Do any additional setup after loading the view.
     [self.view addSubview:self.viewLogin];
     [self racAction];
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self rememberUser];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:skLoginUserAuto]) {
+        [self userLoginAction];
+    }
     [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
 }
 

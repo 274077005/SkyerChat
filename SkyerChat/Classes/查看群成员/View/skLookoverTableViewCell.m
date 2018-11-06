@@ -1,19 +1,19 @@
 //
-//  skGroupTitleTableViewCell.m
+//  skLookoverTableViewCell.m
 //  SkyerChat
 //
-//  Created by admin on 2018/11/2.
+//  Created by admin on 2018/11/6.
 //  Copyright © 2018 www.skyer.com. All rights reserved.
 //
 
-#import "skGroupTitleTableViewCell.h"
+#import "skLookoverTableViewCell.h"
 
-@implementation skGroupTitleTableViewCell
+@implementation skLookoverTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    [self.imageHeader skSetBoardRadius:20 Width:0 andBorderColor:[UIColor redColor]];
+    [self.imageHeader skSetBoardRadius:20 Width:0 andBorderColor:nil];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

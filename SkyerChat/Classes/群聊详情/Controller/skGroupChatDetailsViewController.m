@@ -16,6 +16,8 @@
 #import "skGroupTitleTableViewCell.h"
 #import "UIImageView+WebCache.h"
 #import "skImagePicker.h"
+#import "skLookoverViewController.h"
+#import "skSingleChatViewController.h"
 
 
 @interface skGroupChatDetailsViewController ()
@@ -36,6 +38,29 @@
 - (skGroupChatHeadersTableViewCell *)cellHeaders{
     if (nil==_cellHeaders) {
         _cellHeaders=skXibView(@"skGroupChatHeadersTableViewCell");
+
+        if ([self.model.createUserNo isEqualToString:skUser.userNo]) {
+            [_cellHeaders.btnMore setTitle:@"查看群成员>" forState:(UIControlStateNormal)];
+        }else{
+            [_cellHeaders.btnMore setTitle:@"联系群主>" forState:(UIControlStateNormal)];
+        }
+        
+        @weakify(self)
+        [[_cellHeaders.btnMore rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            if ([self.model.createUserNo isEqualToString:skUser.userNo]) {
+                skLookoverViewController *view=[[skLookoverViewController alloc] init];
+                view.modelOther=self.model;
+                [self.navigationController pushViewController:view animated:YES];
+            }else{
+                skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
+                conversationVC.conversationType = ConversationType_PRIVATE;
+                conversationVC.targetId = self.model.createUserNo;
+                conversationVC.title = self.model.createNickname;
+                [self.navigationController pushViewController:conversationVC animated:YES];
+            }
+            
+        }];
         [_cellHeaders.collectionView reloadData];
     }
     return _cellHeaders;
@@ -178,50 +203,84 @@
     }
     return nil;
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if (section==self.modelCell.arrList.count-1) {
+        return 50;
+    }
+    return 0;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 50)];
+    view.backgroundColor=KcolorBackground;
+    UIButton *btn=[[UIButton alloc] initWithFrame:CGRectMake(20, 10, skScreenWidth-40, 40)];
+    [btn setBackgroundColor:[UIColor redColor]];
+    [btn setTitle:@"解散或退出群聊" forState:(UIControlStateNormal)];
+    [btn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+    [btn skSetBoardRadius:5 Width:0 andBorderColor:nil];
+    [[btn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        
+    }];
+    [view addSubview:btn];
+    
+    return view;
+}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     
+    
     NSArray *arr=[self.modelCell.arrList objectAtIndex:indexPath.section];
     groupCellModel *modelCell=[arr objectAtIndex:indexPath.row];
     
-    if ([modelCell.title isEqualToString:@"群头像"]) {
-        [skImagePicker showImagePickerFromViewController:self allowsEditing:YES finishAction:^(UIImage *image) {
-            [self bizGroupupdate:@"" image:image];
-        }];
-        return;
+    if ([modelCell.title isEqualToString:@"邀请好友"]) {//除了邀请好友大家都有权限,其他的权限只有群主
+        NSString *viewString=modelCell.goViewName;
+        UIViewController *view=[[NSClassFromString(viewString) alloc] init];
+        [self.navigationController pushViewController:view animated:YES];
+    }else{
+        if ([skUser.userNo isEqualToString:self.model.createUserNo]) {
+            if ([modelCell.title isEqualToString:@"群头像"]) {
+                [skImagePicker showImagePickerFromViewController:self allowsEditing:YES finishAction:^(UIImage *image) {
+                    [self bizGroupupdate:@"" image:image];
+                }];
+                return;
+            }
+            
+            if ([modelCell.title isEqualToString:@"群名称"]) {
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"群名称" message:nil preferredStyle:UIAlertControllerStyleAlert];
+                //以下方法就可以实现在提示框中输入文本；
+                
+                //在AlertView中添加一个输入框
+                [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                    
+                    textField.placeholder = @"输入群名称";
+                    textField.text=self.model.groupName;
+                    
+                }];
+                
+                //添加一个确定按钮 并获取AlertView中的第一个输入框 将其文本赋值给BUTTON的title
+                [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    
+                    UITextField *envirnmentNameTextField = alertController.textFields.firstObject;
+                    [self bizGroupupdate:envirnmentNameTextField.text image:nil];
+                }]];
+                
+                //添加一个取消按钮
+                [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+                
+                //present出AlertView
+                [self presentViewController:alertController animated:true completion:nil];
+            }
+            
+            NSString *viewString=modelCell.goViewName;
+            UIViewController *view=[[NSClassFromString(viewString) alloc] init];
+            [self.navigationController pushViewController:view animated:YES];
+        }else{
+            [SkToast SkToastShow:@"只有群主有权限操作" withHight:300];
+        }
     }
-    
-    if ([modelCell.title isEqualToString:@"群名称"]) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"群名称" message:nil preferredStyle:UIAlertControllerStyleAlert];
-        //以下方法就可以实现在提示框中输入文本；
-        
-        //在AlertView中添加一个输入框
-        [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-            
-            textField.placeholder = @"输入群名称";
-            textField.text=self.model.groupName;
-            
-        }];
-        
-        //添加一个确定按钮 并获取AlertView中的第一个输入框 将其文本赋值给BUTTON的title
-        [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            
-            UITextField *envirnmentNameTextField = alertController.textFields.firstObject;
-            [self bizGroupupdate:envirnmentNameTextField.text image:nil];
-        }]];
-        
-        //添加一个取消按钮
-        [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
-        
-        //present出AlertView
-        [self presentViewController:alertController animated:true completion:nil];
-    }
-    
-    NSString *viewString=modelCell.goViewName;
-    UIViewController *view=[[NSClassFromString(viewString) alloc] init];
-    [self.navigationController pushViewController:view animated:YES];
     
 }
 
@@ -248,6 +307,14 @@
         
         if (responseObject.returnCode==0) {
             self.model=[GroupDesModel mj_objectWithKeyValues:responseObject.data];
+            
+            RCGroup *group=[[RCGroup alloc] init];
+            group.groupName=self.model.groupName;
+            group.groupId=self.model.groupNo;
+            group.portraitUri=self.model.groupIcon;
+            
+            [[RCIM sharedRCIM] refreshGroupInfoCache:group withGroupId:self.model.groupNo];
+            
             [self.tableView reloadData];
         }
         

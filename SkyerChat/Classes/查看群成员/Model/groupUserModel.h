@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+//群成员的数据模型
 @interface groupUserModel : NSObject
 @property (nonatomic , copy) NSString              * joinTime;
 @property (nonatomic , assign) NSInteger              groupId;
@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , copy) NSString              * portrait;
 @property (nonatomic , assign) NSInteger              userId;
 @property (nonatomic , assign) BOOL              isGag;
+@property (nonatomic , copy) NSString              * nickName;
 @end
 
 NS_ASSUME_NONNULL_END

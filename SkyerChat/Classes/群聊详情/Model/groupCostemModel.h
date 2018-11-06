@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+//群聊的cell的数据b模型
 @interface groupCostemModel : NSObject
 @property (nonatomic,strong) NSMutableArray *arrList;
 @end
