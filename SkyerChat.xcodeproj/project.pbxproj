@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		112442D770BB7AD1EC085B29 /* Pods_SkyerChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEEFA8DB78EAE898D127450E /* Pods_SkyerChat.framework */; };
+		20FF8D612194864A000D686D /* skAddGroupFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FF8D602194864A000D686D /* skAddGroupFriendViewController.m */; };
+		20FF8D67219486A9000D686D /* addGroupriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FF8D65219486A9000D686D /* addGroupriendTableViewCell.m */; };
+		20FF8D68219486A9000D686D /* addGroupriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20FF8D66219486A9000D686D /* addGroupriendTableViewCell.xib */; };
 		84011AA1217483560005436B /* skAddressBookSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 84011AA0217483560005436B /* skAddressBookSearch.m */; };
 		84011AA3217483620005436B /* skAddressBookSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84011AA2217483620005436B /* skAddressBookSearch.xib */; };
 		84011AA6217489E60005436B /* skResponeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84011AA5217489E60005436B /* skResponeList.m */; };
@@ -139,6 +142,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20FF8D5F2194864A000D686D /* skAddGroupFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAddGroupFriendViewController.h; sourceTree = "<group>"; };
+		20FF8D602194864A000D686D /* skAddGroupFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAddGroupFriendViewController.m; sourceTree = "<group>"; };
+		20FF8D64219486A9000D686D /* addGroupriendTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addGroupriendTableViewCell.h; sourceTree = "<group>"; };
+		20FF8D65219486A9000D686D /* addGroupriendTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = addGroupriendTableViewCell.m; sourceTree = "<group>"; };
+		20FF8D66219486A9000D686D /* addGroupriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addGroupriendTableViewCell.xib; sourceTree = "<group>"; };
 		61CC84636590AF7642696194 /* Pods-SkyerChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyerChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat.release.xcconfig"; sourceTree = "<group>"; };
 		84011A9F217483560005436B /* skAddressBookSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAddressBookSearch.h; sourceTree = "<group>"; };
 		84011AA0217483560005436B /* skAddressBookSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAddressBookSearch.m; sourceTree = "<group>"; };
@@ -389,6 +397,42 @@
 				61CC84636590AF7642696194 /* Pods-SkyerChat.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		20FF8D5D219485EE000D686D /* 邀请群好友 */ = {
+			isa = PBXGroup;
+			children = (
+				20FF8D5E21948627000D686D /* Controller */,
+				20FF8D6321948673000D686D /* Model */,
+				20FF8D6221948673000D686D /* View */,
+			);
+			path = "邀请群好友";
+			sourceTree = "<group>";
+		};
+		20FF8D5E21948627000D686D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				20FF8D5F2194864A000D686D /* skAddGroupFriendViewController.h */,
+				20FF8D602194864A000D686D /* skAddGroupFriendViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		20FF8D6221948673000D686D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20FF8D64219486A9000D686D /* addGroupriendTableViewCell.h */,
+				20FF8D65219486A9000D686D /* addGroupriendTableViewCell.m */,
+				20FF8D66219486A9000D686D /* addGroupriendTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20FF8D6321948673000D686D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8419CDB4216D949E00DBE8F4 /* 键盘监听 */ = {
@@ -739,6 +783,7 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				20FF8D5D219485EE000D686D /* 邀请群好友 */,
 				84B7F3C42191245F00793DDD /* 查看群成员 */,
 				842EAAE42188617700CA9E25 /* 群聊详情 */,
 				84D5CD622182EE6300DB762E /* 弹出菜单 */,
@@ -1587,6 +1632,7 @@
 				84EEBAC22179C4F000EDBA1E /* skAddAddressTableViewCell.xib in Resources */,
 				842CFAA6216F283E00A847AB /* UserCenterTitleTableViewCell.xib in Resources */,
 				842CFAA1216F233B00A847AB /* UserCenterOrderTableViewCell.xib in Resources */,
+				20FF8D68219486A9000D686D /* addGroupriendTableViewCell.xib in Resources */,
 				842EAAF421894DF800CA9E25 /* skGroupChatHeadersTableViewCell.xib in Resources */,
 				84EEBABA2179C03A00EDBA1E /* AddressListTableViewCell.xib in Resources */,
 				84D802302175990800E1894F /* UserCenterLoginOutTableViewCell.xib in Resources */,
@@ -1765,6 +1811,7 @@
 				842CFAA0216F233B00A847AB /* UserCenterOrderTableViewCell.m in Sources */,
 				849959F1217DC2B100FD8A20 /* skChangePasswordModel.m in Sources */,
 				8419CDEC216DD99800DBE8F4 /* skActivityViewController.m in Sources */,
+				20FF8D612194864A000D686D /* skAddGroupFriendViewController.m in Sources */,
 				84995A00217EC62300FD8A20 /* skAuthenticationModel.m in Sources */,
 				842EAADE2187E81C00CA9E25 /* viewShop.m in Sources */,
 				84CCF584216F5178004DE670 /* skChangeUserinfoNikeNameTableViewCell.m in Sources */,
@@ -1773,6 +1820,7 @@
 				84A78E7E215F574A0013F614 /* skAFNetworkingTool.m in Sources */,
 				843B40B6216B337400356306 /* NSDictionary+skDictionary.m in Sources */,
 				84A78E85215F5DA70013F614 /* RongSDKUsed.m in Sources */,
+				20FF8D67219486A9000D686D /* addGroupriendTableViewCell.m in Sources */,
 				84CCF57F216F50AC004DE670 /* skChangeUserinfoHeaderTableViewCell.m in Sources */,
 				84537B792154897E00E4CB29 /* AppDelegate.mm in Sources */,
 				84E65CD02179CC0D00A379E0 /* skAddressViewController.m in Sources */,

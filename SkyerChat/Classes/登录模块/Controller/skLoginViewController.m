@@ -88,9 +88,9 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self rememberUser];
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:skLoginUserAuto]) {
-        [self userLoginAction];
-    }
+//    if ([[NSUserDefaults standardUserDefaults] objectForKey:skLoginUserAuto]) {
+//        [self userLoginAction];
+//    }
     [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
 }
 

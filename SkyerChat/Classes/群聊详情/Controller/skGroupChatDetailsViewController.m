@@ -38,14 +38,22 @@
 - (skGroupChatHeadersTableViewCell *)cellHeaders{
     if (nil==_cellHeaders) {
         _cellHeaders=skXibView(@"skGroupChatHeadersTableViewCell");
-
+        
+        
+        @weakify(self)
+        [[_cellHeaders rac_signalForSelector:@selector(skAddFriend)] subscribeNext:^(RACTuple * _Nullable x) {
+            @strongify(self)
+            
+        }];
+        
+        
         if ([self.model.createUserNo isEqualToString:skUser.userNo]) {
             [_cellHeaders.btnMore setTitle:@"查看群成员>" forState:(UIControlStateNormal)];
         }else{
             [_cellHeaders.btnMore setTitle:@"联系群主>" forState:(UIControlStateNormal)];
         }
         
-        @weakify(self)
+        
         [[_cellHeaders.btnMore rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
             if ([self.model.createUserNo isEqualToString:skUser.userNo]) {

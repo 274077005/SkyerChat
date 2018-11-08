@@ -101,19 +101,20 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         groupUserModel *model=[self.arrList objectAtIndex:indexPath.row];
-        [self bizGroupUserdelete:model.userNo];
+        [self bizGroupUserdelete:self.modelOther.groupNo kickOut:model.userNo];
     }
 }
--(void)bizGroupUserdelete:(NSString *)groupNo{
+-(void)bizGroupUserdelete:(NSString *)groupNo kickOut:(NSString *)kickOut{
     ///intf/bizUser/sendRegister
-    NSDictionary *dic=@{@"groupNo":groupNo
+    NSDictionary *dic=@{@"groupNo":groupNo,
+                        @"userNos":@[kickOut]
                         };
     
     
-    [skAfTool SKPOST:skUrl(@"/intf/bizGroupUser/delete") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroupUser/kickOut") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
-            
+            [self bizGroupUserlist];
         }
         
     } failure:^(NSError * _Nullable error) {

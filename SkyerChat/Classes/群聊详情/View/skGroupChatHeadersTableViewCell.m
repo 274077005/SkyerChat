@@ -188,5 +188,12 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"点击了=%ld",indexPath.row);
+    if (indexPath.row==self.arrModelList.count) {
+        [self skAddFriend];
+    }
 }
+-(void)skAddFriend{
+    
+}
+
 @end

@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,strong) NSArray *arrModelList;
 @property (nonatomic,strong) UIButton *btnMore;
+
+-(void)skAddFriend;
 @end
 
 NS_ASSUME_NONNULL_END
