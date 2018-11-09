@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *labName;
 @property (weak, nonatomic) IBOutlet UILabel *labType;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageSelect;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		112442D770BB7AD1EC085B29 /* Pods_SkyerChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEEFA8DB78EAE898D127450E /* Pods_SkyerChat.framework */; };
 		20FF8D612194864A000D686D /* skAddGroupFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FF8D602194864A000D686D /* skAddGroupFriendViewController.m */; };
-		20FF8D67219486A9000D686D /* addGroupriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FF8D65219486A9000D686D /* addGroupriendTableViewCell.m */; };
-		20FF8D68219486A9000D686D /* addGroupriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20FF8D66219486A9000D686D /* addGroupriendTableViewCell.xib */; };
 		84011AA1217483560005436B /* skAddressBookSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 84011AA0217483560005436B /* skAddressBookSearch.m */; };
 		84011AA3217483620005436B /* skAddressBookSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84011AA2217483620005436B /* skAddressBookSearch.xib */; };
 		84011AA6217489E60005436B /* skResponeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84011AA5217489E60005436B /* skResponeList.m */; };
@@ -70,6 +68,9 @@
 		84637F4E217D744C009DB4FF /* skChangePasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84637F4C217D744C009DB4FF /* skChangePasswordTableViewCell.xib */; };
 		84637F52217D751A009DB4FF /* skChangePwdCodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84637F50217D751A009DB4FF /* skChangePwdCodeTableViewCell.m */; };
 		84637F53217D751A009DB4FF /* skChangePwdCodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84637F51217D751A009DB4FF /* skChangePwdCodeTableViewCell.xib */; };
+		84756E092195788E0018AB35 /* skCreatGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84756E082195788E0018AB35 /* skCreatGroupViewController.m */; };
+		84756E0C219578AD0018AB35 /* creatGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84756E0B219578AD0018AB35 /* creatGroupView.m */; };
+		84756E0E219578B70018AB35 /* creatGroupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84756E0D219578B70018AB35 /* creatGroupView.xib */; };
 		849959E9217D7F1000FD8A20 /* skSafeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849959E8217D7F1000FD8A20 /* skSafeViewController.m */; };
 		849959ED217D7F3D00FD8A20 /* skSafeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849959EB217D7F3D00FD8A20 /* skSafeTableViewCell.m */; };
 		849959EE217D7F3D00FD8A20 /* skSafeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849959EC217D7F3D00FD8A20 /* skSafeTableViewCell.xib */; };
@@ -144,9 +145,6 @@
 /* Begin PBXFileReference section */
 		20FF8D5F2194864A000D686D /* skAddGroupFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAddGroupFriendViewController.h; sourceTree = "<group>"; };
 		20FF8D602194864A000D686D /* skAddGroupFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAddGroupFriendViewController.m; sourceTree = "<group>"; };
-		20FF8D64219486A9000D686D /* addGroupriendTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addGroupriendTableViewCell.h; sourceTree = "<group>"; };
-		20FF8D65219486A9000D686D /* addGroupriendTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = addGroupriendTableViewCell.m; sourceTree = "<group>"; };
-		20FF8D66219486A9000D686D /* addGroupriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addGroupriendTableViewCell.xib; sourceTree = "<group>"; };
 		61CC84636590AF7642696194 /* Pods-SkyerChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyerChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat.release.xcconfig"; sourceTree = "<group>"; };
 		84011A9F217483560005436B /* skAddressBookSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAddressBookSearch.h; sourceTree = "<group>"; };
 		84011AA0217483560005436B /* skAddressBookSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAddressBookSearch.m; sourceTree = "<group>"; };
@@ -254,6 +252,11 @@
 		84637F4F217D751A009DB4FF /* skChangePwdCodeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skChangePwdCodeTableViewCell.h; sourceTree = "<group>"; };
 		84637F50217D751A009DB4FF /* skChangePwdCodeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skChangePwdCodeTableViewCell.m; sourceTree = "<group>"; };
 		84637F51217D751A009DB4FF /* skChangePwdCodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skChangePwdCodeTableViewCell.xib; sourceTree = "<group>"; };
+		84756E072195788E0018AB35 /* skCreatGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skCreatGroupViewController.h; sourceTree = "<group>"; };
+		84756E082195788E0018AB35 /* skCreatGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skCreatGroupViewController.m; sourceTree = "<group>"; };
+		84756E0A219578AD0018AB35 /* creatGroupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = creatGroupView.h; sourceTree = "<group>"; };
+		84756E0B219578AD0018AB35 /* creatGroupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = creatGroupView.m; sourceTree = "<group>"; };
+		84756E0D219578B70018AB35 /* creatGroupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = creatGroupView.xib; sourceTree = "<group>"; };
 		849959E7217D7F1000FD8A20 /* skSafeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skSafeViewController.h; sourceTree = "<group>"; };
 		849959E8217D7F1000FD8A20 /* skSafeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skSafeViewController.m; sourceTree = "<group>"; };
 		849959EA217D7F3D00FD8A20 /* skSafeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skSafeTableViewCell.h; sourceTree = "<group>"; };
@@ -421,9 +424,6 @@
 		20FF8D6221948673000D686D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				20FF8D64219486A9000D686D /* addGroupriendTableViewCell.h */,
-				20FF8D65219486A9000D686D /* addGroupriendTableViewCell.m */,
-				20FF8D66219486A9000D686D /* addGroupriendTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -783,6 +783,8 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				84756E032195785B0018AB35 /* 发布活动 */,
+				84756DFF219578530018AB35 /* 新建群聊 */,
 				20FF8D5D219485EE000D686D /* 邀请群好友 */,
 				84B7F3C42191245F00793DDD /* 查看群成员 */,
 				842EAAE42188617700CA9E25 /* 群聊详情 */,
@@ -1001,6 +1003,73 @@
 				84637F4F217D751A009DB4FF /* skChangePwdCodeTableViewCell.h */,
 				84637F50217D751A009DB4FF /* skChangePwdCodeTableViewCell.m */,
 				84637F51217D751A009DB4FF /* skChangePwdCodeTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84756DFF219578530018AB35 /* 新建群聊 */ = {
+			isa = PBXGroup;
+			children = (
+				84756E00219578530018AB35 /* Controller */,
+				84756E01219578530018AB35 /* Model */,
+				84756E02219578530018AB35 /* View */,
+			);
+			path = "新建群聊";
+			sourceTree = "<group>";
+		};
+		84756E00219578530018AB35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84756E072195788E0018AB35 /* skCreatGroupViewController.h */,
+				84756E082195788E0018AB35 /* skCreatGroupViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84756E01219578530018AB35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84756E02219578530018AB35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84756E0A219578AD0018AB35 /* creatGroupView.h */,
+				84756E0B219578AD0018AB35 /* creatGroupView.m */,
+				84756E0D219578B70018AB35 /* creatGroupView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84756E032195785B0018AB35 /* 发布活动 */ = {
+			isa = PBXGroup;
+			children = (
+				84756E042195785B0018AB35 /* Controller */,
+				84756E052195785B0018AB35 /* Model */,
+				84756E062195785B0018AB35 /* View */,
+			);
+			path = "发布活动";
+			sourceTree = "<group>";
+		};
+		84756E042195785B0018AB35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84756E052195785B0018AB35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84756E062195785B0018AB35 /* View */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1632,7 +1701,6 @@
 				84EEBAC22179C4F000EDBA1E /* skAddAddressTableViewCell.xib in Resources */,
 				842CFAA6216F283E00A847AB /* UserCenterTitleTableViewCell.xib in Resources */,
 				842CFAA1216F233B00A847AB /* UserCenterOrderTableViewCell.xib in Resources */,
-				20FF8D68219486A9000D686D /* addGroupriendTableViewCell.xib in Resources */,
 				842EAAF421894DF800CA9E25 /* skGroupChatHeadersTableViewCell.xib in Resources */,
 				84EEBABA2179C03A00EDBA1E /* AddressListTableViewCell.xib in Resources */,
 				84D802302175990800E1894F /* UserCenterLoginOutTableViewCell.xib in Resources */,
@@ -1642,6 +1710,7 @@
 				84D7DB5E2182A09000131373 /* AddressBookTitleView.xib in Resources */,
 				84537B812154897F00E4CB29 /* Assets.xcassets in Resources */,
 				84B7F3CF2191281200793DDD /* skLookoverTableViewCell.xib in Resources */,
+				84756E0E219578B70018AB35 /* creatGroupView.xib in Resources */,
 				84D8023F2175D3BD00E1894F /* skAddFriendTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1768,6 +1837,7 @@
 				84EEBAB52179BEC600EDBA1E /* skAddressListViewController.m in Sources */,
 				84637F49217D7208009DB4FF /* skChangePasswordViewController.m in Sources */,
 				84011AA921748BB60005436B /* skAddressBookModel.m in Sources */,
+				84756E092195788E0018AB35 /* skCreatGroupViewController.m in Sources */,
 				84CCF58821743347004DE670 /* skChangeUserinfoModel.m in Sources */,
 				84EEBAC12179C4F000EDBA1E /* skAddAddressTableViewCell.m in Sources */,
 				849959E9217D7F1000FD8A20 /* skSafeViewController.m in Sources */,
@@ -1820,10 +1890,10 @@
 				84A78E7E215F574A0013F614 /* skAFNetworkingTool.m in Sources */,
 				843B40B6216B337400356306 /* NSDictionary+skDictionary.m in Sources */,
 				84A78E85215F5DA70013F614 /* RongSDKUsed.m in Sources */,
-				20FF8D67219486A9000D686D /* addGroupriendTableViewCell.m in Sources */,
 				84CCF57F216F50AC004DE670 /* skChangeUserinfoHeaderTableViewCell.m in Sources */,
 				84537B792154897E00E4CB29 /* AppDelegate.mm in Sources */,
 				84E65CD02179CC0D00A379E0 /* skAddressViewController.m in Sources */,
+				84756E0C219578AD0018AB35 /* creatGroupView.m in Sources */,
 				84211A5C215CB67F003BE4A5 /* skColorConfig.m in Sources */,
 				8419CDE6216DD90C00DBE8F4 /* skUserChatViewController.m in Sources */,
 				84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */,

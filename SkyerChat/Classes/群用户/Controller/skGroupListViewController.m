@@ -124,7 +124,7 @@
     }
     skGroupModel *model=self.arrGroupList[indexPath.row];
     
-    [cell.imageTitle sd_setImageWithURL:[NSURL URLWithString:model.groupNo] placeholderImage:[UIImage imageNamed:@"default_group_portrait"]];
+    [cell.imageTitle sd_setImageWithURL:[NSURL URLWithString:model.groupIcon] placeholderImage:[UIImage imageNamed:@"default_group_portrait"]];
     
     cell.labTitle.text=model.groupName;
     

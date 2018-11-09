@@ -14,9 +14,68 @@
 
 @interface skLookoverViewController ()
 @property (nonatomic,strong) NSArray *arrList;
+@property (nonatomic,assign) Boolean isMore;
+@property (nonatomic,strong) NSMutableArray *arrSelect;
+@property (nonatomic,strong) UIButton *btnRight;
 @end
 
 @implementation skLookoverViewController
+- (NSMutableArray *)arrSelect{
+    if (nil==_arrSelect) {
+        _arrSelect=[[NSMutableArray alloc] init];
+    }
+    return _arrSelect;
+}
+-(UIButton *)btnRight{
+    if (nil==_btnRight) {
+        _btnRight=[self skCreatBtn:@"多选" btnTitleOrImage:(btntypeTitle) btnLeftOrRight:(btnStateRight)];
+        @weakify(self)
+        [[_btnRight rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            self.isMore=!self.isMore;
+            if (self.arrSelect.count>0) {
+                [skClassMethod skAlertView:@"删除选中群成员" alertViewMessage:@"是否确定删除选中群成员" cancleTitle:@"取消" defaultTitle:@"删除" cancleHandler:^(UIAlertAction * _Nonnull action) {
+                    [self.arrSelect removeAllObjects];
+                    [self.tableView reloadData];
+                } sureHandler:^(UIAlertAction * _Nonnull action) {
+                    [self bizGroupUserdeleteMore:self.modelOther.groupNo];
+                }];
+            }else{
+                [self.btnRight setTitle:@"多选" forState:(UIControlStateNormal)];
+                [self.tableView reloadData];
+            }
+            
+        }];
+    }
+    return _btnRight;
+}
+
+-(void)bizGroupUserdeleteMore:(NSString *)groupNo{
+    ///intf/bizUser/sendRegister
+    NSMutableArray *arr1=[[NSMutableArray alloc] init];
+    
+    for (int i =0; i<self.arrSelect.count; ++i) {
+        NSString *index=[self.arrSelect objectAtIndex:i];
+        groupUserModel *model=[self.arrList objectAtIndex:[index intValue]];
+        [arr1 addObject:model.userNo];
+    }
+    
+    NSDictionary *dic=@{@"groupNo":groupNo,
+                        @"userNos":arr1
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroupUser/kickOut") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            [self.arrSelect removeAllObjects];
+            [self bizGroupUserlist];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,6 +83,7 @@
     // Do any additional setup after loading the view.
     [self addTableView];
     [self bizGroupUserlist];
+    [self.btnRight setTitle:@"多选" forState:(UIControlStateNormal)];
 }
 -(void)addTableView{
     [self.view addSubview:self.tableView];
@@ -67,25 +127,65 @@
     cell.labName.text=model.nickName.length>0?model.nickName:model.userNo;
     [cell.imageHeader sd_setImageWithURL:[NSURL URLWithString:model.portrait] placeholderImage:[UIImage imageNamed:@"default_portrait_msg"]];
     
-    if ([self.modelOther.createUserNo isEqualToString:model.userNo]) {
+    if (indexPath.row==0) {
+        [cell setAccessoryType:(UITableViewCellAccessoryNone)];
+        [cell.imageSelect setHidden:YES];
         [cell.labType setHidden:NO];
         cell.labType.text=@"群主";
+    }else{
+        if (self.isMore) {
+            [cell setAccessoryType:(UITableViewCellAccessoryNone)];
+            [cell.imageSelect setHidden:NO];
+            [cell.labType setHidden:YES];
+            
+            NSString *row=[NSString stringWithFormat:@"%ld",indexPath.row];
+            if ([self.arrSelect containsObject:row]) {
+                [cell.imageSelect setImage:[UIImage imageNamed:@"多选-选中"]];
+            }else{
+                [cell.imageSelect setImage:[UIImage imageNamed:@"多选-未选"]];
+            }
+        }else{
+            [cell setAccessoryType:(UITableViewCellAccessoryDisclosureIndicator)];
+            [cell.imageSelect setHidden:YES];
+            [cell.labType setHidden:YES];
+        }
     }
+    
+    
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     groupUserModel *model=[self.arrList objectAtIndex:indexPath.row];
     
-    if ([self.modelOther.createUserNo isEqualToString:skUser.userNo]) {
-        skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
-        conversationVC.conversationType = ConversationType_PRIVATE;
-        conversationVC.targetId = model.userNo;
-        conversationVC.title = model.nickName;
-        [self.navigationController pushViewController:conversationVC animated:YES];
+    if (indexPath.row>0) {
+        if (_isMore) {
+            NSString *row=[NSString stringWithFormat:@"%ld",indexPath.row];
+            if (![self.arrSelect containsObject:row]) {
+                [self.arrSelect addObject:row];
+            }else{
+                [self.arrSelect removeObject:row];
+            }
+            [self.tableView reloadData];
+            if (self.arrSelect.count>0) {
+                [self.btnRight setTitle:@"删除" forState:(UIControlStateNormal)];
+            }else{
+                [self.btnRight setTitle:@"多选" forState:(UIControlStateNormal)];
+            }
+        }else{
+            skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
+            conversationVC.conversationType = ConversationType_PRIVATE;
+            conversationVC.targetId = model.userNo;
+            conversationVC.title = model.nickName;
+            [self.navigationController pushViewController:conversationVC animated:YES];
+        }
     }
+    
+    
+    
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;

@@ -18,6 +18,7 @@
 #import "skImagePicker.h"
 #import "skLookoverViewController.h"
 #import "skSingleChatViewController.h"
+#import "skAddGroupFriendViewController.h"
 
 
 @interface skGroupChatDetailsViewController ()
@@ -43,7 +44,9 @@
         @weakify(self)
         [[_cellHeaders rac_signalForSelector:@selector(skAddFriend)] subscribeNext:^(RACTuple * _Nullable x) {
             @strongify(self)
-            
+            skAddGroupFriendViewController *view=[[skAddGroupFriendViewController alloc] init];
+            view.modelOther=self.model;
+            [self.navigationController pushViewController:view animated:YES];
         }];
         
         
@@ -80,6 +83,10 @@
     // Do any additional setup after loading the view.
     self.title=@"聊天信息";
     [self addTableView];
+    
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self bizGroupMergeauditList];
 }
 -(void)addTableView{

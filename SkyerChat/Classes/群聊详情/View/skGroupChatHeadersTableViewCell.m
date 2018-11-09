@@ -116,7 +116,7 @@
         imageName=model.portrait;
         [imageHeaderView sd_setImageWithURL:[NSURL URLWithString:imageName] placeholderImage:[UIImage imageNamed:@"default_portrait_msg"]];
     }else{
-        imageHeaderView.image=[UIImage imageNamed:imageName];
+        [imageHeaderView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:imageName]];
     }
     
     [imageHeaderView skSetBoardRadius:25 Width:1 andBorderColor:[UIColor whiteColor]];
