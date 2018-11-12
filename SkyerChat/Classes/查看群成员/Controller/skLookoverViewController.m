@@ -14,7 +14,6 @@
 
 @interface skLookoverViewController ()
 @property (nonatomic,strong) NSArray *arrList;
-@property (nonatomic,assign) Boolean isMore;
 @property (nonatomic,strong) NSMutableArray *arrSelect;
 @property (nonatomic,strong) UIButton *btnRight;
 @end
@@ -32,20 +31,9 @@
         @weakify(self)
         [[_btnRight rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
-            self.isMore=!self.isMore;
             if (self.arrSelect.count>0) {
-                [skClassMethod skAlertView:@"删除选中群成员" alertViewMessage:@"是否确定删除选中群成员" cancleTitle:@"取消" defaultTitle:@"删除" cancleHandler:^(UIAlertAction * _Nonnull action) {
-                    [self.arrSelect removeAllObjects];
-                    [self.tableView reloadData];
-                    [self.btnRight setTitle:@"多选" forState:(UIControlStateNormal)];
-                } sureHandler:^(UIAlertAction * _Nonnull action) {
-                    [self bizGroupUserdeleteMore:self.modelOther.groupNo];
-                }];
-            }else{
-                [self.btnRight setTitle:@"多选" forState:(UIControlStateNormal)];
-                [self.tableView reloadData];
+                [self bizGroupUserdeleteMore:self.modelOther.groupNo];
             }
-            
         }];
     }
     return _btnRight;
@@ -84,8 +72,9 @@
     // Do any additional setup after loading the view.
     [self addTableView];
     [self bizGroupUserlist];
-    [self.btnRight setTitle:@"多选" forState:(UIControlStateNormal)];
+    [self.btnRight setTitle:@"确定(0)" forState:(UIControlStateNormal)];
 }
+
 -(void)addTableView{
     [self.view addSubview:self.tableView];
     self.tableView.backgroundColor=KcolorBackground;
@@ -134,21 +123,15 @@
         [cell.labType setHidden:NO];
         cell.labType.text=@"群主";
     }else{
-        if (self.isMore) {
-            [cell setAccessoryType:(UITableViewCellAccessoryNone)];
-            [cell.imageSelect setHidden:NO];
-            [cell.labType setHidden:YES];
-            
-            NSString *row=[NSString stringWithFormat:@"%ld",indexPath.row];
-            if ([self.arrSelect containsObject:row]) {
-                [cell.imageSelect setImage:[UIImage imageNamed:@"多选-选中"]];
-            }else{
-                [cell.imageSelect setImage:[UIImage imageNamed:@"多选-未选"]];
-            }
+        [cell setAccessoryType:(UITableViewCellAccessoryNone)];
+        [cell.imageSelect setHidden:NO];
+        [cell.labType setHidden:YES];
+        
+        NSString *row=[NSString stringWithFormat:@"%ld",indexPath.row];
+        if ([self.arrSelect containsObject:row]) {
+            [cell.imageSelect setImage:[UIImage imageNamed:@"多选-选中"]];
         }else{
-            [cell setAccessoryType:(UITableViewCellAccessoryDisclosureIndicator)];
-            [cell.imageSelect setHidden:YES];
-            [cell.labType setHidden:YES];
+            [cell.imageSelect setImage:[UIImage imageNamed:@"多选-未选"]];
         }
     }
     
@@ -160,29 +143,16 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    groupUserModel *model=[self.arrList objectAtIndex:indexPath.row];
     
     if (indexPath.row>0) {
-        if (_isMore) {
-            NSString *row=[NSString stringWithFormat:@"%ld",indexPath.row];
-            if (![self.arrSelect containsObject:row]) {
-                [self.arrSelect addObject:row];
-            }else{
-                [self.arrSelect removeObject:row];
-            }
-            [self.tableView reloadData];
-            if (self.arrSelect.count>0) {
-                [self.btnRight setTitle:@"删除" forState:(UIControlStateNormal)];
-            }else{
-                [self.btnRight setTitle:@"多选" forState:(UIControlStateNormal)];
-            }
+        NSString *row=[NSString stringWithFormat:@"%ld",indexPath.row];
+        if (![self.arrSelect containsObject:row]) {
+            [self.arrSelect addObject:row];
         }else{
-            skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
-            conversationVC.conversationType = ConversationType_PRIVATE;
-            conversationVC.targetId = model.userNo;
-            conversationVC.title = model.nickName;
-            [self.navigationController pushViewController:conversationVC animated:YES];
+            [self.arrSelect removeObject:row];
         }
+        [self.btnRight setTitle:[NSString stringWithFormat:@"确定(%ld)",self.arrSelect.count] forState:(UIControlStateNormal)];
+        [self.tableView reloadData];
     }
     
     
