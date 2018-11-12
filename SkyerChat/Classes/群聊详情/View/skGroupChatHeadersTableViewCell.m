@@ -95,7 +95,13 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    /*
+     static NSString *cellIdentifier = @"AddressListTableViewCell";
+     AddressListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+     if (cell == nil) {
+     cell = skXibView(@"AddressListTableViewCell");
+     }
+     */
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KCellID forIndexPath:indexPath];
     
     for (UIView *view in cell.contentView.subviews) {
@@ -108,7 +114,8 @@
     [cell.contentView addSubview:imageHeaderView];
     [imageHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(50, 50));
-        make.center.mas_equalTo(cell.contentView.center);
+        make.centerX.mas_equalTo(cell.contentView.mas_centerX);
+        make.centerY.mas_equalTo(cell.contentView.mas_centerY);
     }];
     NSString *imageName=@"聊天-更多";
     if (indexPath.row<self.arrModelList.count) {
@@ -121,7 +128,9 @@
     
     [imageHeaderView skSetBoardRadius:25 Width:1 andBorderColor:[UIColor whiteColor]];
 
-    [cell addSubview:imageHeaderView];
+//    cell.contentView.backgroundColor=[UIColor greenColor];
+    
+    
     return cell;
 }
 

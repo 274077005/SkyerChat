@@ -37,6 +37,7 @@
                 [skClassMethod skAlertView:@"删除选中群成员" alertViewMessage:@"是否确定删除选中群成员" cancleTitle:@"取消" defaultTitle:@"删除" cancleHandler:^(UIAlertAction * _Nonnull action) {
                     [self.arrSelect removeAllObjects];
                     [self.tableView reloadData];
+                    [self.btnRight setTitle:@"多选" forState:(UIControlStateNormal)];
                 } sureHandler:^(UIAlertAction * _Nonnull action) {
                     [self bizGroupUserdeleteMore:self.modelOther.groupNo];
                 }];

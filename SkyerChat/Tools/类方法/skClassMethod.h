@@ -37,6 +37,14 @@ NS_ASSUME_NONNULL_BEGIN
       defaultTitle:(NSString *)defaultTitle
      cancleHandler:(void (^ __nullable)(UIAlertAction *action))cancleHandler
        sureHandler:(void (^ __nullable)(UIAlertAction *action))sureHandler;
+
+/**
+ 对图片进行bsae64加密两次
+
+ @param image 加密的图片
+ @return 返回的字符串
+ */
++(NSString *)skImageBase64:(UIImage *)image;
 @end
 
 NS_ASSUME_NONNULL_END

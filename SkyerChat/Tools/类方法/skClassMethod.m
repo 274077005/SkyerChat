@@ -66,5 +66,23 @@
         
     }];
 }
-
+/**
+ 对图片进行base64两次加密
+ 
+ @param image 要加密的图片
+ @return 加密后的字符串
+ */
++(NSString *)skImageBase64:(UIImage *)image
+{
+    //图片转base64
+    NSData *data = UIImageJPEGRepresentation(image, 1.0f);
+    
+    NSString *encodedImageString = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    
+    NSData *dataString = [encodedImageString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString *base64String = [dataString base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    
+    return base64String;
+}
 @end

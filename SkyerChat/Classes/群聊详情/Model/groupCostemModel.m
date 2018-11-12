@@ -51,7 +51,7 @@
     
     groupCellModel *model3=[[groupCellModel alloc] init];
     model3.title=@"发布活动";
-    model3.goViewName=@"";
+    model3.goViewName=@"skGroupAcivityViewController";
     model3.type=cellTypeNormal;
     
     groupCellModel *model4=[[groupCellModel alloc] init];

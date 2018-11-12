@@ -8,9 +8,11 @@
 
 #import "skCreatGroupViewController.h"
 #import "creatGroupView.h"
+#import "skImagePicker.h"
 
 @interface skCreatGroupViewController ()
 @property (nonatomic,strong) creatGroupView *viewCreat;
+@property (nonatomic,strong) UIImage *imageHeader;
 @end
 
 @implementation skCreatGroupViewController
@@ -24,6 +26,21 @@
             make.top.mas_equalTo(10);
             make.right.left.mas_equalTo(0);
             make.size.mas_equalTo(CGSizeMake(skScreenWidth, 480));
+        }];
+        
+        @weakify(self)
+        [[_viewCreat.btnCreat rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            if (self.viewCreat.txtName.text.length>0) {
+                [self bizGroupCreate];
+            }
+        }];
+        [[_viewCreat.btnHeader rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            [skImagePicker showImagePickerFromViewController:self allowsEditing:YES finishAction:^(UIImage *image) {
+                self.imageHeader=image;
+                [self.viewCreat.btnHeader setImage:image forState:(UIControlStateNormal)];
+            }];
         }];
     }
     return _viewCreat;
@@ -44,5 +61,21 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(void)bizGroupCreate{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"groupName":self.viewCreat.txtName.text,
+                        @"groupIconBase64":self.imageHeader?[skClassMethod skImageBase64:self.imageHeader]:@""
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroup/create") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
 @end
