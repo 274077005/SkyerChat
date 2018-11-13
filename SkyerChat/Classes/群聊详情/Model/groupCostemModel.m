@@ -56,7 +56,7 @@
     
     groupCellModel *model4=[[groupCellModel alloc] init];
     model4.title=@"邀请好友";
-    model4.goViewName=@"";
+    model4.goViewName=@"skQRcodeGroupViewController";
     model4.type=cellTypeNormal;
     
     groupCellModel *model5=[[groupCellModel alloc] init];

@@ -11,7 +11,6 @@
 
 @interface skAddGroupFriendViewController ()
 @property (nonatomic,strong) NSArray *arrList;
-@property (nonatomic,assign) Boolean isMore;
 @property (nonatomic,strong) NSMutableArray *arrSelect;
 @property (nonatomic,strong) UIButton *btnRight;
 @end
@@ -29,19 +28,9 @@
         @weakify(self)
         [[_btnRight rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
-            self.isMore=!self.isMore;
             if (self.arrSelect.count>0) {
-                [skClassMethod skAlertView:@"邀请客户加入群聊" alertViewMessage:@"邀请选中的客户加入群聊" cancleTitle:@"取消" defaultTitle:@"确定" cancleHandler:^(UIAlertAction * _Nonnull action) {
-                    [self.arrSelect removeAllObjects];
-                    [self.tableView reloadData];
-                } sureHandler:^(UIAlertAction * _Nonnull action) {
-                    
-                }];
-            }else{
-                [self.btnRight setTitle:@"多选" forState:(UIControlStateNormal)];
-                [self.tableView reloadData];
+                
             }
-            
         }];
     }
     return _btnRight;
@@ -51,7 +40,7 @@
     self.title=@"邀请好友入群";
     // Do any additional setup after loading the view.
     [self addTableView];
-    [self.btnRight setTitle:@"多选" forState:(UIControlStateNormal)];
+    [self.btnRight setTitle:@"确定(0)" forState:(UIControlStateNormal)];
 }
 -(void)addTableView{
     [self.view addSubview:self.tableView];
@@ -72,18 +61,12 @@
 }
 */
 #pragma mark - 代理方法
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
-}
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.arrList.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 15;
 }
 
 
@@ -94,10 +77,28 @@
     if (cell == nil) {
         cell = skXibView(@"skLookoverTableViewCell");
     }
+    [cell setAccessoryType:(UITableViewCellAccessoryNone)];
+    [cell.imageSelect setHidden:NO];
+    [cell.labType setHidden:YES];
+    
+    NSString *row=[NSString stringWithFormat:@"%ld",indexPath.row];
+    if ([self.arrSelect containsObject:row]) {
+        [cell.imageSelect setImage:[UIImage imageNamed:@"多选-选中"]];
+    }else{
+        [cell.imageSelect setImage:[UIImage imageNamed:@"多选-未选"]];
+    }
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSString *row=[NSString stringWithFormat:@"%ld",indexPath.row];
+    if (![self.arrSelect containsObject:row]) {
+        [self.arrSelect addObject:row];
+    }else{
+        [self.arrSelect removeObject:row];
+    }
+    [self.btnRight setTitle:[NSString stringWithFormat:@"确定(%ld)",self.arrSelect.count] forState:(UIControlStateNormal)];
+    [self.tableView reloadData];
 }
 @end

@@ -80,10 +80,12 @@ static skImagePicker *bdImagePickerInstance = nil;
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *image = info[UIImagePickerControllerEditedImage];
+    
     if (image == nil) {
         image = info[UIImagePickerControllerOriginalImage];
     }
-    
+    NSData *imageData=UIImageJPEGRepresentation(image,0.5);//压缩一半
+    image = [UIImage imageWithData: imageData];
     if (_finishAction) {
         _finishAction(image);
     }

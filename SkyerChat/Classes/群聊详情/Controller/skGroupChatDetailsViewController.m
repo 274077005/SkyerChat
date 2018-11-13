@@ -19,6 +19,8 @@
 #import "skLookoverViewController.h"
 #import "skSingleChatViewController.h"
 #import "skAddGroupFriendViewController.h"
+#import "skQRcodeGroupViewController.h"
+#import "skGroupAcivityViewController.h"
 
 
 @interface skGroupChatDetailsViewController ()
@@ -251,9 +253,16 @@
     groupCellModel *modelCell=[arr objectAtIndex:indexPath.row];
     
     if ([modelCell.title isEqualToString:@"邀请好友"]) {//除了邀请好友大家都有权限,其他的权限只有群主
-        NSString *viewString=modelCell.goViewName;
-        UIViewController *view=[[NSClassFromString(viewString) alloc] init];
-        [self.navigationController pushViewController:view animated:YES];
+        
+        skQRcodeGroupViewController *QEView=[[skQRcodeGroupViewController alloc] init];
+        QEView.modelOther=self.model;
+        QEView.view.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
+        
+        QEView.modalPresentationStyle = UIModalPresentationOverFullScreen;
+        
+        [self presentViewController:QEView animated:NO completion:^{
+
+        }];
     }else{
         if ([skUser.userNo isEqualToString:self.model.createUserNo]) {
             if ([modelCell.title isEqualToString:@"群头像"]) {
@@ -262,7 +271,12 @@
                 }];
                 return;
             }
-            
+            if ([modelCell.title isEqualToString:@"发布活动"]) {
+                skGroupAcivityViewController *viewActivice=[[skGroupAcivityViewController alloc] init];
+                viewActivice.modelOther=self.model;
+                [self.navigationController pushViewController:viewActivice animated:YES];
+                return;
+            }
             if ([modelCell.title isEqualToString:@"群名称"]) {
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"群名称" message:nil preferredStyle:UIAlertControllerStyleAlert];
                 //以下方法就可以实现在提示框中输入文本；

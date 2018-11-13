@@ -61,6 +61,9 @@
         }
     }];
     [self bizGroupgetGroup];
+    
+//    self.conversationMessageCollectionView.frame=CGRectMake(0, 200, skScreenWidth, skScreenHeight-200);
+    
 }
 
 /*

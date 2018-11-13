@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QRCodeViews">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-hM-eDq">
+                    <rect key="frame" x="30" y="30" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="L60-xQ-CcB"/>
+                        <constraint firstAttribute="width" constant="60" id="siE-in-NRL"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72F-lC-Zed">
+                    <rect key="frame" x="98" y="51" width="46" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZMr-Pr-FFh">
+                    <rect key="frame" x="87.5" y="130" width="200" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="G2S-sd-Ilz"/>
+                        <constraint firstAttribute="height" constant="200" id="Qf2-td-mR3"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫一扫上面的二维码,加入群组" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzj-rt-tok">
+                    <rect key="frame" x="16" y="419" width="343" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ZMr-Pr-FFh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7y0-Kf-ZXP"/>
+                <constraint firstItem="ZMr-Pr-FFh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OJf-XF-1e9"/>
+                <constraint firstItem="IbW-hM-eDq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="PTM-3w-TbN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uzj-rt-tok" secondAttribute="trailing" constant="16" id="RSF-gO-nAQ"/>
+                <constraint firstItem="72F-lC-Zed" firstAttribute="centerY" secondItem="IbW-hM-eDq" secondAttribute="centerY" id="eYr-0K-Vuc"/>
+                <constraint firstItem="72F-lC-Zed" firstAttribute="leading" secondItem="IbW-hM-eDq" secondAttribute="trailing" constant="8" id="gz4-rI-9Lw"/>
+                <constraint firstItem="uzj-rt-tok" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ose-5l-aDX"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="uzj-rt-tok" secondAttribute="bottom" constant="20" id="sla-fp-yL8"/>
+                <constraint firstItem="IbW-hM-eDq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="trx-9d-BDO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imageGroupHeader" destination="IbW-hM-eDq" id="htj-GZ-GvM"/>
+                <outlet property="imageGroupQR" destination="ZMr-Pr-FFh" id="MRN-Rk-HR2"/>
+                <outlet property="labGroupName" destination="72F-lC-Zed" id="NQJ-zc-Lcx"/>
+            </connections>
+            <point key="canvasLocation" x="55.200000000000003" y="186.20689655172416"/>
+        </view>
+    </objects>
+</document>
