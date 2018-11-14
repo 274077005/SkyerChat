@@ -1,19 +1,18 @@
 //
-//  CombineGroupTableViewCell.m
+//  CombineGroupHeaderTableViewCell.m
 //  SkyerChat
 //
-//  Created by admin on 2018/11/13.
+//  Created by skyer on 2018/11/14.
 //  Copyright © 2018 www.skyer.com. All rights reserved.
 //
 
-#import "CombineGroupTableViewCell.h"
+#import "CombineGroupHeaderTableViewCell.h"
 
-@implementation CombineGroupTableViewCell
+@implementation CombineGroupHeaderTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    [self.imageHeader skSetBoardRadius:20 Width:0 andBorderColor:nil];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

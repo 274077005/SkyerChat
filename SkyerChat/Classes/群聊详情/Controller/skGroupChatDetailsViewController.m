@@ -21,6 +21,7 @@
 #import "skAddGroupFriendViewController.h"
 #import "skQRcodeGroupViewController.h"
 #import "skGroupAcivityViewController.h"
+#import "skCombineGroupViewController.h"
 
 
 @interface skGroupChatDetailsViewController ()
@@ -275,6 +276,11 @@
                 skGroupAcivityViewController *viewActivice=[[skGroupAcivityViewController alloc] init];
                 viewActivice.modelOther=self.model;
                 [self.navigationController pushViewController:viewActivice animated:YES];
+                return;
+            }
+            if ([modelCell.title isEqualToString:@"申请合并群聊"]) {
+                skCombineGroupViewController *view=[[skCombineGroupViewController alloc] init];
+                [self.navigationController pushViewController:view animated:YES];
                 return;
             }
             if ([modelCell.title isEqualToString:@"群名称"]) {
