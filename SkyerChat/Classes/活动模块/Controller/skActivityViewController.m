@@ -11,6 +11,7 @@
 #import "viewShop.h"
 #import "activityModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "skActivityDesViewController.h"
 
 
 @interface skActivityViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,SDCycleScrollViewDelegate>
@@ -207,6 +208,10 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"点击了=%ld",indexPath.row);
+    activityModel *model=[self.arrListActivivt objectAtIndex:indexPath.row];
+    skActivityDesViewController *view=[[skActivityDesViewController alloc] init];
+    view.modelOther=model;
+    [self.navigationController pushViewController:view animated:YES];
 }
 
 

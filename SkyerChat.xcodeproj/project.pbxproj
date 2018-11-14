@@ -17,6 +17,17 @@
 		84011AA3217483620005436B /* skAddressBookSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84011AA2217483620005436B /* skAddressBookSearch.xib */; };
 		84011AA6217489E60005436B /* skResponeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84011AA5217489E60005436B /* skResponeList.m */; };
 		84011AA921748BB60005436B /* skAddressBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84011AA821748BB60005436B /* skAddressBookModel.m */; };
+		8403A68E219BF26E000DAFD1 /* QRCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403A68C219BF26E000DAFD1 /* QRCodeScanViewController.m */; };
+		8403A695219C00E0000DAFD1 /* skActivityDesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403A694219C00E0000DAFD1 /* skActivityDesViewController.m */; };
+		8403A698219C03B3000DAFD1 /* ActivityDesViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403A697219C03B3000DAFD1 /* ActivityDesViews.m */; };
+		8403A69A219C03BD000DAFD1 /* ActivityDesViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403A699219C03BD000DAFD1 /* ActivityDesViews.xib */; };
+		8403A69E219C08A6000DAFD1 /* ActivityHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403A69C219C08A6000DAFD1 /* ActivityHeaderTableViewCell.m */; };
+		8403A69F219C08A6000DAFD1 /* ActivityHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403A69D219C08A6000DAFD1 /* ActivityHeaderTableViewCell.xib */; };
+		8403A6A2219C0BBD000DAFD1 /* goodsDecModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403A6A1219C0BBD000DAFD1 /* goodsDecModel.m */; };
+		8403A6A6219C1043000DAFD1 /* ActivityTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403A6A4219C1043000DAFD1 /* ActivityTitleTableViewCell.m */; };
+		8403A6A7219C1043000DAFD1 /* ActivityTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403A6A5219C1043000DAFD1 /* ActivityTitleTableViewCell.xib */; };
+		8403A6AB219C133E000DAFD1 /* activityOtherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403A6A9219C133E000DAFD1 /* activityOtherTableViewCell.m */; };
+		8403A6AC219C133E000DAFD1 /* activityOtherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403A6AA219C133E000DAFD1 /* activityOtherTableViewCell.xib */; };
 		8419CDB0216C826300DBE8F4 /* modelRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDAF216C826300DBE8F4 /* modelRegister.m */; };
 		8419CDBA216D949E00DBE8F4 /* SKKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDB5216D949E00DBE8F4 /* SKKeyboard.m */; };
 		8419CDBB216D949E00DBE8F4 /* skClassMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDB9216D949E00DBE8F4 /* skClassMethod.m */; };
@@ -174,6 +185,24 @@
 		84011AA5217489E60005436B /* skResponeList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skResponeList.m; sourceTree = "<group>"; };
 		84011AA721748BB60005436B /* skAddressBookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAddressBookModel.h; sourceTree = "<group>"; };
 		84011AA821748BB60005436B /* skAddressBookModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAddressBookModel.m; sourceTree = "<group>"; };
+		8403A68C219BF26E000DAFD1 /* QRCodeScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeScanViewController.m; sourceTree = "<group>"; };
+		8403A68D219BF26E000DAFD1 /* QRCodeScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeScanViewController.h; sourceTree = "<group>"; };
+		8403A693219C00E0000DAFD1 /* skActivityDesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skActivityDesViewController.h; sourceTree = "<group>"; };
+		8403A694219C00E0000DAFD1 /* skActivityDesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skActivityDesViewController.m; sourceTree = "<group>"; };
+		8403A696219C03B3000DAFD1 /* ActivityDesViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityDesViews.h; sourceTree = "<group>"; };
+		8403A697219C03B3000DAFD1 /* ActivityDesViews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityDesViews.m; sourceTree = "<group>"; };
+		8403A699219C03BD000DAFD1 /* ActivityDesViews.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityDesViews.xib; sourceTree = "<group>"; };
+		8403A69B219C08A6000DAFD1 /* ActivityHeaderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityHeaderTableViewCell.h; sourceTree = "<group>"; };
+		8403A69C219C08A6000DAFD1 /* ActivityHeaderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityHeaderTableViewCell.m; sourceTree = "<group>"; };
+		8403A69D219C08A6000DAFD1 /* ActivityHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		8403A6A0219C0BBD000DAFD1 /* goodsDecModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goodsDecModel.h; sourceTree = "<group>"; };
+		8403A6A1219C0BBD000DAFD1 /* goodsDecModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = goodsDecModel.m; sourceTree = "<group>"; };
+		8403A6A3219C1043000DAFD1 /* ActivityTitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityTitleTableViewCell.h; sourceTree = "<group>"; };
+		8403A6A4219C1043000DAFD1 /* ActivityTitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityTitleTableViewCell.m; sourceTree = "<group>"; };
+		8403A6A5219C1043000DAFD1 /* ActivityTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTitleTableViewCell.xib; sourceTree = "<group>"; };
+		8403A6A8219C133E000DAFD1 /* activityOtherTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = activityOtherTableViewCell.h; sourceTree = "<group>"; };
+		8403A6A9219C133E000DAFD1 /* activityOtherTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = activityOtherTableViewCell.m; sourceTree = "<group>"; };
+		8403A6AA219C133E000DAFD1 /* activityOtherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = activityOtherTableViewCell.xib; sourceTree = "<group>"; };
 		8419CDAE216C826300DBE8F4 /* modelRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = modelRegister.h; sourceTree = "<group>"; };
 		8419CDAF216C826300DBE8F4 /* modelRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = modelRegister.m; sourceTree = "<group>"; };
 		8419CDB5216D949E00DBE8F4 /* SKKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKKeyboard.m; sourceTree = "<group>"; };
@@ -535,6 +564,86 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8403A66A219BCAE7000DAFD1 /* 二维码扫码 */ = {
+			isa = PBXGroup;
+			children = (
+				8403A66B219BCAE7000DAFD1 /* Controller */,
+				8403A66C219BCAE7000DAFD1 /* Model */,
+				8403A66D219BCAE7000DAFD1 /* View */,
+			);
+			path = "二维码扫码";
+			sourceTree = "<group>";
+		};
+		8403A66B219BCAE7000DAFD1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8403A68D219BF26E000DAFD1 /* QRCodeScanViewController.h */,
+				8403A68C219BF26E000DAFD1 /* QRCodeScanViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8403A66C219BCAE7000DAFD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8403A66D219BCAE7000DAFD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8403A68F219C0073000DAFD1 /* 活动详情 */ = {
+			isa = PBXGroup;
+			children = (
+				8403A690219C0073000DAFD1 /* Controller */,
+				8403A691219C0073000DAFD1 /* Model */,
+				8403A692219C0073000DAFD1 /* View */,
+			);
+			path = "活动详情";
+			sourceTree = "<group>";
+		};
+		8403A690219C0073000DAFD1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8403A693219C00E0000DAFD1 /* skActivityDesViewController.h */,
+				8403A694219C00E0000DAFD1 /* skActivityDesViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8403A691219C0073000DAFD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8403A6A0219C0BBD000DAFD1 /* goodsDecModel.h */,
+				8403A6A1219C0BBD000DAFD1 /* goodsDecModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8403A692219C0073000DAFD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8403A696219C03B3000DAFD1 /* ActivityDesViews.h */,
+				8403A697219C03B3000DAFD1 /* ActivityDesViews.m */,
+				8403A699219C03BD000DAFD1 /* ActivityDesViews.xib */,
+				8403A69B219C08A6000DAFD1 /* ActivityHeaderTableViewCell.h */,
+				8403A69C219C08A6000DAFD1 /* ActivityHeaderTableViewCell.m */,
+				8403A69D219C08A6000DAFD1 /* ActivityHeaderTableViewCell.xib */,
+				8403A6A3219C1043000DAFD1 /* ActivityTitleTableViewCell.h */,
+				8403A6A4219C1043000DAFD1 /* ActivityTitleTableViewCell.m */,
+				8403A6A5219C1043000DAFD1 /* ActivityTitleTableViewCell.xib */,
+				8403A6A8219C133E000DAFD1 /* activityOtherTableViewCell.h */,
+				8403A6A9219C133E000DAFD1 /* activityOtherTableViewCell.m */,
+				8403A6AA219C133E000DAFD1 /* activityOtherTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8419CDB4216D949E00DBE8F4 /* 键盘监听 */ = {
@@ -959,6 +1068,8 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8403A68F219C0073000DAFD1 /* 活动详情 */,
+				8403A66A219BCAE7000DAFD1 /* 二维码扫码 */,
 				8426F07C219AB0E700DAB5F0 /* 发布群公告 */,
 				8440AFB7219A7B8A00044584 /* 二维码邀请入群 */,
 				205BC094219914B1009DF53A /* 合并群聊 */,
@@ -1854,9 +1965,11 @@
 				84995A302181C5C900FD8A20 /* myClientTableViewCell.xib in Resources */,
 				84CCF58D21747CA1004DE670 /* skAddressBookTableViewCell.xib in Resources */,
 				842EAB04218B00E900CA9E25 /* skGroupGonggaoTableViewCell.xib in Resources */,
+				8403A6A7219C1043000DAFD1 /* ActivityTitleTableViewCell.xib in Resources */,
 				845617B0217830F900E3A511 /* UserinfoSetTableViewCell.xib in Resources */,
 				84CCF580216F50AC004DE670 /* skChangeUserinfoHeaderTableViewCell.xib in Resources */,
 				8426F08C219AB3DA00DAB5F0 /* CombineGroupTableViewCell.xib in Resources */,
+				8403A69A219C03BD000DAFD1 /* ActivityDesViews.xib in Resources */,
 				84B7F3C3218C2FA300793DDD /* skGroupTitleTableViewCell.xib in Resources */,
 				84E65CD32179CC0D00A379E0 /* AddressCenterTableViewCell.xib in Resources */,
 				84EEBAC22179C4F000EDBA1E /* skAddAddressTableViewCell.xib in Resources */,
@@ -1868,6 +1981,8 @@
 				842CFA9C216F21B500A847AB /* UserCenterHeaderTableViewCell.xib in Resources */,
 				8426F087219AB13B00DAB5F0 /* GroupGonggaoCreat.xib in Resources */,
 				84CFE3AB217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.xib in Resources */,
+				8403A69F219C08A6000DAFD1 /* ActivityHeaderTableViewCell.xib in Resources */,
+				8403A6AC219C133E000DAFD1 /* activityOtherTableViewCell.xib in Resources */,
 				84E65CD22179CC0D00A379E0 /* AddressTableViewCell.xib in Resources */,
 				84D7DB5E2182A09000131373 /* AddressBookTitleView.xib in Resources */,
 				84537B812154897F00E4CB29 /* Assets.xcassets in Resources */,
@@ -2002,6 +2117,7 @@
 				84756E092195788E0018AB35 /* skCreatGroupViewController.m in Sources */,
 				84CCF58821743347004DE670 /* skChangeUserinfoModel.m in Sources */,
 				84EEBAC12179C4F000EDBA1E /* skAddAddressTableViewCell.m in Sources */,
+				8403A68E219BF26E000DAFD1 /* QRCodeScanViewController.m in Sources */,
 				849959E9217D7F1000FD8A20 /* skSafeViewController.m in Sources */,
 				843B40B9216B4E4600356306 /* LoginView.m in Sources */,
 				84637F422179D1C1009DB4FF /* AddAddressModel.m in Sources */,
@@ -2029,6 +2145,8 @@
 				8446958821912BAE00C96FEA /* groupUserModel.m in Sources */,
 				84D5CD682182EE8C00DB762E /* skMenuViewController.m in Sources */,
 				84995A2B2181C43000FD8A20 /* myClientModel.m in Sources */,
+				8403A6AB219C133E000DAFD1 /* activityOtherTableViewCell.m in Sources */,
+				8403A6A2219C0BBD000DAFD1 /* goodsDecModel.m in Sources */,
 				8419CDE9216DD96E00DBE8F4 /* skGroupListViewController.m in Sources */,
 				842EAAFC218AA01D00CA9E25 /* GroupDesModel.m in Sources */,
 				84637F52217D751A009DB4FF /* skChangePwdCodeTableViewCell.m in Sources */,
@@ -2046,9 +2164,11 @@
 				84995A1E2180734E00FD8A20 /* SingleModel.m in Sources */,
 				843B40C7216C555200356306 /* RegisterView.m in Sources */,
 				842CFAA0216F233B00A847AB /* UserCenterOrderTableViewCell.m in Sources */,
+				8403A6A6219C1043000DAFD1 /* ActivityTitleTableViewCell.m in Sources */,
 				849959F1217DC2B100FD8A20 /* skChangePasswordModel.m in Sources */,
 				8419CDEC216DD99800DBE8F4 /* skActivityViewController.m in Sources */,
 				20FF8D612194864A000D686D /* skAddGroupFriendViewController.m in Sources */,
+				8403A695219C00E0000DAFD1 /* skActivityDesViewController.m in Sources */,
 				84995A00217EC62300FD8A20 /* skAuthenticationModel.m in Sources */,
 				842EAADE2187E81C00CA9E25 /* viewShop.m in Sources */,
 				84CCF584216F5178004DE670 /* skChangeUserinfoNikeNameTableViewCell.m in Sources */,
@@ -2071,6 +2191,7 @@
 				84D8023A2175C1AC00E1894F /* skLinkFriendModel.m in Sources */,
 				2035B0832199B5EF00BF8AE2 /* skGroupAcivityViewController.m in Sources */,
 				84CCF57B216F505A004DE670 /* skChangeUserinfoViewController.m in Sources */,
+				8403A69E219C08A6000DAFD1 /* ActivityHeaderTableViewCell.m in Sources */,
 				8419CDD5216DD80C00DBE8F4 /* skTabarViewController.m in Sources */,
 				84B7F3BE218C2B9C00793DDD /* groupCellModel.m in Sources */,
 				84995A2F2181C5C900FD8A20 /* myClientTableViewCell.m in Sources */,
@@ -2079,6 +2200,7 @@
 				84D7DB652182B2C500131373 /* skAddressBookViewController.m in Sources */,
 				84995A1B21804E0500FD8A20 /* GroupModel.m in Sources */,
 				84211A59215B2345003BE4A5 /* skRongChatViewController.m in Sources */,
+				8403A698219C03B3000DAFD1 /* ActivityDesViews.m in Sources */,
 				842EAB03218B00E900CA9E25 /* skGroupGonggaoTableViewCell.m in Sources */,
 				84CCF573216F4B4C004DE670 /* skImagePicker.m in Sources */,
 				84D160D6215F6FBF002188DB /* skNetConfig.m in Sources */,

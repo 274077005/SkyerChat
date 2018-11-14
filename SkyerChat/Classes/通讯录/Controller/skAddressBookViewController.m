@@ -15,6 +15,7 @@
 #import "skAddFriendViewController.h"
 #import "skMenuViewController.h"
 #import "skCreatGroupViewController.h"
+#import "QRCodeScanViewController.h"
 
 @interface skAddressBookViewController ()
 @property (nonatomic,strong) SkChildViews *viewChild;
@@ -73,7 +74,7 @@
         
         skMenuViewController *viewCharge=[[skMenuViewController alloc] init];
         //关键语句，必须有
-        viewCharge.arrTitle=@[@"新建聊天群",@"合并聊天群",@"添加好友",@"扫一扫"];
+        viewCharge.arrTitle=@[@"新建聊天群",@"添加好友",@"扫一扫"];
         viewCharge.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.1];
         viewCharge.modalPresentationStyle = UIModalPresentationOverFullScreen;
         [viewCharge setChargeType:^(NSInteger index) {
@@ -87,22 +88,21 @@
                     break;
                 case 1:
                 {
-                    
-                }
-                    break;
-                case 2:
-                {
                     skAddFriendViewController *view=[[skAddFriendViewController alloc] init];
                     [self.navigationController pushViewController:view animated:YES];
                 }
                     break;
-                case 3:
+                case 2:
                 {
+                    QRCodeScanViewController *view=[[QRCodeScanViewController alloc] init];
+                    @weakify(self)
                     
-                }
-                    break;
-                case 4:
-                {
+                    [[view rac_signalForSelector:@selector(skScanResult:)] subscribeNext:^(RACTuple * _Nullable x) {
+                        @strongify(self)
+                        [self bizGroupUserCreate:x[0]];
+                        
+                    }];
+                    [self.navigationController pushViewController:view animated:YES];
                     
                 }
                     break;
@@ -117,14 +117,29 @@
     }];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+
+-(void)bizGroupUserCreate:(NSString *)groupNo{
+    ///intf/bizUser/sendRegister
+    
+    NSLog(@"====%@",groupNo);
+    NSArray *arrList=[groupNo componentsSeparatedByString:@"/"];
+    if (arrList.count>0) {
+        NSDictionary *dic=@{@"inviteSecret":[arrList lastObject],
+                            };
+        
+        
+        [skAfTool SKPOST:skUrl(@"/intf/bizGroupUser/create") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+            
+            if (responseObject.returnCode==0) {
+                [SkToast SkToastShow:@"加群成功" withHight:300];
+            }
+            
+        } failure:^(NSError * _Nullable error) {
+            
+        }];
+    }
+    
 }
-*/
-
 @end
