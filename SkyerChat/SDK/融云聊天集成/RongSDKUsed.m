@@ -72,7 +72,7 @@
     //    [RCIM sharedRCIM].globalMessagePortraitSize = CGSizeMake(46, 46);
     //开启输入状态监听
     [RCIM sharedRCIM].enableTypingStatus = YES;
-    
+    [RCIM sharedRCIM].disableMessageNotificaiton=YES;
     //开启发送已读回执
     [RCIM sharedRCIM].enabledReadReceiptConversationTypeList =
     @[ @(ConversationType_PRIVATE), @(ConversationType_DISCUSSION), @(ConversationType_GROUP) ];

@@ -191,4 +191,9 @@
     self.viewImage.labTitle.text=model.goodsName;
     self.indexSelect=index;
 }
+
+- (void)dealloc
+{
+    NSLog(@"聊天界面销毁了");
+}
 @end

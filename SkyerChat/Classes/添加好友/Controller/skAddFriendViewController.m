@@ -121,6 +121,7 @@
     if (isAdd) {
         [cell.btnAddFriend setTitle:@"已添加" forState:(UIControlStateNormal)];
         [cell.btnAddFriend setTitleColor:[UIColor lightGrayColor] forState:(UIControlStateNormal)];
+        [cell.btnAddFriend skSetBoardRadius:3 Width:1 andBorderColor:[UIColor clearColor]];
         [cell.btnAddFriend setEnabled:NO];
     }else{
         [cell.btnAddFriend setTitle:@"添加" forState:(UIControlStateNormal)];
@@ -162,7 +163,7 @@
                         };
     
     
-    [skAfTool SKPOST:skUrl(@"/intf/bizLinker/findByPhoneNos") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+    [skAfTool SKPOST:skUrl(@"/intf/bizLinker/findByPhoneNos") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
             
@@ -189,7 +190,7 @@
         
         if (responseObject.returnCode==0) {
             [SkToast SkToastShow:@"添加好友成功" withHight:300];
-            [self.tableView reloadData];
+            [self findByPhoneNos];
         }
         
     } failure:^(NSError * _Nullable error) {
