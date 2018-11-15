@@ -67,6 +67,15 @@
             [self.navigationController pushViewController:conversationVC animated:YES];
         }
             break;
+        case ConversationType_SYSTEM://群组
+        {
+            skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
+            conversationVC.conversationType = model.conversationType;
+            conversationVC.targetId = model.targetId;
+            conversationVC.title = model.conversationTitle;
+            [self.navigationController pushViewController:conversationVC animated:YES];
+        }
+            break;
             
         default:
             break;

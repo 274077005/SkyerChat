@@ -37,6 +37,9 @@
 		8403A6F8219D632A000DAFD1 /* skGonggaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403A6F7219D632A000DAFD1 /* skGonggaoViewController.m */; };
 		8403A6FB219D6349000DAFD1 /* gonggaoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403A6FA219D6349000DAFD1 /* gonggaoView.m */; };
 		8403A6FD219D635D000DAFD1 /* gonggaoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403A6FC219D635D000DAFD1 /* gonggaoView.xib */; };
+		8403A89B219D6D40000DAFD1 /* groupOnerActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403A89A219D6D40000DAFD1 /* groupOnerActivityModel.m */; };
+		8403A89E219D709C000DAFD1 /* groupImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403A89D219D709C000DAFD1 /* groupImageView.m */; };
+		8403A8A0219D70AB000DAFD1 /* groupImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403A89F219D70AB000DAFD1 /* groupImageView.xib */; };
 		8419CDB0216C826300DBE8F4 /* modelRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDAF216C826300DBE8F4 /* modelRegister.m */; };
 		8419CDBA216D949E00DBE8F4 /* SKKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDB5216D949E00DBE8F4 /* SKKeyboard.m */; };
 		8419CDBB216D949E00DBE8F4 /* skClassMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDB9216D949E00DBE8F4 /* skClassMethod.m */; };
@@ -225,6 +228,11 @@
 		8403A6F9219D6349000DAFD1 /* gonggaoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gonggaoView.h; sourceTree = "<group>"; };
 		8403A6FA219D6349000DAFD1 /* gonggaoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gonggaoView.m; sourceTree = "<group>"; };
 		8403A6FC219D635D000DAFD1 /* gonggaoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = gonggaoView.xib; sourceTree = "<group>"; };
+		8403A899219D6D40000DAFD1 /* groupOnerActivityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = groupOnerActivityModel.h; sourceTree = "<group>"; };
+		8403A89A219D6D40000DAFD1 /* groupOnerActivityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = groupOnerActivityModel.m; sourceTree = "<group>"; };
+		8403A89C219D709C000DAFD1 /* groupImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = groupImageView.h; sourceTree = "<group>"; };
+		8403A89D219D709C000DAFD1 /* groupImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = groupImageView.m; sourceTree = "<group>"; };
+		8403A89F219D70AB000DAFD1 /* groupImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = groupImageView.xib; sourceTree = "<group>"; };
 		8419CDAE216C826300DBE8F4 /* modelRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = modelRegister.h; sourceTree = "<group>"; };
 		8419CDAF216C826300DBE8F4 /* modelRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = modelRegister.m; sourceTree = "<group>"; };
 		8419CDB5216D949E00DBE8F4 /* SKKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKKeyboard.m; sourceTree = "<group>"; };
@@ -1535,6 +1543,8 @@
 				84995A1A21804E0500FD8A20 /* GroupModel.m */,
 				842EAAFA218AA01C00CA9E25 /* GroupDesModel.h */,
 				842EAAFB218AA01D00CA9E25 /* GroupDesModel.m */,
+				8403A899219D6D40000DAFD1 /* groupOnerActivityModel.h */,
+				8403A89A219D6D40000DAFD1 /* groupOnerActivityModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1542,6 +1552,9 @@
 		84995A11218015C100FD8A20 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8403A89C219D709C000DAFD1 /* groupImageView.h */,
+				8403A89D219D709C000DAFD1 /* groupImageView.m */,
+				8403A89F219D70AB000DAFD1 /* groupImageView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2051,6 +2064,7 @@
 				843B40BB216B4E5200356306 /* LoginView.xib in Resources */,
 				843B40C4216C553D00356306 /* RegisterView.xib in Resources */,
 				84637F4E217D744C009DB4FF /* skChangePasswordTableViewCell.xib in Resources */,
+				8403A8A0219D70AB000DAFD1 /* groupImageView.xib in Resources */,
 				842EAAE02187E82900CA9E25 /* viewShop.xib in Resources */,
 				2035B07F2199B5AF00BF8AE2 /* ActivityView.xib in Resources */,
 				84537B842154897F00E4CB29 /* LaunchScreen.storyboard in Resources */,
@@ -2251,6 +2265,7 @@
 				84537BA42154D83200E4CB29 /* skBaseNavViewController.m in Sources */,
 				84995A0C21800D9B00FD8A20 /* PersonalTableViewCell.m in Sources */,
 				84B21DAA21605E1D00DCCF9C /* UserModel.m in Sources */,
+				8403A89B219D6D40000DAFD1 /* groupOnerActivityModel.m in Sources */,
 				84D802372175C0CD00E1894F /* skAddFriendViewController.m in Sources */,
 				843B40C2216C552300356306 /* skRegisterViewController.m in Sources */,
 				849959F8217EC32C00FD8A20 /* skAuthenticationViewController.m in Sources */,
@@ -2285,6 +2300,7 @@
 				8419CDE6216DD90C00DBE8F4 /* skUserChatViewController.m in Sources */,
 				84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */,
 				84637F4D217D744C009DB4FF /* skChangePasswordTableViewCell.m in Sources */,
+				8403A89E219D709C000DAFD1 /* groupImageView.m in Sources */,
 				84D8023A2175C1AC00E1894F /* skLinkFriendModel.m in Sources */,
 				2035B0832199B5EF00BF8AE2 /* skGroupAcivityViewController.m in Sources */,
 				84CCF57B216F505A004DE670 /* skChangeUserinfoViewController.m in Sources */,
