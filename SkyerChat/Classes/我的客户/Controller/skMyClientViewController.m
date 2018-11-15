@@ -95,7 +95,7 @@
     }
     myClientModel *model=[self.arrList objectAtIndex:indexPath.row];
     
-    cell.labNikeName.text=model.nickName?model.nickName:model.userNo;
+    cell.labNikeName.text=model.nickName.length>0?model.nickName:model.userNo;
     [cell.imageTitle sd_setImageWithURL:[NSURL URLWithString:model.portrait] placeholderImage:[UIImage imageNamed:@"default_portrait_msg"]];
     return cell;
 }
