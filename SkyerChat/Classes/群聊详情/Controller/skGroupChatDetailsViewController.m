@@ -22,6 +22,7 @@
 #import "skQRcodeGroupViewController.h"
 #import "skGroupAcivityViewController.h"
 #import "skCombineGroupViewController.h"
+#import "skGonggaoViewController.h"
 
 
 @interface skGroupChatDetailsViewController ()
@@ -280,6 +281,13 @@
             }
             if ([modelCell.title isEqualToString:@"申请合并群聊"]) {
                 skCombineGroupViewController *view=[[skCombineGroupViewController alloc] init];
+                view.modelOther=self.model;
+                [self.navigationController pushViewController:view animated:YES];
+                return;
+            }
+            if ([modelCell.title isEqualToString:@"群公告"]) {
+                skGonggaoViewController *view=[[skGonggaoViewController alloc] init];
+                view.modelOther=self.model;
                 [self.navigationController pushViewController:view animated:YES];
                 return;
             }

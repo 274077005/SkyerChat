@@ -88,9 +88,6 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self rememberUser];
-//    if ([[NSUserDefaults standardUserDefaults] objectForKey:skLoginUserAuto]) {
-//        [self userLoginAction];
-//    }
     [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
 }
 
@@ -145,13 +142,6 @@
             
             skUser.isLogin=YES;
             
-            [[RongSDKUsed shareInstance] skRongConnectWithToken:skUser.token success:^(NSString *userId) {
-                
-            } error:^(RCConnectErrorCode status) {
-                
-            } tokenIncorrect:^{
-                
-            }];
             
             [skRootViewController skRootTabarViewController];
         }

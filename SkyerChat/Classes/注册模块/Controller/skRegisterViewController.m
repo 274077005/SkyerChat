@@ -183,13 +183,7 @@
             
             [SFHFKeychainUtils storeUsername:skLoginUserPWD andPassword:self.model.password forServiceName:skLoginUserPWD updateExisting:YES error:nil];
             skUser.isLogin=YES;
-            [[RongSDKUsed shareInstance] skRongConnectWithToken:skUser.token success:^(NSString *userId) {
-                
-            } error:^(RCConnectErrorCode status) {
-                
-            } tokenIncorrect:^{
-                
-            }];
+            
             [skRootViewController skRootTabarViewController];
         }
         

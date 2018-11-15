@@ -36,8 +36,8 @@
     
     [[RongSDKUsed shareInstance] initRongWithAppkey:skRongAppKey];
     
-    [skRootViewController skRootLoginViewController];
-//    [skRootViewController skRootTabarViewController];
+    [skRootViewController skBeforeLoginViewController];
+    
     
     return YES;
 }

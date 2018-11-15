@@ -11,19 +11,43 @@
 #import "skGroupModel.h"
 #import "CombineGroupHeaderTableViewCell.h"
 #import "UIImageView+WebCache.h"
+#import "combineModel.h"
+#import "skImagePicker.h"
 
 @interface skCombineGroupViewController ()
 @property (nonatomic,assign) NSInteger rowGroup;
 @property (nonatomic,strong) NSArray *arrGroupList;
 @property (nonatomic,strong) NSMutableArray *arrSelect;
 @property (nonatomic,strong) CombineGroupHeaderTableViewCell *cellHeader;
+@property (nonatomic,strong) combineModel *model;
+@property (nonatomic,strong) UIImage *imageHeader;
 @end
 
 @implementation skCombineGroupViewController
+- (combineModel *)model{
+    if (nil==_model) {
+        _model=[[combineModel alloc] init];
+    }
+    return _model;
+}
 - (CombineGroupHeaderTableViewCell *)cellHeader{
     if (_cellHeader==nil) {
         _cellHeader=skXibView(@"CombineGroupHeaderTableViewCell");
+        [_cellHeader.btnHeader skSetBoardRadius:40 Width:0 andBorderColor:nil];
+        @weakify(self)
+        [[_cellHeader.btnHeader rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            [skImagePicker showImagePickerFromViewController:self allowsEditing:YES finishAction:^(UIImage *image) {
+                if (image) {
+                    self.imageHeader=image;
+                    [self.cellHeader.btnHeader setImage:nil forState:(UIControlStateNormal)];
+                    [self.cellHeader.btnHeader setBackgroundImage:image forState:(UIControlStateNormal)];
+                }
+                
+            }];
+        }];
     }
+    
     return _cellHeader;
 }
 - (NSMutableArray *)arrSelect{
@@ -38,6 +62,14 @@
     // Do any additional setup after loading the view.
     [self addTableView];
     [self bizGroupMyGroup];
+    self.title=@"合并群聊天";
+    RAC(self.model,groupName)=self.cellHeader.txtName.rac_textSignal;
+    RAC(self.model,mergeDays)=self.cellHeader.txtDay.rac_textSignal;
+    @weakify(self)
+    [[[self skCreatBtn:@"合并" btnTitleOrImage:(btntypeTitle) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self)
+        [self applyMergeGroup];
+    }];
 }
 -(void)addTableView{
     [self.view addSubview:self.tableView];
@@ -169,17 +201,48 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section>0) {
-        NSString *rows=[NSString stringWithFormat:@"%ld",indexPath.row];
         
-        if (![self.arrSelect containsObject:rows]) {
-            [self.arrSelect addObject:rows];
+        NSString *rows=[NSString stringWithFormat:@"%ld",indexPath.row];
+        skGroupModel *model=[self.arrGroupList objectAtIndex:indexPath.row];
+        if (![self.modelOther.groupNo isEqualToString:model.groupNo]) {
+            if (![self.arrSelect containsObject:rows]) {
+                [self.arrSelect addObject:rows];
+            }else{
+                [self.arrSelect removeObject:rows];
+            }
+            
+            [self.tableView reloadData];
         }else{
-            [self.arrSelect removeObject:rows];
+            [SkToast SkToastShow:@"发起者不能选取" withHight:300];
         }
         
-        [self.tableView reloadData];
     }
+}
+
+-(void)applyMergeGroup{
+    ///intf/bizUser/sendRegister
+    NSMutableArray *arrNos=[[NSMutableArray alloc] init];
+    for (int i=0; i<self.arrSelect.count; ++i) {
+        skGroupModel *model=[self.arrGroupList objectAtIndex:i];
+        [arrNos addObject:model.groupNo];
+    }
+    NSDictionary *dic=@{@"fromGroupNo":self.modelOther.groupNo,
+                        @"toGroupNos":arrNos,
+                        @"groupIconBase64":[skClassMethod skImageBase64:self.imageHeader]?[skClassMethod skImageBase64:self.imageHeader]:@"",
+                        @"newGroupName":self.model.groupName?self.model.groupName:@"",
+                        @"mergeDays":self.model.mergeDays?self.model.mergeDays:@"30"
+                        };
     
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroupMerge/applyMergeGroup") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            [SkToast SkToastShow:@"合并成功" withHight:300];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
 }
 
 @end

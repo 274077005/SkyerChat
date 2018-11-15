@@ -12,6 +12,7 @@
 #import "skActivityViewController.h"
 #import "skUserCenterViewController.h"
 #import "skAddressBookViewController.h"
+#import "skChatSelectViewController.h"
 
 @interface skTabarViewController ()
 
@@ -32,7 +33,7 @@
 
 -(void)initTabarView{
     //首页
-    skUserChatViewController *skHome=[[skUserChatViewController alloc] init];
+    skChatSelectViewController *skHome=[[skChatSelectViewController alloc] init];
     skBaseNavViewController *skHomeNav = [[skBaseNavViewController alloc] initWithRootViewController:skHome];
     //附近
     skAddressBookViewController *skNear = [[skAddressBookViewController alloc] init];

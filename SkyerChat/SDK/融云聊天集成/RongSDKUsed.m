@@ -125,7 +125,16 @@
 }
 - (void)onRCIMConnectionStatusChanged:(RCConnectionStatus)status {
     if (status == ConnectionStatus_KICKED_OFFLINE_BY_OTHER_CLIENT) {
-        NSLog(@"强登了");
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"强制下线" message:@"您的账号已在别处登录" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *action=[UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alertController addAction:action];
+        [skVSView presentViewController:alertController animated:YES completion:^{
+            
+        }];
+        
         [skRootViewController skRootLoginViewController];
     }
 }

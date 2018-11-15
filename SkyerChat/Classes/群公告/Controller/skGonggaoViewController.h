@@ -1,8 +1,8 @@
 //
-//  skCombineGroupViewController.h
+//  skGonggaoViewController.h
 //  SkyerChat
 //
-//  Created by skyer on 2018/11/12.
+//  Created by admin on 2018/11/15.
 //  Copyright © 2018 www.skyer.com. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 #import "GroupDesModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface skCombineGroupViewController : skBaseViewController
+@interface skGonggaoViewController : skBaseViewController
 @property (nonatomic,strong) GroupDesModel *modelOther;
 @end
 

@@ -9,11 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "skTabarViewController.h"
 #import "skLoginViewController.h"
+#import "skBeforeLoginViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface skRootViewController : NSObject
 
+/**
+ 在登录界面q之前
+ */
++(void)skBeforeLoginViewController;
 /**
  进入登录界面
  */

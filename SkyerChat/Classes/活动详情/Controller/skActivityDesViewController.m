@@ -14,6 +14,7 @@
 #import "ActivityTitleTableViewCell.h"
 #import "activityOtherTableViewCell.h"
 #import "skSingleChatViewController.h"
+
 @interface skActivityDesViewController ()<SDCycleScrollViewDelegate>
 @property (nonatomic,strong) ActivityDesViews *viewActivity;
 @property (nonatomic,strong) goodsDecModel *model;

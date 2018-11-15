@@ -65,7 +65,9 @@
 //    self.conversationMessageCollectionView.frame=CGRectMake(0, 200, skScreenWidth, skScreenHeight-200);
     
 }
-
+-(void)gonggao{
+    
+}
 /*
 #pragma mark - Navigation
 

@@ -1,14 +1,14 @@
 //
-//  GroupGonggaoCreat.m
+//  gonggaoView.m
 //  SkyerChat
 //
-//  Created by admin on 2018/11/13.
+//  Created by admin on 2018/11/15.
 //  Copyright © 2018 www.skyer.com. All rights reserved.
 //
 
-#import "GroupGonggaoCreat.h"
+#import "gonggaoView.h"
 
-@implementation GroupGonggaoCreat
+@implementation gonggaoView
 
 /*
 // Only override drawRect: if you perform custom drawing.

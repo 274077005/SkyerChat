@@ -74,7 +74,9 @@
         [[_viewSearch.txtSearch rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
             @strongify(self)
             if (x.length>0) {
-                [self getAddressBookList:x];
+                [self bizGroupSearch:x];
+            }else{
+                [self bizGroupMyGroup];
             }
         }];
     }
@@ -194,5 +196,26 @@
         [self headerEndRefreshing];
     }];
 }
-
+-(void)bizGroupSearch:(NSString *)keyword{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"groupType":@"1",
+                        @"keyword":keyword
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroup/search") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            
+            skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
+            
+            self.arrGroupList=[skGroupModel mj_objectArrayWithKeyValuesArray:modelList.list];
+            
+            [self.tableView reloadData];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
 @end

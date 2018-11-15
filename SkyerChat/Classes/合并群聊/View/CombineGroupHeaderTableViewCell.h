@@ -11,6 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CombineGroupHeaderTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *btnHeader;
+@property (weak, nonatomic) IBOutlet UITextField *txtName;
+@property (weak, nonatomic) IBOutlet UITextField *txtDay;
 
 @end
 

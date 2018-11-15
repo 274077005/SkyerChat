@@ -107,6 +107,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="btnHeader" destination="1zP-HU-3g1" id="ccO-Jj-wfI"/>
+                <outlet property="txtDay" destination="n9A-og-DLU" id="pVj-kd-Sw8"/>
+                <outlet property="txtName" destination="biS-TU-SRY" id="0jX-cb-xfs"/>
+            </connections>
             <point key="canvasLocation" x="137.59999999999999" y="217.69115442278863"/>
         </tableViewCell>
     </objects>

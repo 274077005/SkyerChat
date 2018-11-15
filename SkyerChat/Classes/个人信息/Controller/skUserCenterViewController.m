@@ -305,6 +305,8 @@
             UIAlertController *alertView=[UIAlertController alertControllerWithTitle:@"退出登录" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
             UIAlertAction *action=[UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
             UIAlertAction *action1=[UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+                [[NSUserDefaults standardUserDefaults] removeObjectForKey:skLoginUserAuto];
+                [[NSUserDefaults standardUserDefaults] synchronize];
                 [[RCIM sharedRCIM] disconnect:NO];
                 [skRootViewController skRootLoginViewController];
             }];
