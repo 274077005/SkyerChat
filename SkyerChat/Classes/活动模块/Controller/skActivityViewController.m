@@ -17,7 +17,6 @@
 @interface skActivityViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,SDCycleScrollViewDelegate>
 @property (nonatomic,strong) UICollectionView *collectionView;
 
-@property (nonatomic,strong) SDCycleScrollView *viewCycle;
 
 @property (nonatomic,strong) NSArray *arrList;
 
@@ -29,13 +28,6 @@
 
 @implementation skActivityViewController
 
-- (SDCycleScrollView *)viewCycle{
-    if (nil==_viewCycle) {
-        _viewCycle = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, skScreenWidth, 150) delegate:self placeholderImage:[UIImage imageNamed:@""]];
-    }
-    return _viewCycle;
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,7 +35,6 @@
     [self.view addSubview:self.collectionView];
     
     self.title=@"活动";
-    [self honorForLee];
     [self myGroupGoods];
     self.collectionView.mj_header = [MJRefreshNormalHeader  headerWithRefreshingBlock:^{
         self.rows=10;
@@ -56,7 +47,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:animated];
 
 }
 
@@ -71,7 +62,7 @@
         //设置collectionView滚动方向
         [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
         //设置headerView的尺寸大小
-        layout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, 150);
+        layout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, 0);
         //设置尾部的尺寸大小
 //        layout.footerReferenceSize = CGSizeMake(self.view.frame.size.width, 137);
         //该方法也可以设置itemSize
@@ -192,7 +183,6 @@
         
         UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderReusableView" forIndexPath:indexPath];
     
-        [headerView addSubview:self.viewCycle];
         return headerView;
     }
     
@@ -215,42 +205,16 @@
 }
 
 
--(void)honorForLee{
-    ///intf/bizUser/sendRegister
-    NSDictionary *dic=@{@"isTopOnly":[NSNumber numberWithBool:YES],
-                        @"page":[NSNumber numberWithInteger:1],
-                        @"rows":[NSNumber numberWithInteger:5]
-                        };
-    
-    
-    [skAfTool SKPOST:skUrl(@"/intf/bizGoods/honorForLee") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
-        
-        if (responseObject.returnCode==0) {
-            skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
-            self.arrList=[activityModel mj_objectArrayWithKeyValuesArray:modelList.list];
-            NSMutableArray *arrImage=[[NSMutableArray alloc] init];
-            for (int i =0; i < self.arrList.count; ++i) {
-                activityModel *model=[self.arrList objectAtIndex:i];
-                NSString *imageUrl=model.goodsPic;
-                [arrImage addObject:imageUrl];
-            }
-            self.viewCycle.imageURLStringsGroup = arrImage;
-        }
-        
-    } failure:^(NSError * _Nullable error) {
-        
-    }];
-}
 
 -(void)myGroupGoods{
     ///intf/bizUser/sendRegister
-    NSDictionary *dic=@{
+    NSDictionary *dic=@{@"isTopOnly":[NSNumber numberWithBool:YES],
                         @"page":[NSNumber numberWithInteger:1],
                         @"rows":[NSNumber numberWithInteger:self.rows]
                         };
     
     
-    [skAfTool SKPOST:skUrl(@"/intf/bizGoods/myGroupGoods") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+    [skAfTool SKPOST:skUrl(@"/intf/bizGoods/honorForLee") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
             [self.collectionView.mj_footer endRefreshing];

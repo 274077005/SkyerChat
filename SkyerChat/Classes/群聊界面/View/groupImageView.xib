@@ -25,29 +25,29 @@
                                 <constraint firstAttribute="width" constant="50" id="AB8-XL-Dei"/>
                                 <constraint firstAttribute="height" constant="35" id="yGY-f8-VSv"/>
                             </constraints>
-                            <state key="normal" image="bar-返回-黑"/>
+                            <state key="normal" image="bar-返回-白"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ja-9B-piS">
                             <rect key="frame" x="317" y="8" width="50" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="YQS-S2-7PX"/>
                             </constraints>
-                            <state key="normal" image="bar-更多-黑"/>
+                            <state key="normal" image="bar-更多-白"/>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3N-oR-Dhn">
                             <rect key="frame" x="0.0" y="160" width="375" height="40"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTT-YI-ThH">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTT-YI-ThH">
                                     <rect key="frame" x="8" y="0.0" width="359" height="40"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y63-Qo-jsX">
-                                    <rect key="frame" x="327" y="5" width="40" height="30"/>
+                                    <rect key="frame" x="317" y="5" width="50" height="30"/>
                                     <color key="backgroundColor" red="1" green="0.035314427760000003" blue="0.020246718390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="40" id="Q8h-bF-L4O"/>
+                                        <constraint firstAttribute="width" constant="50" id="Q8h-bF-L4O"/>
                                     </constraints>
                                     <state key="normal" title="购买">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,7 +99,7 @@
         </view>
     </objects>
     <resources>
-        <image name="bar-更多-黑" width="24" height="24"/>
-        <image name="bar-返回-黑" width="24" height="24"/>
+        <image name="bar-更多-白" width="24" height="24"/>
+        <image name="bar-返回-白" width="24" height="24"/>
     </resources>
 </document>

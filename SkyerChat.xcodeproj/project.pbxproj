@@ -1196,7 +1196,6 @@
 				8419CDDC216DD8BE00DBE8F4 /* 活动模块 */,
 				8419CDCB216DD80C00DBE8F4 /* 选项卡 */,
 				843B40BC216C54DF00356306 /* 注册模块 */,
-				84537B9A2154929C00E4CB29 /* 首页模块 */,
 				84537B922154929C00E4CB29 /* 登录模块 */,
 				84537B962154929C00E4CB29 /* 聊天模块 */,
 			);
@@ -1304,37 +1303,6 @@
 			sourceTree = "<group>";
 		};
 		84537B992154929C00E4CB29 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		84537B9A2154929C00E4CB29 /* 首页模块 */ = {
-			isa = PBXGroup;
-			children = (
-				84537B9B2154929C00E4CB29 /* Controller */,
-				84537B9C2154929C00E4CB29 /* Model */,
-				84537B9D2154929C00E4CB29 /* View */,
-			);
-			path = "首页模块";
-			sourceTree = "<group>";
-		};
-		84537B9B2154929C00E4CB29 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		84537B9C2154929C00E4CB29 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		84537B9D2154929C00E4CB29 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);

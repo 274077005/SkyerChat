@@ -34,6 +34,7 @@
     if (nil==_viewActivity) {
         
         _viewActivity=skXibView(@"ActivityDesViews");
+        _viewActivity.frame=self.view.bounds;
         [self.view addSubview:_viewActivity];
         @weakify(self)
         [[_viewActivity.btnChat rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
