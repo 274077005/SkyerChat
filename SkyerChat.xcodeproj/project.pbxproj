@@ -73,6 +73,7 @@
 		842EAAFC218AA01D00CA9E25 /* GroupDesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 842EAAFB218AA01D00CA9E25 /* GroupDesModel.m */; };
 		842EAB03218B00E900CA9E25 /* skGroupGonggaoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842EAB01218B00E900CA9E25 /* skGroupGonggaoTableViewCell.m */; };
 		842EAB04218B00E900CA9E25 /* skGroupGonggaoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842EAB02218B00E900CA9E25 /* skGroupGonggaoTableViewCell.xib */; };
+		84328C2721A2698900EC5AF1 /* combineCheckModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84328C2621A2698900EC5AF1 /* combineCheckModel.m */; };
 		843B40B6216B337400356306 /* NSDictionary+skDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B40B5216B337400356306 /* NSDictionary+skDictionary.m */; };
 		843B40B9216B4E4600356306 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B40B8216B4E4600356306 /* LoginView.m */; };
 		843B40BB216B4E5200356306 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843B40BA216B4E5200356306 /* LoginView.xib */; };
@@ -102,6 +103,9 @@
 		84637F4E217D744C009DB4FF /* skChangePasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84637F4C217D744C009DB4FF /* skChangePasswordTableViewCell.xib */; };
 		84637F52217D751A009DB4FF /* skChangePwdCodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84637F50217D751A009DB4FF /* skChangePwdCodeTableViewCell.m */; };
 		84637F53217D751A009DB4FF /* skChangePwdCodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84637F51217D751A009DB4FF /* skChangePwdCodeTableViewCell.xib */; };
+		8472395F21A257BC009055C7 /* skCombineCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8472395E21A257BC009055C7 /* skCombineCheckViewController.m */; };
+		8472396321A25A8E009055C7 /* CombineCheckTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8472396121A25A8E009055C7 /* CombineCheckTableViewCell.m */; };
+		8472396421A25A8E009055C7 /* CombineCheckTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8472396221A25A8E009055C7 /* CombineCheckTableViewCell.xib */; };
 		84756E092195788E0018AB35 /* skCreatGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84756E082195788E0018AB35 /* skCreatGroupViewController.m */; };
 		84756E0C219578AD0018AB35 /* creatGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84756E0B219578AD0018AB35 /* creatGroupView.m */; };
 		84756E0E219578B70018AB35 /* creatGroupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84756E0D219578B70018AB35 /* creatGroupView.xib */; };
@@ -293,6 +297,8 @@
 		842EAB00218B00E900CA9E25 /* skGroupGonggaoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skGroupGonggaoTableViewCell.h; sourceTree = "<group>"; };
 		842EAB01218B00E900CA9E25 /* skGroupGonggaoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skGroupGonggaoTableViewCell.m; sourceTree = "<group>"; };
 		842EAB02218B00E900CA9E25 /* skGroupGonggaoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skGroupGonggaoTableViewCell.xib; sourceTree = "<group>"; };
+		84328C2521A2698900EC5AF1 /* combineCheckModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = combineCheckModel.h; sourceTree = "<group>"; };
+		84328C2621A2698900EC5AF1 /* combineCheckModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = combineCheckModel.m; sourceTree = "<group>"; };
 		843B40B4216B337400356306 /* NSDictionary+skDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+skDictionary.h"; sourceTree = "<group>"; };
 		843B40B5216B337400356306 /* NSDictionary+skDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+skDictionary.m"; sourceTree = "<group>"; };
 		843B40B7216B4E4600356306 /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
@@ -345,6 +351,11 @@
 		84637F4F217D751A009DB4FF /* skChangePwdCodeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skChangePwdCodeTableViewCell.h; sourceTree = "<group>"; };
 		84637F50217D751A009DB4FF /* skChangePwdCodeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skChangePwdCodeTableViewCell.m; sourceTree = "<group>"; };
 		84637F51217D751A009DB4FF /* skChangePwdCodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skChangePwdCodeTableViewCell.xib; sourceTree = "<group>"; };
+		8472395D21A257BC009055C7 /* skCombineCheckViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skCombineCheckViewController.h; sourceTree = "<group>"; };
+		8472395E21A257BC009055C7 /* skCombineCheckViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skCombineCheckViewController.m; sourceTree = "<group>"; };
+		8472396021A25A8E009055C7 /* CombineCheckTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CombineCheckTableViewCell.h; sourceTree = "<group>"; };
+		8472396121A25A8E009055C7 /* CombineCheckTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CombineCheckTableViewCell.m; sourceTree = "<group>"; };
+		8472396221A25A8E009055C7 /* CombineCheckTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CombineCheckTableViewCell.xib; sourceTree = "<group>"; };
 		84756E072195788E0018AB35 /* skCreatGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skCreatGroupViewController.h; sourceTree = "<group>"; };
 		84756E082195788E0018AB35 /* skCreatGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skCreatGroupViewController.m; sourceTree = "<group>"; };
 		84756E0A219578AD0018AB35 /* creatGroupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = creatGroupView.h; sourceTree = "<group>"; };
@@ -1168,6 +1179,7 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8472395921A257A0009055C7 /* 入群审核 */,
 				8403A6F2219D6319000DAFD1 /* 群公告 */,
 				8403A6E5219D53F6000DAFD1 /* 聊天空白页 */,
 				8403A6DE219D5243000DAFD1 /* 聊天 */,
@@ -1363,6 +1375,44 @@
 				84637F4F217D751A009DB4FF /* skChangePwdCodeTableViewCell.h */,
 				84637F50217D751A009DB4FF /* skChangePwdCodeTableViewCell.m */,
 				84637F51217D751A009DB4FF /* skChangePwdCodeTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8472395921A257A0009055C7 /* 入群审核 */ = {
+			isa = PBXGroup;
+			children = (
+				8472395A21A257A0009055C7 /* Controller */,
+				8472395B21A257A0009055C7 /* Model */,
+				8472395C21A257A0009055C7 /* View */,
+			);
+			path = "入群审核";
+			sourceTree = "<group>";
+		};
+		8472395A21A257A0009055C7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8472395D21A257BC009055C7 /* skCombineCheckViewController.h */,
+				8472395E21A257BC009055C7 /* skCombineCheckViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8472395B21A257A0009055C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84328C2521A2698900EC5AF1 /* combineCheckModel.h */,
+				84328C2621A2698900EC5AF1 /* combineCheckModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8472395C21A257A0009055C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8472396021A25A8E009055C7 /* CombineCheckTableViewCell.h */,
+				8472396121A25A8E009055C7 /* CombineCheckTableViewCell.m */,
+				8472396221A25A8E009055C7 /* CombineCheckTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2067,6 +2117,7 @@
 				84CFE3AB217828AB0061B625 /* UserinfoSetNewMessageTableViewCell.xib in Resources */,
 				8403A69F219C08A6000DAFD1 /* ActivityHeaderTableViewCell.xib in Resources */,
 				8403A6AC219C133E000DAFD1 /* activityOtherTableViewCell.xib in Resources */,
+				8472396421A25A8E009055C7 /* CombineCheckTableViewCell.xib in Resources */,
 				84E65CD22179CC0D00A379E0 /* AddressTableViewCell.xib in Resources */,
 				84D7DB5E2182A09000131373 /* AddressBookTitleView.xib in Resources */,
 				84537B812154897F00E4CB29 /* Assets.xcassets in Resources */,
@@ -2185,6 +2236,7 @@
 				84EEBABD2179C3E600EDBA1E /* skAddressModel.m in Sources */,
 				84D160D9216058A8002188DB /* skParamsForRequest.m in Sources */,
 				84D5CD752182FAC000DB762E /* UIView+Shadow.m in Sources */,
+				84328C2721A2698900EC5AF1 /* combineCheckModel.m in Sources */,
 				84011AA6217489E60005436B /* skResponeList.m in Sources */,
 				84537B872154897F00E4CB29 /* main.m in Sources */,
 				84B7F3CE2191281200793DDD /* skLookoverTableViewCell.m in Sources */,
@@ -2202,6 +2254,7 @@
 				84011AA921748BB60005436B /* skAddressBookModel.m in Sources */,
 				84756E092195788E0018AB35 /* skCreatGroupViewController.m in Sources */,
 				8403A6DD219D4ABF000DAFD1 /* combineModel.m in Sources */,
+				8472395F21A257BC009055C7 /* skCombineCheckViewController.m in Sources */,
 				84CCF58821743347004DE670 /* skChangeUserinfoModel.m in Sources */,
 				84EEBAC12179C4F000EDBA1E /* skAddAddressTableViewCell.m in Sources */,
 				8403A68E219BF26E000DAFD1 /* QRCodeScanViewController.m in Sources */,
@@ -2297,6 +2350,7 @@
 				84D160D6215F6FBF002188DB /* skNetConfig.m in Sources */,
 				84995A282181C11E00FD8A20 /* skMyClientViewController.m in Sources */,
 				842EAAE32188338300CA9E25 /* activityModel.m in Sources */,
+				8472396321A25A8E009055C7 /* CombineCheckTableViewCell.m in Sources */,
 				84B7F3CA2191248400793DDD /* skLookoverViewController.m in Sources */,
 				8419CDEF216DD9B700DBE8F4 /* skUserCenterViewController.m in Sources */,
 				84D8022F2175990800E1894F /* UserCenterLoginOutTableViewCell.m in Sources */,
@@ -2439,7 +2493,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SkyerChat/SkyerChat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6X2WV2GYU6;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = SkyerChat/PrefixHeader.pch;
@@ -2451,7 +2505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = skyer.SkyerChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Development SkyerChat";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;
 			};
@@ -2465,8 +2519,8 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SkyerChat/SkyerChat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X2WV2GYU6;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = SkyerChat/PrefixHeader.pch;
 				INFOPLIST_FILE = SkyerChat/Info.plist;

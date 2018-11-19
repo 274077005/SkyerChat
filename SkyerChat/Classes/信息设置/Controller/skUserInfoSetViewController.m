@@ -258,10 +258,10 @@
 -(void)changeUser:(Boolean)isNotify workUnit:(NSString *)workUnit monthIncome:(NSString *)monthIncome hobbies:(NSString *)hobbies sign:(NSString *)sign{
     ///intf/bizUser/sendRegister
     NSDictionary *dic=@{@"isNotify":[NSNumber numberWithBool:isNotify],
-                        @"workUnit":workUnit,
-                        @"monthIncome":monthIncome,
-                        @"hobbies":hobbies,
-                        @"sign":sign
+                        @"workUnit":workUnit?workUnit:@"",
+                        @"monthIncome":monthIncome?monthIncome:@"",
+                        @"hobbies":hobbies?hobbies:@"",
+                        @"sign":sign?sign:@""
                         };
     
     

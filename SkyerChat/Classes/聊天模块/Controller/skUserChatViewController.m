@@ -9,6 +9,7 @@
 #import "skUserChatViewController.h"
 #import "skGroupChatViewController.h"
 #import "skSingleChatViewController.h"
+#import "skCombineCheckViewController.h"
 
 
 @interface skUserChatViewController ()
@@ -69,19 +70,18 @@
             break;
         case ConversationType_SYSTEM://群组
         {
-            skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
-            conversationVC.conversationType = model.conversationType;
-            conversationVC.targetId = model.targetId;
-            conversationVC.title = model.conversationTitle;
-            [self.navigationController pushViewController:conversationVC animated:YES];
+            skCombineCheckViewController *view=[[skCombineCheckViewController  alloc] init];
+            [self.navigationController pushViewController:view animated:YES];
         }
             break;
             
         default:
             break;
     }
-    
-    
+}
 
+-(void)skDeleteNilCell{
+    RCConversationModel *modelRCC=[[RCConversationModel alloc] init];
+    [self didDeleteConversationCell:modelRCC];
 }
 @end

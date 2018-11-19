@@ -42,14 +42,14 @@
     // Do any additional setup after loading the view.
 //    self.title=@"通讯录";
     [self addTableView];
-    
+    skWeakSelf(self)
     [self createRefreshHeaderViewWithBlock:^{
-        self.rowGroup=0;
-        [self bizGroupMyGroup];
+        weakself.rowGroup=0;
+        [weakself bizGroupMyGroup];
     }];
     [self createRefreshFooterViewWithBlock:^{
-        self.rowGroup+=10;
-        [self bizGroupMyGroup];
+        weakself.rowGroup+=10;
+        [weakself bizGroupMyGroup];
     }];
     
 }

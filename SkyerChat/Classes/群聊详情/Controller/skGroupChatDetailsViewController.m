@@ -238,8 +238,14 @@
     [btn setTitle:@"解散或退出群聊" forState:(UIControlStateNormal)];
     [btn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
     [btn skSetBoardRadius:5 Width:0 andBorderColor:nil];
+    @weakify(self)
     [[btn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        
+        @strongify(self)
+        if ([skUser.userNo isEqualToString:self.model.createUserNo]) {//群主
+            [self bizGroupDelete];
+        }else{//群员
+            [self bizGroupUserDelete];
+        }
     }];
     [view addSubview:btn];
     
@@ -408,4 +414,39 @@
     }];
 }
 
+#pragma mark - 退出群聊
+-(void)bizGroupUserDelete{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"groupNo":self.model.groupNo
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroupUser/delete") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+#pragma mark - 解散群聊
+///intf/bizGroup/delete
+-(void)bizGroupDelete{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"groupNo":self.model.groupNo
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroup/delete") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
 @end

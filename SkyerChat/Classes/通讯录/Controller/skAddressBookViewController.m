@@ -16,6 +16,7 @@
 #import "skMenuViewController.h"
 #import "skCreatGroupViewController.h"
 #import "QRCodeScanViewController.h"
+#import "skCombineCheckViewController.h"
 
 @interface skAddressBookViewController ()
 @property (nonatomic,strong) SkChildViews *viewChild;
@@ -74,7 +75,7 @@
         
         skMenuViewController *viewCharge=[[skMenuViewController alloc] init];
         //关键语句，必须有
-        viewCharge.arrTitle=@[@"新建聊天群",@"添加好友",@"扫一扫"];
+        viewCharge.arrTitle=@[@"新建聊天群",@"添加好友",@"扫一扫",@"合并审核"];
         viewCharge.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.1];
         viewCharge.modalPresentationStyle = UIModalPresentationOverFullScreen;
         [viewCharge setChargeType:^(NSInteger index) {
@@ -102,6 +103,13 @@
                         [self bizGroupUserCreate:x[0]];
                         
                     }];
+                    [self.navigationController pushViewController:view animated:YES];
+                    
+                }
+                    break;
+                case 3:
+                {
+                    skCombineCheckViewController *view=[[skCombineCheckViewController  alloc] init];
                     [self.navigationController pushViewController:view animated:YES];
                     
                 }

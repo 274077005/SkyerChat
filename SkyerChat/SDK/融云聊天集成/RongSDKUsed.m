@@ -179,6 +179,7 @@
             user.userId=userNo;
             
             completion(user);
+        }else{
         }
         
     } failure:^(NSError * _Nullable error) {
