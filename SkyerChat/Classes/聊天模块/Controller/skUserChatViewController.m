@@ -30,8 +30,9 @@
                                         @(ConversationType_APPSERVICE),
                                         @(ConversationType_SYSTEM)]];
     //设置需要将哪些类型的会话在会话列表中聚合显示
-    [self setCollectionConversationType:@[@(ConversationType_SYSTEM),
-                                          @(ConversationType_PUSHSERVICE)]];
+    [self setCollectionConversationType:@[@(ConversationType_SYSTEM)]];
+
+    [self setIsEnteredToCollectionViewController:YES];
 }
 /*
 #pragma mark - Navigation
@@ -46,6 +47,9 @@
 - (void)onSelectedTableRow:(RCConversationModelType)conversationModelType
          conversationModel:(RCConversationModel *)model
                atIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    [super onSelectedTableRow:conversationModelType conversationModel:model atIndexPath:indexPath];
     
     RCConversationType type=model.conversationType;
     
