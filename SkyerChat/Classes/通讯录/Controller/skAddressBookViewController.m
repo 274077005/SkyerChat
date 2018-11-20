@@ -12,11 +12,7 @@
 #import "skGroupListViewController.h"
 #import "skMyClientViewController.h"
 #import "AddressBookTitleView.h"
-#import "skAddFriendViewController.h"
-#import "skMenuViewController.h"
-#import "skCreatGroupViewController.h"
-#import "QRCodeScanViewController.h"
-#import "skCombineCheckViewController.h"
+
 
 @interface skAddressBookViewController ()
 @property (nonatomic,strong) SkChildViews *viewChild;
@@ -67,87 +63,11 @@
     
     [self.viewChild skChangVeiw:0];
     
-    @weakify(self)
-    [[[self skCreatBtn:@"bar-更多-白" btnTitleOrImage:(btntypeImage) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        @strongify(self)
-        
-        
-        
-        skMenuViewController *viewCharge=[[skMenuViewController alloc] init];
-        //关键语句，必须有
-        viewCharge.arrTitle=@[@"新建聊天群",@"添加好友",@"扫一扫",@"合并审核"];
-        viewCharge.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.1];
-        viewCharge.modalPresentationStyle = UIModalPresentationOverFullScreen;
-        [viewCharge setChargeType:^(NSInteger index) {
-            NSLog(@"%ld",index);
-            switch (index) {
-                case 0:
-                {
-                    skCreatGroupViewController *view=[[skCreatGroupViewController alloc] init];
-                    [self.navigationController pushViewController:view animated:YES];
-                }
-                    break;
-                case 1:
-                {
-                    skAddFriendViewController *view=[[skAddFriendViewController alloc] init];
-                    [self.navigationController pushViewController:view animated:YES];
-                }
-                    break;
-                case 2:
-                {
-                    QRCodeScanViewController *view=[[QRCodeScanViewController alloc] init];
-                    @weakify(self)
-                    
-                    [[view rac_signalForSelector:@selector(skScanResult:)] subscribeNext:^(RACTuple * _Nullable x) {
-                        @strongify(self)
-                        [self bizGroupUserCreate:x[0]];
-                        
-                    }];
-                    [self.navigationController pushViewController:view animated:YES];
-                    
-                }
-                    break;
-                case 3:
-                {
-                    skCombineCheckViewController *view=[[skCombineCheckViewController  alloc] init];
-                    [self.navigationController pushViewController:view animated:YES];
-                    
-                }
-                    break;
-                    
-                default:
-                    break;
-            }
-        }];
-        [skVSView presentViewController:viewCharge animated:NO completion:^(void){
-            
-        }];
-    }];
-}
-
-
-
-
--(void)bizGroupUserCreate:(NSString *)groupNo{
-    ///intf/bizUser/sendRegister
-    
-    NSLog(@"====%@",groupNo);
-    NSArray *arrList=[groupNo componentsSeparatedByString:@"/"];
-    if (arrList.count>0) {
-        NSDictionary *dic=@{@"inviteSecret":[arrList lastObject],
-                            };
-        
-        
-        [skAfTool SKPOST:skUrl(@"/intf/bizGroupUser/create") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
-            
-            if (responseObject.returnCode==0) {
-                [SkToast SkToastShow:@"加群成功" withHight:300];
-            }
-            
-        } failure:^(NSError * _Nullable error) {
-            
-        }];
-    }
     
 }
+
+
+
+
+
 @end
