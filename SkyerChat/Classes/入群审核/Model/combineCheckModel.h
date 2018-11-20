@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , copy) NSString              * toGroupName;
 @property (nonatomic , assign) NSInteger              toUserId;
 @property (nonatomic , copy) NSString              * mergeNo;
-@property (nonatomic , copy) NSString              * xoxoGroupName;
+@property (nonatomic , copy) NSString              * xGroupName;
 @property (nonatomic , assign) NSInteger              toGroupType;
 @property (nonatomic , copy) NSString              * applyTime;
 @property (nonatomic , assign) NSInteger              mergeDays;

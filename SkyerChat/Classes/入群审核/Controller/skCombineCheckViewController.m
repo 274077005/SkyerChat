@@ -109,7 +109,7 @@
     
     cell.labTitle.text=[NSString stringWithFormat:@"群(%@)向你申请合并(%@)",model.fromGroupName,model.toGroupName];
     
-    cell.labNewGroupName.text=model.xoxoGroupName;
+    cell.labNewGroupName.text=model.xGroupName;
     cell.labTime.text=model.applyTime;
     cell.labMregeDay.text=[NSString stringWithFormat:@"%ld",model.mergeDays];
     cell.labWhoConbine.text=model.fromUserNo;
