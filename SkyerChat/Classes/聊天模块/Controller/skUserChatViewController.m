@@ -77,9 +77,9 @@
             break;
         case ConversationType_SYSTEM://群组
         {
-            [[RCIMClient sharedRCIMClient] clearMessagesUnreadStatus:ConversationType_SYSTEM targetId:model.targetId];
-            skCombineCheckViewController *view=[[skCombineCheckViewController  alloc] init];
-            [self.navigationController pushViewController:view animated:YES];
+//            [[RCIMClient sharedRCIMClient] clearMessagesUnreadStatus:ConversationType_SYSTEM targetId:model.targetId];
+//            skCombineCheckViewController *view=[[skCombineCheckViewController  alloc] init];
+//            [self.navigationController pushViewController:view animated:YES];
             
         }
             break;
