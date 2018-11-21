@@ -222,8 +222,11 @@
 -(void)applyMergeGroup{
     ///intf/bizUser/sendRegister
     NSMutableArray *arrNos=[[NSMutableArray alloc] init];
+    
     for (int i=0; i<self.arrSelect.count; ++i) {
-        skGroupModel *model=[self.arrGroupList objectAtIndex:i];
+        NSInteger index=[[self.arrSelect objectAtIndex:i] integerValue];
+        skGroupModel *model=[self.arrGroupList objectAtIndex:index];
+        
         [arrNos addObject:model.groupNo];
     }
     NSDictionary *dic=@{@"fromGroupNo":self.modelOther.groupNo,
