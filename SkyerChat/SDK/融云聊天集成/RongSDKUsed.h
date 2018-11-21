@@ -10,6 +10,7 @@
 
 @interface RongSDKUsed : NSObject <RCIMConnectionStatusDelegate,RCIMUserInfoDataSource,RCIMGroupInfoDataSource,RCIMGroupUserInfoDataSource,RCIMGroupMemberDataSource,RCIMReceiveMessageDelegate>
 
+@property (nonatomic,strong) NSMutableArray *arrMember;
 
 + (RongSDKUsed *)shareInstance;
 
@@ -31,4 +32,11 @@
                          error:(void (^)(RCConnectErrorCode status))errorBlock
                 tokenIncorrect:(void (^)(void))tokenIncorrectBlock;
 
+
+/**
+ 返回未读消息数
+
+ @return 未读消息的数量
+ */
+-(NSInteger)skGetCount;
 @end

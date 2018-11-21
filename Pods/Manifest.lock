@@ -70,7 +70,6 @@ DEPENDENCIES:
   - RongCloudIM/CallKit
   - RongCloudIM/CallLib
   - RongCloudIM/IMKit
-  - RongCloudIM/IMLib
   - RongCloudIM/RedPacket
   - SDCycleScrollView (~> 1.75)
   - SDWebImage
@@ -117,6 +116,6 @@ SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SkyerTools: 2aa8614b85ced2d15f139762379e91ecda837a47
 
-PODFILE CHECKSUM: 9f3a7b14d4e2219aebe57e59ea439bc2809d54bf
+PODFILE CHECKSUM: 787c8d84fa362cd19625a68a69d4c44f991668f6
 
 COCOAPODS: 1.5.2

@@ -22,7 +22,7 @@ target 'SkyerChat' do
 #    融云音视频界面组件 - RongCloudIM/CallKit
 #    融云红包 - RongCloudIM/RedPacket
 
-    pod 'RongCloudIM/IMLib'
+#    pod 'RongCloudIM/IMLib'
     pod 'RongCloudIM/IMKit'
     pod 'RongCloudIM/CallLib'
     pod 'RongCloudIM/CallKit'

@@ -17,22 +17,29 @@
 @end
 
 @implementation skUserChatViewController
-
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        //设置需要显示哪些类型的会话
+        [self setDisplayConversationTypeArray:@[@(ConversationType_PRIVATE),
+                                                @(ConversationType_DISCUSSION),
+                                                @(ConversationType_CHATROOM),
+                                                @(ConversationType_GROUP),
+                                                @(ConversationType_APPSERVICE),
+                                                @(ConversationType_SYSTEM)]];
+        //设置需要将哪些类型的会话在会话列表中聚合显示
+        [self setCollectionConversationType:@[@(ConversationType_SYSTEM)]];
+        
+        [self setIsEnteredToCollectionViewController:YES];
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"聊天";
     // Do any additional setup after loading the view.
-    //设置需要显示哪些类型的会话
-    [self setDisplayConversationTypeArray:@[@(ConversationType_PRIVATE),
-                                        @(ConversationType_DISCUSSION),
-                                        @(ConversationType_CHATROOM),
-                                        @(ConversationType_GROUP),
-                                        @(ConversationType_APPSERVICE),
-                                        @(ConversationType_SYSTEM)]];
-    //设置需要将哪些类型的会话在会话列表中聚合显示
-    [self setCollectionConversationType:@[@(ConversationType_SYSTEM)]];
-
-    [self setIsEnteredToCollectionViewController:YES];
+    
 }
 /*
 #pragma mark - Navigation
@@ -74,8 +81,10 @@
             break;
         case ConversationType_SYSTEM://群组
         {
+            [[RCIMClient sharedRCIMClient] clearMessagesUnreadStatus:ConversationType_SYSTEM targetId:model.targetId];
             skCombineCheckViewController *view=[[skCombineCheckViewController  alloc] init];
             [self.navigationController pushViewController:view animated:YES];
+            
         }
             break;
             
