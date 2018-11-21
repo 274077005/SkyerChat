@@ -229,7 +229,7 @@
     NSDictionary *dic=@{@"fromGroupNo":self.modelOther.groupNo,
                         @"toGroupNos":arrNos,
                         @"groupIconBase64":[skClassMethod skImageBase64:self.imageHeader]?[skClassMethod skImageBase64:self.imageHeader]:@"",
-                        @"newGroupName":self.model.groupName?self.model.groupName:@"",
+                        @"xGroupName":self.model.groupName?self.model.groupName:@"",
                         @"mergeDays":self.model.mergeDays?self.model.mergeDays:@"30"
                         };
     

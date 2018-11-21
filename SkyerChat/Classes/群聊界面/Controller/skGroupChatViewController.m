@@ -166,7 +166,6 @@
         
         if (responseObject.returnCode==0) {
             
-            
             skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
             
             self.arrList=[groupOnerActivityModel mj_objectArrayWithKeyValuesArray:modelList.list];

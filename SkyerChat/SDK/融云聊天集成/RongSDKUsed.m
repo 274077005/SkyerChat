@@ -228,7 +228,6 @@
     }
     UIApplication *app = [UIApplication sharedApplication];
     app.applicationIconBadgeNumber = unreadMsgCount;
-    
 }
 
 #pragma mark 所有的未读消息

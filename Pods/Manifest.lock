@@ -33,16 +33,11 @@ PODS:
   - MOBFoundation (3.2.0)
   - PPGetAddressBook (0.2.8)
   - ReactiveObjC (3.1.0)
-  - RongCloudIM/CallKit (2.8.32):
-    - RongCloudIM/CallLib
-    - RongCloudIM/IMKit
   - RongCloudIM/CallLib (2.8.32):
     - RongCloudIM/IMLib
   - RongCloudIM/IMKit (2.8.32):
     - RongCloudIM/IMLib
   - RongCloudIM/IMLib (2.8.32)
-  - RongCloudIM/RedPacket (2.8.32):
-    - RongCloudIM/IMKit
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
   - SDWebImage (4.4.2):
@@ -67,10 +62,8 @@ DEPENDENCIES:
   - mob_sharesdk/ShareSDKPlatforms/WeChatFull
   - PPGetAddressBook (from `https://github.com/jkpang/PPGetAddressBook.git`)
   - ReactiveObjC
-  - RongCloudIM/CallKit
   - RongCloudIM/CallLib
   - RongCloudIM/IMKit
-  - RongCloudIM/RedPacket
   - SDCycleScrollView (~> 1.75)
   - SDWebImage
   - SkyerTools
@@ -116,6 +109,6 @@ SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SkyerTools: 2aa8614b85ced2d15f139762379e91ecda837a47
 
-PODFILE CHECKSUM: 787c8d84fa362cd19625a68a69d4c44f991668f6
+PODFILE CHECKSUM: a034291ec73dda85d9aab69d2f8ec8ed52b906b0
 
 COCOAPODS: 1.5.2

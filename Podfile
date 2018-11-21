@@ -25,8 +25,8 @@ target 'SkyerChat' do
 #    pod 'RongCloudIM/IMLib'
     pod 'RongCloudIM/IMKit'
     pod 'RongCloudIM/CallLib'
-    pod 'RongCloudIM/CallKit'
-    pod 'RongCloudIM/RedPacket'
+#    pod 'RongCloudIM/CallKit'
+#    pod 'RongCloudIM/RedPacket'
     pod 'PPGetAddressBook',:git => 'https://github.com/jkpang/PPGetAddressBook.git'
     pod 'SDCycleScrollView','~> 1.75'
     # 主模块(必须)

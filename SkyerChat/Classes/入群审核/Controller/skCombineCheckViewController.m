@@ -148,13 +148,14 @@
 -(void)auditJoinMergedGroup:(NSInteger)btnTag andStay:(NSString *)status{
     ///intf/bizUser/sendRegister
     combineCheckModel *model=[self.arrList objectAtIndex:btnTag];
+    
     NSDictionary *dic=@{@"mergeNo":model.mergeNo,
-                        @"fromGroupNo":[NSNumber numberWithInteger:model.fromGroupId],
+                        @"groupNo":model.toGroupNo,
                         @"status":status//1=同意,2=不同意
                         };
     
     
-    [skAfTool SKPOST:skUrl(@"/intf/bizGroupMerge/auditJoinMergedGroup") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroupMerge/auditMergeGroup") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
             [self auditList];

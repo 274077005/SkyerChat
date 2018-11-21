@@ -97,12 +97,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj"
   install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist"
   install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist"
-  install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/JResource.bundle"
-  install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/en.lproj"
-  install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/zh-Hans.lproj"
-  install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/jrmf.cer"
-  install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/AlipaySDK/AlipaySDK.bundle"
-  install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/WalletResource.bundle"
   install_resource "${PODS_ROOT}/mob_sharesdk/SDK/ShareSDK/Support/Required/ShareSDK.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -111,12 +105,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj"
   install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist"
   install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist"
-  install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/JResource.bundle"
-  install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/en.lproj"
-  install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/zh-Hans.lproj"
-  install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/jrmf.cer"
-  install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/AlipaySDK/AlipaySDK.bundle"
-  install_resource "${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/WalletResource.bundle"
   install_resource "${PODS_ROOT}/mob_sharesdk/SDK/ShareSDK/Support/Required/ShareSDK.bundle"
 fi
 

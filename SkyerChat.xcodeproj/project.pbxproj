@@ -2181,12 +2181,6 @@
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/JResource.bundle",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/en.lproj",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/zh-Hans.lproj",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/jrmf.cer",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/AlipaySDK/AlipaySDK.bundle",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/JrmfIMLib/WalletResource.bundle",
 				"${PODS_ROOT}/mob_sharesdk/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -2196,10 +2190,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Emoji.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCConfig.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JResource.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jrmf.cer",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AlipaySDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WalletResource.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
