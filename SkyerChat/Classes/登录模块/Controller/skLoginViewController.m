@@ -12,6 +12,7 @@
 #import "skRegisterViewController.h"
 #import "skRootViewController.h"
 #import "skChangePasswordViewController.h"
+#import "skJPUSHSet.h"
 
 @interface skLoginViewController ()
 @property (nonatomic,strong) LoginView *viewLogin;
@@ -125,7 +126,8 @@
     NSString *passwd=[NSString stringWithFormat:@"%@%@",_userLogin.loginPwd,skSaltMd5String];
     
     NSDictionary *dic=@{@"phoneNo":_userLogin.loginPhone,
-                        @"passwd":[passwd MD5]
+                        @"passwd":[passwd MD5],
+                        @"registrationId":[skJPUSHSet sharedskJPUSHSet].skRegistrationID.length>0?[skJPUSHSet sharedskJPUSHSet].skRegistrationID:@"没注册成功"  
                         };
     
     skModelNet.phoneNo=_userLogin.loginPhone;

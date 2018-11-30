@@ -7,6 +7,7 @@
 //
 
 #import "skRootViewController.h"
+#import "skJPUSHSet.h"
 
 
 @implementation skRootViewController
@@ -40,9 +41,11 @@
     
     NSString *passwd=[NSString stringWithFormat:@"%@%@",userPWD,skSaltMd5String];
     
+    [skJPUSHSet sharedskJPUSHSet].skRegistrationID=[[NSUserDefaults standardUserDefaults] objectForKey:@"skRegistrationID"];
+    
     NSDictionary *dic=@{@"phoneNo":userName,
-                        @"passwd":[passwd MD5]
-                        };
+                        @"passwd":[passwd MD5],
+                        @"registrationId":[skJPUSHSet sharedskJPUSHSet].skRegistrationID.length>0?[skJPUSHSet sharedskJPUSHSet].skRegistrationID:@"没注册成功"                        };
     
     skModelNet.phoneNo=userName;
     skModelNet.passwd=[passwd MD5];

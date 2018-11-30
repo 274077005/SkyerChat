@@ -11,7 +11,7 @@
 #import "SKKeyboard.h"
 #import "skNavigationConfig.h"
 #import "skRootViewController.h"
-
+#import "skJPUSHSet.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +24,9 @@
     // Override point for customization after application launch.
     //设置状态栏
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    //极光推送
+    [[skJPUSHSet sharedskJPUSHSet] skJpushSet:launchOptions];
+    //获取配置文件
     [skNetConfig initNetConfig];
     NSLog(@"url地址=%@",skModelNet.apiServer);
     //初始化键盘管理器

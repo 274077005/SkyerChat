@@ -109,6 +109,8 @@
 		84756E092195788E0018AB35 /* skCreatGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84756E082195788E0018AB35 /* skCreatGroupViewController.m */; };
 		84756E0C219578AD0018AB35 /* creatGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84756E0B219578AD0018AB35 /* creatGroupView.m */; };
 		84756E0E219578B70018AB35 /* creatGroupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84756E0D219578B70018AB35 /* creatGroupView.xib */; };
+		84913DBC21B121D000EB6C78 /* skJPUSHSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 84913DB821B121D000EB6C78 /* skJPUSHSet.m */; };
+		84913DBD21B121D000EB6C78 /* AppDelegate+Jpush.m in Sources */ = {isa = PBXBuildFile; fileRef = 84913DBB21B121D000EB6C78 /* AppDelegate+Jpush.m */; };
 		849959E9217D7F1000FD8A20 /* skSafeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849959E8217D7F1000FD8A20 /* skSafeViewController.m */; };
 		849959ED217D7F3D00FD8A20 /* skSafeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849959EB217D7F3D00FD8A20 /* skSafeTableViewCell.m */; };
 		849959EE217D7F3D00FD8A20 /* skSafeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849959EC217D7F3D00FD8A20 /* skSafeTableViewCell.xib */; };
@@ -361,6 +363,10 @@
 		84756E0A219578AD0018AB35 /* creatGroupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = creatGroupView.h; sourceTree = "<group>"; };
 		84756E0B219578AD0018AB35 /* creatGroupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = creatGroupView.m; sourceTree = "<group>"; };
 		84756E0D219578B70018AB35 /* creatGroupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = creatGroupView.xib; sourceTree = "<group>"; };
+		84913DB821B121D000EB6C78 /* skJPUSHSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skJPUSHSet.m; sourceTree = "<group>"; };
+		84913DB921B121D000EB6C78 /* AppDelegate+Jpush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Jpush.h"; sourceTree = "<group>"; };
+		84913DBA21B121D000EB6C78 /* skJPUSHSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skJPUSHSet.h; sourceTree = "<group>"; };
+		84913DBB21B121D000EB6C78 /* AppDelegate+Jpush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Jpush.m"; sourceTree = "<group>"; };
 		849959E7217D7F1000FD8A20 /* skSafeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skSafeViewController.h; sourceTree = "<group>"; };
 		849959E8217D7F1000FD8A20 /* skSafeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skSafeViewController.m; sourceTree = "<group>"; };
 		849959EA217D7F3D00FD8A20 /* skSafeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skSafeTableViewCell.h; sourceTree = "<group>"; };
@@ -1219,6 +1225,7 @@
 		84537B8F2154913B00E4CB29 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				84913DB721B121D000EB6C78 /* JPUSHSet */,
 				84CCF570216F4B4C004DE670 /* 图片选择器 */,
 				84A78E82215F5DA70013F614 /* 融云聊天集成 */,
 			);
@@ -1461,6 +1468,17 @@
 				2035B07A2199B5AF00BF8AE2 /* View */,
 			);
 			path = "发布活动";
+			sourceTree = "<group>";
+		};
+		84913DB721B121D000EB6C78 /* JPUSHSet */ = {
+			isa = PBXGroup;
+			children = (
+				84913DB821B121D000EB6C78 /* skJPUSHSet.m */,
+				84913DB921B121D000EB6C78 /* AppDelegate+Jpush.h */,
+				84913DBA21B121D000EB6C78 /* skJPUSHSet.h */,
+				84913DBB21B121D000EB6C78 /* AppDelegate+Jpush.m */,
+			);
+			path = JPUSHSet;
 			sourceTree = "<group>";
 		};
 		849959E3217D7EF900FD8A20 /* 账户安全 */ = {
@@ -2253,6 +2271,7 @@
 				2035B08C219C6AD800BF8AE2 /* CombineGroupHeaderTableViewCell.m in Sources */,
 				84637F422179D1C1009DB4FF /* AddAddressModel.m in Sources */,
 				8440AFBD219A7BBC00044584 /* skQRcodeGroupViewController.m in Sources */,
+				84913DBD21B121D000EB6C78 /* AppDelegate+Jpush.m in Sources */,
 				84537BA82154E36000E4CB29 /* skLoginViewController.m in Sources */,
 				8403A6FB219D6349000DAFD1 /* gonggaoView.m in Sources */,
 				84D5CD712182F47E00DB762E /* menuTableViewCell.m in Sources */,
@@ -2310,6 +2329,7 @@
 				84CCF58C21747CA1004DE670 /* skAddressBookTableViewCell.m in Sources */,
 				84A78E7E215F574A0013F614 /* skAFNetworkingTool.m in Sources */,
 				843B40B6216B337400356306 /* NSDictionary+skDictionary.m in Sources */,
+				84913DBC21B121D000EB6C78 /* skJPUSHSet.m in Sources */,
 				84A78E85215F5DA70013F614 /* RongSDKUsed.m in Sources */,
 				84CCF57F216F50AC004DE670 /* skChangeUserinfoHeaderTableViewCell.m in Sources */,
 				84537B792154897E00E4CB29 /* AppDelegate.mm in Sources */,

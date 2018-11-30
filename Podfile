@@ -15,7 +15,7 @@ target 'SkyerChat' do
     pod 'MJExtension'
     pod 'SDWebImage'
     pod 'SkyerTools'
-    
+    pod 'JPush'
 #    融云 IM 通讯能力库 - RongCloudIM/IMLib
 #    融云 IM 界面组件 - RongCloudIM/IMKit
 #    融云音视频通讯能力库 - RongCloudIM/CallLib
