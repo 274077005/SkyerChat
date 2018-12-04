@@ -45,7 +45,7 @@
     
     NSDictionary *dic=@{@"phoneNo":userName,
                         @"passwd":[passwd MD5],
-                        @"registrationId":[skJPUSHSet sharedskJPUSHSet].skRegistrationID.length>0?[skJPUSHSet sharedskJPUSHSet].skRegistrationID:@"没注册成功"                        };
+                        @"registrationId":[skJPUSHSet sharedskJPUSHSet].skRegistrationID.length>0?[skJPUSHSet sharedskJPUSHSet].skRegistrationID:@"极光推送初始化失败"                        };
     
     skModelNet.phoneNo=userName;
     skModelNet.passwd=[passwd MD5];
