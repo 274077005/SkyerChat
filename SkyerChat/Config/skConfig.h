@@ -16,6 +16,7 @@
 //融云的appkey
 //别人融云
 #define skRongAppKey @"n19jmcy5n8zf9"
+//加密的盐
 #define skSaltMd5String @"n19jmcy5n8zf9fq8e0r884nadhf"
 //极光推送
 #define kjpushKey @"072c029ed3b59c9be8139a17"

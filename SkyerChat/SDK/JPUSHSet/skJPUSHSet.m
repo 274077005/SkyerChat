@@ -38,9 +38,10 @@ SkyerSingletonM(skJPUSHSet)
     } seq:1];
     [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
         if(resCode == 0){
+            
             NSLog(@"registrationID获取成功：%@",registrationID);
             self.skRegistrationID=registrationID;
-            [[NSUserDefaults standardUserDefaults] objectForKey:@"skRegistrationID"];
+            [[NSUserDefaults standardUserDefaults] setObject:self.skRegistrationID forKey:@"skRegistrationID"];
         }else{
             NSLog(@"registrationID获取失败，code：%d",resCode);
             self.skRegistrationID=@"极光注册失败";

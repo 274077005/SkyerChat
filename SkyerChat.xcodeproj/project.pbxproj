@@ -1473,9 +1473,9 @@
 		84913DB721B121D000EB6C78 /* JPUSHSet */ = {
 			isa = PBXGroup;
 			children = (
+				84913DBA21B121D000EB6C78 /* skJPUSHSet.h */,
 				84913DB821B121D000EB6C78 /* skJPUSHSet.m */,
 				84913DB921B121D000EB6C78 /* AppDelegate+Jpush.h */,
-				84913DBA21B121D000EB6C78 /* skJPUSHSet.h */,
 				84913DBB21B121D000EB6C78 /* AppDelegate+Jpush.m */,
 			);
 			path = JPUSHSet;
