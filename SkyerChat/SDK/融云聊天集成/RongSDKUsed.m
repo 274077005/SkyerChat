@@ -115,12 +115,12 @@
         if (responseObject.returnCode==0) {
             SingleModel *model=[SingleModel mj_objectWithKeyValues:responseObject.data];
             RCUserInfo *user=[[RCUserInfo alloc] init];
-            user.name=model.nickName;
+            user.name=[model.nickName length]>0?model.nickName:userNo;
             user.portraitUri=model.portrait;
             user.userId=userNo;
-            
             completion(user);
         }else{
+            
         }
         
     } failure:^(NSError * _Nullable error) {

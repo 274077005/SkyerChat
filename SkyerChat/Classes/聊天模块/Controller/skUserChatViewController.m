@@ -62,7 +62,7 @@
             skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
             conversationVC.conversationType = model.conversationType;
             conversationVC.targetId = model.targetId;
-            conversationVC.title = model.conversationTitle;
+            conversationVC.title = [model.conversationTitle length]>0?model.conversationTitle:model.targetId;
             [self.navigationController pushViewController:conversationVC animated:YES];
         }
             break;

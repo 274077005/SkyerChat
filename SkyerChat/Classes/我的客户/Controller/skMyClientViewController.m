@@ -104,7 +104,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     myClientModel *model=[self.arrList objectAtIndex:indexPath.row];
     skSingleChatViewController *view=[[skSingleChatViewController alloc] initWithConversationType:(ConversationType_PRIVATE) targetId:model.userNo];
-    view.title=model.nickName?model.nickName:model.userNo;
+    view.title=[model.nickName length]>0?model.nickName:model.userNo;
     [self.navigationController pushViewController:view animated:YES];
 }
 /**
