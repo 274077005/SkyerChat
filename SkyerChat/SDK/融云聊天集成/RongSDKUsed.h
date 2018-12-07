@@ -10,7 +10,6 @@
 
 @interface RongSDKUsed : NSObject <RCIMConnectionStatusDelegate,RCIMUserInfoDataSource,RCIMGroupInfoDataSource,RCIMGroupUserInfoDataSource,RCIMGroupMemberDataSource,RCIMReceiveMessageDelegate>
 
-@property (nonatomic,strong) NSMutableArray *arrMember;
 
 + (RongSDKUsed *)shareInstance;
 

@@ -9,6 +9,7 @@
 #import "RongSDKUsed.h"
 #import "GroupModel.h"
 #import "SingleModel.h"
+#import "groupUserModel.h"
 
 @implementation RongSDKUsed
 
@@ -25,7 +26,7 @@
 -(void)initRongWithAppkey:(NSString *)key{
     [[RCIM sharedRCIM] initWithAppKey:key];
     //设置用户信息源和群组信息源
-    self.arrMember=[[NSMutableArray alloc] init];
+    
 }
 #pragma mark 链接融云
 - (void)skRongConnectWithToken:(NSString *)token
@@ -97,7 +98,6 @@
 - (void)getUserInfoWithUserId:(NSString *)userId completion:(void (^)(RCUserInfo *userInfo))completion{
     
     NSLog(@"用户信息提供者ID=%@",userId);
-    [self.arrMember addObject:userId];
     [self getUser:userId completion:^(RCUserInfo *userInfo) {
         [[RCIM sharedRCIM] refreshUserInfoCache:userInfo withUserId:userId];
         completion(userInfo);
@@ -162,11 +162,39 @@
         
     }];
 }
+#pragma mark - 群成员信息列表 @功能用到
+-(void)getGroupList:(NSString *)groupId
+                     result:(void (^)(NSArray<NSString *> *userIdList))resultBlock{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"groupNo":groupId
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroupUser/list") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
+            
+            NSArray *arrList=[groupUserModel mj_objectArrayWithKeyValuesArray:modelList.list];
+            NSMutableArray *arrMember=[[NSMutableArray alloc] init];
+            for (int i = 0; i<arrList.count; ++i) {
+                groupUserModel *model=[arrList objectAtIndex:i];
+                [arrMember addObject:model.userNo];
+            }
+            resultBlock(arrMember);
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
 #pragma mark 群名片信息提供者
 - (void)getAllMembersOfGroup:(NSString *)groupId
                       result:(void (^)(NSArray<NSString *> *userIdList))resultBlock{
     
-    resultBlock(self.arrMember);
+    [self getGroupList:groupId result:^(NSArray<NSString *> *userIdList) {
+        resultBlock(userIdList);
+    }];
     
 }
 #pragma mark - 强登回调
