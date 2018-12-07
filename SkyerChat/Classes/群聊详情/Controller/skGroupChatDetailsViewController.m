@@ -23,6 +23,7 @@
 #import "skGroupAcivityViewController.h"
 #import "skCombineGroupViewController.h"
 #import "skGonggaoViewController.h"
+#import "skGroupMenberListViewController.h"
 
 
 @interface skGroupChatDetailsViewController ()
@@ -46,36 +47,76 @@
         
         
         @weakify(self)
-        [[_cellHeaders rac_signalForSelector:@selector(skAddFriend)] subscribeNext:^(RACTuple * _Nullable x) {
+//        [[_cellHeaders rac_signalForSelector:@selector(skAddFriend)] subscribeNext:^(RACTuple * _Nullable x) {
+//            @strongify(self)
+//            skAddGroupFriendViewController *view=[[skAddGroupFriendViewController alloc] init];
+//            view.modelOther=self.model;
+//            [self.navigationController pushViewController:view animated:YES];
+//        }];
+        
+        [[_cellHeaders rac_signalForSelector:@selector(skDidSelectItemAtIndexPath:)] subscribeNext:^(RACTuple * _Nullable x) {
             @strongify(self)
-            skAddGroupFriendViewController *view=[[skAddGroupFriendViewController alloc] init];
-            view.modelOther=self.model;
-            [self.navigationController pushViewController:view animated:YES];
-        }];
-        
-        
-        if ([self.model.createUserNo isEqualToString:skUser.userNo]) {
-            [_cellHeaders.btnMore setTitle:@"查看群成员>" forState:(UIControlStateNormal)];
-        }else{
-            [_cellHeaders.btnMore setTitle:@"联系群主>" forState:(UIControlStateNormal)];
-        }
-        
-        
-        [[_cellHeaders.btnMore rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            @strongify(self)
-            if ([self.model.createUserNo isEqualToString:skUser.userNo]) {
-                skLookoverViewController *view=[[skLookoverViewController alloc] init];
-                view.modelOther=self.model;
-                [self.navigationController pushViewController:view animated:YES];
-            }else{
-                skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
-                conversationVC.conversationType = ConversationType_PRIVATE;
-                conversationVC.targetId = self.model.createUserNo;
-                conversationVC.title = self.model.createNickname;
-                [self.navigationController pushViewController:conversationVC animated:YES];
+            
+            
+            NSIndexPath *indexPath=x[0];
+            if (indexPath.row<self.arrListGroupHeader.count) {//群主点击聊天
+                if ([self.model.createUserNo isEqualToString:skUser.userNo]) {
+                    groupUserModel *modelU=[self.arrListGroupHeader objectAtIndex:indexPath.row];
+                    skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
+                    conversationVC.conversationType = ConversationType_PRIVATE;
+                    conversationVC.targetId = modelU.userNo;
+                    conversationVC.title = modelU.nickName;
+                    [self.navigationController pushViewController:conversationVC animated:YES];
+                }
+                
+            }else if(indexPath.row==self.arrListGroupHeader.count){//邀请进群
+                if ([self.model.createUserNo isEqualToString:skUser.userNo]) {
+                    skAddGroupFriendViewController *view=[[skAddGroupFriendViewController alloc] init];
+                    view.modelOther=self.model;
+                    [self.navigationController pushViewController:view animated:YES];
+                }
+            }else{//删除群成员
+                if ([self.model.createUserNo isEqualToString:skUser.userNo]) {
+                    skLookoverViewController *view=[[skLookoverViewController alloc] init];
+                    view.modelOther=self.model;
+                    [self.navigationController pushViewController:view animated:YES];
+                }
             }
             
         }];
+        
+        [[_cellHeaders.viewMore.btnMore rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            if ([self.model.createUserNo isEqualToString:skUser.userNo]) {
+                
+                skGroupMenberListViewController *view=[[skGroupMenberListViewController alloc] init];
+                
+                view.modelOther=self.model;
+                [self.navigationController pushViewController:view animated:YES];
+            }
+        }];
+//        if ([self.model.createUserNo isEqualToString:skUser.userNo]) {
+//            [_cellHeaders.btnMore setTitle:@"查看群成员>" forState:(UIControlStateNormal)];
+//        }else{
+//            [_cellHeaders.btnMore setTitle:@"联系群主>" forState:(UIControlStateNormal)];
+//        }
+        
+        
+//        [[_cellHeaders.btnMore rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+//            @strongify(self)
+//            if ([self.model.createUserNo isEqualToString:skUser.userNo]) {
+//                skLookoverViewController *view=[[skLookoverViewController alloc] init];
+//                view.modelOther=self.model;
+//                [self.navigationController pushViewController:view animated:YES];
+//            }else{
+//                skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
+//                conversationVC.conversationType = ConversationType_PRIVATE;
+//                conversationVC.targetId = self.model.createUserNo;
+//                conversationVC.title = self.model.createNickname;
+//                [self.navigationController pushViewController:conversationVC animated:YES];
+//            }
+//            
+//        }];
         [_cellHeaders.collectionView reloadData];
     }
     return _cellHeaders;
@@ -135,7 +176,7 @@
             return 66;
             break;
         case cellTypeHeader:
-            if (self.arrListGroupHeader.count<5) {
+            if (self.arrListGroupHeader.count<4) {
                 return 110;
             }else{
                 return 180;
@@ -405,6 +446,8 @@
             
             self.arrListGroupHeader=[groupUserModel mj_objectArrayWithKeyValuesArray:modelList.list];
             self.cellHeaders.arrModelList=self.arrListGroupHeader;
+            NSString *title=[NSString stringWithFormat:@"共%ld人>",self.arrListGroupHeader.count];
+            [self.cellHeaders.viewMore.btnMore setTitle:title forState:(UIControlStateNormal)];
             [self.cellHeaders.collectionView reloadData];
             [self.tableView reloadData];
         }

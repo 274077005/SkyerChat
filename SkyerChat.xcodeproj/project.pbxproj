@@ -111,6 +111,9 @@
 		84756E0E219578B70018AB35 /* creatGroupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84756E0D219578B70018AB35 /* creatGroupView.xib */; };
 		84913DBC21B121D000EB6C78 /* skJPUSHSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 84913DB821B121D000EB6C78 /* skJPUSHSet.m */; };
 		84913DBD21B121D000EB6C78 /* AppDelegate+Jpush.m in Sources */ = {isa = PBXBuildFile; fileRef = 84913DBB21B121D000EB6C78 /* AppDelegate+Jpush.m */; };
+		84913DC021BA1AA300EB6C78 /* skGroupMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84913DBF21BA1AA300EB6C78 /* skGroupMoreView.m */; };
+		84913DC221BA1AB000EB6C78 /* skGroupMoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84913DC121BA1AB000EB6C78 /* skGroupMoreView.xib */; };
+		84913DC921BA4AF200EB6C78 /* skGroupMenberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84913DC821BA4AF200EB6C78 /* skGroupMenberListViewController.m */; };
 		849959E9217D7F1000FD8A20 /* skSafeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849959E8217D7F1000FD8A20 /* skSafeViewController.m */; };
 		849959ED217D7F3D00FD8A20 /* skSafeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849959EB217D7F3D00FD8A20 /* skSafeTableViewCell.m */; };
 		849959EE217D7F3D00FD8A20 /* skSafeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849959EC217D7F3D00FD8A20 /* skSafeTableViewCell.xib */; };
@@ -367,6 +370,11 @@
 		84913DB921B121D000EB6C78 /* AppDelegate+Jpush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Jpush.h"; sourceTree = "<group>"; };
 		84913DBA21B121D000EB6C78 /* skJPUSHSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skJPUSHSet.h; sourceTree = "<group>"; };
 		84913DBB21B121D000EB6C78 /* AppDelegate+Jpush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Jpush.m"; sourceTree = "<group>"; };
+		84913DBE21BA1AA300EB6C78 /* skGroupMoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skGroupMoreView.h; sourceTree = "<group>"; };
+		84913DBF21BA1AA300EB6C78 /* skGroupMoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skGroupMoreView.m; sourceTree = "<group>"; };
+		84913DC121BA1AB000EB6C78 /* skGroupMoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skGroupMoreView.xib; sourceTree = "<group>"; };
+		84913DC721BA4AF200EB6C78 /* skGroupMenberListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skGroupMenberListViewController.h; sourceTree = "<group>"; };
+		84913DC821BA4AF200EB6C78 /* skGroupMenberListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skGroupMenberListViewController.m; sourceTree = "<group>"; };
 		849959E7217D7F1000FD8A20 /* skSafeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skSafeViewController.h; sourceTree = "<group>"; };
 		849959E8217D7F1000FD8A20 /* skSafeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skSafeViewController.m; sourceTree = "<group>"; };
 		849959EA217D7F3D00FD8A20 /* skSafeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skSafeTableViewCell.h; sourceTree = "<group>"; };
@@ -1041,6 +1049,9 @@
 				84B7F3BF218C2FA300793DDD /* skGroupTitleTableViewCell.h */,
 				84B7F3C0218C2FA300793DDD /* skGroupTitleTableViewCell.m */,
 				84B7F3C1218C2FA300793DDD /* skGroupTitleTableViewCell.xib */,
+				84913DBE21BA1AA300EB6C78 /* skGroupMoreView.h */,
+				84913DBF21BA1AA300EB6C78 /* skGroupMoreView.m */,
+				84913DC121BA1AB000EB6C78 /* skGroupMoreView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1185,6 +1196,7 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				84913DC321BA4A6700EB6C78 /* 群成员列表 */,
 				8472395921A257A0009055C7 /* 入群审核 */,
 				8403A6F2219D6319000DAFD1 /* 群公告 */,
 				8403A6E5219D53F6000DAFD1 /* 聊天空白页 */,
@@ -1479,6 +1491,39 @@
 				84913DBB21B121D000EB6C78 /* AppDelegate+Jpush.m */,
 			);
 			path = JPUSHSet;
+			sourceTree = "<group>";
+		};
+		84913DC321BA4A6700EB6C78 /* 群成员列表 */ = {
+			isa = PBXGroup;
+			children = (
+				84913DC421BA4A6700EB6C78 /* Controller */,
+				84913DC521BA4A6700EB6C78 /* Model */,
+				84913DC621BA4A6700EB6C78 /* View */,
+			);
+			path = "群成员列表";
+			sourceTree = "<group>";
+		};
+		84913DC421BA4A6700EB6C78 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84913DC721BA4AF200EB6C78 /* skGroupMenberListViewController.h */,
+				84913DC821BA4AF200EB6C78 /* skGroupMenberListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84913DC521BA4A6700EB6C78 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84913DC621BA4A6700EB6C78 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		849959E3217D7EF900FD8A20 /* 账户安全 */ = {
@@ -2117,6 +2162,7 @@
 				84995A302181C5C900FD8A20 /* myClientTableViewCell.xib in Resources */,
 				84CCF58D21747CA1004DE670 /* skAddressBookTableViewCell.xib in Resources */,
 				842EAB04218B00E900CA9E25 /* skGroupGonggaoTableViewCell.xib in Resources */,
+				84913DC221BA1AB000EB6C78 /* skGroupMoreView.xib in Resources */,
 				8403A6A7219C1043000DAFD1 /* ActivityTitleTableViewCell.xib in Resources */,
 				845617B0217830F900E3A511 /* UserinfoSetTableViewCell.xib in Resources */,
 				84CCF580216F50AC004DE670 /* skChangeUserinfoHeaderTableViewCell.xib in Resources */,
@@ -2265,6 +2311,7 @@
 				8472395F21A257BC009055C7 /* skCombineCheckViewController.m in Sources */,
 				84CCF58821743347004DE670 /* skChangeUserinfoModel.m in Sources */,
 				84EEBAC12179C4F000EDBA1E /* skAddAddressTableViewCell.m in Sources */,
+				84913DC921BA4AF200EB6C78 /* skGroupMenberListViewController.m in Sources */,
 				8403A68E219BF26E000DAFD1 /* QRCodeScanViewController.m in Sources */,
 				849959E9217D7F1000FD8A20 /* skSafeViewController.m in Sources */,
 				843B40B9216B4E4600356306 /* LoginView.m in Sources */,
@@ -2339,6 +2386,7 @@
 				84211A5C215CB67F003BE4A5 /* skColorConfig.m in Sources */,
 				2035B0802199B5AF00BF8AE2 /* ActivityView.m in Sources */,
 				8419CDE6216DD90C00DBE8F4 /* skUserChatViewController.m in Sources */,
+				84913DC021BA1AA300EB6C78 /* skGroupMoreView.m in Sources */,
 				84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */,
 				84637F4D217D744C009DB4FF /* skChangePasswordTableViewCell.m in Sources */,
 				8403A89E219D709C000DAFD1 /* groupImageView.m in Sources */,

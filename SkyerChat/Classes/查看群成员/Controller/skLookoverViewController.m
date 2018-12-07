@@ -68,7 +68,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"查看群成员";
+    self.title=@"删除群成员";
     // Do any additional setup after loading the view.
     [self addTableView];
     [self bizGroupUserlist];

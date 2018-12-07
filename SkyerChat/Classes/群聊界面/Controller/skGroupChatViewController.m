@@ -32,7 +32,7 @@
             make.left.right.mas_equalTo(0);
             make.size.mas_equalTo(CGSizeMake(skScreenWidth, 150));
         }];
-        _viewCycle.pageControlBottomOffset=30;
+        _viewCycle.pageControlBottomOffset=20;
     }
     return _viewCycle;
 }
@@ -52,6 +52,9 @@
             @strongify(self)
             [self.navigationController popViewControllerAnimated:YES];
         }];
+        [_viewImage.btnBack skSetBoardRadius:17 Width:0 andBorderColor:nil];
+        [_viewImage.btnMore skSetBoardRadius:17 Width:0 andBorderColor:nil];
+        [_viewImage.btnBuy skSetBoardRadius:5 Width:0 andBorderColor:nil];
         [[_viewImage.btnMore rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
             if (self.model.groupNo) {
@@ -116,14 +119,11 @@
     }];
     [self bizGroupgetGroup];
     
-    self.conversationMessageCollectionView.frame=CGRectMake(0, 150, skScreenWidth, skScreenHeight-150);
-    [self bizGoodsMyGoods];
-    [self viewCycle];
-    [self viewImage];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
+    [self bizGoodsMyGoods];
+    
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -138,6 +138,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+//获取群的详情信息
 -(void)bizGroupgetGroup{
     ///intf/bizUser/sendRegister
     NSDictionary *dic=@{@"groupNo":self.targetId
@@ -153,7 +154,7 @@
         
     }];
 }
-
+//获取群的活动列表信息
 -(void)bizGoodsMyGoods{
     ///intf/bizUser/sendRegister
     NSDictionary *dic=@{@"goodsNo":self.targetId,
@@ -176,6 +177,20 @@
                 [arrImage addObject:model.goodsPic];
             }
             self.viewCycle.imageURLStringsGroup = arrImage;
+            
+            
+            if (self.arrList.count>0) {
+                self.navigationController.navigationBarHidden = YES;
+                self.conversationMessageCollectionView.frame=CGRectMake(0, 150, skScreenWidth, skScreenHeight-150);
+                [self viewCycle];
+                [self viewImage];
+                [self.viewCycle setHidden:NO];
+                [self.viewImage setHidden:NO];
+            }else{
+                self.conversationMessageCollectionView.frame=CGRectMake(0, 0, skScreenWidth, skScreenHeight-0);
+                [self.viewCycle setHidden:YES];
+                [self.viewImage setHidden:YES];
+            }
         }
         
     } failure:^(NSError * _Nullable error) {

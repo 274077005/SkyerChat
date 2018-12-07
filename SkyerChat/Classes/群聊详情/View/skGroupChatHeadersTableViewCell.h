@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "groupUserModel.h"
+#import "skGroupMoreView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface skGroupChatHeadersTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,strong) NSArray *arrModelList;
-@property (nonatomic,strong) UIButton *btnMore;
-
--(void)skAddFriend;
+@property (nonatomic,strong) skGroupMoreView *viewMore;
+-(void)skDidSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
 NS_ASSUME_NONNULL_END

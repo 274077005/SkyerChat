@@ -15,17 +15,7 @@
 #define KFooterID @"skGroupChatHeadersViewFooterID"
 
 @implementation skGroupChatHeadersTableViewCell
--(UIButton *)btnMore{
-    if (nil==_btnMore) {
-        _btnMore=[[UIButton alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 30)];
-        [_btnMore setBackgroundColor:KcolorBackground];
-        [_btnMore setTitle:@"查看更多群成员>" forState:(UIControlStateNormal)];
-        [_btnMore.titleLabel setFont:[UIFont systemFontOfSize:14]];
-        [_btnMore setTitleColor:[UIColor grayColor] forState:(UIControlStateNormal)];
-        [_btnMore setBackgroundColor:[UIColor whiteColor]];
-    }
-    return _btnMore;
-}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -36,6 +26,17 @@
 
     // Configure the view for the selected state
 }
+
+
+-(skGroupMoreView *)viewMore{
+    if (nil==_viewMore) {
+        _viewMore=skXibView(@"skGroupMoreView");
+        [_viewMore mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(skScreenWidth, 40));
+        }];
+    }
+    return _viewMore;
+}
 -(UICollectionView *)collectionView{
     if (nil==_collectionView) {
         //1.初始化layout
@@ -43,9 +44,9 @@
         //设置collectionView滚动方向
         [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
         //设置headerView的尺寸大小
-//        layout.headerReferenceSize = CGSizeMake(self.frame.size.width, 20);
+        layout.headerReferenceSize = CGSizeMake(self.frame.size.width, 20);
         //设置尾部的尺寸大小
-        layout.footerReferenceSize = CGSizeMake(self.frame.size.width, 30);
+//        layout.footerReferenceSize = CGSizeMake(self.frame.size.width, 30);
 //        该方法也可以设置itemSize
         
         
@@ -85,8 +86,8 @@
 //每个section的item个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    if (self.arrModelList.count<10) {
-        return self.arrModelList.count+1;
+    if (self.arrModelList.count<=8) {
+        return self.arrModelList.count+2;
     }else{
         return 10;
     }
@@ -117,18 +118,18 @@
         make.centerX.mas_equalTo(cell.contentView.mas_centerX);
         make.centerY.mas_equalTo(cell.contentView.mas_centerY);
     }];
-    NSString *imageName=@"聊天-更多";
     if (indexPath.row<self.arrModelList.count) {
         groupUserModel *model=[self.arrModelList objectAtIndex:indexPath.row];
-        imageName=model.portrait;
-        [imageHeaderView sd_setImageWithURL:[NSURL URLWithString:imageName] placeholderImage:[UIImage imageNamed:@"default_portrait_msg"]];
+        [imageHeaderView sd_setImageWithURL:[NSURL URLWithString:model.portrait] placeholderImage:[UIImage imageNamed:@"default_portrait_msg"]];
+    }else if(indexPath.row==self.arrModelList.count){
+        [imageHeaderView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"jia"]];
     }else{
-        [imageHeaderView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:imageName]];
+        [imageHeaderView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"jian"]];
     }
+    
     
     [imageHeaderView skSetBoardRadius:25 Width:1 andBorderColor:[UIColor whiteColor]];
 
-//    cell.contentView.backgroundColor=[UIColor greenColor];
     
     
     return cell;
@@ -147,10 +148,10 @@
 //}
 
 //header的size
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
-//{
-//    return CGSizeMake(10, 10);
-//}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    return CGSizeMake(skScreenWidth , 40);
+}
 
 //设置每个item的UIEdgeInsets
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
@@ -179,17 +180,10 @@
         
         UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:KHedderID forIndexPath:indexPath];
         
+        [headerView addSubview:self.viewMore];
         return headerView;
     }
     
-        if (kind ==UICollectionElementKindSectionFooter) {
-            UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:KFooterID forIndexPath:indexPath];
-    
-            
-            [headerView addSubview:self.btnMore];
-            
-            return headerView;
-        }
     return nil;
 }
 
@@ -197,11 +191,9 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"点击了=%ld",indexPath.row);
-    if (indexPath.row==self.arrModelList.count) {
-        [self skAddFriend];
-    }
+    [self skDidSelectItemAtIndexPath:indexPath];
 }
--(void)skAddFriend{
+-(void)skDidSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
 }
 
