@@ -109,6 +109,7 @@
 		84756E092195788E0018AB35 /* skCreatGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84756E082195788E0018AB35 /* skCreatGroupViewController.m */; };
 		84756E0C219578AD0018AB35 /* creatGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84756E0B219578AD0018AB35 /* creatGroupView.m */; };
 		84756E0E219578B70018AB35 /* creatGroupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84756E0D219578B70018AB35 /* creatGroupView.xib */; };
+		8485413221C2317F00481CC0 /* GBLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485413121C2317F00481CC0 /* GBLoopView.m */; };
 		84913DBC21B121D000EB6C78 /* skJPUSHSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 84913DB821B121D000EB6C78 /* skJPUSHSet.m */; };
 		84913DBD21B121D000EB6C78 /* AppDelegate+Jpush.m in Sources */ = {isa = PBXBuildFile; fileRef = 84913DBB21B121D000EB6C78 /* AppDelegate+Jpush.m */; };
 		84913DC021BA1AA300EB6C78 /* skGroupMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84913DBF21BA1AA300EB6C78 /* skGroupMoreView.m */; };
@@ -138,6 +139,9 @@
 		84A78E85215F5DA70013F614 /* RongSDKUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A78E83215F5DA70013F614 /* RongSDKUsed.m */; };
 		84ADFC29217877F4008D7BE5 /* skUserinfoSetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ADFC28217877F4008D7BE5 /* skUserinfoSetModel.m */; };
 		84B21DAA21605E1D00DCCF9C /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B21DA921605E1D00DCCF9C /* UserModel.m */; };
+		84B38DFC21C1FF2B00446372 /* chatGonggaoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B38DFB21C1FF2B00446372 /* chatGonggaoView.m */; };
+		84B38DFE21C1FF3500446372 /* chatGonggaoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B38DFD21C1FF3500446372 /* chatGonggaoView.xib */; };
+		84B38E0121C201FB00446372 /* chatGonggaoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B38E0021C201FB00446372 /* chatGonggaoModel.m */; };
 		84B7F3BE218C2B9C00793DDD /* groupCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B7F3BD218C2B9C00793DDD /* groupCellModel.m */; };
 		84B7F3C2218C2FA300793DDD /* skGroupTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B7F3C0218C2FA300793DDD /* skGroupTitleTableViewCell.m */; };
 		84B7F3C3218C2FA300793DDD /* skGroupTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B7F3C1218C2FA300793DDD /* skGroupTitleTableViewCell.xib */; };
@@ -366,6 +370,8 @@
 		84756E0A219578AD0018AB35 /* creatGroupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = creatGroupView.h; sourceTree = "<group>"; };
 		84756E0B219578AD0018AB35 /* creatGroupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = creatGroupView.m; sourceTree = "<group>"; };
 		84756E0D219578B70018AB35 /* creatGroupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = creatGroupView.xib; sourceTree = "<group>"; };
+		8485413021C2317F00481CC0 /* GBLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBLoopView.h; sourceTree = "<group>"; };
+		8485413121C2317F00481CC0 /* GBLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBLoopView.m; sourceTree = "<group>"; };
 		84913DB821B121D000EB6C78 /* skJPUSHSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skJPUSHSet.m; sourceTree = "<group>"; };
 		84913DB921B121D000EB6C78 /* AppDelegate+Jpush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Jpush.h"; sourceTree = "<group>"; };
 		84913DBA21B121D000EB6C78 /* skJPUSHSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skJPUSHSet.h; sourceTree = "<group>"; };
@@ -419,6 +425,11 @@
 		84ADFC28217877F4008D7BE5 /* skUserinfoSetModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skUserinfoSetModel.m; sourceTree = "<group>"; };
 		84B21DA821605E1D00DCCF9C /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		84B21DA921605E1D00DCCF9C /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		84B38DFA21C1FF2B00446372 /* chatGonggaoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chatGonggaoView.h; sourceTree = "<group>"; };
+		84B38DFB21C1FF2B00446372 /* chatGonggaoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chatGonggaoView.m; sourceTree = "<group>"; };
+		84B38DFD21C1FF3500446372 /* chatGonggaoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = chatGonggaoView.xib; sourceTree = "<group>"; };
+		84B38DFF21C201FB00446372 /* chatGonggaoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chatGonggaoModel.h; sourceTree = "<group>"; };
+		84B38E0021C201FB00446372 /* chatGonggaoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chatGonggaoModel.m; sourceTree = "<group>"; };
 		84B7F3BC218C2B9C00793DDD /* groupCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = groupCellModel.h; sourceTree = "<group>"; };
 		84B7F3BD218C2B9C00793DDD /* groupCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = groupCellModel.m; sourceTree = "<group>"; };
 		84B7F3BF218C2FA300793DDD /* skGroupTitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skGroupTitleTableViewCell.h; sourceTree = "<group>"; };
@@ -1247,6 +1258,7 @@
 		84537B902154913B00E4CB29 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				84B38DF621C1FE2700446372 /* 跑马灯 */,
 				842CFA8C216EF36700A847AB /* 导航栏设置 */,
 				842CFA88216EDF1800A847AB /* 密码保存 */,
 				8419CDB4216D949E00DBE8F4 /* 键盘监听 */,
@@ -1628,6 +1640,8 @@
 				842EAAFB218AA01D00CA9E25 /* GroupDesModel.m */,
 				8403A899219D6D40000DAFD1 /* groupOnerActivityModel.h */,
 				8403A89A219D6D40000DAFD1 /* groupOnerActivityModel.m */,
+				84B38DFF21C201FB00446372 /* chatGonggaoModel.h */,
+				84B38E0021C201FB00446372 /* chatGonggaoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1638,6 +1652,9 @@
 				8403A89C219D709C000DAFD1 /* groupImageView.h */,
 				8403A89D219D709C000DAFD1 /* groupImageView.m */,
 				8403A89F219D70AB000DAFD1 /* groupImageView.xib */,
+				84B38DFA21C1FF2B00446372 /* chatGonggaoView.h */,
+				84B38DFB21C1FF2B00446372 /* chatGonggaoView.m */,
+				84B38DFD21C1FF3500446372 /* chatGonggaoView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1737,6 +1754,15 @@
 				84A78E83215F5DA70013F614 /* RongSDKUsed.m */,
 			);
 			path = "融云聊天集成";
+			sourceTree = "<group>";
+		};
+		84B38DF621C1FE2700446372 /* 跑马灯 */ = {
+			isa = PBXGroup;
+			children = (
+				8485413021C2317F00481CC0 /* GBLoopView.h */,
+				8485413121C2317F00481CC0 /* GBLoopView.m */,
+			);
+			path = "跑马灯";
 			sourceTree = "<group>";
 		};
 		84B7F3C42191245F00793DDD /* 查看群成员 */ = {
@@ -2173,6 +2199,7 @@
 				84E65CD32179CC0D00A379E0 /* AddressCenterTableViewCell.xib in Resources */,
 				84EEBAC22179C4F000EDBA1E /* skAddAddressTableViewCell.xib in Resources */,
 				842CFAA6216F283E00A847AB /* UserCenterTitleTableViewCell.xib in Resources */,
+				84B38DFE21C1FF3500446372 /* chatGonggaoView.xib in Resources */,
 				842CFAA1216F233B00A847AB /* UserCenterOrderTableViewCell.xib in Resources */,
 				842EAAF421894DF800CA9E25 /* skGroupChatHeadersTableViewCell.xib in Resources */,
 				84EEBABA2179C03A00EDBA1E /* AddressListTableViewCell.xib in Resources */,
@@ -2308,6 +2335,7 @@
 				84011AA921748BB60005436B /* skAddressBookModel.m in Sources */,
 				84756E092195788E0018AB35 /* skCreatGroupViewController.m in Sources */,
 				8403A6DD219D4ABF000DAFD1 /* combineModel.m in Sources */,
+				84B38E0121C201FB00446372 /* chatGonggaoModel.m in Sources */,
 				8472395F21A257BC009055C7 /* skCombineCheckViewController.m in Sources */,
 				84CCF58821743347004DE670 /* skChangeUserinfoModel.m in Sources */,
 				84EEBAC12179C4F000EDBA1E /* skAddAddressTableViewCell.m in Sources */,
@@ -2387,6 +2415,7 @@
 				2035B0802199B5AF00BF8AE2 /* ActivityView.m in Sources */,
 				8419CDE6216DD90C00DBE8F4 /* skUserChatViewController.m in Sources */,
 				84913DC021BA1AA300EB6C78 /* skGroupMoreView.m in Sources */,
+				84B38DFC21C1FF2B00446372 /* chatGonggaoView.m in Sources */,
 				84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */,
 				84637F4D217D744C009DB4FF /* skChangePasswordTableViewCell.m in Sources */,
 				8403A89E219D709C000DAFD1 /* groupImageView.m in Sources */,
@@ -2402,6 +2431,7 @@
 				84D7DB652182B2C500131373 /* skAddressBookViewController.m in Sources */,
 				84995A1B21804E0500FD8A20 /* GroupModel.m in Sources */,
 				84211A59215B2345003BE4A5 /* skRongChatViewController.m in Sources */,
+				8485413221C2317F00481CC0 /* GBLoopView.m in Sources */,
 				8403A698219C03B3000DAFD1 /* ActivityDesViews.m in Sources */,
 				842EAB03218B00E900CA9E25 /* skGroupGonggaoTableViewCell.m in Sources */,
 				84CCF573216F4B4C004DE670 /* skImagePicker.m in Sources */,

@@ -13,6 +13,9 @@
 #import "groupOnerActivityModel.h"
 #import "groupImageView.h"
 #import "skActivityDesViewController.h"
+#import "GBLoopView.h"
+#import "chatGonggaoView.h"
+#import "chatGonggaoModel.h"
 
 @interface skGroupChatViewController ()<SDCycleScrollViewDelegate>
 @property (nonatomic,strong) GroupDesModel *model;
@@ -20,9 +23,34 @@
 @property (nonatomic,strong) groupImageView *viewImage;
 @property (nonatomic,strong) NSArray *arrList;
 @property (nonatomic,assign) NSInteger indexSelect;
+@property (nonatomic,strong) GBLoopView *paoView;
+@property (nonatomic,strong) chatGonggaoView *viewGonggao;
 @end
 
 @implementation skGroupChatViewController
+
+
+- (GBLoopView *)paoView{
+    if (nil==_paoView) {
+        _paoView=[[GBLoopView alloc] initWithFrame:CGRectMake(50, 0, skScreenWidth-50, 24)];
+        [_paoView setSpeed:60.0f];
+        [_paoView setDirection:GBLoopDirectionRight];
+        [_paoView start];
+    }
+    return _paoView;
+}
+
+- (chatGonggaoView *)viewGonggao{
+    if (nil==_viewGonggao) {
+        _viewGonggao=skXibView(@"chatGonggaoView");
+        [self.view addSubview:_viewGonggao];
+        [_viewGonggao mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(skScreenWidth, 24));
+        }];
+    }
+    return _viewGonggao;
+}
+
 - (SDCycleScrollView *)viewCycle{
     if (nil==_viewCycle) {
         _viewCycle = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, skScreenWidth, 150) delegate:self placeholderImage:[UIImage imageNamed:@""]];
@@ -117,12 +145,12 @@
             [self.navigationController pushViewController:view animated:YES];
         }
     }];
-    [self bizGroupgetGroup];
+    [self bizGroupgetGroup];//查询群信息
     
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self bizGoodsMyGoods];
+    [self bizGoodsMyGoods];//查询群活动
     
 }
 - (void)viewWillDisappear:(BOOL)animated{
@@ -166,7 +194,7 @@
     [skAfTool SKPOST:skUrl(@"/intf/bizGoods/myGoods") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
-            
+            [self getNewest];
             skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
             
             self.arrList=[groupOnerActivityModel mj_objectArrayWithKeyValuesArray:modelList.list];
@@ -205,6 +233,61 @@
     self.viewImage.labTitle.text=model.goodsName;
     self.indexSelect=index;
 }
+
+/**
+ 获取公告最新的一条
+ */
+-(void)getNewest{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"groupNo":self.targetId,
+                        };
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroupNotice/getNewest") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            chatGonggaoModel *gonggaoModel=[chatGonggaoModel mj_objectWithKeyValues:responseObject.data];
+            
+            
+            NSArray *loopArrs;
+            [self.viewGonggao.viewContain addSubview:self.paoView];
+            
+            if (self.arrList.count>0) {
+                if (gonggaoModel.noticeContent.length>0) {
+                    loopArrs = [NSArray arrayWithObjects:gonggaoModel.noticeContent,nil];
+                }{
+                    loopArrs = [NSArray arrayWithObjects:@"群主暂无发布公告",nil];
+                }
+                
+                [self.viewGonggao mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.mas_equalTo(self.viewImage.mas_bottom);
+                    make.left.mas_equalTo(0);
+                }];
+                self.conversationMessageCollectionView.frame=CGRectMake(0, 150+24, skScreenWidth, skScreenHeight-150-24);
+            }else{
+                if (gonggaoModel.noticeContent.length>0) {
+                    loopArrs = [NSArray arrayWithObjects:gonggaoModel.noticeContent,nil];
+                }{
+                    loopArrs = [NSArray arrayWithObjects:@"群主暂无发布公告",nil];
+                }
+                [self.viewGonggao mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
+                    make.left.mas_equalTo(0);
+                }];
+                self.conversationMessageCollectionView.frame=CGRectMake(0,24, skScreenWidth, skScreenHeight-24);
+            }
+            
+            
+            [self.paoView setTickerArrs:loopArrs];
+            
+            
+            
+            
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+
 
 - (void)dealloc
 {

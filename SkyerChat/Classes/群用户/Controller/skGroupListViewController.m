@@ -114,7 +114,7 @@
     labTitel.font=[UIFont systemFontOfSize:15];
     labTitel.textColor=[UIColor whiteColor];
     labTitel.textAlignment=1;
-    labTitel.backgroundColor=skUIColorFromRGB(0xEEEEEE);
+    labTitel.backgroundColor=KcolorBackground;
     return labTitel;
 }
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
