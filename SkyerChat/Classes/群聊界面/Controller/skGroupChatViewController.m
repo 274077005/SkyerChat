@@ -194,7 +194,7 @@
     [skAfTool SKPOST:skUrl(@"/intf/bizGoods/myGoods") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
-            [self getNewest];
+            
             skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
             
             self.arrList=[groupOnerActivityModel mj_objectArrayWithKeyValuesArray:modelList.list];
@@ -219,6 +219,7 @@
                 [self.viewCycle setHidden:YES];
                 [self.viewImage setHidden:YES];
             }
+            [self getNewest];
         }
         
     } failure:^(NSError * _Nullable error) {
@@ -253,7 +254,7 @@
             if (self.arrList.count>0) {
                 if (gonggaoModel.noticeContent.length>0) {
                     loopArrs = [NSArray arrayWithObjects:gonggaoModel.noticeContent,nil];
-                }{
+                }else{
                     loopArrs = [NSArray arrayWithObjects:@"群主暂无发布公告",nil];
                 }
                 
@@ -265,7 +266,7 @@
             }else{
                 if (gonggaoModel.noticeContent.length>0) {
                     loopArrs = [NSArray arrayWithObjects:gonggaoModel.noticeContent,nil];
-                }{
+                }else{
                     loopArrs = [NSArray arrayWithObjects:@"群主暂无发布公告",nil];
                 }
                 [self.viewGonggao mas_makeConstraints:^(MASConstraintMaker *make) {

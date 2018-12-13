@@ -32,6 +32,7 @@
     groupCellModel *model0=[[groupCellModel alloc] init];
     model0.title=@"群公告";
     model0.goViewName=@"";
+    model0.typeTitle=cellTitleTypeTitle;
     model0.type=cellTypeNormal;
     
     groupCellModel *model1=[[groupCellModel alloc] init];
@@ -46,7 +47,7 @@
     model2.typeTitle=cellTitleTypeTitle;
     model2.type=cellTypeNormal;
     
-    NSArray *arr1=@[model0,model1,model2];
+    NSArray *arr1=@[model1,model2,model0];
     [self.arrList addObject:arr1];
     
     groupCellModel *model3=[[groupCellModel alloc] init];

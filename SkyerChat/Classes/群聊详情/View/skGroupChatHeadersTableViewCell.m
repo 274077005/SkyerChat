@@ -118,9 +118,48 @@
         make.centerX.mas_equalTo(cell.contentView.mas_centerX);
         make.centerY.mas_equalTo(cell.contentView.mas_centerY);
     }];
+    
+    UILabel *labType=[[UILabel alloc] init];
+    [cell.contentView addSubview:labType];
+    [labType mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+        make.bottom.mas_equalTo(-5);
+        make.width.mas_equalTo(25);
+    }];
+    labType.text=@"群主";
+    labType.backgroundColor=KcolorMain;
+    labType.font=[UIFont systemFontOfSize:12];
+    labType.textAlignment=1;
+    [labType setTextColor:[UIColor whiteColor]];
+    [labType skSetBoardRadius:5 Width:4 andBorderColor:[UIColor clearColor]];
+    [labType setHidden:YES];
+    
     if (indexPath.row<self.arrModelList.count) {
+        
         groupUserModel *model=[self.arrModelList objectAtIndex:indexPath.row];
+        
         [imageHeaderView sd_setImageWithURL:[NSURL URLWithString:model.portrait] placeholderImage:[UIImage imageNamed:@"default_portrait_msg"]];
+        
+        switch (model.memberType) {
+            case 1:
+            {
+                labType.text=@"群主";
+                [labType setHidden:NO];
+            }
+                break;
+            case 2:
+            {
+                labType.text=@"管理员";
+                [labType setHidden:NO];
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
+        
     }else if(indexPath.row==self.arrModelList.count){
         [imageHeaderView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"jia"]];
     }else{

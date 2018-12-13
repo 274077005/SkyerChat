@@ -24,16 +24,25 @@
 #import "skCombineGroupViewController.h"
 #import "skGonggaoViewController.h"
 #import "skGroupMenberListViewController.h"
+#import "chatGonggaoModel.h"
 
 
 @interface skGroupChatDetailsViewController ()
 @property (nonatomic,strong) skGroupChatHeadersTableViewCell *cellHeaders;//头像cell
 @property (nonatomic,strong) NSArray *arrListGroupHeader;
 @property (nonatomic,strong) groupCostemModel *modelCell;//所有的cellde模型
+
+@property (nonatomic,strong) chatGonggaoModel *modelGonggao;
 @end
 
 @implementation skGroupChatDetailsViewController
 
+- (chatGonggaoModel *)modelGonggao{
+    if (nil==_modelGonggao) {
+        _modelGonggao=[[chatGonggaoModel alloc] init];
+    }
+    return _modelGonggao;
+}
 
 - (groupCostemModel *)modelCell{
     if (nil==_modelCell) {
@@ -67,6 +76,15 @@
                     conversationVC.targetId = modelU.userNo;
                     conversationVC.title = modelU.nickName;
                     [self.navigationController pushViewController:conversationVC animated:YES];
+                }else{
+                    if (indexPath.row==0) {//找群主聊天
+                        groupUserModel *modelU=[self.arrListGroupHeader objectAtIndex:indexPath.row];
+                        skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
+                        conversationVC.conversationType = ConversationType_PRIVATE;
+                        conversationVC.targetId = modelU.userNo;
+                        conversationVC.title = modelU.nickName;
+                        [self.navigationController pushViewController:conversationVC animated:YES];
+                    }
                 }
                 
             }else if(indexPath.row==self.arrListGroupHeader.count){//邀请进群
@@ -133,6 +151,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self bizGroupMergeauditList];
+    [self getNewest];
 }
 -(void)addTableView{
     [self.view addSubview:self.tableView];
@@ -215,9 +234,16 @@
             switch (modelCell.typeTitle) {
                 case cellTitleTypeTitle:
                 {
-                    [cell.labWare setHidden:NO];
-                    [cell.imageHeader setHidden:YES];
-                    cell.labWare.text=self.model.groupName;
+                    if ([modelCell.title isEqualToString:@"群公告"]) {
+                        [cell.labWare setHidden:NO];
+                        [cell.imageHeader setHidden:YES];
+                        cell.labWare.text=self.modelGonggao.noticeContent;
+                    }else if([modelCell.title isEqualToString:@"群名称"]){
+                        [cell.labWare setHidden:NO];
+                        [cell.imageHeader setHidden:YES];
+                        cell.labWare.text=self.model.groupName;
+                    }
+                    
                 }
                     break;
                 case cellTitleTypeImage:
@@ -486,6 +512,28 @@
         
         if (responseObject.returnCode==0) {
             [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+
+/**
+ 获取公告最新的一条
+ */
+-(void)getNewest{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"groupNo":self.model.groupNo,
+                        };
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroupNotice/getNewest") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            
+            self.modelGonggao=[chatGonggaoModel mj_objectWithKeyValues:responseObject.data];
+            
+            [self.tableView reloadData];
+            
         }
         
     } failure:^(NSError * _Nullable error) {
