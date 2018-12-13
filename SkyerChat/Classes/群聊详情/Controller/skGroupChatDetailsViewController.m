@@ -77,8 +77,8 @@
                     conversationVC.title = modelU.nickName;
                     [self.navigationController pushViewController:conversationVC animated:YES];
                 }else{
-                    if (indexPath.row==0) {//找群主聊天
-                        groupUserModel *modelU=[self.arrListGroupHeader objectAtIndex:indexPath.row];
+                    groupUserModel *modelU=[self.arrListGroupHeader objectAtIndex:indexPath.row];
+                    if (modelU.memberType==1||modelU.memberType==2) {//找群主聊天
                         skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
                         conversationVC.conversationType = ConversationType_PRIVATE;
                         conversationVC.targetId = modelU.userNo;
