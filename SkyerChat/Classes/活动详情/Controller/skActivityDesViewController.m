@@ -14,6 +14,7 @@
 #import "ActivityTitleTableViewCell.h"
 #import "activityOtherTableViewCell.h"
 #import "skSingleChatViewController.h"
+#import "MyActivictViewsTableViewCell.h"
 
 @interface skActivityDesViewController ()<SDCycleScrollViewDelegate>
 @property (nonatomic,strong) ActivityDesViews *viewActivity;
@@ -50,6 +51,12 @@
 -(void)addTableView{
     [self.viewActivity.viewTableViewContain addSubview:self.tableView];
     self.tableView.backgroundColor=KcolorBackground;
+//    //cell预估高度,设一个接近cell高度的值
+//    self.tableView.estimatedRowHeight = 100;//也可以省略不设置,
+//
+//    //设置rowHeight为UITableViewAutomaticDimension,
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;//可以省略不设置
+    
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.left.right.mas_equalTo(0);
     }];
@@ -80,7 +87,12 @@
 */
 #pragma mark - 代理方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    if ([self.modelOther.userNo isEqualToString:skUser.userNo]) {
+        return 4;
+    }else{
+        return 3;
+    }
+    return 0;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -98,6 +110,11 @@
         case 2:
         {
             return 2;
+        }
+            break;
+        case 3://自家的
+        {
+            return 1;
         }
             break;
             
@@ -123,11 +140,17 @@
             return 50;
         }
             break;
-            
+        case 3:
+        {
+            return 120;
+        }
+            break;
+
         default:
             break;
     }
     return 10;
+
 }
 
 
@@ -187,6 +210,17 @@
             }
             return cell;
         }
+        case 3:
+        {
+            static NSString *cellIdentifier = @"MyActivictViewsTableViewCell";
+            MyActivictViewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+            if (cell == nil) {
+                cell = skXibView(@"MyActivictViewsTableViewCell");
+            }
+            [cell.collectionView reloadData];
+            return cell;
+        }
+            break;
             
         default:
             break;
@@ -199,10 +233,8 @@
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section==2) {
-        return 10;
-    }
-    return 0;
+
+    return 10;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

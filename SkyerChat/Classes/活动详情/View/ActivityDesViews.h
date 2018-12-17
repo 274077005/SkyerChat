@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *viewTableViewContain;
 @property (weak, nonatomic) IBOutlet UIButton *btnChat;
 @property (weak, nonatomic) IBOutlet UIButton *btnBay;
+@property (weak, nonatomic) IBOutlet UIView *viewBotton;
 
 @end
 

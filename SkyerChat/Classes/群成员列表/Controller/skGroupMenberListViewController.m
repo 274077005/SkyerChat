@@ -109,7 +109,12 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
+    skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
+    groupUserModel *model=[self.arrList objectAtIndex:indexPath.row];
+    conversationVC.conversationType = ConversationType_PRIVATE;
+    conversationVC.targetId = model.userNo;
+    conversationVC.title = [model.nickName length]>0?model.nickName:model.userNo;
+    [self.navigationController pushViewController:conversationVC animated:YES];
 }
 
 @end

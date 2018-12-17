@@ -118,6 +118,7 @@
             <connections>
                 <outlet property="btnBay" destination="s4i-5W-nnc" id="VmG-aX-Liz"/>
                 <outlet property="btnChat" destination="0aX-Do-3pD" id="a91-nP-4yo"/>
+                <outlet property="viewBotton" destination="5tn-t3-HGn" id="rBQ-nK-rQw"/>
                 <outlet property="viewTableViewContain" destination="gQL-MF-yk2" id="BSh-cA-gSG"/>
             </connections>
             <point key="canvasLocation" x="138.40000000000001" y="138.98050974512745"/>

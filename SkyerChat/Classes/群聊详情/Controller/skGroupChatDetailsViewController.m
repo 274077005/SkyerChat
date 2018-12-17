@@ -74,7 +74,7 @@
                     skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
                     conversationVC.conversationType = ConversationType_PRIVATE;
                     conversationVC.targetId = modelU.userNo;
-                    conversationVC.title = modelU.nickName;
+                    conversationVC.title = [modelU.nickName length]>0?modelU.nickName:modelU.userNo;
                     [self.navigationController pushViewController:conversationVC animated:YES];
                 }else{
                     groupUserModel *modelU=[self.arrListGroupHeader objectAtIndex:indexPath.row];
@@ -82,7 +82,7 @@
                         skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
                         conversationVC.conversationType = ConversationType_PRIVATE;
                         conversationVC.targetId = modelU.userNo;
-                        conversationVC.title = modelU.nickName;
+                        conversationVC.title = [modelU.nickName length]>0?modelU.nickName:modelU.userNo;
                         [self.navigationController pushViewController:conversationVC animated:YES];
                     }
                 }

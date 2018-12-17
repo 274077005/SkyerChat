@@ -47,26 +47,26 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Db-J0-GDz">
-                        <rect key="frame" x="24" y="84" width="272" height="55"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Db-J0-GDz">
+                        <rect key="frame" x="24" y="84" width="272" height="63"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0Db-J0-GDz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="8ua-IN-QKH"/>
+                    <constraint firstItem="0Db-J0-GDz" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="8" id="95L-3I-hz9"/>
                     <constraint firstItem="F1f-7M-DTf" firstAttribute="top" secondItem="0wz-d7-kOq" secondAttribute="bottom" constant="8" id="AHP-hG-KwJ"/>
-                    <constraint firstItem="0Db-J0-GDz" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="BtX-FU-O1F"/>
+                    <constraint firstItem="0Db-J0-GDz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="JWE-Ih-0ot"/>
                     <constraint firstAttribute="trailing" secondItem="0wz-d7-kOq" secondAttribute="trailing" id="M9s-b0-Jit"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="0Db-J0-GDz" secondAttribute="trailing" constant="8" id="MPW-Li-ihG"/>
-                    <constraint firstItem="0Db-J0-GDz" firstAttribute="top" secondItem="F1f-7M-DTf" secondAttribute="bottom" constant="8" id="MhJ-Pb-Afa"/>
+                    <constraint firstItem="0Db-J0-GDz" firstAttribute="top" secondItem="F1f-7M-DTf" secondAttribute="bottom" constant="8" id="aNL-nw-OCM"/>
                     <constraint firstItem="F1f-7M-DTf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="awY-IG-NSr"/>
                     <constraint firstItem="prv-rE-BSZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="gxT-H0-9Eb"/>
                     <constraint firstItem="prv-rE-BSZ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="8" id="l3X-sV-P5S"/>
                     <constraint firstAttribute="trailingMargin" secondItem="F1f-7M-DTf" secondAttribute="trailing" constant="8" id="niF-5c-0pd"/>
                     <constraint firstItem="F1f-7M-DTf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="r0T-Jy-gn1"/>
                     <constraint firstItem="0wz-d7-kOq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="r54-Gh-MFu"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0Db-J0-GDz" secondAttribute="trailing" constant="8" id="rbx-tE-HDR"/>
                     <constraint firstItem="0wz-d7-kOq" firstAttribute="top" secondItem="prv-rE-BSZ" secondAttribute="bottom" constant="8" id="uBr-gK-NkU"/>
                     <constraint firstItem="prv-rE-BSZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="xcp-TP-8Nq"/>
                 </constraints>
