@@ -80,9 +80,9 @@
     UILabel *labTitel=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 30)];
     labTitel.text=[NSString stringWithFormat:@"拥有%ld个客户",self.arrList.count];
     labTitel.font=[UIFont systemFontOfSize:15];
-    labTitel.textColor=[UIColor whiteColor];
+    labTitel.textColor=[UIColor grayColor];
     labTitel.textAlignment=1;
-    labTitel.backgroundColor=KcolorBackground;
+    labTitel.backgroundColor=[UIColor whiteColor];
     return labTitel;
 }
 
