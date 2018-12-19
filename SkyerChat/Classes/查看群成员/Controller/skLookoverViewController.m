@@ -31,6 +31,7 @@
         @weakify(self)
         [[_btnRight rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
+            
             if (self.arrSelect.count>0) {
                 [self bizGroupUserdeleteMore:self.modelOther.groupNo];
             }
@@ -58,6 +59,7 @@
         
         if (responseObject.returnCode==0) {
             [self.arrSelect removeAllObjects];
+            [self.btnRight setTitle:@"确定(0)" forState:(UIControlStateNormal)];
             [self bizGroupUserlist];
         }
         
@@ -185,7 +187,11 @@
     [skAfTool SKPOST:skUrl(@"/intf/bizGroupUser/kickOut") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
+            
+            [self.arrSelect removeAllObjects];
+            [self.btnRight setTitle:@"确定(0)" forState:(UIControlStateNormal)];
             [self bizGroupUserlist];
+            
         }
         
     } failure:^(NSError * _Nullable error) {

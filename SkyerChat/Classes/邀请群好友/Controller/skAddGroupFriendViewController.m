@@ -191,8 +191,9 @@
 -(void)bizGroupUserCreate{
     ///intf/bizUser/sendRegister
     NSMutableArray *arrNos=[[NSMutableArray alloc] init];
-    for (int i =0; i<self.arrCanAddMember.count; ++i) {
-        myClientModel *modelc=[self.arrCanAddMember objectAtIndex:i];
+    for (int i =0; i<self.arrSelect.count; ++i) {
+        NSString *intselect=[self.arrSelect objectAtIndex:i];
+        myClientModel *modelc=[self.arrCanAddMember objectAtIndex:[intselect intValue]];
         [arrNos addObject:modelc.userNo];
     }
     NSDictionary *dic=@{@"groupNo":self.modelOther.groupNo,
@@ -200,10 +201,13 @@
                         };
     
     
-    [skAfTool SKPOST:skUrl(@"/intf/bizGroupUser/create") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroupUser/pullIn") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
             [SkToast SkToastShow:@"加群成功" withHight:300];
+            [self.btnRight setTitle:@"确定(0)" forState:(UIControlStateNormal)];
+            [self.arrSelect removeAllObjects];
+            [self.arrCanAddMember removeAllObjects];
             [self bizGroupUserlist];
             [self getAddressBookList:@""];
         }

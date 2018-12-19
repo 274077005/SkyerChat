@@ -2592,7 +2592,7 @@
 				CODE_SIGN_ENTITLEMENTS = SkyerChat/SkyerChat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6X2WV2GYU6;
+				DEVELOPMENT_TEAM = 9P24NBVNXS;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = SkyerChat/PrefixHeader.pch;
 				INFOPLIST_FILE = SkyerChat/Info.plist;
@@ -2601,7 +2601,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = skyer.SkyerChat;
+				PRODUCT_BUNDLE_IDENTIFIER = skyer.SkyerChat.MiLiChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2618,7 +2618,7 @@
 				CODE_SIGN_ENTITLEMENTS = SkyerChat/SkyerChat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6X2WV2GYU6;
+				DEVELOPMENT_TEAM = 9P24NBVNXS;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = SkyerChat/PrefixHeader.pch;
 				INFOPLIST_FILE = SkyerChat/Info.plist;
@@ -2627,7 +2627,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = skyer.SkyerChat;
+				PRODUCT_BUNDLE_IDENTIFIER = skyer.SkyerChat.MiLiChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
