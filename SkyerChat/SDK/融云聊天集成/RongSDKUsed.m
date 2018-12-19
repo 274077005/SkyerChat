@@ -46,6 +46,7 @@
         successBlock(userId);
     } error:^(RCConnectErrorCode status) {
         NSLog(@"登陆的错误码为:%ld", status);
+        
         errorBlock(status);
     } tokenIncorrect:^{
         //token过期或者不正确。

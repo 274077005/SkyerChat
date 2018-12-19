@@ -40,6 +40,13 @@
 		8403A89B219D6D40000DAFD1 /* groupOnerActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403A89A219D6D40000DAFD1 /* groupOnerActivityModel.m */; };
 		8403A89E219D709C000DAFD1 /* groupImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8403A89D219D709C000DAFD1 /* groupImageView.m */; };
 		8403A8A0219D70AB000DAFD1 /* groupImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403A89F219D70AB000DAFD1 /* groupImageView.xib */; };
+		84082CC921C9F894004A0422 /* skLookoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84082CC121C9F894004A0422 /* skLookoverViewController.m */; };
+		84082CCA21C9F894004A0422 /* groupUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84082CC321C9F894004A0422 /* groupUserModel.m */; };
+		84082CCB21C9F894004A0422 /* skLookoverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84082CC721C9F894004A0422 /* skLookoverTableViewCell.xib */; };
+		84082CCC21C9F894004A0422 /* skLookoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84082CC821C9F894004A0422 /* skLookoverTableViewCell.m */; };
+		84082CCF21CA25A0004A0422 /* GroupMenberListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84082CCE21CA25A0004A0422 /* GroupMenberListModel.m */; };
+		84082CD221CA2AFF004A0422 /* GroupWithTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84082CD121CA2AFF004A0422 /* GroupWithTypeView.m */; };
+		84082CD421CA2B0E004A0422 /* GroupWithTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84082CD321CA2B0E004A0422 /* GroupWithTypeView.xib */; };
 		8419CDB0216C826300DBE8F4 /* modelRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDAF216C826300DBE8F4 /* modelRegister.m */; };
 		8419CDBA216D949E00DBE8F4 /* SKKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDB5216D949E00DBE8F4 /* SKKeyboard.m */; };
 		8419CDBB216D949E00DBE8F4 /* skClassMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419CDB9216D949E00DBE8F4 /* skClassMethod.m */; };
@@ -84,7 +91,6 @@
 		8440AFC0219A7C5E00044584 /* QRCodeViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440AFBF219A7C5E00044584 /* QRCodeViews.m */; };
 		8440AFC2219A7CE700044584 /* QRCodeViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AFC1219A7CE700044584 /* QRCodeViews.xib */; };
 		8440AFC5219A81A000044584 /* QRCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440AFC4219A81A000044584 /* QRCodeModel.m */; };
-		8446958821912BAE00C96FEA /* groupUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446958621912BAE00C96FEA /* groupUserModel.m */; };
 		84537B792154897E00E4CB29 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84537B782154897E00E4CB29 /* AppDelegate.mm */; };
 		84537B812154897F00E4CB29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84537B802154897F00E4CB29 /* Assets.xcassets */; };
 		84537B842154897F00E4CB29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84537B822154897F00E4CB29 /* LaunchScreen.storyboard */; };
@@ -147,9 +153,6 @@
 		84B7F3BE218C2B9C00793DDD /* groupCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B7F3BD218C2B9C00793DDD /* groupCellModel.m */; };
 		84B7F3C2218C2FA300793DDD /* skGroupTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B7F3C0218C2FA300793DDD /* skGroupTitleTableViewCell.m */; };
 		84B7F3C3218C2FA300793DDD /* skGroupTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B7F3C1218C2FA300793DDD /* skGroupTitleTableViewCell.xib */; };
-		84B7F3CA2191248400793DDD /* skLookoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B7F3C92191248400793DDD /* skLookoverViewController.m */; };
-		84B7F3CE2191281200793DDD /* skLookoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B7F3CC2191281200793DDD /* skLookoverTableViewCell.m */; };
-		84B7F3CF2191281200793DDD /* skLookoverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B7F3CD2191281200793DDD /* skLookoverTableViewCell.xib */; };
 		84CCF573216F4B4C004DE670 /* skImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF571216F4B4C004DE670 /* skImagePicker.m */; };
 		84CCF57B216F505A004DE670 /* skChangeUserinfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF57A216F505A004DE670 /* skChangeUserinfoViewController.m */; };
 		84CCF57F216F50AC004DE670 /* skChangeUserinfoHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CCF57D216F50AC004DE670 /* skChangeUserinfoHeaderTableViewCell.m */; };
@@ -249,6 +252,18 @@
 		8403A89C219D709C000DAFD1 /* groupImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = groupImageView.h; sourceTree = "<group>"; };
 		8403A89D219D709C000DAFD1 /* groupImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = groupImageView.m; sourceTree = "<group>"; };
 		8403A89F219D70AB000DAFD1 /* groupImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = groupImageView.xib; sourceTree = "<group>"; };
+		84082CC021C9F894004A0422 /* skLookoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skLookoverViewController.h; sourceTree = "<group>"; };
+		84082CC121C9F894004A0422 /* skLookoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skLookoverViewController.m; sourceTree = "<group>"; };
+		84082CC321C9F894004A0422 /* groupUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = groupUserModel.m; sourceTree = "<group>"; };
+		84082CC421C9F894004A0422 /* groupUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = groupUserModel.h; sourceTree = "<group>"; };
+		84082CC621C9F894004A0422 /* skLookoverTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skLookoverTableViewCell.h; sourceTree = "<group>"; };
+		84082CC721C9F894004A0422 /* skLookoverTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = skLookoverTableViewCell.xib; sourceTree = "<group>"; };
+		84082CC821C9F894004A0422 /* skLookoverTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skLookoverTableViewCell.m; sourceTree = "<group>"; };
+		84082CCD21CA25A0004A0422 /* GroupMenberListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupMenberListModel.h; sourceTree = "<group>"; };
+		84082CCE21CA25A0004A0422 /* GroupMenberListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupMenberListModel.m; sourceTree = "<group>"; };
+		84082CD021CA2AFF004A0422 /* GroupWithTypeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupWithTypeView.h; sourceTree = "<group>"; };
+		84082CD121CA2AFF004A0422 /* GroupWithTypeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupWithTypeView.m; sourceTree = "<group>"; };
+		84082CD321CA2B0E004A0422 /* GroupWithTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupWithTypeView.xib; sourceTree = "<group>"; };
 		8419CDAE216C826300DBE8F4 /* modelRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = modelRegister.h; sourceTree = "<group>"; };
 		8419CDAF216C826300DBE8F4 /* modelRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = modelRegister.m; sourceTree = "<group>"; };
 		8419CDB5216D949E00DBE8F4 /* SKKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKKeyboard.m; sourceTree = "<group>"; };
@@ -327,8 +342,6 @@
 		8440AFC1219A7CE700044584 /* QRCodeViews.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeViews.xib; sourceTree = "<group>"; };
 		8440AFC3219A81A000044584 /* QRCodeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeModel.h; sourceTree = "<group>"; };
 		8440AFC4219A81A000044584 /* QRCodeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeModel.m; sourceTree = "<group>"; };
-		8446958621912BAE00C96FEA /* groupUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = groupUserModel.m; sourceTree = "<group>"; };
-		8446958721912BAE00C96FEA /* groupUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = groupUserModel.h; sourceTree = "<group>"; };
 		84537B742154897E00E4CB29 /* SkyerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84537B772154897E00E4CB29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84537B782154897E00E4CB29 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -440,11 +453,6 @@
 		84B7F3BF218C2FA300793DDD /* skGroupTitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skGroupTitleTableViewCell.h; sourceTree = "<group>"; };
 		84B7F3C0218C2FA300793DDD /* skGroupTitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skGroupTitleTableViewCell.m; sourceTree = "<group>"; };
 		84B7F3C1218C2FA300793DDD /* skGroupTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skGroupTitleTableViewCell.xib; sourceTree = "<group>"; };
-		84B7F3C82191248400793DDD /* skLookoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skLookoverViewController.h; sourceTree = "<group>"; };
-		84B7F3C92191248400793DDD /* skLookoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skLookoverViewController.m; sourceTree = "<group>"; };
-		84B7F3CB2191281200793DDD /* skLookoverTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skLookoverTableViewCell.h; sourceTree = "<group>"; };
-		84B7F3CC2191281200793DDD /* skLookoverTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skLookoverTableViewCell.m; sourceTree = "<group>"; };
-		84B7F3CD2191281200793DDD /* skLookoverTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skLookoverTableViewCell.xib; sourceTree = "<group>"; };
 		84CCF571216F4B4C004DE670 /* skImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skImagePicker.m; sourceTree = "<group>"; };
 		84CCF574216F4B91004DE670 /* skImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skImagePicker.h; sourceTree = "<group>"; };
 		84CCF579216F505A004DE670 /* skChangeUserinfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skChangeUserinfoViewController.h; sourceTree = "<group>"; };
@@ -819,6 +827,44 @@
 				8403A6F9219D6349000DAFD1 /* gonggaoView.h */,
 				8403A6FA219D6349000DAFD1 /* gonggaoView.m */,
 				8403A6FC219D635D000DAFD1 /* gonggaoView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84082CBE21C9F894004A0422 /* 删除群成员 */ = {
+			isa = PBXGroup;
+			children = (
+				84082CBF21C9F894004A0422 /* Controller */,
+				84082CC221C9F894004A0422 /* Model */,
+				84082CC521C9F894004A0422 /* View */,
+			);
+			path = "删除群成员";
+			sourceTree = "<group>";
+		};
+		84082CBF21C9F894004A0422 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84082CC021C9F894004A0422 /* skLookoverViewController.h */,
+				84082CC121C9F894004A0422 /* skLookoverViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84082CC221C9F894004A0422 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84082CC321C9F894004A0422 /* groupUserModel.m */,
+				84082CC421C9F894004A0422 /* groupUserModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84082CC521C9F894004A0422 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84082CC621C9F894004A0422 /* skLookoverTableViewCell.h */,
+				84082CC721C9F894004A0422 /* skLookoverTableViewCell.xib */,
+				84082CC821C9F894004A0422 /* skLookoverTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1215,6 +1261,7 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				84082CBE21C9F894004A0422 /* 删除群成员 */,
 				84913DC321BA4A6700EB6C78 /* 群成员列表 */,
 				8472395921A257A0009055C7 /* 入群审核 */,
 				8403A6F2219D6319000DAFD1 /* 群公告 */,
@@ -1227,7 +1274,6 @@
 				84756E032195785B0018AB35 /* 发布活动 */,
 				84756DFF219578530018AB35 /* 新建群聊 */,
 				20FF8D5D219485EE000D686D /* 邀请群好友 */,
-				84B7F3C42191245F00793DDD /* 查看群成员 */,
 				842EAAE42188617700CA9E25 /* 群聊详情 */,
 				84D5CD622182EE6300DB762E /* 弹出菜单 */,
 				84D7DB5F2182AA0100131373 /* 通讯录 */,
@@ -1535,6 +1581,8 @@
 		84913DC521BA4A6700EB6C78 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84082CCD21CA25A0004A0422 /* GroupMenberListModel.h */,
+				84082CCE21CA25A0004A0422 /* GroupMenberListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1542,6 +1590,9 @@
 		84913DC621BA4A6700EB6C78 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84082CD021CA2AFF004A0422 /* GroupWithTypeView.h */,
+				84082CD121CA2AFF004A0422 /* GroupWithTypeView.m */,
+				84082CD321CA2B0E004A0422 /* GroupWithTypeView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1771,44 +1822,6 @@
 				8485413121C2317F00481CC0 /* GBLoopView.m */,
 			);
 			path = "跑马灯";
-			sourceTree = "<group>";
-		};
-		84B7F3C42191245F00793DDD /* 查看群成员 */ = {
-			isa = PBXGroup;
-			children = (
-				84B7F3C52191245F00793DDD /* Controller */,
-				84B7F3C62191245F00793DDD /* Model */,
-				84B7F3C72191245F00793DDD /* View */,
-			);
-			path = "查看群成员";
-			sourceTree = "<group>";
-		};
-		84B7F3C52191245F00793DDD /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				84B7F3C82191248400793DDD /* skLookoverViewController.h */,
-				84B7F3C92191248400793DDD /* skLookoverViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		84B7F3C62191245F00793DDD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8446958721912BAE00C96FEA /* groupUserModel.h */,
-				8446958621912BAE00C96FEA /* groupUserModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		84B7F3C72191245F00793DDD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				84B7F3CB2191281200793DDD /* skLookoverTableViewCell.h */,
-				84B7F3CC2191281200793DDD /* skLookoverTableViewCell.m */,
-				84B7F3CD2191281200793DDD /* skLookoverTableViewCell.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		84CCF570216F4B4C004DE670 /* 图片选择器 */ = {
@@ -2190,6 +2203,7 @@
 				843B40C4216C553D00356306 /* RegisterView.xib in Resources */,
 				84637F4E217D744C009DB4FF /* skChangePasswordTableViewCell.xib in Resources */,
 				8403A8A0219D70AB000DAFD1 /* groupImageView.xib in Resources */,
+				84082CD421CA2B0E004A0422 /* GroupWithTypeView.xib in Resources */,
 				842EAAE02187E82900CA9E25 /* viewShop.xib in Resources */,
 				2035B07F2199B5AF00BF8AE2 /* ActivityView.xib in Resources */,
 				8485413C21C7397400481CC0 /* MyActivictViewsTableViewCell.xib in Resources */,
@@ -2203,6 +2217,7 @@
 				84CCF580216F50AC004DE670 /* skChangeUserinfoHeaderTableViewCell.xib in Resources */,
 				8426F08C219AB3DA00DAB5F0 /* CombineGroupTableViewCell.xib in Resources */,
 				8403A69A219C03BD000DAFD1 /* ActivityDesViews.xib in Resources */,
+				84082CCB21C9F894004A0422 /* skLookoverTableViewCell.xib in Resources */,
 				84B7F3C3218C2FA300793DDD /* skGroupTitleTableViewCell.xib in Resources */,
 				8403A6FD219D635D000DAFD1 /* gonggaoView.xib in Resources */,
 				84E65CD32179CC0D00A379E0 /* AddressCenterTableViewCell.xib in Resources */,
@@ -2221,7 +2236,6 @@
 				84E65CD22179CC0D00A379E0 /* AddressTableViewCell.xib in Resources */,
 				84D7DB5E2182A09000131373 /* AddressBookTitleView.xib in Resources */,
 				84537B812154897F00E4CB29 /* Assets.xcassets in Resources */,
-				84B7F3CF2191281200793DDD /* skLookoverTableViewCell.xib in Resources */,
 				84756E0E219578B70018AB35 /* creatGroupView.xib in Resources */,
 				2035B08D219C6AD800BF8AE2 /* CombineGroupHeaderTableViewCell.xib in Resources */,
 				84D8023F2175D3BD00E1894F /* skAddFriendTableViewCell.xib in Resources */,
@@ -2329,7 +2343,6 @@
 				84328C2721A2698900EC5AF1 /* combineCheckModel.m in Sources */,
 				84011AA6217489E60005436B /* skResponeList.m in Sources */,
 				84537B872154897F00E4CB29 /* main.m in Sources */,
-				84B7F3CE2191281200793DDD /* skLookoverTableViewCell.m in Sources */,
 				84B7F3C2218C2FA300793DDD /* skGroupTitleTableViewCell.m in Sources */,
 				842CFA9B216F21B500A847AB /* UserCenterHeaderTableViewCell.m in Sources */,
 				849959FC217EC3E100FD8A20 /* skAuthenticationTableViewCell.m in Sources */,
@@ -2343,6 +2356,7 @@
 				84637F49217D7208009DB4FF /* skChangePasswordViewController.m in Sources */,
 				84011AA921748BB60005436B /* skAddressBookModel.m in Sources */,
 				84756E092195788E0018AB35 /* skCreatGroupViewController.m in Sources */,
+				84082CCF21CA25A0004A0422 /* GroupMenberListModel.m in Sources */,
 				8403A6DD219D4ABF000DAFD1 /* combineModel.m in Sources */,
 				84B38E0121C201FB00446372 /* chatGonggaoModel.m in Sources */,
 				8472395F21A257BC009055C7 /* skCombineCheckViewController.m in Sources */,
@@ -2373,13 +2387,14 @@
 				8440AFC0219A7C5E00044584 /* QRCodeViews.m in Sources */,
 				8485413B21C7397400481CC0 /* MyActivictViewsTableViewCell.m in Sources */,
 				84E65CD42179CC0D00A379E0 /* AddressTableViewCell.m in Sources */,
+				84082CCA21C9F894004A0422 /* groupUserModel.m in Sources */,
+				84082CD221CA2AFF004A0422 /* GroupWithTypeView.m in Sources */,
 				84D7DB5C2182A08000131373 /* AddressBookTitleView.m in Sources */,
 				84CFE3A1217827BC0061B625 /* skUserInfoSetViewController.m in Sources */,
 				84ADFC29217877F4008D7BE5 /* skUserinfoSetModel.m in Sources */,
 				842EAAF321894DF800CA9E25 /* skGroupChatHeadersTableViewCell.m in Sources */,
 				8419CDBB216D949E00DBE8F4 /* skClassMethod.m in Sources */,
 				84995A08217FFEF300FD8A20 /* skGroupModel.m in Sources */,
-				8446958821912BAE00C96FEA /* groupUserModel.m in Sources */,
 				84D5CD682182EE8C00DB762E /* skMenuViewController.m in Sources */,
 				84995A2B2181C43000FD8A20 /* myClientModel.m in Sources */,
 				8403A6AB219C133E000DAFD1 /* activityOtherTableViewCell.m in Sources */,
@@ -2387,6 +2402,7 @@
 				8419CDE9216DD96E00DBE8F4 /* skGroupListViewController.m in Sources */,
 				842EAAFC218AA01D00CA9E25 /* GroupDesModel.m in Sources */,
 				84637F52217D751A009DB4FF /* skChangePwdCodeTableViewCell.m in Sources */,
+				84082CC921C9F894004A0422 /* skLookoverViewController.m in Sources */,
 				84537BA42154D83200E4CB29 /* skBaseNavViewController.m in Sources */,
 				84995A0C21800D9B00FD8A20 /* PersonalTableViewCell.m in Sources */,
 				84B21DAA21605E1D00DCCF9C /* UserModel.m in Sources */,
@@ -2400,6 +2416,7 @@
 				8440AFC5219A81A000044584 /* QRCodeModel.m in Sources */,
 				84E65CD12179CC0D00A379E0 /* AddressCenterTableViewCell.m in Sources */,
 				84995A1E2180734E00FD8A20 /* SingleModel.m in Sources */,
+				84082CCC21C9F894004A0422 /* skLookoverTableViewCell.m in Sources */,
 				843B40C7216C555200356306 /* RegisterView.m in Sources */,
 				842CFAA0216F233B00A847AB /* UserCenterOrderTableViewCell.m in Sources */,
 				8403A6A6219C1043000DAFD1 /* ActivityTitleTableViewCell.m in Sources */,
@@ -2449,7 +2466,6 @@
 				84995A282181C11E00FD8A20 /* skMyClientViewController.m in Sources */,
 				842EAAE32188338300CA9E25 /* activityModel.m in Sources */,
 				8472396321A25A8E009055C7 /* CombineCheckTableViewCell.m in Sources */,
-				84B7F3CA2191248400793DDD /* skLookoverViewController.m in Sources */,
 				8419CDEF216DD9B700DBE8F4 /* skUserCenterViewController.m in Sources */,
 				84D8022F2175990800E1894F /* UserCenterLoginOutTableViewCell.m in Sources */,
 				84995A21218199DE00FD8A20 /* skSingleChatViewController.m in Sources */,
