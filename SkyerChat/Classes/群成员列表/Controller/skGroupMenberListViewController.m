@@ -19,17 +19,24 @@
 @property (nonatomic,strong) NSArray *arrGroupList;
 @property (nonatomic,strong) NSArray *arrGroupContainList;
 @property (nonatomic,strong) NSArray *arrList;
+@property (nonatomic,strong) NSMutableArray *arrSelect;
 
 @end
 
 @implementation skGroupMenberListViewController
-
+- (NSMutableArray *)arrSelect{
+    if (nil==_arrSelect) {
+        _arrSelect=[[NSMutableArray alloc] init];
+    }
+    return  _arrSelect;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title=@"查看群成员";
     
     [self addTableView];
+    
     if (self.modelOther.groupType==1) {//永久群
         [self bizGroupUserlist];
     }else{//临时群
@@ -104,17 +111,24 @@
     }else{//临时群
         return self.arrGroupList.count;
     }
-    return 1;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.modelOther.groupType==1) {//永久群
         return self.arrList.count;
     }else{//临时群
-        GroupMenberListModel *model=[self.arrGroupList objectAtIndex:section];
-        return model.members.count;
+        
+        
+        NSString *select=[NSString stringWithFormat:@"%ld",section];
+        
+        if ([self.arrSelect containsObject:select]) {
+            GroupMenberListModel *model=[self.arrGroupList objectAtIndex:section];
+            return model.members.count;
+        }else{
+            return 0;
+        }
+        
     }
-    return self.arrList.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
@@ -122,20 +136,61 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (self.modelOther.groupType==1) {//永久群
         return 0;
+    }else{
+        return 40;
     }
-    return 40;
+    
 }
-//- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    GroupWithTypeView *view=skXibView(@"GroupWithTypeView");
-//    NSLog(@"=====%@",view);
-//    view.backgroundColor=KcolorBackground;
-//    GroupMenberListModel *modelG=[self.arrGroupList objectAtIndex:section];
-//    view.labTitle.text=modelG.toGroupName;
-//    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.size.mas_equalTo(CGSizeMake(skScreenWidth, 40));
-//    }];
-//    return view;
-//}
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 40)];
+    view.backgroundColor=KcolorBackground;
+    
+    GroupMenberListModel *modelG=[self.arrGroupList objectAtIndex:section];
+
+    UILabel *labTitle=[[UILabel alloc] initWithFrame:CGRectMake(10 , 10, 200, 20)];
+    [view addSubview:labTitle];
+    labTitle.textColor=[UIColor grayColor];
+    labTitle.text=modelG.toGroupName;
+    
+    NSString *select=[NSString stringWithFormat:@"%ld",section];
+    
+    UIImageView *imageView=[[UIImageView alloc] initWithFrame:CGRectMake(skScreenWidth-30, 10, 20, 20)];
+    if ([self.arrSelect containsObject:select]){
+        imageView.image=[UIImage imageNamed:@"小图标-箭头-下"];
+    }else{
+        imageView.image=[UIImage imageNamed:@"小图标-箭头右"];
+    }
+    
+    [view addSubview:imageView];
+    
+    UIButton *btnSelect=[[UIButton alloc] initWithFrame:view.bounds];
+    btnSelect.tag=section;
+    @weakify(self)
+    [[btnSelect rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self)
+        
+        
+        if ([self.arrSelect containsObject:select]){
+            [self.arrSelect removeObject:select];
+        }else{
+            [self.arrSelect addObject:select];
+        }
+        
+        [self.tableView reloadData];
+        
+    }];
+    [view addSubview:btnSelect];
+    
+    
+    UILabel *labLine=[[UILabel alloc] initWithFrame:CGRectMake(0, 39, skScreenWidth, 1)];
+    labLine.backgroundColor=[UIColor groupTableViewBackgroundColor];
+    [view addSubview:labLine];
+    
+    return view;
+}
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     

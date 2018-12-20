@@ -152,6 +152,7 @@
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UILabel *lab=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 10)];
+//    lab.text=[NSString stringWithFormat:@"=======%ld",section];
     lab.backgroundColor=KcolorBackground;
     return lab;
 }
