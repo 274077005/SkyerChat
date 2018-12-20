@@ -214,17 +214,24 @@
     cell.labName.text=model.nickName.length>0?model.nickName:model.userNo;
     [cell.imageHeader sd_setImageWithURL:[NSURL URLWithString:model.portrait] placeholderImage:[UIImage imageNamed:@"default_portrait_msg"]];
     
-    if (indexPath.row==0) {
-        [cell setAccessoryType:(UITableViewCellAccessoryNone)];
+    if (model.memberType==1) {
         [cell.imageSelect setHidden:YES];
         [cell.labType setHidden:NO];
-        cell.labType.text=@"群主";
+        cell.labType.text=@" 群主 ";
+        [cell.labType skSetBoardRadius:4 Width:0 andBorderColor:nil];
+        [cell.labType setBackgroundColor:KcolorMain];
+    }else if (model.memberType==2){
+        [cell.imageSelect setHidden:YES];
+        [cell.labType setHidden:NO];
+        cell.labType.text=@" 管理员 ";
+        [cell.labType skSetBoardRadius:4 Width:0 andBorderColor:nil];
+        [cell.labType setBackgroundColor:KcolorMain];
     }else{
-        [cell setAccessoryType:(UITableViewCellAccessoryDisclosureIndicator)];
+        
         [cell.imageSelect setHidden:YES];
         [cell.labType setHidden:YES];
-        
     }
+    [cell setAccessoryType:(UITableViewCellAccessoryDisclosureIndicator)];
     return cell;
 }
 

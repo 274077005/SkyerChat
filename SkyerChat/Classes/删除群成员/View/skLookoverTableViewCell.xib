@@ -45,12 +45,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="类型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoQ-Ia-UNr">
-                        <rect key="frame" x="247" y="16" width="31" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="多选-未选" translatesAutoresizingMaskIntoConstraints="NO" id="8y8-4F-bXW">
                         <rect key="frame" x="246" y="5" width="40" height="40"/>
                         <constraints>
@@ -58,15 +52,22 @@
                             <constraint firstAttribute="height" constant="40" id="nfV-pq-9eg"/>
                         </constraints>
                     </imageView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="类型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoQ-Ia-UNr">
+                        <rect key="frame" x="98" y="17" width="27" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Ein-hA-0Ui" secondAttribute="trailing" constant="-34" id="28W-Hn-dQM"/>
                     <constraint firstItem="YjE-Jt-48m" firstAttribute="leading" secondItem="qAZ-Rq-jb0" secondAttribute="trailing" constant="8" id="2Wq-fc-2IO"/>
+                    <constraint firstItem="GoQ-Ia-UNr" firstAttribute="leading" secondItem="YjE-Jt-48m" secondAttribute="trailing" constant="3" id="6RX-VV-Vab"/>
+                    <constraint firstItem="GoQ-Ia-UNr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="96z-Ox-BHG"/>
                     <constraint firstItem="Ein-hA-0Ui" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="GKI-7b-gNk"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="GoQ-Ia-UNr" secondAttribute="trailing" id="JOR-a0-YON"/>
+                    <constraint firstItem="YjE-Jt-48m" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LWu-tN-vL6"/>
                     <constraint firstAttribute="bottom" secondItem="Ein-hA-0Ui" secondAttribute="bottom" id="O52-hP-IEK"/>
                     <constraint firstAttribute="trailing" secondItem="8y8-4F-bXW" secondAttribute="trailing" id="dkF-yt-32d"/>
-                    <constraint firstItem="GoQ-Ia-UNr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eFQ-Qr-EBc"/>
                     <constraint firstItem="YjE-Jt-48m" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hSl-jH-urE"/>
                     <constraint firstItem="qAZ-Rq-jb0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="keG-ju-xOG"/>
                     <constraint firstItem="qAZ-Rq-jb0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="m8g-Uh-bhQ"/>
