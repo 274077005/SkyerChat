@@ -145,7 +145,7 @@
     
     
     UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 40)];
-    view.backgroundColor=KcolorBackground;
+    view.backgroundColor=[UIColor whiteColor];
     
     GroupMenberListModel *modelG=[self.arrGroupList objectAtIndex:section];
 
