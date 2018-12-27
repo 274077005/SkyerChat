@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , assign) NSInteger              groupType;
 @property (nonatomic , copy) NSString              * createTime;
 @property (nonatomic , assign) NSInteger              groupId;
+@property (nonatomic , assign) NSInteger              memberType;
 @property (nonatomic , copy) NSString              * createUserNo;
 @property (nonatomic , copy) NSString              * createNickname;
 @property (nonatomic , copy) NSString              * groupNo;

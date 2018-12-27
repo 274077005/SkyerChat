@@ -105,7 +105,8 @@
         
         [[_cellHeaders.viewMore.btnMore rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
-            if ([self.model.createUserNo isEqualToString:skUser.userNo]) {
+            //查看群成员
+            if (self.model.memberType==1||self.model.memberType==2) {
                 
                 skGroupMenberListViewController *view=[[skGroupMenberListViewController alloc] init];
                 
@@ -113,28 +114,6 @@
                 [self.navigationController pushViewController:view animated:YES];
             }
         }];
-//        if ([self.model.createUserNo isEqualToString:skUser.userNo]) {
-//            [_cellHeaders.btnMore setTitle:@"查看群成员>" forState:(UIControlStateNormal)];
-//        }else{
-//            [_cellHeaders.btnMore setTitle:@"联系群主>" forState:(UIControlStateNormal)];
-//        }
-        
-        
-//        [[_cellHeaders.btnMore rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-//            @strongify(self)
-//            if ([self.model.createUserNo isEqualToString:skUser.userNo]) {
-//                skLookoverViewController *view=[[skLookoverViewController alloc] init];
-//                view.modelOther=self.model;
-//                [self.navigationController pushViewController:view animated:YES];
-//            }else{
-//                skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
-//                conversationVC.conversationType = ConversationType_PRIVATE;
-//                conversationVC.targetId = self.model.createUserNo;
-//                conversationVC.title = self.model.createNickname;
-//                [self.navigationController pushViewController:conversationVC animated:YES];
-//            }
-//            
-//        }];
         [_cellHeaders.collectionView reloadData];
     }
     return _cellHeaders;
@@ -152,6 +131,7 @@
     [super viewWillAppear:animated];
     [self bizGroupMergeauditList];
     [self getNewest];
+    self.navigationController.navigationBarHidden = NO;
 }
 -(void)addTableView{
     [self.view addSubview:self.tableView];

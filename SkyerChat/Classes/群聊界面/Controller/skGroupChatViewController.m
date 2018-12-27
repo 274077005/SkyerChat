@@ -16,6 +16,7 @@
 #import "GBLoopView.h"
 #import "chatGonggaoView.h"
 #import "chatGonggaoModel.h"
+#import "skFriendDesViewController.h"
 
 @interface skGroupChatViewController ()<SDCycleScrollViewDelegate>
 @property (nonatomic,strong) GroupDesModel *model;
@@ -166,6 +167,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+//- (void)didTapCellPortrait:(NSString *)userId{
+//    if ([skUser.userNo isEqualToString:self.model.createUserNo]) {
+//        [super didTapCellPortrait:userId];
+//        skFriendDesViewController *view=[[skFriendDesViewController alloc] init];
+//        view.skDataNeed0 = userId;
+//        view.skDataNeed1 =[NSNumber numberWithInteger:self.model.groupId];
+//        [self.navigationController pushViewController:view animated:YES];
+//    }
+//}
+
 //获取群的详情信息
 -(void)bizGroupgetGroup{
     ///intf/bizUser/sendRegister

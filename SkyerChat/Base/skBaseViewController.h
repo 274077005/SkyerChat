@@ -24,6 +24,10 @@ typedef NS_ENUM(NSInteger, btnState)
 @interface skBaseViewController : UIViewController <UITableViewDelegate ,UITableViewDataSource>
 
 #pragma mark - 这部分是UITableView的
+@property (nonatomic,strong) id skDataNeed0;
+@property (nonatomic,strong) id skDataNeed1;
+@property (nonatomic,strong) id skDataNeed2;
+@property (nonatomic,strong) id skDataNeed3;
 @property (nonatomic ,strong) UITableView *tableView;
 @property (nonatomic,strong,readonly) MJRefreshFooter * footerView;
 @property (nonatomic,strong,readonly) MJRefreshHeader * headerView;

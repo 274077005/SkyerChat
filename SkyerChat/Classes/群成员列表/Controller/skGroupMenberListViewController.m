@@ -13,6 +13,8 @@
 #import "skSingleChatViewController.h"
 #import "GroupMenberListModel.h"
 #import "GroupWithTypeView.h"
+#import "skFriendDesViewController.h"
+#import "GroupDesModel.h"
 
 @interface skGroupMenberListViewController ()
 
@@ -238,26 +240,43 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    if (self.modelOther.groupType==1) {//永久群
+//        skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
+//        groupUserModel *model=[self.arrList objectAtIndex:indexPath.row];
+//        conversationVC.conversationType = ConversationType_PRIVATE;
+//        conversationVC.targetId = model.userNo;
+//        conversationVC.title = [model.nickName length]>0?model.nickName:model.userNo;
+//        [self.navigationController pushViewController:conversationVC animated:YES];
+//    }else{//临时群
+//        GroupMenberListModel *modelG=[self.arrGroupList objectAtIndex:indexPath.section];
+//        NSArray *arr=modelG.members;
+//        NSDictionary *dic=[arr objectAtIndex:indexPath.row];
+//        groupUserModel *model=[groupUserModel mj_objectWithKeyValues:dic];
+//
+//        skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
+//
+//        conversationVC.conversationType = ConversationType_PRIVATE;
+//        conversationVC.targetId = model.userNo;
+//        conversationVC.title = [model.nickName length]>0?model.nickName:model.userNo;
+//        [self.navigationController pushViewController:conversationVC animated:YES];
+//    }
     if (self.modelOther.groupType==1) {//永久群
-        skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
         groupUserModel *model=[self.arrList objectAtIndex:indexPath.row];
-        conversationVC.conversationType = ConversationType_PRIVATE;
-        conversationVC.targetId = model.userNo;
-        conversationVC.title = [model.nickName length]>0?model.nickName:model.userNo;
-        [self.navigationController pushViewController:conversationVC animated:YES];
+        skFriendDesViewController *view=[[skFriendDesViewController alloc] init];
+        view.skDataNeed0 = model;
+        view.skDataNeed1 = self.modelOther;
+        [self.navigationController pushViewController:view animated:YES];
     }else{//临时群
         GroupMenberListModel *modelG=[self.arrGroupList objectAtIndex:indexPath.section];
         NSArray *arr=modelG.members;
         NSDictionary *dic=[arr objectAtIndex:indexPath.row];
         groupUserModel *model=[groupUserModel mj_objectWithKeyValues:dic];
-        
-        skSingleChatViewController *conversationVC = [[skSingleChatViewController alloc]init];
-        
-        conversationVC.conversationType = ConversationType_PRIVATE;
-        conversationVC.targetId = model.userNo;
-        conversationVC.title = [model.nickName length]>0?model.nickName:model.userNo;
-        [self.navigationController pushViewController:conversationVC animated:YES];
+        skFriendDesViewController *view=[[skFriendDesViewController alloc] init];
+        view.skDataNeed0 = model;
+        view.skDataNeed1 = self.modelOther;
+        [self.navigationController pushViewController:view animated:YES];
     }
+    
     
     
 }
