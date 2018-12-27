@@ -236,8 +236,32 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.row==2) {
+        groupUserModel *model=self.skDataNeed0;
+        GroupDesModel *modelG = self.skDataNeed1;
+        [self bizGroupUserdelete:modelG.groupNo kickOut:model.userNo];
+    }
 }
-
+-(void)bizGroupUserdelete:(NSString *)groupNo kickOut:(NSString *)kickOut{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"groupNo":groupNo,
+                        @"userNos":@[kickOut]
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroupUser/kickOut") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
 
 #pragma mark - 禁言
 -(void)bizUserUpdate{

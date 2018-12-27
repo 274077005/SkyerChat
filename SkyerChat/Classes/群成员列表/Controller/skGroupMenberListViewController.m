@@ -274,6 +274,7 @@
         skFriendDesViewController *view=[[skFriendDesViewController alloc] init];
         view.skDataNeed0 = model;
         view.skDataNeed1 = self.modelOther;
+    
         [self.navigationController pushViewController:view animated:YES];
     }
     
