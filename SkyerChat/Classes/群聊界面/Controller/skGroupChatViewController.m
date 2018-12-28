@@ -45,9 +45,7 @@
     if (nil==_viewGonggao) {
         _viewGonggao=skXibView(@"chatGonggaoView");
         [self.view addSubview:_viewGonggao];
-        [_viewGonggao mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(skScreenWidth, 24));
-        }];
+        [_viewGonggao setHidden:YES];
     }
     return _viewGonggao;
 }
@@ -156,6 +154,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
     self.indexSelect=0;
     [self bizGoodsMyGoods];//查询群活动
     
@@ -212,7 +211,7 @@
 //获取群的活动列表信息
 -(void)bizGoodsMyGoods{
     ///intf/bizUser/sendRegister
-    NSDictionary *dic=@{@"goodsNo":self.targetId,
+    NSDictionary *dic=@{@"groupNo":self.targetId,
                         @"page":@"0",
                         @"rows":@"3"
                         };
@@ -229,10 +228,12 @@
             
             [self getNewest];
             
+        }else{
+            self.navigationController.navigationBarHidden = NO;
         }
         
     } failure:^(NSError * _Nullable error) {
-        
+        self.navigationController.navigationBarHidden = NO;
     }];
 }
 /**
@@ -258,8 +259,8 @@
             NSArray *loopArrs;
             
             
-            [self.viewGonggao.viewContain addSubview:self.paoView];
             
+            [self.viewGonggao.viewContain addSubview:self.paoView];
             if (self.arrList.count>0) {
                 self.navigationController.navigationBarHidden = YES;
                 self.conversationMessageCollectionView.frame=CGRectMake(0, 150, skScreenWidth, skScreenHeight-150);
@@ -273,9 +274,15 @@
                 }else{
                     loopArrs = [NSArray arrayWithObjects:@"群主暂无发布公告",nil];
                 }
-                self.viewGonggao.frame=CGRectMake(0, 150+20, skScreenWidth, 24);
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    self.viewGonggao.frame=CGRectMake(0, 170, skScreenWidth, 24);
+                    [self.viewGonggao setHidden:NO];
+                });
+                
                 
             }else{
+                self.navigationController.navigationBarHidden = NO;
                 self.conversationMessageCollectionView.frame=CGRectMake(0, 0, skScreenWidth, skScreenHeight-0);
                 [self.viewCycle setHidden:YES];
                 [self.viewImage setHidden:YES];
@@ -285,15 +292,20 @@
                 }else{
                     loopArrs = [NSArray arrayWithObjects:@"群主暂无发布公告",nil];
                 }
-                self.viewGonggao.frame=CGRectMake(0, 64, skScreenWidth, 24);
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    self.viewGonggao.frame=CGRectMake(0, 64, skScreenWidth, 24);
+                    [self.viewGonggao setHidden:NO];
+                });
             }
             
             [self.paoView setTickerArrs:loopArrs];
             
+        }else{
+            self.navigationController.navigationBarHidden = NO;
         }
         
     } failure:^(NSError * _Nullable error) {
-        
+        self.navigationController.navigationBarHidden = NO;
     }];
 }
 
