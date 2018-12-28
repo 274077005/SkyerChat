@@ -154,7 +154,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBarHidden = YES;
     self.indexSelect=0;
     [self bizGoodsMyGoods];//查询群活动
     
