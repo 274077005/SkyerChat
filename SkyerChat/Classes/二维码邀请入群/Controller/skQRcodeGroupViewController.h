@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface skQRcodeGroupViewController : skBaseViewController
 @property (nonatomic,strong) GroupDesModel *modelOther;
-@property (nonatomic,strong) NSString *groupNo;
+//@property (nonatomic,strong) NSString *groupNo;
 @end
 
 NS_ASSUME_NONNULL_END

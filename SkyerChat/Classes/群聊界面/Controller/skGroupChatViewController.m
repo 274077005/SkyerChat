@@ -33,7 +33,7 @@
 
 - (GBLoopView *)paoView{
     if (nil==_paoView) {
-        _paoView=[[GBLoopView alloc] initWithFrame:CGRectMake(50, 0, skScreenWidth-50, 24)];
+        _paoView=[[GBLoopView alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 24)];
         [_paoView setSpeed:60.0f];
         [_paoView setDirection:GBLoopDirectionRight];
         [_paoView start];
@@ -54,19 +54,24 @@
 
 - (SDCycleScrollView *)viewCycle{
     if (nil==_viewCycle) {
+        
         _viewCycle = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, skScreenWidth, 150) delegate:self placeholderImage:[UIImage imageNamed:@""]];
-        [self.view addSubview:_viewCycle];
+        
+        [self.viewImage.imageContainView addSubview:_viewCycle];
+        
         [_viewCycle mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(self.mas_topLayoutGuide);
             make.left.right.mas_equalTo(0);
             make.size.mas_equalTo(CGSizeMake(skScreenWidth, 150));
         }];
+        
         _viewCycle.pageControlBottomOffset=20;
     }
     return _viewCycle;
 }
 - (groupImageView *)viewImage{
     if (nil==_viewImage) {
+        
         _viewImage=skXibView(@"groupImageView");
         [self.view addSubview:_viewImage];
         _viewImage.iamgeTitle.backgroundColor=[[UIColor grayColor] colorWithAlphaComponent:0.3];
@@ -151,6 +156,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.indexSelect=0;
     [self bizGoodsMyGoods];//查询群活动
     
 }
@@ -194,6 +200,15 @@
         
     }];
 }
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    
+}
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index{
+    groupOnerActivityModel *model=[self.arrList objectAtIndex:index];
+    self.viewImage.labTitle.text=model.goodsName;
+    self.indexSelect=index;
+}
 //获取群的活动列表信息
 -(void)bizGoodsMyGoods{
     ///intf/bizUser/sendRegister
@@ -211,29 +226,8 @@
             
             self.arrList=[groupOnerActivityModel mj_objectArrayWithKeyValuesArray:modelList.list];
             
-            NSMutableArray *arrImage=[[NSMutableArray alloc] init];
-            for (int i =0; i<self.arrList.count; ++i) {
-                groupOnerActivityModel *model=[self.arrList objectAtIndex:i];
-                [arrImage addObject:model.goodsPic];
-            }
-            self.viewCycle.imageURLStringsGroup = arrImage;
             
-            
-            if (self.arrList.count>0) {
-                self.navigationController.navigationBarHidden = YES;
-                self.conversationMessageCollectionView.frame=CGRectMake(0, 150, skScreenWidth, skScreenHeight-150);
-                [self viewCycle];
-                [self viewImage];
-                [self.viewCycle setHidden:NO];
-                [self.viewImage setHidden:NO];
-            }else{
-                self.conversationMessageCollectionView.frame=CGRectMake(0, 0, skScreenWidth, skScreenHeight-0);
-                [self.viewCycle setHidden:YES];
-                [self.viewImage setHidden:YES];
-            }
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self getNewest];
-            });
+            [self getNewest];
             
         }
         
@@ -241,15 +235,6 @@
         
     }];
 }
-- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
-    
-}
-- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index{
-    groupOnerActivityModel *model=[self.arrList objectAtIndex:index];
-    self.viewImage.labTitle.text=model.goodsName;
-    self.indexSelect=index;
-}
-
 /**
  获取公告最新的一条
  */
@@ -260,37 +245,48 @@
     [skAfTool SKPOST:skUrl(@"/intf/bizGroupNotice/getNewest") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
+            
+            NSMutableArray *arrImage=[[NSMutableArray alloc] init];
+            for (int i =0; i<self.arrList.count; ++i) {
+                groupOnerActivityModel *model=[self.arrList objectAtIndex:i];
+                [arrImage addObject:model.goodsPic];
+            }
+            self.viewCycle.imageURLStringsGroup = arrImage;
+            
             chatGonggaoModel *gonggaoModel=[chatGonggaoModel mj_objectWithKeyValues:responseObject.data];
             
-            
             NSArray *loopArrs;
+            
+            
             [self.viewGonggao.viewContain addSubview:self.paoView];
             
             if (self.arrList.count>0) {
-                if (gonggaoModel.noticeContent.length>0) {
-                    loopArrs = [NSArray arrayWithObjects:gonggaoModel.noticeContent,nil];
-                }else{
-                    loopArrs = [NSArray arrayWithObjects:@"群主暂无发布公告",nil];
-                }
+                self.navigationController.navigationBarHidden = YES;
+                self.conversationMessageCollectionView.frame=CGRectMake(0, 150, skScreenWidth, skScreenHeight-150);
+                [self viewCycle];
+                [self.viewCycle setHidden:NO];
+                [self.viewImage setHidden:NO];
                 
-                [self.viewGonggao mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.top.mas_equalTo(self.viewImage.mas_bottom);
-                    make.left.mas_equalTo(0);
-                }];
-                self.conversationMessageCollectionView.frame=CGRectMake(0, 150+24, skScreenWidth, skScreenHeight-150-24);
-            }else{
+                
                 if (gonggaoModel.noticeContent.length>0) {
                     loopArrs = [NSArray arrayWithObjects:gonggaoModel.noticeContent,nil];
                 }else{
                     loopArrs = [NSArray arrayWithObjects:@"群主暂无发布公告",nil];
                 }
-                [self.viewGonggao mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
-                    make.left.mas_equalTo(0);
-                }];
-                self.conversationMessageCollectionView.frame=CGRectMake(0,24, skScreenWidth, skScreenHeight-24);
+                self.viewGonggao.frame=CGRectMake(0, 150+20, skScreenWidth, 24);
+                
+            }else{
+                self.conversationMessageCollectionView.frame=CGRectMake(0, 0, skScreenWidth, skScreenHeight-0);
+                [self.viewCycle setHidden:YES];
+                [self.viewImage setHidden:YES];
+                
+                if (gonggaoModel.noticeContent.length>0) {
+                    loopArrs = [NSArray arrayWithObjects:gonggaoModel.noticeContent,nil];
+                }else{
+                    loopArrs = [NSArray arrayWithObjects:@"群主暂无发布公告",nil];
+                }
+                self.viewGonggao.frame=CGRectMake(0, 64, skScreenWidth, 24);
             }
-            
             
             [self.paoView setTickerArrs:loopArrs];
             

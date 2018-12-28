@@ -290,8 +290,7 @@
 #pragma mark - 上架商品
 -(void)bizGoodsUp{
     ///intf/bizUser/sendRegister
-    NSDictionary *dic=@{@"goodsNo":self.modelOther.goodsNo,
-                        @"groupNo":self.modelOther.goodsNo
+    NSDictionary *dic=@{@"goodsNo":self.model.goodsNo
                         };
     
     
@@ -308,8 +307,7 @@
 #pragma mark - 下架
 -(void)bizGoodsDown{
     ///intf/bizUser/sendRegister
-    NSDictionary *dic=@{@"goodsNo":self.modelOther.goodsNo,
-                        @"groupNo":self.modelOther.goodsNo
+    NSDictionary *dic=@{@"goodsNo":self.model.goodsNo
                         };
     
     
