@@ -39,11 +39,24 @@
                             <constraint firstAttribute="width" constant="40" id="VKP-ZT-bdc"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODa-2q-mTt">
+                        <rect key="frame" x="0.0" y="48.5" width="320" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="dmS-sh-rmV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Aad-ud-xRJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="HeD-dz-MvF"/>
                     <constraint firstItem="wNW-AR-Ok9" firstAttribute="leading" secondItem="Aad-ud-xRJ" secondAttribute="trailing" constant="8" id="JYJ-a5-YVn"/>
                     <constraint firstAttribute="trailing" secondItem="FLs-xS-HwN" secondAttribute="trailing" id="KYl-JJ-Vuv"/>
+                    <constraint firstItem="ODa-2q-mTt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KzM-Vc-qoJ"/>
+                    <constraint firstAttribute="trailing" secondItem="ODa-2q-mTt" secondAttribute="trailing" id="NJO-hQ-mDQ"/>
+                    <constraint firstAttribute="bottom" secondItem="ODa-2q-mTt" secondAttribute="bottom" id="QDu-ak-fYp"/>
                     <constraint firstItem="wNW-AR-Ok9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="b46-k8-XfV"/>
                     <constraint firstItem="Aad-ud-xRJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="xam-Il-xrY"/>
                     <constraint firstItem="FLs-xS-HwN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xoJ-fS-uJm"/>

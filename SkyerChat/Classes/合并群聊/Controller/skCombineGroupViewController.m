@@ -13,6 +13,7 @@
 #import "UIImageView+WebCache.h"
 #import "combineModel.h"
 #import "skImagePicker.h"
+#import "CombineGroupInfoView.h"
 
 @interface skCombineGroupViewController ()
 @property (nonatomic,assign) NSInteger rowGroup;
@@ -21,9 +22,23 @@
 @property (nonatomic,strong) CombineGroupHeaderTableViewCell *cellHeader;
 @property (nonatomic,strong) combineModel *model;
 @property (nonatomic,strong) UIImage *imageHeader;
+@property (nonatomic,strong) CombineGroupInfoView *viewCombine;
 @end
 
 @implementation skCombineGroupViewController
+
+-(CombineGroupInfoView *)viewCombine{
+    if (nil==_viewCombine) {
+        _viewCombine=skXibView(@"CombineGroupInfoView");
+        [self.view addSubview:_viewCombine];
+        [_viewCombine mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.bottom.top.mas_equalTo(0);
+        }];
+    }
+    return _viewCombine;
+}
+
+
 - (combineModel *)model{
     if (nil==_model) {
         _model=[[combineModel alloc] init];
@@ -43,11 +58,11 @@
                     [self.cellHeader.btnHeader setImage:nil forState:(UIControlStateNormal)];
                     [self.cellHeader.btnHeader setBackgroundImage:image forState:(UIControlStateNormal)];
                 }
-                
+
             }];
         }];
     }
-    
+
     return _cellHeader;
 }
 - (NSMutableArray *)arrSelect{
@@ -66,17 +81,18 @@
     RAC(self.model,groupName)=self.cellHeader.txtName.rac_textSignal;
     RAC(self.model,mergeDays)=self.cellHeader.txtDay.rac_textSignal;
     @weakify(self)
-    [[[self skCreatBtn:@"合并" btnTitleOrImage:(btntypeTitle) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        @strongify(self)
-        [self applyMergeGroup];
-    }];
+//    [[[self skCreatBtn:@"合并" btnTitleOrImage:(btntypeTitle) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+//        @strongify(self)
+//        [self applyMergeGroup];
+//    }];
 }
 -(void)addTableView{
     [self.view addSubview:self.tableView];
+    self.tableView.backgroundColor=KcolorBackground;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
         make.left.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(self.mas_bottomLayoutGuideTop);
+        make.bottom.mas_equalTo(self.mas_bottomLayoutGuideTop).offset(-60);
     }];
 }
 
@@ -114,78 +130,29 @@
 */
 #pragma mark - 代理方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    switch (section) {
-        case 0:
-        {
-            return 1;
-        }
-            break;
-        case 1:
-        {
-            return self.arrGroupList.count;
-        }
-            break;
-            
-        default:
-            break;
-    }
     return self.arrGroupList.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    switch (indexPath.section) {
-        case 0:
-            return 220;
-            break;
-        case 1:
-            return 50;
-            break;
-            
-        default:
-            break;
-    }
+    
     return 50;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 30;
+}
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UILabel *labTitle=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, skScreenWidth, 30)];
+    labTitle.text=@" 选择需要合并的群主";
+    labTitle.textColor=[UIColor grayColor];
+    labTitle.font=[UIFont systemFontOfSize:14];
+    labTitle.backgroundColor=[UIColor groupTableViewBackgroundColor];
+    return labTitle;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    
-    
-    switch (indexPath.section) {
-        case 0:
-        {
-            return self.cellHeader;
-        }
-            break;
-        case 1:
-        {
-            static NSString *cellIdentifier = @"CombineGroupTableViewCell";
-            
-            CombineGroupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            
-            if (cell == nil) {
-                cell = skXibView(@"CombineGroupTableViewCell");
-            }
-            NSString *rows=[NSString stringWithFormat:@"%ld",indexPath.row];
-            if ([self.arrSelect containsObject:rows]) {
-                [cell.imageSelect setImage:[UIImage imageNamed:@"多选-选中"]];
-            }else{
-                [cell.imageSelect setImage:[UIImage imageNamed:@"多选-未选"]];
-            }
-            skGroupModel *model=[self.arrGroupList objectAtIndex:indexPath.row];
-            [cell.imageHeader sd_setImageWithURL:[NSURL URLWithString:model.groupIcon] placeholderImage:[UIImage imageNamed:@"default_group_portrait"]];
-            
-            cell.labName.text=model.groupName;
-            
-            return cell;
-        }
-            break;
-            
-        default:
-            break;
-    }
     static NSString *cellIdentifier = @"CombineGroupTableViewCell";
     
     CombineGroupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -193,6 +160,16 @@
     if (cell == nil) {
         cell = skXibView(@"CombineGroupTableViewCell");
     }
+    NSString *rows=[NSString stringWithFormat:@"%ld",indexPath.row];
+    if ([self.arrSelect containsObject:rows]) {
+        [cell.imageSelect setImage:[UIImage imageNamed:@"多选-选中"]];
+    }else{
+        [cell.imageSelect setImage:[UIImage imageNamed:@"多选-未选"]];
+    }
+    skGroupModel *model=[self.arrGroupList objectAtIndex:indexPath.row];
+    [cell.imageHeader sd_setImageWithURL:[NSURL URLWithString:model.groupIcon] placeholderImage:[UIImage imageNamed:@"default_group_portrait"]];
+    
+    cell.labName.text=model.groupName;
     
     return cell;
 }
@@ -200,22 +177,18 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section>0) {
-        
-        NSString *rows=[NSString stringWithFormat:@"%ld",indexPath.row];
-        skGroupModel *model=[self.arrGroupList objectAtIndex:indexPath.row];
-        if (![self.modelOther.groupNo isEqualToString:model.groupNo]) {
-            if (![self.arrSelect containsObject:rows]) {
-                [self.arrSelect addObject:rows];
-            }else{
-                [self.arrSelect removeObject:rows];
-            }
-            
-            [self.tableView reloadData];
+    NSString *rows=[NSString stringWithFormat:@"%ld",indexPath.row];
+    skGroupModel *model=[self.arrGroupList objectAtIndex:indexPath.row];
+    if (![self.modelOther.groupNo isEqualToString:model.groupNo]) {
+        if (![self.arrSelect containsObject:rows]) {
+            [self.arrSelect addObject:rows];
         }else{
-            [SkToast SkToastShow:@"发起者不能选取" withHight:300];
+            [self.arrSelect removeObject:rows];
         }
         
+        [self.tableView reloadData];
+    }else{
+        [SkToast SkToastShow:@"发起者不能选取" withHight:300];
     }
 }
 
