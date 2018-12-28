@@ -53,15 +53,9 @@
 - (skGroupChatHeadersTableViewCell *)cellHeaders{
     if (nil==_cellHeaders) {
         _cellHeaders=skXibView(@"skGroupChatHeadersTableViewCell");
-        
+        _cellHeaders.modelG=self.model;
         
         @weakify(self)
-//        [[_cellHeaders rac_signalForSelector:@selector(skAddFriend)] subscribeNext:^(RACTuple * _Nullable x) {
-//            @strongify(self)
-//            skAddGroupFriendViewController *view=[[skAddGroupFriendViewController alloc] init];
-//            view.modelOther=self.model;
-//            [self.navigationController pushViewController:view animated:YES];
-//        }];
         
         [[_cellHeaders rac_signalForSelector:@selector(skDidSelectItemAtIndexPath:)] subscribeNext:^(RACTuple * _Nullable x) {
             @strongify(self)

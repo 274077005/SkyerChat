@@ -267,19 +267,21 @@
         view.skDataNeed1 = self.modelOther;
         [self.navigationController pushViewController:view animated:YES];
     }else{//临时群
+        
         GroupMenberListModel *modelG=[self.arrGroupList objectAtIndex:indexPath.section];
+        
+//        if (modelG.) {
+//            <#statements#>
+//        }
         NSArray *arr=modelG.members;
         NSDictionary *dic=[arr objectAtIndex:indexPath.row];
         groupUserModel *model=[groupUserModel mj_objectWithKeyValues:dic];
+        
         skFriendDesViewController *view=[[skFriendDesViewController alloc] init];
         view.skDataNeed0 = model;
         view.skDataNeed1 = self.modelOther;
-    
         [self.navigationController pushViewController:view animated:YES];
     }
-    
-    
-    
 }
 
 @end

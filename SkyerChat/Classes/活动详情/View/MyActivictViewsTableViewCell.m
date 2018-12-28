@@ -173,6 +173,9 @@
 //点击item方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self skClick:indexPath];
+}
+- (void)skClick:(NSIndexPath *)indexPath{
     NSLog(@"点击了=%ld",indexPath.row);
 }
 @end

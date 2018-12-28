@@ -216,6 +216,36 @@
             MyActivictViewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
             if (cell == nil) {
                 cell = skXibView(@"MyActivictViewsTableViewCell");
+                @weakify(self)
+                [[cell rac_signalForSelector:@selector(skClick:)] subscribeNext:^(RACTuple * _Nullable x) {
+                    @strongify(self)
+                    NSIndexPath *indexPath=x[0];
+                    switch (indexPath.row) {
+                        case 0:
+                        {
+                            
+                        }
+                            break;
+                        case 1:
+                        {
+                            [self bizGoodsDelete];
+                        }
+                            break;
+                        case 2:
+                        {
+                            [self bizGoodsUp];
+                        }
+                            break;
+                        case 3:
+                        {
+                            [self bizGoodsDown];
+                        }
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                }];
             }
             [cell.collectionView reloadData];
             return cell;
@@ -239,7 +269,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
+#pragma mark - 获取商品详情
 -(void)bizGoodsGet{
     ///intf/bizUser/sendRegister
     NSDictionary *dic=@{@"goodsNo":self.modelOther.goodsNo
@@ -257,5 +287,58 @@
         
     }];
 }
-
+#pragma mark - 上架商品
+-(void)bizGoodsUp{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"goodsNo":self.modelOther.goodsNo,
+                        @"groupNo":self.modelOther.goodsNo
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGoods/up") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            [SkToast SkToastShow:@"上架成功" withHight:300];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+#pragma mark - 下架
+-(void)bizGoodsDown{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"goodsNo":self.modelOther.goodsNo,
+                        @"groupNo":self.modelOther.goodsNo
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGoods/down") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            [SkToast SkToastShow:@"下架成功" withHight:300];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+#pragma mark - 删除商品
+-(void)bizGoodsDelete{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"goodsNo":self.modelOther.goodsNo
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGoods/delete") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            [SkToast SkToastShow:@"删除成功" withHight:300];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
 @end

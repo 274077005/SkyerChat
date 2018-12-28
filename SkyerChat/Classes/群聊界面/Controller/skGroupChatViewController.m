@@ -203,7 +203,7 @@
                         };
     
     
-    [skAfTool SKPOST:skUrl(@"/intf/bizGoods/myGoods") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
+    [skAfTool SKPOST:skUrl(@"/intf/bizGoods/myGroupGoods") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
             
@@ -231,7 +231,10 @@
                 [self.viewCycle setHidden:YES];
                 [self.viewImage setHidden:YES];
             }
-            [self getNewest];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self getNewest];
+            });
+            
         }
         
     } failure:^(NSError * _Nullable error) {
@@ -290,9 +293,6 @@
             
             
             [self.paoView setTickerArrs:loopArrs];
-            
-            
-            
             
         }
         

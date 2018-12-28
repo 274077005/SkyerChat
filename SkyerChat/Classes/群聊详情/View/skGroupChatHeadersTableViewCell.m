@@ -87,7 +87,12 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     if (self.arrModelList.count<=8) {
-        return self.arrModelList.count+2;
+        if (self.modelG.groupType==1) {
+            return self.arrModelList.count+2;
+        }else{
+            return self.arrModelList.count+1;
+        }
+        
     }else{
         return 10;
     }
