@@ -15,6 +15,7 @@
 #import "activityOtherTableViewCell.h"
 #import "skSingleChatViewController.h"
 #import "MyActivictViewsTableViewCell.h"
+#import "skSubmitOrderViewController.h"
 
 @interface skActivityDesViewController ()<SDCycleScrollViewDelegate>
 @property (nonatomic,strong) ActivityDesViews *viewActivity;
@@ -38,11 +39,26 @@
         _viewActivity.frame=self.view.bounds;
         [self.view addSubview:_viewActivity];
         @weakify(self)
+        //联系商家
         [[_viewActivity.btnChat rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
             skSingleChatViewController *view=[[skSingleChatViewController alloc] initWithConversationType:(ConversationType_PRIVATE) targetId:self.model.userNo];
             view.title=self.model.nickName?self.model.nickName:self.model.userNo;
             [self.navigationController pushViewController:view animated:YES];
+        }];
+        //购买商品
+        [[_viewActivity.btnBay rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            
+            skSubmitOrderViewController *view=[[skSubmitOrderViewController alloc] init];
+            view.modelGoods=self.model;
+            view.modelActivity=self.modelOther;
+            
+            view.view.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.7];
+            view.modalPresentationStyle = UIModalPresentationOverFullScreen;
+            [self presentViewController:view animated:YES completion:^(void){
+                
+            }];
         }];
     }
     return _viewActivity;
@@ -279,6 +295,7 @@
     [skAfTool SKPOST:skUrl(@"/intf/bizGoods/get") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
+            
             self.model=[goodsDecModel mj_objectWithKeyValues:responseObject.data];
             [self.tableView reloadData];
         }

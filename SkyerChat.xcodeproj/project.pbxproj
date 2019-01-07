@@ -84,6 +84,10 @@
 		8434775D21D620F0001CF8B3 /* CombineGroupInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434775C21D620F0001CF8B3 /* CombineGroupInfoView.m */; };
 		8434775F21D620FB001CF8B3 /* CombineGroupInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8434775E21D620FB001CF8B3 /* CombineGroupInfoView.xib */; };
 		8434776221D626FD001CF8B3 /* skCombineSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434776121D626FD001CF8B3 /* skCombineSubViewController.m */; };
+		8434776921E2F6E5001CF8B3 /* skSubmitOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434776821E2F6E5001CF8B3 /* skSubmitOrderViewController.m */; };
+		8434776C21E2F709001CF8B3 /* skSubmitOrderViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434776B21E2F709001CF8B3 /* skSubmitOrderViews.m */; };
+		8434776E21E2F714001CF8B3 /* skSubmitOrderViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8434776D21E2F714001CF8B3 /* skSubmitOrderViews.xib */; };
+		8434777121E2F73A001CF8B3 /* skSubmitOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8434777021E2F73A001CF8B3 /* skSubmitOrderModel.m */; };
 		84369E2B21D319E400B32344 /* skFriendDesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84369E2A21D319E400B32344 /* skFriendDesViewController.m */; };
 		84369E2F21D31C5400B32344 /* skFriendHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84369E2D21D31C5400B32344 /* skFriendHeaderTableViewCell.m */; };
 		84369E3021D31C5400B32344 /* skFriendHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84369E2E21D31C5400B32344 /* skFriendHeaderTableViewCell.xib */; };
@@ -339,6 +343,13 @@
 		8434775E21D620FB001CF8B3 /* CombineGroupInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CombineGroupInfoView.xib; sourceTree = "<group>"; };
 		8434776021D626FD001CF8B3 /* skCombineSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skCombineSubViewController.h; sourceTree = "<group>"; };
 		8434776121D626FD001CF8B3 /* skCombineSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skCombineSubViewController.m; sourceTree = "<group>"; };
+		8434776721E2F6E5001CF8B3 /* skSubmitOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skSubmitOrderViewController.h; sourceTree = "<group>"; };
+		8434776821E2F6E5001CF8B3 /* skSubmitOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skSubmitOrderViewController.m; sourceTree = "<group>"; };
+		8434776A21E2F709001CF8B3 /* skSubmitOrderViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skSubmitOrderViews.h; sourceTree = "<group>"; };
+		8434776B21E2F709001CF8B3 /* skSubmitOrderViews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skSubmitOrderViews.m; sourceTree = "<group>"; };
+		8434776D21E2F714001CF8B3 /* skSubmitOrderViews.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skSubmitOrderViews.xib; sourceTree = "<group>"; };
+		8434776F21E2F73A001CF8B3 /* skSubmitOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skSubmitOrderModel.h; sourceTree = "<group>"; };
+		8434777021E2F73A001CF8B3 /* skSubmitOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skSubmitOrderModel.m; sourceTree = "<group>"; };
 		84369E2921D319E400B32344 /* skFriendDesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skFriendDesViewController.h; sourceTree = "<group>"; };
 		84369E2A21D319E400B32344 /* skFriendDesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skFriendDesViewController.m; sourceTree = "<group>"; };
 		84369E2C21D31C5400B32344 /* skFriendHeaderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skFriendHeaderTableViewCell.h; sourceTree = "<group>"; };
@@ -1181,6 +1192,44 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8434776321E2F68F001CF8B3 /* 提交订单 */ = {
+			isa = PBXGroup;
+			children = (
+				8434776421E2F68F001CF8B3 /* Controller */,
+				8434776521E2F68F001CF8B3 /* Model */,
+				8434776621E2F68F001CF8B3 /* View */,
+			);
+			path = "提交订单";
+			sourceTree = "<group>";
+		};
+		8434776421E2F68F001CF8B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8434776721E2F6E5001CF8B3 /* skSubmitOrderViewController.h */,
+				8434776821E2F6E5001CF8B3 /* skSubmitOrderViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8434776521E2F68F001CF8B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8434776F21E2F73A001CF8B3 /* skSubmitOrderModel.h */,
+				8434777021E2F73A001CF8B3 /* skSubmitOrderModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8434776621E2F68F001CF8B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8434776A21E2F709001CF8B3 /* skSubmitOrderViews.h */,
+				8434776B21E2F709001CF8B3 /* skSubmitOrderViews.m */,
+				8434776D21E2F714001CF8B3 /* skSubmitOrderViews.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		84369E2521D319B000B32344 /* 个人详情 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1362,6 +1411,7 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8434776321E2F68F001CF8B3 /* 提交订单 */,
 				8434775721D61D9D001CF8B3 /* 订单列表 */,
 				84369E2521D319B000B32344 /* 个人详情 */,
 				84082CBE21C9F894004A0422 /* 删除群成员 */,
@@ -2313,6 +2363,7 @@
 				2035B07F2199B5AF00BF8AE2 /* ActivityView.xib in Resources */,
 				8485413C21C7397400481CC0 /* MyActivictViewsTableViewCell.xib in Resources */,
 				84537B842154897F00E4CB29 /* LaunchScreen.storyboard in Resources */,
+				8434776E21E2F714001CF8B3 /* skSubmitOrderViews.xib in Resources */,
 				84995A302181C5C900FD8A20 /* myClientTableViewCell.xib in Resources */,
 				84CCF58D21747CA1004DE670 /* skAddressBookTableViewCell.xib in Resources */,
 				842EAB04218B00E900CA9E25 /* skGroupGonggaoTableViewCell.xib in Resources */,
@@ -2496,6 +2547,7 @@
 				84E65CD42179CC0D00A379E0 /* AddressTableViewCell.m in Sources */,
 				84082CCA21C9F894004A0422 /* groupUserModel.m in Sources */,
 				84082CD221CA2AFF004A0422 /* GroupWithTypeView.m in Sources */,
+				8434777121E2F73A001CF8B3 /* skSubmitOrderModel.m in Sources */,
 				84D7DB5C2182A08000131373 /* AddressBookTitleView.m in Sources */,
 				84CFE3A1217827BC0061B625 /* skUserInfoSetViewController.m in Sources */,
 				84ADFC29217877F4008D7BE5 /* skUserinfoSetModel.m in Sources */,
@@ -2528,6 +2580,7 @@
 				843B40C7216C555200356306 /* RegisterView.m in Sources */,
 				842CFAA0216F233B00A847AB /* UserCenterOrderTableViewCell.m in Sources */,
 				8403A6A6219C1043000DAFD1 /* ActivityTitleTableViewCell.m in Sources */,
+				8434776921E2F6E5001CF8B3 /* skSubmitOrderViewController.m in Sources */,
 				849959F1217DC2B100FD8A20 /* skChangePasswordModel.m in Sources */,
 				8419CDEC216DD99800DBE8F4 /* skActivityViewController.m in Sources */,
 				20FF8D612194864A000D686D /* skAddGroupFriendViewController.m in Sources */,
@@ -2564,6 +2617,7 @@
 				8419CDD5216DD80C00DBE8F4 /* skTabarViewController.m in Sources */,
 				84B7F3BE218C2B9C00793DDD /* groupCellModel.m in Sources */,
 				84995A2F2181C5C900FD8A20 /* myClientTableViewCell.m in Sources */,
+				8434776C21E2F709001CF8B3 /* skSubmitOrderViews.m in Sources */,
 				84537BA32154D83200E4CB29 /* skBaseViewController.m in Sources */,
 				84537BAB2154E9CE00E4CB29 /* skConfig.m in Sources */,
 				84D7DB652182B2C500131373 /* skAddressBookViewController.m in Sources */,

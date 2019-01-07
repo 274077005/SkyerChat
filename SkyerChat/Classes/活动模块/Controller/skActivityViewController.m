@@ -12,6 +12,7 @@
 #import "activityModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "skActivityDesViewController.h"
+#import "skSubmitOrderViewController.h"
 
 
 @interface skActivityViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,SDCycleScrollViewDelegate>
