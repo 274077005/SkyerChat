@@ -14,6 +14,7 @@
 #import "combineModel.h"
 #import "skImagePicker.h"
 #import "CombineGroupInfoView.h"
+#import "skCombineSubViewController.h"
 
 @interface skCombineGroupViewController ()
 @property (nonatomic,assign) NSInteger rowGroup;
@@ -85,6 +86,29 @@
 //        @strongify(self)
 //        [self applyMergeGroup];
 //    }];
+    
+    UIButton *btnNext=[[UIButton alloc] init];
+    [self.view addSubview:btnNext];
+    
+    [btnNext mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(skScreenWidth-40, 50));
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-20);
+    }];
+    
+    [btnNext setTitle:@"下一步" forState:(UIControlStateNormal)];
+    [btnNext setBackgroundColor:KcolorMain];
+    [btnNext skSetBoardRadius:5 Width:0 andBorderColor:nil];
+    [[btnNext rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self)
+        if (self.arrSelect.count>1) {
+            skCombineSubViewController *view=[[skCombineSubViewController alloc] init];
+            view.modelOther=self.modelOther;
+            view.arrGroupList=self.arrGroupList;
+            view.arrSelect=self.arrSelect;
+            [self.navigationController pushViewController:view animated:YES];
+        }
+    }];
 }
 -(void)addTableView{
     [self.view addSubview:self.tableView];

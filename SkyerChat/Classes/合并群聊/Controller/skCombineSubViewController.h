@@ -7,11 +7,14 @@
 //
 
 #import "skBaseViewController.h"
+#import "GroupDesModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface skCombineSubViewController : skBaseViewController
-
+@property (nonatomic,strong) GroupDesModel *modelOther;
+@property (nonatomic,strong) NSArray *arrGroupList;
+@property (nonatomic,strong) NSMutableArray *arrSelect;
 @end
 
 NS_ASSUME_NONNULL_END
