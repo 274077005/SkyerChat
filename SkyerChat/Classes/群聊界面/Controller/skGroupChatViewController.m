@@ -275,8 +275,10 @@
                     loopArrs = [NSArray arrayWithObjects:@"群主暂无发布公告",nil];
                 }
                 
+                CGFloat maxY=CGRectGetMaxY(self.viewImage.frame);
+                
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    self.viewGonggao.frame=CGRectMake(0, 170, skScreenWidth, 24);
+                    self.viewGonggao.frame=CGRectMake(0, maxY, skScreenWidth, 24);
                     [self.viewGonggao setHidden:NO];
                 });
                 

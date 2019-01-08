@@ -10,6 +10,7 @@
 #import "UserinfoSetNewMessageTableViewCell.h"
 #import "UserinfoSetTableViewCell.h"
 #import "skUserinfoSetModel.h"
+#import "skImagePicker.h"
 
 @interface skUserInfoSetViewController ()
 @property (nonatomic,strong) UserinfoSetNewMessageTableViewCell *messageCell;
@@ -59,7 +60,7 @@
 */
 #pragma mark - 代理方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -74,11 +75,16 @@
             return 4;
         }
             break;
+        case 2:
+        {
+            return 2;
+        }
+            break;
             
         default:
             break;
     }
-    return 10;
+    return 0;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
@@ -139,6 +145,35 @@
             return cell;
         }
             break;
+        case 2:
+        {
+            static NSString *cellIdentifier = @"UserinfoSetTableViewCell";
+            
+            UserinfoSetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+            if (cell == nil) {
+                cell = skXibView(@"UserinfoSetTableViewCell");
+            }
+            [cell.labName setHidden:YES];
+            switch (indexPath.row) {
+                case 0://支付宝付款码上传
+                {
+                    cell.labTitle.text=@"支付宝收款码";
+                    
+                }
+                    break;
+                case 1://微信付款码上传
+                {
+                    cell.labTitle.text=@"微信收款码";
+                    
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+            return cell;
+        }
+            break;
             
         default:
             break;
@@ -191,11 +226,63 @@
             [self showAlertView:title index:indexPath.row];
         }
             break;
+        case 2:
+        {
+            switch (indexPath.row) {
+                case 0://上传支付宝付款码
+                {
+                    [skImagePicker showImagePickerFromViewController:self allowsEditing:YES finishAction:^(UIImage *image) {
+                        if (image) {
+                            [self setPayImage:image type:0];
+                        }
+                    }];
+                }
+                    break;
+                case 1://上传微信付款码
+                {
+                    [skImagePicker showImagePickerFromViewController:self allowsEditing:YES finishAction:^(UIImage *image) {
+                        if (image) {
+                            [self setPayImage:image type:1];
+                        }
+                        
+                    }];
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
+            break;
             
         default:
             break;
     }
 }
+
+-(void)setPayImage:(UIImage *)image type:(NSInteger)type{
+    ///intf/bizUser/sendRegister
+    NSString *updataString;
+    NSString *imageString=[skClassMethod skImageBase64:image];
+    if (type==0) {
+        updataString=@"alipayQrCodeUrl";
+    }else{
+        updataString=@"wechatQrCodeUrl";
+    }
+    NSDictionary *dic=@{updataString:imageString};
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizUser/update") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            [SkToast SkToastShow:@"更新成功" withHight:300];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+
 
 -(void)showAlertView:(NSString *)title index:(NSInteger)index{
     
