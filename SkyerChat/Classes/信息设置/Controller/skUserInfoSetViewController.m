@@ -265,9 +265,9 @@
     NSString *updataString;
     NSString *imageString=[skClassMethod skImageBase64:image];
     if (type==0) {
-        updataString=@"alipayQrCodeUrl";
+        updataString=@"alipayQrCodeUrlBase64";
     }else{
-        updataString=@"wechatQrCodeUrl";
+        updataString=@"wechatQrCodeUrlBase64";
     }
     NSDictionary *dic=@{updataString:imageString};
     
