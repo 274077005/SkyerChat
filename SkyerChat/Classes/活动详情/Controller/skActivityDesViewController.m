@@ -16,11 +16,13 @@
 #import "skSingleChatViewController.h"
 #import "MyActivictViewsTableViewCell.h"
 #import "skSubmitOrderViewController.h"
+#import "skAddressViewController.h"
 
 @interface skActivityDesViewController ()<SDCycleScrollViewDelegate>
 @property (nonatomic,strong) ActivityDesViews *viewActivity;
 @property (nonatomic,strong) goodsDecModel *model;
 @property (nonatomic,strong) SDCycleScrollView *viewCycle;
+@property (nonatomic,strong) NSArray *arrList;
 @end
 
 @implementation skActivityDesViewController
@@ -84,10 +86,39 @@
     [self  bizGoodsGet];
     self.title=@"活动详情";
 }
-//-(void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
 //    self.navigationController.navigationBarHidden = YES;
-//}
+    [self receiverAddress];
+}
+-(void)receiverAddress{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"page":@"",
+                        @"rows":@"1"
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizReceiverAddress/list") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            
+            skResponeList *modelList=[skResponeList mj_objectWithKeyValues:responseObject.data];
+            
+            self.arrList=[skAddressModel mj_objectArrayWithKeyValuesArray:modelList.list];
+            if (self.arrList.count==0) {
+                //先设置收货地址
+                skAddressViewController *view=[[skAddressViewController alloc] init];
+                [self.navigationController pushViewController:view animated:YES];
+            }else{
+                
+                [self.tableView reloadData];
+            }
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
 //- (void)viewWillDisappear:(BOOL)animated{
 //    [super viewWillDisappear:animated];
 //    self.navigationController.navigationBarHidden = NO;
@@ -148,7 +179,7 @@
             break;
         case 1:
         {
-            return 150;
+            return 170;
         }
             break;
         case 2:
@@ -194,8 +225,9 @@
             if (cell == nil) {
                 cell = skXibView(@"ActivityTitleTableViewCell");
             }
-            cell.labMoney.text=[NSString stringWithFormat:@"%ld",self.model.goodsPrice];
+            cell.labMoney.text=[NSString stringWithFormat:@"%ld",self.model.activityPrice];
             cell.labDes.text=self.model.goodsDesc;
+            cell.labNoNeedMeney.text=[NSString stringWithFormat:@"%ld",self.model.goodsPrice];
             return cell;
         }
             break;
@@ -211,13 +243,14 @@
                 case 0:
                 {
                     cell.labTitle.text=@"商家";
-                    cell.labName.text=self.model.groupName;
+                    cell.labName.text=self.model.nickName;
                 }
                     break;
                 case 1:
                 {
                     cell.labTitle.text=@"送至";
-                    cell.labName.text=@"我特么的知道这是啥?";
+                    skAddressModel *modelAddress=[self.arrList firstObject];
+                    cell.labName.text=modelAddress.address;
                 }
                     break;
                     

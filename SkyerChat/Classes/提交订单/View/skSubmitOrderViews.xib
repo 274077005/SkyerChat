@@ -57,6 +57,16 @@
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYq-Zo-1LR">
+                                    <rect key="frame" x="313" y="0.0" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="KRr-nr-RcU"/>
+                                        <constraint firstAttribute="height" constant="30" id="she-f2-LYM"/>
+                                    </constraints>
+                                    <state key="normal" title="X">
+                                        <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -65,7 +75,9 @@
                                 <constraint firstItem="ElA-KQ-o2H" firstAttribute="leading" secondItem="8dE-xC-QwA" secondAttribute="trailing" constant="8" id="HHr-fr-Fte"/>
                                 <constraint firstAttribute="trailing" secondItem="NJ2-V2-iaQ" secondAttribute="trailing" constant="8" id="PiU-oU-9o2"/>
                                 <constraint firstItem="ElA-KQ-o2H" firstAttribute="bottom" secondItem="8dE-xC-QwA" secondAttribute="bottom" id="UPq-bb-rj3"/>
+                                <constraint firstAttribute="trailing" secondItem="iYq-Zo-1LR" secondAttribute="trailing" constant="16" id="UgW-MZ-Urd"/>
                                 <constraint firstItem="8dE-xC-QwA" firstAttribute="centerY" secondItem="zPL-GE-rbU" secondAttribute="centerY" id="WpN-xU-1jO"/>
+                                <constraint firstItem="iYq-Zo-1LR" firstAttribute="top" secondItem="zPL-GE-rbU" secondAttribute="top" id="Wqj-r3-U4k"/>
                                 <constraint firstItem="8dE-xC-QwA" firstAttribute="leading" secondItem="zPL-GE-rbU" secondAttribute="leading" constant="8" id="YTk-0D-BN2"/>
                                 <constraint firstAttribute="height" constant="120" id="cJw-df-rHq"/>
                                 <constraint firstItem="NJ2-V2-iaQ" firstAttribute="centerY" secondItem="ElA-KQ-o2H" secondAttribute="centerY" id="ijR-un-Hwc"/>
@@ -101,14 +113,14 @@
                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekU-NO-AdD">
-                                    <rect key="frame" x="296.5" y="11" width="9.5" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekU-NO-AdD">
+                                    <rect key="frame" x="299" y="11" width="7" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ptb-rV-rVR">
-                                    <rect key="frame" x="263.5" y="7.5" width="25" height="25"/>
+                                    <rect key="frame" x="266" y="7.5" width="25" height="25"/>
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="OIr-UW-IeR"/>
@@ -309,6 +321,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="btnAdd" destination="Ptb-rV-rVR" id="uLT-pO-EnM"/>
+                <outlet property="btnDiss" destination="iYq-Zo-1LR" id="fBg-MR-Ela"/>
                 <outlet property="btnDissmiss" destination="YWj-M7-p4m" id="3f0-dm-xvl"/>
                 <outlet property="btnSub" destination="mep-HM-PYM" id="1b1-Wf-Jze"/>
                 <outlet property="btnSubmit" destination="sA6-Vb-mFB" id="SiL-FT-f8y"/>

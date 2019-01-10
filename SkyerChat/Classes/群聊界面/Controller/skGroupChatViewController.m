@@ -277,10 +277,8 @@
                 
                 CGFloat maxY=CGRectGetMaxY(self.viewImage.frame);
                 
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    self.viewGonggao.frame=CGRectMake(0, maxY, skScreenWidth, 24);
-                    [self.viewGonggao setHidden:NO];
-                });
+                self.viewGonggao.frame=CGRectMake(0, maxY, skScreenWidth, 24);
+                [self.viewGonggao setHidden:NO];
                 
                 
             }else{
@@ -294,10 +292,8 @@
                 }else{
                     loopArrs = [NSArray arrayWithObjects:@"群主暂无发布公告",nil];
                 }
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    self.viewGonggao.frame=CGRectMake(0, 64, skScreenWidth, 24);
-                    [self.viewGonggao setHidden:NO];
-                });
+                self.viewGonggao.frame=CGRectMake(0, 64, skScreenWidth, 24);
+                [self.viewGonggao setHidden:NO];
             }
             
             [self.paoView setTickerArrs:loopArrs];

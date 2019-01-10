@@ -10,6 +10,7 @@
 #import "skSubmitOrderViews.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "skAddressModel.h"
+#import "skAddressViewController.h"
 
 @interface skSubmitOrderViewController ()
 @property (nonatomic,strong) skSubmitOrderViews *viewSubmit;
@@ -25,8 +26,12 @@
     self.view.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.7];
     self.bayCount=1;
     [self viewSubmit];
-    [self receiverAddress];
+    
     [self initData];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self receiverAddress];
 }
 -(void)receiverAddress{
     ///intf/bizUser/sendRegister
@@ -44,7 +49,8 @@
             self.arrList=[skAddressModel mj_objectArrayWithKeyValuesArray:modelList.list];
             if (self.arrList.count==0) {
                 //先设置收货地址
-                
+                skAddressViewController *view=[[skAddressViewController alloc] init];
+                [self.navigationController pushViewController:view animated:YES];
             }else{
                 skAddressModel *modelAddress=[self.arrList firstObject];
                 self.viewSubmit.labBayName.text=modelAddress.receiver;
@@ -64,9 +70,10 @@
     //标题
     self.viewSubmit.labTitle.text=self.modelGoods.goodsName;
     //价格
-    self.viewSubmit.labMeney.text=[NSString stringWithFormat:@"￥%ld",self.modelGoods.goodsPrice];
+    self.viewSubmit.labMeney.text=[NSString stringWithFormat:@"￥%ld",self.modelGoods.activityPrice];
     //购买个数
-    self.viewSubmit.labCount.text=[NSString stringWithFormat:@"%d",self.bayCount];
+    self.viewSubmit.labTotalMeney.text=[NSString stringWithFormat:@"%ld",self.bayCount*self.modelGoods.activityPrice];
+    
 }
 
 - (skSubmitOrderViews *)viewSubmit{
@@ -83,6 +90,10 @@
             @strongify(self)
             [self dismissViewControllerAnimated:YES completion:nil];
         }];
+        [[_viewSubmit.btnDiss rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
         //提交
         [_viewSubmit.btnSubmit skSetBoardRadius:5 Width:0 andBorderColor:nil];
         [[_viewSubmit.btnSubmit rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
@@ -94,6 +105,8 @@
             @strongify(self)
             self.bayCount+=1;
             self.viewSubmit.labCount.text=[NSString stringWithFormat:@"%d",self.bayCount];
+            
+            self.viewSubmit.labTotalMeney.text=[NSString stringWithFormat:@"%ld",self.bayCount*self.modelGoods.activityPrice];
         }];
         //减
         [[_viewSubmit.btnSub rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
@@ -101,11 +114,14 @@
             if (self.bayCount>0) {
                 self.bayCount-=1;
                 self.viewSubmit.labCount.text=[NSString stringWithFormat:@"%d",self.bayCount];
+                self.viewSubmit.labTotalMeney.text=[NSString stringWithFormat:@"%ld",self.bayCount*self.modelGoods.activityPrice];
             }
         }];
     }
     return _viewSubmit;
 }
+
+
 /*
 #pragma mark - Navigation
 
