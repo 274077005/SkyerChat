@@ -16,6 +16,7 @@
 #import "skUserInfoSetViewController.h"
 #import "skSafeViewController.h"
 #import "skAddressListViewController.h"
+#import "skMyPayCodeViewController.h"
 
 @interface skUserCenterViewController ()
 @property (nonatomic,strong) UserCenterHeaderTableViewCell *cellHeader;
@@ -80,7 +81,7 @@
             break;
         case 1:
         {
-            return 3;
+            return 4;
         }
             break;
         case 2:
@@ -214,6 +215,11 @@
                     break;
                 case 2:
                 {
+                    cell.labTitle.text=@"我的收款码";
+                }
+                    break;
+                case 3:
+                {
                     cell.labTitle.text=@"我的地址";
                 }
                     break;
@@ -285,6 +291,13 @@
                 }
                     break;
                 case 2:
+                {
+                    skMyPayCodeViewController *view=[[skMyPayCodeViewController alloc] init];
+                    [self.navigationController pushViewController:view animated:YES];
+                    
+                }
+                    break;
+                case 3:
                 {
                     skAddressListViewController *view=[skAddressListViewController alloc];
                     [self.navigationController pushViewController:view animated:YES];

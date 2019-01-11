@@ -87,6 +87,9 @@
         [_viewImage.btnBack skSetBoardRadius:17 Width:0 andBorderColor:nil];
         [_viewImage.btnMore skSetBoardRadius:17 Width:0 andBorderColor:nil];
         [_viewImage.btnBuy skSetBoardRadius:5 Width:0 andBorderColor:nil];
+        if (self.model.memberType==1) {
+            [_viewImage.btnBuy setTitle:@"设置" forState:(UIControlStateNormal)];
+        }
         [[_viewImage.btnMore rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
             if (self.model.groupNo) {

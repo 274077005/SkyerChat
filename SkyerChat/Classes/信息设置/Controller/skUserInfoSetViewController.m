@@ -275,6 +275,12 @@
     [skAfTool SKPOST:skUrl(@"/intf/bizUser/update") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
+            NSDictionary *dic=(NSDictionary *)responseObject.data;
+            if (type==0) {
+                skUser.alipayQrCodeUrl=[dic objectForKey:@"alipayQrCodeUrl"];
+            }else{
+                skUser.wechatQrCodeUrl=[dic objectForKey:@"wechatQrCodeUrl"];
+            }
             [SkToast SkToastShow:@"更新成功" withHight:300];
         }
         

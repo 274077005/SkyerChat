@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		112442D770BB7AD1EC085B29 /* Pods_SkyerChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEEFA8DB78EAE898D127450E /* Pods_SkyerChat.framework */; };
+		2022869221E862DA006789E2 /* skOrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2022869121E862DA006789E2 /* skOrderListViewController.m */; };
+		2022869921E8648A006789E2 /* skMyPayCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2022869821E8648A006789E2 /* skMyPayCodeViewController.m */; };
+		2022869C21E864CA006789E2 /* skMyPayCodeViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 2022869B21E864CA006789E2 /* skMyPayCodeViews.m */; };
+		2022869E21E864D6006789E2 /* skMyPayCodeViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2022869D21E864D6006789E2 /* skMyPayCodeViews.xib */; };
 		2035B07F2199B5AF00BF8AE2 /* ActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2035B07B2199B5AF00BF8AE2 /* ActivityView.xib */; };
 		2035B0802199B5AF00BF8AE2 /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2035B07C2199B5AF00BF8AE2 /* ActivityView.m */; };
 		2035B0832199B5EF00BF8AE2 /* skGroupAcivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2035B0822199B5EF00BF8AE2 /* skGroupAcivityViewController.m */; };
@@ -208,6 +212,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2022869021E862DA006789E2 /* skOrderListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skOrderListViewController.h; sourceTree = "<group>"; };
+		2022869121E862DA006789E2 /* skOrderListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skOrderListViewController.m; sourceTree = "<group>"; };
+		2022869721E8648A006789E2 /* skMyPayCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skMyPayCodeViewController.h; sourceTree = "<group>"; };
+		2022869821E8648A006789E2 /* skMyPayCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skMyPayCodeViewController.m; sourceTree = "<group>"; };
+		2022869A21E864CA006789E2 /* skMyPayCodeViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skMyPayCodeViews.h; sourceTree = "<group>"; };
+		2022869B21E864CA006789E2 /* skMyPayCodeViews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skMyPayCodeViews.m; sourceTree = "<group>"; };
+		2022869D21E864D6006789E2 /* skMyPayCodeViews.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skMyPayCodeViews.xib; sourceTree = "<group>"; };
 		2035B07B2199B5AF00BF8AE2 /* ActivityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityView.xib; sourceTree = "<group>"; };
 		2035B07C2199B5AF00BF8AE2 /* ActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityView.m; sourceTree = "<group>"; };
 		2035B07D2199B5AF00BF8AE2 /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
@@ -577,6 +588,75 @@
 				61CC84636590AF7642696194 /* Pods-SkyerChat.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		2022868C21E72BCC006789E2 /* 订单列表模块 */ = {
+			isa = PBXGroup;
+			children = (
+				2022868F21E72C0F006789E2 /* Controller */,
+				2022868E21E72C0E006789E2 /* Model */,
+				2022868D21E72C0E006789E2 /* View */,
+			);
+			path = "订单列表模块";
+			sourceTree = "<group>";
+		};
+		2022868D21E72C0E006789E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2022868E21E72C0E006789E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2022868F21E72C0F006789E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2022869021E862DA006789E2 /* skOrderListViewController.h */,
+				2022869121E862DA006789E2 /* skOrderListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2022869321E8646B006789E2 /* 我的收款码 */ = {
+			isa = PBXGroup;
+			children = (
+				2022869421E8646B006789E2 /* Controller */,
+				2022869521E8646B006789E2 /* Model */,
+				2022869621E8646B006789E2 /* View */,
+			);
+			path = "我的收款码";
+			sourceTree = "<group>";
+		};
+		2022869421E8646B006789E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2022869721E8648A006789E2 /* skMyPayCodeViewController.h */,
+				2022869821E8648A006789E2 /* skMyPayCodeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2022869521E8646B006789E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2022869621E8646B006789E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2022869A21E864CA006789E2 /* skMyPayCodeViews.h */,
+				2022869B21E864CA006789E2 /* skMyPayCodeViews.m */,
+				2022869D21E864D6006789E2 /* skMyPayCodeViews.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		2035B0792199B5AF00BF8AE2 /* Model */ = {
@@ -1161,37 +1241,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		8434775721D61D9D001CF8B3 /* 订单列表 */ = {
-			isa = PBXGroup;
-			children = (
-				8434775821D61D9D001CF8B3 /* Controller */,
-				8434775921D61D9D001CF8B3 /* Model */,
-				8434775A21D61D9D001CF8B3 /* View */,
-			);
-			path = "订单列表";
-			sourceTree = "<group>";
-		};
-		8434775821D61D9D001CF8B3 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		8434775921D61D9D001CF8B3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		8434775A21D61D9D001CF8B3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		8434776321E2F68F001CF8B3 /* 提交订单 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1411,8 +1460,9 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2022869321E8646B006789E2 /* 我的收款码 */,
+				2022868C21E72BCC006789E2 /* 订单列表模块 */,
 				8434776321E2F68F001CF8B3 /* 提交订单 */,
-				8434775721D61D9D001CF8B3 /* 订单列表 */,
 				84369E2521D319B000B32344 /* 个人详情 */,
 				84082CBE21C9F894004A0422 /* 删除群成员 */,
 				84913DC321BA4A6700EB6C78 /* 群成员列表 */,
@@ -2395,6 +2445,7 @@
 				84537B812154897F00E4CB29 /* Assets.xcassets in Resources */,
 				84756E0E219578B70018AB35 /* creatGroupView.xib in Resources */,
 				2035B08D219C6AD800BF8AE2 /* CombineGroupHeaderTableViewCell.xib in Resources */,
+				2022869E21E864D6006789E2 /* skMyPayCodeViews.xib in Resources */,
 				84D8023F2175D3BD00E1894F /* skAddFriendTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2557,6 +2608,7 @@
 				84D5CD682182EE8C00DB762E /* skMenuViewController.m in Sources */,
 				84995A2B2181C43000FD8A20 /* myClientModel.m in Sources */,
 				8403A6AB219C133E000DAFD1 /* activityOtherTableViewCell.m in Sources */,
+				2022869C21E864CA006789E2 /* skMyPayCodeViews.m in Sources */,
 				8403A6A2219C0BBD000DAFD1 /* goodsDecModel.m in Sources */,
 				8419CDE9216DD96E00DBE8F4 /* skGroupListViewController.m in Sources */,
 				842EAAFC218AA01D00CA9E25 /* GroupDesModel.m in Sources */,
@@ -2599,11 +2651,13 @@
 				84537B792154897E00E4CB29 /* AppDelegate.mm in Sources */,
 				84E65CD02179CC0D00A379E0 /* skAddressViewController.m in Sources */,
 				84E016DA21D3241E00935269 /* skFriendModel.m in Sources */,
+				2022869921E8648A006789E2 /* skMyPayCodeViewController.m in Sources */,
 				84756E0C219578AD0018AB35 /* creatGroupView.m in Sources */,
 				8403A6EE219D5C4F000DAFD1 /* skBeforeLoginViewController.m in Sources */,
 				84211A5C215CB67F003BE4A5 /* skColorConfig.m in Sources */,
 				2035B0802199B5AF00BF8AE2 /* ActivityView.m in Sources */,
 				8419CDE6216DD90C00DBE8F4 /* skUserChatViewController.m in Sources */,
+				2022869221E862DA006789E2 /* skOrderListViewController.m in Sources */,
 				84913DC021BA1AA300EB6C78 /* skGroupMoreView.m in Sources */,
 				84B38DFC21C1FF2B00446372 /* chatGonggaoView.m in Sources */,
 				84211A56215B22A8003BE4A5 /* skRongListViewController.m in Sources */,
