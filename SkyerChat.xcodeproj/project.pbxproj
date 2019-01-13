@@ -33,6 +33,9 @@
 		20F703DB21EB1720005EA277 /* skSellerViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703DA21EB1720005EA277 /* skSellerViewController1.m */; };
 		20F703DE21EB172E005EA277 /* skSellerViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703DD21EB172E005EA277 /* skSellerViewController2.m */; };
 		20F703E121EB173A005EA277 /* skSellerViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703E021EB173A005EA277 /* skSellerViewController3.m */; };
+		20F703E821EB2787005EA277 /* skOrderPayDesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703E721EB2787005EA277 /* skOrderPayDesViewController.m */; };
+		20F703EB21EB279A005EA277 /* skOrderPayDesViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703EA21EB279A005EA277 /* skOrderPayDesViews.m */; };
+		20F703ED21EB27A9005EA277 /* skOrderPayDesViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F703EC21EB27A9005EA277 /* skOrderPayDesViews.xib */; };
 		20FF8D612194864A000D686D /* skAddGroupFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FF8D602194864A000D686D /* skAddGroupFriendViewController.m */; };
 		84011AA1217483560005436B /* skAddressBookSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 84011AA0217483560005436B /* skAddressBookSearch.m */; };
 		84011AA3217483620005436B /* skAddressBookSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84011AA2217483620005436B /* skAddressBookSearch.xib */; };
@@ -273,6 +276,11 @@
 		20F703DD21EB172E005EA277 /* skSellerViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skSellerViewController2.m; sourceTree = "<group>"; };
 		20F703DF21EB173A005EA277 /* skSellerViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skSellerViewController3.h; sourceTree = "<group>"; };
 		20F703E021EB173A005EA277 /* skSellerViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skSellerViewController3.m; sourceTree = "<group>"; };
+		20F703E621EB2787005EA277 /* skOrderPayDesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skOrderPayDesViewController.h; sourceTree = "<group>"; };
+		20F703E721EB2787005EA277 /* skOrderPayDesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skOrderPayDesViewController.m; sourceTree = "<group>"; };
+		20F703E921EB279A005EA277 /* skOrderPayDesViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skOrderPayDesViews.h; sourceTree = "<group>"; };
+		20F703EA21EB279A005EA277 /* skOrderPayDesViews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skOrderPayDesViews.m; sourceTree = "<group>"; };
+		20F703EC21EB27A9005EA277 /* skOrderPayDesViews.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skOrderPayDesViews.xib; sourceTree = "<group>"; };
 		20FF8D5F2194864A000D686D /* skAddGroupFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAddGroupFriendViewController.h; sourceTree = "<group>"; };
 		20FF8D602194864A000D686D /* skAddGroupFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAddGroupFriendViewController.m; sourceTree = "<group>"; };
 		61CC84636590AF7642696194 /* Pods-SkyerChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyerChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -862,6 +870,42 @@
 				209E9ED921E88DC700A72082 /* LXScrollContentView.h */,
 			);
 			path = LXScrollContentViewLib;
+			sourceTree = "<group>";
+		};
+		20F703E221EB2765005EA277 /* 订单支付详情 */ = {
+			isa = PBXGroup;
+			children = (
+				20F703E321EB2765005EA277 /* Controller */,
+				20F703E421EB2765005EA277 /* Model */,
+				20F703E521EB2765005EA277 /* View */,
+			);
+			path = "订单支付详情";
+			sourceTree = "<group>";
+		};
+		20F703E321EB2765005EA277 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				20F703E621EB2787005EA277 /* skOrderPayDesViewController.h */,
+				20F703E721EB2787005EA277 /* skOrderPayDesViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		20F703E421EB2765005EA277 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		20F703E521EB2765005EA277 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20F703E921EB279A005EA277 /* skOrderPayDesViews.h */,
+				20F703EA21EB279A005EA277 /* skOrderPayDesViews.m */,
+				20F703EC21EB27A9005EA277 /* skOrderPayDesViews.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		20FF8D5D219485EE000D686D /* 邀请群好友 */ = {
@@ -1600,6 +1644,7 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				20F703E221EB2765005EA277 /* 订单支付详情 */,
 				209E9ECE21E879C100A72082 /* 买家订单管理 */,
 				209E9ECA21E8799E00A72082 /* 商家订单管理 */,
 				2022869321E8646B006789E2 /* 我的收款码 */,
@@ -2590,6 +2635,7 @@
 				84537B812154897F00E4CB29 /* Assets.xcassets in Resources */,
 				84756E0E219578B70018AB35 /* creatGroupView.xib in Resources */,
 				2035B08D219C6AD800BF8AE2 /* CombineGroupHeaderTableViewCell.xib in Resources */,
+				20F703ED21EB27A9005EA277 /* skOrderPayDesViews.xib in Resources */,
 				2022869E21E864D6006789E2 /* skMyPayCodeViews.xib in Resources */,
 				84D8023F2175D3BD00E1894F /* skAddFriendTableViewCell.xib in Resources */,
 			);
@@ -2696,6 +2742,7 @@
 				84328C2721A2698900EC5AF1 /* combineCheckModel.m in Sources */,
 				84011AA6217489E60005436B /* skResponeList.m in Sources */,
 				84537B872154897F00E4CB29 /* main.m in Sources */,
+				20F703E821EB2787005EA277 /* skOrderPayDesViewController.m in Sources */,
 				84B7F3C2218C2FA300793DDD /* skGroupTitleTableViewCell.m in Sources */,
 				842CFA9B216F21B500A847AB /* UserCenterHeaderTableViewCell.m in Sources */,
 				849959FC217EC3E100FD8A20 /* skAuthenticationTableViewCell.m in Sources */,
@@ -2775,6 +2822,7 @@
 				8419CDBA216D949E00DBE8F4 /* SKKeyboard.m in Sources */,
 				209E9EE121E8904D00A72082 /* skOrderBuyersViewController3.m in Sources */,
 				84E016D621D31EBF00935269 /* skFriendInfoTableViewCell.m in Sources */,
+				20F703EB21EB279A005EA277 /* skOrderPayDesViews.m in Sources */,
 				84011AA1217483560005436B /* skAddressBookSearch.m in Sources */,
 				8440AFC5219A81A000044584 /* QRCodeModel.m in Sources */,
 				209E9EE821EAF80700A72082 /* skOrderBuyTableViewCell.m in Sources */,

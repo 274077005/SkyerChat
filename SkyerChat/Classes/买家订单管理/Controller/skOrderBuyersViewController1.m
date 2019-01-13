@@ -11,6 +11,7 @@
 #import "skOrderBuyModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "skMyPayCodeViewController.h"
+#import "skOrderPayDesViewController.h"
 
 @interface skOrderBuyersViewController1 ()
 @property(nonatomic,assign) NSInteger page;
@@ -141,7 +142,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     
-    
+    skOrderPayDesViewController *view=[[skOrderPayDesViewController alloc] init];
+    [self.navigationController pushViewController:view animated:YES];
 }
 
 -(void)bizGoodsOrder{
