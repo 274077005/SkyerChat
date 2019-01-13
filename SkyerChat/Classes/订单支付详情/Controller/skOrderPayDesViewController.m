@@ -22,6 +22,10 @@
             make.top.bottom.left.right.mas_equalTo(0);
         }];
         [_viewOrderPay.viewYuan skSetBoardRadius:5 Width:0 andBorderColor:nil];
+        
+        [_viewOrderPay.btnPay skSetBoardRadius:4 Width:1 andBorderColor:[UIColor redColor]];
+        [_viewOrderPay.btnCanle skSetBoardRadius:4 Width:1 andBorderColor:[UIColor grayColor]];
+        [_viewOrderPay.btnUplong skSetBoardRadius:4 Width:1 andBorderColor:[UIColor grayColor]];
     }
     return _viewOrderPay;
 }
