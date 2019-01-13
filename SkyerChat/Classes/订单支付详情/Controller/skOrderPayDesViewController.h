@@ -7,11 +7,12 @@
 //
 
 #import "skBaseViewController.h"
+#import "skOrderBuyModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface skOrderPayDesViewController : skBaseViewController
-
+@property (nonatomic,strong) skOrderBuyModel *modelOrder;
 @end
 
 NS_ASSUME_NONNULL_END

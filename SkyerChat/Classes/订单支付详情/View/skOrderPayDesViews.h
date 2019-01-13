@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *btnUplong;
 
 @property (weak, nonatomic) IBOutlet UIButton *btnCanle;
+@property (weak, nonatomic) IBOutlet UILabel *labTotalCount;
 
 
 @end

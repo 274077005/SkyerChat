@@ -36,6 +36,7 @@
 		20F703E821EB2787005EA277 /* skOrderPayDesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703E721EB2787005EA277 /* skOrderPayDesViewController.m */; };
 		20F703EB21EB279A005EA277 /* skOrderPayDesViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703EA21EB279A005EA277 /* skOrderPayDesViews.m */; };
 		20F703ED21EB27A9005EA277 /* skOrderPayDesViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F703EC21EB27A9005EA277 /* skOrderPayDesViews.xib */; };
+		20F703F021EB9877005EA277 /* skOrderState.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703EF21EB9877005EA277 /* skOrderState.m */; };
 		20FF8D612194864A000D686D /* skAddGroupFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FF8D602194864A000D686D /* skAddGroupFriendViewController.m */; };
 		84011AA1217483560005436B /* skAddressBookSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 84011AA0217483560005436B /* skAddressBookSearch.m */; };
 		84011AA3217483620005436B /* skAddressBookSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84011AA2217483620005436B /* skAddressBookSearch.xib */; };
@@ -281,6 +282,8 @@
 		20F703E921EB279A005EA277 /* skOrderPayDesViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skOrderPayDesViews.h; sourceTree = "<group>"; };
 		20F703EA21EB279A005EA277 /* skOrderPayDesViews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skOrderPayDesViews.m; sourceTree = "<group>"; };
 		20F703EC21EB27A9005EA277 /* skOrderPayDesViews.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skOrderPayDesViews.xib; sourceTree = "<group>"; };
+		20F703EE21EB9877005EA277 /* skOrderState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skOrderState.h; sourceTree = "<group>"; };
+		20F703EF21EB9877005EA277 /* skOrderState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skOrderState.m; sourceTree = "<group>"; };
 		20FF8D5F2194864A000D686D /* skAddGroupFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAddGroupFriendViewController.h; sourceTree = "<group>"; };
 		20FF8D602194864A000D686D /* skAddGroupFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAddGroupFriendViewController.m; sourceTree = "<group>"; };
 		61CC84636590AF7642696194 /* Pods-SkyerChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyerChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -894,6 +897,8 @@
 		20F703E421EB2765005EA277 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				20F703EE21EB9877005EA277 /* skOrderState.h */,
+				20F703EF21EB9877005EA277 /* skOrderState.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2847,6 +2852,7 @@
 				84CCF58C21747CA1004DE670 /* skAddressBookTableViewCell.m in Sources */,
 				84A78E7E215F574A0013F614 /* skAFNetworkingTool.m in Sources */,
 				843B40B6216B337400356306 /* NSDictionary+skDictionary.m in Sources */,
+				20F703F021EB9877005EA277 /* skOrderState.m in Sources */,
 				84913DBC21B121D000EB6C78 /* skJPUSHSet.m in Sources */,
 				84A78E85215F5DA70013F614 /* RongSDKUsed.m in Sources */,
 				84CCF57F216F50AC004DE670 /* skChangeUserinfoHeaderTableViewCell.m in Sources */,

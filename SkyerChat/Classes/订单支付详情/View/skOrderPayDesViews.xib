@@ -87,11 +87,18 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRo-rg-9m6">
+                            <rect key="frame" x="106" y="72" width="18" height="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Zq6-Vh-9WG" firstAttribute="top" secondItem="DOU-I0-5tA" secondAttribute="bottom" constant="8" id="1eO-bM-6rF"/>
                         <constraint firstItem="xcg-vw-35h" firstAttribute="centerY" secondItem="PDH-7b-rDS" secondAttribute="centerY" id="Cxu-Mp-xIk"/>
+                        <constraint firstItem="PDH-7b-rDS" firstAttribute="top" secondItem="WRo-rg-9m6" secondAttribute="bottom" constant="3" id="FQH-7x-rZ9"/>
                         <constraint firstItem="TDO-yy-DsY" firstAttribute="top" secondItem="Zq6-Vh-9WG" secondAttribute="bottom" constant="8" id="FTj-qG-DkW"/>
                         <constraint firstItem="P5v-Zv-k1a" firstAttribute="top" secondItem="Zq6-Vh-9WG" secondAttribute="top" id="LaV-wS-5cd"/>
                         <constraint firstAttribute="bottom" secondItem="oP1-Jp-jfs" secondAttribute="bottom" constant="8" id="MJo-pi-dm9"/>
@@ -106,6 +113,7 @@
                         <constraint firstItem="PDH-7b-rDS" firstAttribute="bottom" secondItem="Zq6-Vh-9WG" secondAttribute="bottom" id="gxT-Mj-gT2"/>
                         <constraint firstItem="DOU-I0-5tA" firstAttribute="leading" secondItem="GOP-55-Uiu" secondAttribute="leading" constant="8" id="iTq-Oq-cc6"/>
                         <constraint firstItem="DOU-I0-5tA" firstAttribute="top" secondItem="GOP-55-Uiu" secondAttribute="top" constant="12" id="lyu-1L-y5i"/>
+                        <constraint firstItem="WRo-rg-9m6" firstAttribute="leading" secondItem="Zq6-Vh-9WG" secondAttribute="trailing" constant="8" id="lzr-nb-woc"/>
                         <constraint firstAttribute="trailing" secondItem="TDO-yy-DsY" secondAttribute="trailing" constant="8" id="rnF-BH-y0K"/>
                         <constraint firstItem="Zq6-Vh-9WG" firstAttribute="leading" secondItem="GOP-55-Uiu" secondAttribute="leading" constant="8" id="sUh-Yl-Usd"/>
                     </constraints>
@@ -281,6 +289,7 @@
                 <outlet property="labState" destination="Otq-YS-kdk" id="TIR-YO-h4x"/>
                 <outlet property="labTimeBay" destination="M8T-TQ-GPw" id="jyK-8X-Qrh"/>
                 <outlet property="labTimePay" destination="pc8-2N-7rN" id="FjD-Zg-FGO"/>
+                <outlet property="labTotalCount" destination="WRo-rg-9m6" id="pAK-4F-whd"/>
                 <outlet property="labTotalMeneyCount" destination="xcg-vw-35h" id="kWu-Uf-P3j"/>
                 <outlet property="viewYuan" destination="TtR-8F-rcy" id="WGX-C0-6hx"/>
             </connections>

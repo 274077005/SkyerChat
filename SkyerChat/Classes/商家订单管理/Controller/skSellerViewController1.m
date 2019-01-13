@@ -10,6 +10,10 @@
 #import "skOrderBuyTableViewCell.h"
 #import "skOrderBuyModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "skMyPayCodeViewController.h"
+#import "skOrderPayDesViewController.h"
+#import "skOrderState.h"
+
 @interface skSellerViewController1 ()
 @property(nonatomic,assign) NSInteger page;
 @property(nonatomic,strong) NSArray * arrList;
@@ -80,6 +84,19 @@
     skOrderBuyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = skXibView(@"skOrderBuyTableViewCell");
+        
+        @weakify(self)
+        [[cell.btnPay rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            [skClassMethod skAlertView:@"提示" alertViewMessage:@"如果已经支付过订单,只需要上次支付凭证,是否需要向群主支付该订单" cancleTitle:@"取消" defaultTitle:@"确定" cancleHandler:^(UIAlertAction * _Nonnull action) {
+                
+            } sureHandler:^(UIAlertAction * _Nonnull action) {
+                skMyPayCodeViewController *view=[[skMyPayCodeViewController alloc] init];
+                view.isShow=YES;
+                [self.navigationController pushViewController:view
+                                                     animated:YES];
+            }];
+        }];
     }
     
     skOrderBuyModel *model=[self.arrList objectAtIndex:indexPath.section];
@@ -88,28 +105,7 @@
     //商品时间
     cell.labTime.text=model.orderTime;
     //支付状态
-    NSString *state;
-    switch (model.orderStatus) {
-        case 0:
-        {
-            state=@"未支付";
-        }
-            break;
-        case 1:
-        {
-            state=@"待确认";
-        }
-            break;
-        case 2:
-        {
-            state=@"已支付";
-        }
-            break;
-            
-        default:
-            break;
-    }
-    cell.labState.text=state;
+    cell.labState.text=[skOrderState getState:model.orderStatus];
     //商品名称
     cell.labShopName.text=model.goodsName;
     //商品数量
@@ -126,15 +122,25 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     
+    skOrderPayDesViewController *view=[[skOrderPayDesViewController alloc] init];
     
+    skOrderBuyModel *model=[self.arrList objectAtIndex:indexPath.section];
+    
+    view.modelOrder=model;
+    
+    [self.navigationController pushViewController:view animated:YES];
 }
 
 -(void)bizGoodsOrder{
     ///intf/bizUser/sendRegister
+    /*
+     取值：0=未支付,1=待确认支付,2=已支付,3=确认未支付, 5=已发货,6=已收货,7=申请退货中,8=待寄回,9=寄回中,10=检查货物中,11=退货完成,12=不予退货,13=取消订单。如果不传则查询所有状态的订单
+     */
     NSDictionary *dic=@{@"isBuyer":[NSNumber numberWithBool:NO],
                         @"page":[NSNumber numberWithInteger:self.page],
                         @"rows":@"10",
-                        @"orderBy":@"order_time"
+                        @"orderBy":@"order_time",
+                        @"orderStatus":@"0"
                         };
     
     
