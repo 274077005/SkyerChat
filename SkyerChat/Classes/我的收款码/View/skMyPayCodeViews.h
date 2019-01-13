@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *viewZFB;
 @property (weak, nonatomic) IBOutlet UIImageView *imageVX;
 @property (weak, nonatomic) IBOutlet UIImageView *imageZFB;
+@property (weak, nonatomic) IBOutlet UIButton *btnSaveVX;
+@property (weak, nonatomic) IBOutlet UIButton *btnSaveZFB;
 
 @end
 

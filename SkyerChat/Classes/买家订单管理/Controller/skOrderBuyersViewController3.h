@@ -1,5 +1,5 @@
 //
-//  skMyPayCodeViewController.h
+//  skOrderBuyersViewController3.h
 //  SkyerChat
 //
 //  Created by skyer on 2019/1/11.
@@ -10,8 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface skMyPayCodeViewController : skBaseViewController
-@property (nonatomic,assign) Boolean isShow;
+@interface skOrderBuyersViewController3 : skBaseViewController
+
 @end
 
 NS_ASSUME_NONNULL_END

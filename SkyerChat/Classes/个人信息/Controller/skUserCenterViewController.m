@@ -17,6 +17,7 @@
 #import "skSafeViewController.h"
 #import "skAddressListViewController.h"
 #import "skMyPayCodeViewController.h"
+#import "skOrderListViewController.h"
 
 @interface skUserCenterViewController ()
 @property (nonatomic,strong) UserCenterHeaderTableViewCell *cellHeader;
@@ -33,6 +34,7 @@
             skChangeUserinfoViewController *view=[[skChangeUserinfoViewController alloc] init];
             [self.navigationController pushViewController:view animated:YES];
         }];
+        
     }
     return _cellHeader;
 }
@@ -179,6 +181,13 @@
                     
                     if (cell == nil) {
                         cell = skXibView(@"UserCenterOrderTableViewCell");
+                        @weakify(self)
+                        [[cell.btnOrder rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+                            @strongify(self)
+                            skOrderListViewController *view=[[skOrderListViewController alloc] init];
+                            
+                            [self.navigationController pushViewController:view animated:YES];
+                        }];
                     }
                     cell.labOrderCount.text=[NSString stringWithFormat:@"%ld",skUser.orderNum];
                     cell.labOrderCount.text=[NSString stringWithFormat:@"%ld",skUser.coins];
@@ -292,8 +301,19 @@
                     break;
                 case 2:
                 {
-                    skMyPayCodeViewController *view=[[skMyPayCodeViewController alloc] init];
-                    [self.navigationController pushViewController:view animated:YES];
+                    if ([skUser.alipayQrCodeUrl length]>0||[skUser.wechatQrCodeUrl length]>0) {
+                        skMyPayCodeViewController *view=[[skMyPayCodeViewController alloc] init];
+                        [self.navigationController pushViewController:view animated:YES];
+                    }else{
+                        [skClassMethod skAlertView:@"温馨提示" alertViewMessage:@"没有设置收款码,是否前往设置?" cancleTitle:@"取消" defaultTitle:@"确定" cancleHandler:^(UIAlertAction * _Nonnull action) {
+                            
+                        } sureHandler:^(UIAlertAction * _Nonnull action) {
+                            skUserInfoSetViewController *view=[[skUserInfoSetViewController alloc] init];
+                            [self.navigationController pushViewController:view animated:YES];
+                        }];
+                        
+                    }
+                    
                     
                 }
                     break;

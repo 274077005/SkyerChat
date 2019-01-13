@@ -1,17 +1,18 @@
 //
-//  skMyPayCodeViewController.h
+//  skOrderListTableViewCell.h
 //  SkyerChat
 //
 //  Created by skyer on 2019/1/11.
 //  Copyright © 2019 www.skyer.com. All rights reserved.
 //
 
-#import "skBaseViewController.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface skMyPayCodeViewController : skBaseViewController
-@property (nonatomic,assign) Boolean isShow;
+@interface skOrderListTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *labTitle;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -26,6 +26,8 @@
         }];
         [_viewCode.viewVX skSetShadowWithColor:[UIColor grayColor] andSizeMake:CGSizeMake(0, 0) Radius:5];
         [_viewCode.viewZFB skSetShadowWithColor:[UIColor grayColor] andSizeMake:CGSizeMake(0, 0) Radius:5];
+        _viewCode.btnSaveVX.hidden=!self.isShow;
+        _viewCode.btnSaveZFB.hidden=!self.isShow;
     }
     return _viewCode;
 }
@@ -35,14 +37,10 @@
     self.title=@"我的收款码";
 }
 -(void)viewWillAppear:(BOOL)animated{
+    [self.viewCode.imageVX sd_setImageWithURL:[NSURL URLWithString:skUser.wechatQrCodeUrl]];
+    [self.viewCode.imageZFB sd_setImageWithURL:[NSURL URLWithString:skUser.alipayQrCodeUrl]];
+
     
-    if (skUser.alipayQrCodeUrl||skUser.wechatQrCodeUrl) {
-        [self.viewCode.imageVX sd_setImageWithURL:[NSURL URLWithString:skUser.wechatQrCodeUrl]];
-        [self.viewCode.imageZFB sd_setImageWithURL:[NSURL URLWithString:skUser.alipayQrCodeUrl]];
-    }else{
-        skUserInfoSetViewController *view=[[skUserInfoSetViewController alloc] init];
-        [self.navigationController pushViewController:view animated:YES];
-    }
 }
 /*
 #pragma mark - Navigation
