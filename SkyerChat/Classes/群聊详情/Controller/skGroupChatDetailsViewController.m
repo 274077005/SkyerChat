@@ -25,6 +25,7 @@
 #import "skGonggaoViewController.h"
 #import "skGroupMenberListViewController.h"
 #import "chatGonggaoModel.h"
+#import "skUserInfoSetViewController.h"
 
 
 @interface skGroupChatDetailsViewController ()
@@ -321,9 +322,20 @@
                 return;
             }
             if ([modelCell.title isEqualToString:@"发布活动"]) {
-                skGroupAcivityViewController *viewActivice=[[skGroupAcivityViewController alloc] init];
-                viewActivice.modelOther=self.model;
-                [self.navigationController pushViewController:viewActivice animated:YES];
+                if ([skUser.alipayQrCodeUrl length]>0||[skUser.wechatQrCodeUrl length]>0) {
+                    skGroupAcivityViewController *viewActivice=[[skGroupAcivityViewController alloc] init];
+                    viewActivice.modelOther=self.model;
+                    [self.navigationController pushViewController:viewActivice animated:YES];
+                }else{
+                    [skClassMethod skAlertView:@"温馨提示" alertViewMessage:@"没有设置收款码,是否前往设置?" cancleTitle:@"取消" defaultTitle:@"确定" cancleHandler:^(UIAlertAction * _Nonnull action) {
+                        
+                    } sureHandler:^(UIAlertAction * _Nonnull action) {
+                        skUserInfoSetViewController *view=[[skUserInfoSetViewController alloc] init];
+                        [self.navigationController pushViewController:view animated:YES];
+                    }];
+                    
+                }
+                
                 return;
             }
             if ([modelCell.title isEqualToString:@"申请合并群聊"]) {
