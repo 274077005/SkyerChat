@@ -17,10 +17,12 @@
 #import "MyActivictViewsTableViewCell.h"
 #import "skSubmitOrderViewController.h"
 #import "skAddressViewController.h"
+#import "GroupDesModel.h"
 
 @interface skActivityDesViewController ()<SDCycleScrollViewDelegate>
 @property (nonatomic,strong) ActivityDesViews *viewActivity;
 @property (nonatomic,strong) goodsDecModel *model;
+@property (nonatomic,strong) GroupDesModel *modelGroup;
 @property (nonatomic,strong) SDCycleScrollView *viewCycle;
 @property (nonatomic,strong) NSArray *arrList;
 @end
@@ -85,12 +87,30 @@
     [self addTableView];
     [self  bizGoodsGet];
     self.title=@"活动详情";
+    [self bizGroupgetGroup];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 //    self.navigationController.navigationBarHidden = YES;
     [self receiverAddress];
 }
+-(void)bizGroupgetGroup{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"groupNo":self.modelOther.goodsNo
+                        };
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGroup/getGroup") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            self.modelGroup=[GroupDesModel mj_objectWithKeyValues:responseObject.data];
+        }
+        [self.tableView reloadData];
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+
 -(void)receiverAddress{
     ///intf/bizUser/sendRegister
     NSDictionary *dic=@{@"page":@"",
@@ -134,7 +154,8 @@
 */
 #pragma mark - 代理方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    if ([self.modelOther.userNo isEqualToString:skUser.userNo]) {
+    
+    if (self.modelGroup.memberType>2) {
         return 4;
     }else{
         return 3;
@@ -272,7 +293,9 @@
                     switch (indexPath.row) {
                         case 0:
                         {
-                            
+                            if (self.modelGroup.memberType==2) {
+                                [self followMergeGoods];
+                            }
                         }
                             break;
                         case 1:
@@ -365,6 +388,24 @@
         
         if (responseObject.returnCode==0) {
             [SkToast SkToastShow:@"下架成功" withHight:300];
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+}
+#pragma mark - 参与
+-(void)followMergeGoods{
+    ///intf/bizUser/sendRegister
+    NSDictionary *dic=@{@"goodsNo":self.model.goodsNo,
+                        @"groupNo":self.model.groupNo
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGoods/followMergeGoods") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+        
+        if (responseObject.returnCode==0) {
+            [SkToast SkToastShow:@"成功参与" withHight:300];
         }
         
     } failure:^(NSError * _Nullable error) {
