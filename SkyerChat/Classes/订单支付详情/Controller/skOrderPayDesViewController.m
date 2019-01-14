@@ -28,6 +28,12 @@
         [_viewOrderPay.btnPay skSetBoardRadius:4 Width:1 andBorderColor:[UIColor redColor]];
         [_viewOrderPay.btnCanle skSetBoardRadius:4 Width:1 andBorderColor:[UIColor grayColor]];
         [_viewOrderPay.btnUplong skSetBoardRadius:4 Width:1 andBorderColor:[UIColor grayColor]];
+        @weakify(self)
+        [[_viewOrderPay.btnCanle rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            [self bizGoodsOrder];
+        }];
+        
         //显示状态
         _viewOrderPay.labState.text=[skOrderState getState:self.modelOrder.orderStatus];
         //收货人
@@ -55,6 +61,12 @@
         
         //图片
         [_viewOrderPay.imageShop sd_setImageWithURL:[NSURL URLWithString:self.modelOrder.goodsPic]];
+        
+        
+        if (self.modelOrder.orderStatus!=0) {
+            [_viewOrderPay.viewPayImageShow setHidden:NO];
+            [_viewOrderPay.imagePay sd_setImageWithURL:[NSURL URLWithString:self.modelOrder.paidCapture]];
+        }
     }
     return _viewOrderPay;
 }
@@ -65,7 +77,26 @@
     self.title=@"订单详情";
     
 }
-
+///intf/bizGoodsOrder/deletes
+-(void)bizGoodsOrder{
+    ///intf/bizUser/sendRegister
+    /*
+     取值：0=未支付,1=待确认支付,2=已支付,3=确认未支付, 5=已发货,6=已收货,7=申请退货中,8=待寄回,9=寄回中,10=检查货物中,11=退货完成,12=不予退货,13=取消订单。如果不传则查询所有状态的订单
+     */
+    NSNumber *ids=[NSNumber numberWithInteger:self.modelOrder.orderId];
+    
+    NSDictionary *dic=@{@"ids":@[ids]
+                        };
+    
+    
+    [skAfTool SKPOST:skUrl(@"/intf/bizGoodsOrder/deletes") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:NO showErrMsg:NO success:^(skResponeModel *  _Nullable responseObject) {
+        if (responseObject.returnCode==0) {
+            
+        }
+        
+    } failure:^(NSError * _Nullable error) {
+    }];
+}
 /*
 #pragma mark - Navigation
 

@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *btnCanle;
 @property (weak, nonatomic) IBOutlet UILabel *labTotalCount;
 
+@property (weak, nonatomic) IBOutlet UIView *viewPayImageShow;
+@property (weak, nonatomic) IBOutlet UIImageView *imagePay;
 
 @end
 

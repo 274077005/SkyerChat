@@ -13,6 +13,7 @@
 #import "skMyPayCodeViewController.h"
 #import "skOrderPayDesViewController.h"
 #import "skOrderState.h"
+#import "skSingleChatViewController.h"
 
 @interface skSellerViewController1 ()
 @property(nonatomic,assign) NSInteger page;
@@ -82,24 +83,21 @@
     
     static NSString *cellIdentifier = @"skOrderListTableViewCell";
     skOrderBuyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    skOrderBuyModel *model=[self.arrList objectAtIndex:indexPath.section];
     if (cell == nil) {
         cell = skXibView(@"skOrderBuyTableViewCell");
         
         @weakify(self)
         [[cell.btnPay rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
-            [skClassMethod skAlertView:@"提示" alertViewMessage:@"如果已经支付过订单,只需要上次支付凭证,是否需要向群主支付该订单" cancleTitle:@"取消" defaultTitle:@"确定" cancleHandler:^(UIAlertAction * _Nonnull action) {
-                
-            } sureHandler:^(UIAlertAction * _Nonnull action) {
-                skMyPayCodeViewController *view=[[skMyPayCodeViewController alloc] init];
-                view.isShow=YES;
-                [self.navigationController pushViewController:view
-                                                     animated:YES];
-            }];
+            //提醒支付
+            skSingleChatViewController *view=[[skSingleChatViewController alloc] initWithConversationType:(ConversationType_PRIVATE) targetId:model.buyerUserNo];
+            view.title=model.buyerUserNo;
+            [self.navigationController pushViewController:view animated:YES];
         }];
     }
     
-    skOrderBuyModel *model=[self.arrList objectAtIndex:indexPath.section];
+    
     //图片
     [cell.imageShop sd_setImageWithURL:[NSURL URLWithString:model.goodsPic]];
     //商品时间
@@ -113,6 +111,9 @@
     
     //价格
     cell.labMeney.text=[NSString stringWithFormat:@"￥%ld",model.toPayMoney];
+    
+    //提醒支付
+    [cell.btnPay setTitle:@"提醒支付" forState:(UIControlStateNormal)];
     
     return cell;
 }

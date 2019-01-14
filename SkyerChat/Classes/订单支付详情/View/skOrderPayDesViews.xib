@@ -251,6 +251,32 @@
                         <constraint firstItem="F8M-uu-tyH" firstAttribute="leading" secondItem="TtR-8F-rcy" secondAttribute="leading" constant="10" id="sWj-en-AbL"/>
                     </constraints>
                 </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppA-Bs-Xnq">
+                    <rect key="frame" x="0.0" y="462" width="375" height="205"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="付款凭证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPe-Zk-BHS">
+                            <rect key="frame" x="153" y="8" width="69.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j62-Ph-gBY">
+                            <rect key="frame" x="67.5" y="37" width="240" height="160"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="160" id="aGj-Wi-3nV"/>
+                                <constraint firstAttribute="width" constant="240" id="er3-gf-mPA"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="j62-Ph-gBY" firstAttribute="centerX" secondItem="ppA-Bs-Xnq" secondAttribute="centerX" id="6h9-Df-Efy"/>
+                        <constraint firstItem="RPe-Zk-BHS" firstAttribute="top" secondItem="ppA-Bs-Xnq" secondAttribute="top" constant="8" id="GFV-13-3Oh"/>
+                        <constraint firstAttribute="bottom" secondItem="j62-Ph-gBY" secondAttribute="bottom" constant="8" id="HtE-2b-1rW"/>
+                        <constraint firstItem="RPe-Zk-BHS" firstAttribute="centerX" secondItem="ppA-Bs-Xnq" secondAttribute="centerX" id="Qcx-bY-R8J"/>
+                        <constraint firstItem="j62-Ph-gBY" firstAttribute="top" secondItem="RPe-Zk-BHS" secondAttribute="bottom" constant="8" id="n7z-yd-oKC"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
@@ -258,6 +284,7 @@
                 <constraint firstItem="apX-cM-FVq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="5nb-bP-ysi"/>
                 <constraint firstItem="apX-cM-FVq" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="8DM-Ug-4aw"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TtR-8F-rcy" secondAttribute="trailing" constant="16" id="AHv-di-ZzV"/>
+                <constraint firstItem="ppA-Bs-Xnq" firstAttribute="top" secondItem="4EF-Ke-oA5" secondAttribute="bottom" constant="8" id="BK8-Pr-Jeo"/>
                 <constraint firstItem="GOP-55-Uiu" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Omv-Y1-EfF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Otq-YS-kdk" secondAttribute="trailing" constant="16" id="Pwh-ld-ALP"/>
                 <constraint firstItem="apX-cM-FVq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QhS-bu-RXK"/>
@@ -265,12 +292,15 @@
                 <constraint firstItem="GOP-55-Uiu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Uxb-SV-HKx"/>
                 <constraint firstItem="4EF-Ke-oA5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="VNO-Ev-Vhl"/>
                 <constraint firstItem="Otq-YS-kdk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="WCV-FB-P3Y"/>
+                <constraint firstItem="ppA-Bs-Xnq" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="WWH-Wh-iHF"/>
                 <constraint firstItem="4EF-Ke-oA5" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="YPV-3P-5Rw"/>
+                <constraint firstItem="ppA-Bs-Xnq" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="bEa-Nc-DJF"/>
                 <constraint firstItem="tEh-5z-rLV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="csb-9x-wdy"/>
                 <constraint firstItem="tEh-5z-rLV" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="dWj-Fy-sSx"/>
                 <constraint firstItem="Otq-YS-kdk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="gWc-nu-OPm"/>
                 <constraint firstItem="TtR-8F-rcy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="hqQ-hD-FYO"/>
                 <constraint firstItem="tEh-5z-rLV" firstAttribute="top" secondItem="GOP-55-Uiu" secondAttribute="bottom" constant="8" id="jg6-iR-rLM"/>
+                <constraint firstItem="ppA-Bs-Xnq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vEo-bH-g6u"/>
                 <constraint firstItem="GOP-55-Uiu" firstAttribute="top" secondItem="TtR-8F-rcy" secondAttribute="bottom" constant="8" id="zD0-0e-G2b"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -278,6 +308,7 @@
                 <outlet property="btnCanle" destination="dTR-xg-Gkn" id="I2V-p7-Y1e"/>
                 <outlet property="btnPay" destination="1sO-ba-Bx8" id="tjl-n6-qAD"/>
                 <outlet property="btnUplong" destination="lBd-0K-c0K" id="7D2-Cg-Bgs"/>
+                <outlet property="imagePay" destination="j62-Ph-gBY" id="HMc-v6-PcT"/>
                 <outlet property="imageShop" destination="Zq6-Vh-9WG" id="DGp-00-6Hr"/>
                 <outlet property="labAddress" destination="F8M-uu-tyH" id="ipu-py-IO7"/>
                 <outlet property="labGroupName" destination="DOU-I0-5tA" id="fPj-Sl-5zr"/>
@@ -291,6 +322,7 @@
                 <outlet property="labTimePay" destination="pc8-2N-7rN" id="FjD-Zg-FGO"/>
                 <outlet property="labTotalCount" destination="WRo-rg-9m6" id="pAK-4F-whd"/>
                 <outlet property="labTotalMeneyCount" destination="xcg-vw-35h" id="kWu-Uf-P3j"/>
+                <outlet property="viewPayImageShow" destination="ppA-Bs-Xnq" id="QwE-Hq-gqz"/>
                 <outlet property="viewYuan" destination="TtR-8F-rcy" id="WGX-C0-6hx"/>
             </connections>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
