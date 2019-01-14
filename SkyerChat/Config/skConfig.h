@@ -20,6 +20,10 @@
 #define skSaltMd5String @"n19jmcy5n8zf9fq8e0r884nadhf"
 //极光推送
 #define kjpushKey @"072c029ed3b59c9be8139a17"
+//微信
+#define skWechatID @"wx0a0d1b04a5c0f72d"
+//QQ
+#define skQQid @"101536307"
 //账号密码保存
 #define skLoginUserName @"LoginUserName"
 #define skLoginUserPWD @"LoginUserPWD"

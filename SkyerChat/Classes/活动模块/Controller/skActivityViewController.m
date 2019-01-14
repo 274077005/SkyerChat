@@ -209,13 +209,13 @@
 
 -(void)myGroupGoods{
     ///intf/bizUser/sendRegister
-    NSDictionary *dic=@{@"isTopOnly":[NSNumber numberWithBool:YES],
+    NSDictionary *dic=@{
                         @"page":[NSNumber numberWithInteger:1],
                         @"rows":[NSNumber numberWithInteger:self.rows]
                         };
     
     
-    [skAfTool SKPOST:skUrl(@"/intf/bizGoods/honorForLee") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
+    [skAfTool SKPOST:skUrl(@"/intf/bizGoods/myGroupGoods") pubParame:skPubParType(0) busParame:[dic skDicToJson:dic] showHUD:YES showErrMsg:YES success:^(skResponeModel *  _Nullable responseObject) {
         
         if (responseObject.returnCode==0) {
             [self.collectionView.mj_footer endRefreshing];

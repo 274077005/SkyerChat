@@ -12,6 +12,7 @@
 #import "skNavigationConfig.h"
 #import "skRootViewController.h"
 #import "skJPUSHSet.h"
+#import "skModShareConfig.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,8 @@
     // Override point for customization after application launch.
     //设置状态栏
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    //第三方分享登录
+    [skModShareConfig skShareRegist];
     //极光推送
     [[skJPUSHSet sharedskJPUSHSet] skJpushSet:launchOptions];
     //获取配置文件

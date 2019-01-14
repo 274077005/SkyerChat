@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ShareViews">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8v-ni-8uS">
+                    <rect key="frame" x="16" y="50" width="343" height="300"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描加入海淘,一起嗨!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPD-wu-dww">
+                            <rect key="frame" x="8" y="260" width="327" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="P21-Rs-bpT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="蒲公英下载" translatesAutoresizingMaskIntoConstraints="NO" id="UhB-BY-aUv">
+                            <rect key="frame" x="71.5" y="50" width="200" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="Xkx-1s-3vg"/>
+                                <constraint firstAttribute="width" constant="200" id="dZG-xn-W5g"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="wPD-wu-dww" firstAttribute="leading" secondItem="j8v-ni-8uS" secondAttribute="leading" constant="8" id="2YB-kb-RIo"/>
+                        <constraint firstAttribute="trailing" secondItem="wPD-wu-dww" secondAttribute="trailing" constant="8" id="Lx7-Ml-MRc"/>
+                        <constraint firstAttribute="height" constant="300" id="P59-2k-iBp"/>
+                        <constraint firstItem="UhB-BY-aUv" firstAttribute="centerY" secondItem="j8v-ni-8uS" secondAttribute="centerY" id="e1t-bS-fIe"/>
+                        <constraint firstItem="UhB-BY-aUv" firstAttribute="centerX" secondItem="j8v-ni-8uS" secondAttribute="centerX" id="t7R-zx-GVK"/>
+                        <constraint firstAttribute="bottom" secondItem="wPD-wu-dww" secondAttribute="bottom" constant="20" id="zVI-XL-7jC"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nv-MS-uAo">
+                    <rect key="frame" x="0.0" y="358" width="375" height="100"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="a9Y-sG-Wc5">
+                            <rect key="frame" x="47.5" y="60" width="280" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BA5-0q-q3I">
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="cwK-b0-J7k"/>
+                                        <constraint firstAttribute="height" constant="40" id="jUo-lb-W2z"/>
+                                    </constraints>
+                                    <state key="normal" image="weixinfenxiang"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEX-IW-tqu">
+                                    <rect key="frame" x="80" y="0.0" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="95g-0F-Gk7"/>
+                                        <constraint firstAttribute="width" constant="40" id="l5Z-3a-Shr"/>
+                                    </constraints>
+                                    <state key="normal" image="pengyouquanfenxiang"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivI-TV-pUq">
+                                    <rect key="frame" x="160" y="0.0" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="clN-1X-k8q"/>
+                                        <constraint firstAttribute="height" constant="40" id="ehB-12-fnI"/>
+                                    </constraints>
+                                    <state key="normal" image="qqfenxiang"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzi-bF-3ma">
+                                    <rect key="frame" x="240" y="0.0" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="rVO-fB-c7E"/>
+                                        <constraint firstAttribute="width" constant="40" id="xmb-uu-JnQ"/>
+                                    </constraints>
+                                    <state key="normal" image="kongjianfenxiang"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="iUq-KA-WXn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.33284482360000001" green="0.79989415409999998" blue="0.97636741400000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="6nv-MS-uAo" firstAttribute="top" secondItem="j8v-ni-8uS" secondAttribute="bottom" constant="8" id="58j-mA-n6t"/>
+                <constraint firstItem="j8v-ni-8uS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="Rcm-WD-Ao9"/>
+                <constraint firstItem="6nv-MS-uAo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="U3r-EP-Anz"/>
+                <constraint firstItem="6nv-MS-uAo" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="XGS-an-Ug2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="j8v-ni-8uS" secondAttribute="trailing" constant="16" id="bUA-SJ-a5m"/>
+                <constraint firstItem="j8v-ni-8uS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="k0V-oL-shh"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btnShareQQ" destination="ivI-TV-pUq" id="3T4-Ac-vAO"/>
+                <outlet property="btnShareZool" destination="jzi-bF-3ma" id="3XK-w8-hZA"/>
+                <outlet property="btnWechat" destination="BA5-0q-q3I" id="fSk-la-nYI"/>
+                <outlet property="btnWechatFriend" destination="KEX-IW-tqu" id="SnK-NG-pEu"/>
+            </connections>
+            <point key="canvasLocation" x="34.399999999999999" y="52.623688155922046"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="kongjianfenxiang" width="36" height="36"/>
+        <image name="pengyouquanfenxiang" width="36" height="36"/>
+        <image name="qqfenxiang" width="36" height="36"/>
+        <image name="weixinfenxiang" width="36" height="36"/>
+        <image name="蒲公英下载" width="336" height="336"/>
+    </resources>
+</document>

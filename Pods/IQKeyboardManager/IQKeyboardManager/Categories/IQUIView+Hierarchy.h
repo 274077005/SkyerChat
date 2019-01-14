@@ -77,7 +77,7 @@
 /**
  Returns searchBar if receiver object is UISearchBarTextField, otherwise return nil.
  */
-@property (nullable, nonatomic, readonly) UISearchBar *textFieldSearchBar;
+@property (nullable, nonatomic, readonly) UISearchBar *searchBar;
 
 /**
  Returns YES if the receiver object is UIAlertSheetTextField, otherwise return NO.

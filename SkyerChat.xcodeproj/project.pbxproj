@@ -20,6 +20,11 @@
 		2035B08C219C6AD800BF8AE2 /* CombineGroupHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2035B08A219C6AD800BF8AE2 /* CombineGroupHeaderTableViewCell.m */; };
 		2035B08D219C6AD800BF8AE2 /* CombineGroupHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2035B08B219C6AD800BF8AE2 /* CombineGroupHeaderTableViewCell.xib */; };
 		205BC09A219914E6009DF53A /* skCombineGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 205BC099219914E6009DF53A /* skCombineGroupViewController.m */; };
+		208A6BDD21EC79B200C89BA0 /* skModShareConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 208A6BDA21EC79B200C89BA0 /* skModShareConfig.m */; };
+		208A6BDE21EC79B200C89BA0 /* ShareUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 208A6BDB21EC79B200C89BA0 /* ShareUserModel.m */; };
+		208A6BE821EC7EB300C89BA0 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208A6BE121EC7EB300C89BA0 /* ShareViewController.m */; };
+		208A6BE921EC7EB300C89BA0 /* ShareViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208A6BE521EC7EB300C89BA0 /* ShareViews.xib */; };
+		208A6BEA21EC7EB300C89BA0 /* ShareViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 208A6BE721EC7EB300C89BA0 /* ShareViews.m */; };
 		209E9ED421E87D2200A72082 /* skOrderBuyersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 209E9ED321E87D2200A72082 /* skOrderBuyersViewController.m */; };
 		209E9EDA21E88DC700A72082 /* LXSegmentTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 209E9ED621E88DC700A72082 /* LXSegmentTitleView.m */; };
 		209E9EDB21E88DC700A72082 /* LXScrollContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 209E9ED721E88DC700A72082 /* LXScrollContentView.m */; };
@@ -37,6 +42,8 @@
 		20F703EB21EB279A005EA277 /* skOrderPayDesViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703EA21EB279A005EA277 /* skOrderPayDesViews.m */; };
 		20F703ED21EB27A9005EA277 /* skOrderPayDesViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F703EC21EB27A9005EA277 /* skOrderPayDesViews.xib */; };
 		20F703F021EB9877005EA277 /* skOrderState.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703EF21EB9877005EA277 /* skOrderState.m */; };
+		20F703F621EC75EE005EA277 /* skJPUSHSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703F221EC75ED005EA277 /* skJPUSHSet.m */; };
+		20F703F721EC75EE005EA277 /* AppDelegate+Jpush.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703F521EC75ED005EA277 /* AppDelegate+Jpush.m */; };
 		20FF8D612194864A000D686D /* skAddGroupFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FF8D602194864A000D686D /* skAddGroupFriendViewController.m */; };
 		84011AA1217483560005436B /* skAddressBookSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 84011AA0217483560005436B /* skAddressBookSearch.m */; };
 		84011AA3217483620005436B /* skAddressBookSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84011AA2217483620005436B /* skAddressBookSearch.xib */; };
@@ -151,8 +158,6 @@
 		8485413221C2317F00481CC0 /* GBLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485413121C2317F00481CC0 /* GBLoopView.m */; };
 		8485413B21C7397400481CC0 /* MyActivictViewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485413921C7397400481CC0 /* MyActivictViewsTableViewCell.m */; };
 		8485413C21C7397400481CC0 /* MyActivictViewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8485413A21C7397400481CC0 /* MyActivictViewsTableViewCell.xib */; };
-		84913DBC21B121D000EB6C78 /* skJPUSHSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 84913DB821B121D000EB6C78 /* skJPUSHSet.m */; };
-		84913DBD21B121D000EB6C78 /* AppDelegate+Jpush.m in Sources */ = {isa = PBXBuildFile; fileRef = 84913DBB21B121D000EB6C78 /* AppDelegate+Jpush.m */; };
 		84913DC021BA1AA300EB6C78 /* skGroupMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84913DBF21BA1AA300EB6C78 /* skGroupMoreView.m */; };
 		84913DC221BA1AB000EB6C78 /* skGroupMoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84913DC121BA1AB000EB6C78 /* skGroupMoreView.xib */; };
 		84913DC921BA4AF200EB6C78 /* skGroupMenberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84913DC821BA4AF200EB6C78 /* skGroupMenberListViewController.m */; };
@@ -251,6 +256,15 @@
 		2035B08B219C6AD800BF8AE2 /* CombineGroupHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CombineGroupHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		205BC098219914E6009DF53A /* skCombineGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skCombineGroupViewController.h; sourceTree = "<group>"; };
 		205BC099219914E6009DF53A /* skCombineGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skCombineGroupViewController.m; sourceTree = "<group>"; };
+		208A6BD921EC79B200C89BA0 /* ShareUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareUserModel.h; sourceTree = "<group>"; };
+		208A6BDA21EC79B200C89BA0 /* skModShareConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skModShareConfig.m; sourceTree = "<group>"; };
+		208A6BDB21EC79B200C89BA0 /* ShareUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareUserModel.m; sourceTree = "<group>"; };
+		208A6BDC21EC79B200C89BA0 /* skModShareConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skModShareConfig.h; sourceTree = "<group>"; };
+		208A6BE121EC7EB300C89BA0 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		208A6BE221EC7EB300C89BA0 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		208A6BE521EC7EB300C89BA0 /* ShareViews.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareViews.xib; sourceTree = "<group>"; };
+		208A6BE621EC7EB300C89BA0 /* ShareViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViews.h; sourceTree = "<group>"; };
+		208A6BE721EC7EB300C89BA0 /* ShareViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViews.m; sourceTree = "<group>"; };
 		209E9ED221E87D2200A72082 /* skOrderBuyersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skOrderBuyersViewController.h; sourceTree = "<group>"; };
 		209E9ED321E87D2200A72082 /* skOrderBuyersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skOrderBuyersViewController.m; sourceTree = "<group>"; };
 		209E9ED621E88DC700A72082 /* LXSegmentTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXSegmentTitleView.m; sourceTree = "<group>"; };
@@ -284,6 +298,10 @@
 		20F703EC21EB27A9005EA277 /* skOrderPayDesViews.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skOrderPayDesViews.xib; sourceTree = "<group>"; };
 		20F703EE21EB9877005EA277 /* skOrderState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skOrderState.h; sourceTree = "<group>"; };
 		20F703EF21EB9877005EA277 /* skOrderState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skOrderState.m; sourceTree = "<group>"; };
+		20F703F221EC75ED005EA277 /* skJPUSHSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skJPUSHSet.m; sourceTree = "<group>"; };
+		20F703F321EC75ED005EA277 /* AppDelegate+Jpush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Jpush.h"; sourceTree = "<group>"; };
+		20F703F421EC75ED005EA277 /* skJPUSHSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skJPUSHSet.h; sourceTree = "<group>"; };
+		20F703F521EC75ED005EA277 /* AppDelegate+Jpush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Jpush.m"; sourceTree = "<group>"; };
 		20FF8D5F2194864A000D686D /* skAddGroupFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAddGroupFriendViewController.h; sourceTree = "<group>"; };
 		20FF8D602194864A000D686D /* skAddGroupFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAddGroupFriendViewController.m; sourceTree = "<group>"; };
 		61CC84636590AF7642696194 /* Pods-SkyerChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyerChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -485,10 +503,6 @@
 		8485413821C7397400481CC0 /* MyActivictViewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyActivictViewsTableViewCell.h; sourceTree = "<group>"; };
 		8485413921C7397400481CC0 /* MyActivictViewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyActivictViewsTableViewCell.m; sourceTree = "<group>"; };
 		8485413A21C7397400481CC0 /* MyActivictViewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyActivictViewsTableViewCell.xib; sourceTree = "<group>"; };
-		84913DB821B121D000EB6C78 /* skJPUSHSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skJPUSHSet.m; sourceTree = "<group>"; };
-		84913DB921B121D000EB6C78 /* AppDelegate+Jpush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Jpush.h"; sourceTree = "<group>"; };
-		84913DBA21B121D000EB6C78 /* skJPUSHSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skJPUSHSet.h; sourceTree = "<group>"; };
-		84913DBB21B121D000EB6C78 /* AppDelegate+Jpush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Jpush.m"; sourceTree = "<group>"; };
 		84913DBE21BA1AA300EB6C78 /* skGroupMoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skGroupMoreView.h; sourceTree = "<group>"; };
 		84913DBF21BA1AA300EB6C78 /* skGroupMoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skGroupMoreView.m; sourceTree = "<group>"; };
 		84913DC121BA1AB000EB6C78 /* skGroupMoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skGroupMoreView.xib; sourceTree = "<group>"; };
@@ -781,6 +795,53 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		208A6BD821EC79B200C89BA0 /* 第三方登录和分享 */ = {
+			isa = PBXGroup;
+			children = (
+				208A6BD921EC79B200C89BA0 /* ShareUserModel.h */,
+				208A6BDA21EC79B200C89BA0 /* skModShareConfig.m */,
+				208A6BDB21EC79B200C89BA0 /* ShareUserModel.m */,
+				208A6BDC21EC79B200C89BA0 /* skModShareConfig.h */,
+			);
+			path = "第三方登录和分享";
+			sourceTree = "<group>";
+		};
+		208A6BDF21EC7EB300C89BA0 /* 推荐分享 */ = {
+			isa = PBXGroup;
+			children = (
+				208A6BE021EC7EB300C89BA0 /* Controller */,
+				208A6BE321EC7EB300C89BA0 /* Model */,
+				208A6BE421EC7EB300C89BA0 /* View */,
+			);
+			path = "推荐分享";
+			sourceTree = "<group>";
+		};
+		208A6BE021EC7EB300C89BA0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				208A6BE221EC7EB300C89BA0 /* ShareViewController.h */,
+				208A6BE121EC7EB300C89BA0 /* ShareViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		208A6BE321EC7EB300C89BA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		208A6BE421EC7EB300C89BA0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				208A6BE521EC7EB300C89BA0 /* ShareViews.xib */,
+				208A6BE621EC7EB300C89BA0 /* ShareViews.h */,
+				208A6BE721EC7EB300C89BA0 /* ShareViews.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		209E9ECA21E8799E00A72082 /* 商家订单管理 */ = {
 			isa = PBXGroup;
 			children = (
@@ -911,6 +972,17 @@
 				20F703EC21EB27A9005EA277 /* skOrderPayDesViews.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		20F703F121EC75ED005EA277 /* JPUSHSet */ = {
+			isa = PBXGroup;
+			children = (
+				20F703F221EC75ED005EA277 /* skJPUSHSet.m */,
+				20F703F321EC75ED005EA277 /* AppDelegate+Jpush.h */,
+				20F703F421EC75ED005EA277 /* skJPUSHSet.h */,
+				20F703F521EC75ED005EA277 /* AppDelegate+Jpush.m */,
+			);
+			path = JPUSHSet;
 			sourceTree = "<group>";
 		};
 		20FF8D5D219485EE000D686D /* 邀请群好友 */ = {
@@ -1649,6 +1721,7 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				208A6BDF21EC7EB300C89BA0 /* 推荐分享 */,
 				20F703E221EB2765005EA277 /* 订单支付详情 */,
 				209E9ECE21E879C100A72082 /* 买家订单管理 */,
 				209E9ECA21E8799E00A72082 /* 商家订单管理 */,
@@ -1697,8 +1770,8 @@
 		84537B8F2154913B00E4CB29 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				20F703F121EC75ED005EA277 /* JPUSHSet */,
 				209E9ED521E88DC700A72082 /* LXScrollContentViewLib */,
-				84913DB721B121D000EB6C78 /* JPUSHSet */,
 				84CCF570216F4B4C004DE670 /* 图片选择器 */,
 				84A78E82215F5DA70013F614 /* 融云聊天集成 */,
 			);
@@ -1708,6 +1781,7 @@
 		84537B902154913B00E4CB29 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				208A6BD821EC79B200C89BA0 /* 第三方登录和分享 */,
 				84B38DF621C1FE2700446372 /* 跑马灯 */,
 				842CFA8C216EF36700A847AB /* 导航栏设置 */,
 				842CFA88216EDF1800A847AB /* 密码保存 */,
@@ -1942,17 +2016,6 @@
 				2035B07A2199B5AF00BF8AE2 /* View */,
 			);
 			path = "发布活动";
-			sourceTree = "<group>";
-		};
-		84913DB721B121D000EB6C78 /* JPUSHSet */ = {
-			isa = PBXGroup;
-			children = (
-				84913DBA21B121D000EB6C78 /* skJPUSHSet.h */,
-				84913DB821B121D000EB6C78 /* skJPUSHSet.m */,
-				84913DB921B121D000EB6C78 /* AppDelegate+Jpush.h */,
-				84913DBB21B121D000EB6C78 /* AppDelegate+Jpush.m */,
-			);
-			path = JPUSHSet;
 			sourceTree = "<group>";
 		};
 		84913DC321BA4A6700EB6C78 /* 群成员列表 */ = {
@@ -2603,6 +2666,7 @@
 				84369E3021D31C5400B32344 /* skFriendHeaderTableViewCell.xib in Resources */,
 				84082CD421CA2B0E004A0422 /* GroupWithTypeView.xib in Resources */,
 				842EAAE02187E82900CA9E25 /* viewShop.xib in Resources */,
+				208A6BE921EC7EB300C89BA0 /* ShareViews.xib in Resources */,
 				2035B07F2199B5AF00BF8AE2 /* ActivityView.xib in Resources */,
 				8485413C21C7397400481CC0 /* MyActivictViewsTableViewCell.xib in Resources */,
 				84537B842154897F00E4CB29 /* LaunchScreen.storyboard in Resources */,
@@ -2775,8 +2839,8 @@
 				2035B08C219C6AD800BF8AE2 /* CombineGroupHeaderTableViewCell.m in Sources */,
 				20F703D521EB0C86005EA277 /* skOrderBuyModel.m in Sources */,
 				84637F422179D1C1009DB4FF /* AddAddressModel.m in Sources */,
+				208A6BE821EC7EB300C89BA0 /* ShareViewController.m in Sources */,
 				8440AFBD219A7BBC00044584 /* skQRcodeGroupViewController.m in Sources */,
-				84913DBD21B121D000EB6C78 /* AppDelegate+Jpush.m in Sources */,
 				84537BA82154E36000E4CB29 /* skLoginViewController.m in Sources */,
 				8403A6FB219D6349000DAFD1 /* gonggaoView.m in Sources */,
 				84D5CD712182F47E00DB762E /* menuTableViewCell.m in Sources */,
@@ -2794,6 +2858,7 @@
 				84995A14218015E400FD8A20 /* skGroupChatViewController.m in Sources */,
 				8440AFC0219A7C5E00044584 /* QRCodeViews.m in Sources */,
 				8485413B21C7397400481CC0 /* MyActivictViewsTableViewCell.m in Sources */,
+				20F703F621EC75EE005EA277 /* skJPUSHSet.m in Sources */,
 				209E9EDA21E88DC700A72082 /* LXSegmentTitleView.m in Sources */,
 				84E65CD42179CC0D00A379E0 /* AddressTableViewCell.m in Sources */,
 				84082CCA21C9F894004A0422 /* groupUserModel.m in Sources */,
@@ -2831,6 +2896,7 @@
 				84011AA1217483560005436B /* skAddressBookSearch.m in Sources */,
 				8440AFC5219A81A000044584 /* QRCodeModel.m in Sources */,
 				209E9EE821EAF80700A72082 /* skOrderBuyTableViewCell.m in Sources */,
+				20F703F721EC75EE005EA277 /* AppDelegate+Jpush.m in Sources */,
 				84E65CD12179CC0D00A379E0 /* AddressCenterTableViewCell.m in Sources */,
 				84995A1E2180734E00FD8A20 /* SingleModel.m in Sources */,
 				209E9EDE21E8904000A72082 /* skOrderBuyersViewController2.m in Sources */,
@@ -2853,13 +2919,13 @@
 				84A78E7E215F574A0013F614 /* skAFNetworkingTool.m in Sources */,
 				843B40B6216B337400356306 /* NSDictionary+skDictionary.m in Sources */,
 				20F703F021EB9877005EA277 /* skOrderState.m in Sources */,
-				84913DBC21B121D000EB6C78 /* skJPUSHSet.m in Sources */,
 				84A78E85215F5DA70013F614 /* RongSDKUsed.m in Sources */,
 				84CCF57F216F50AC004DE670 /* skChangeUserinfoHeaderTableViewCell.m in Sources */,
 				84537B792154897E00E4CB29 /* AppDelegate.mm in Sources */,
 				84E65CD02179CC0D00A379E0 /* skAddressViewController.m in Sources */,
 				84E016DA21D3241E00935269 /* skFriendModel.m in Sources */,
 				2022869921E8648A006789E2 /* skMyPayCodeViewController.m in Sources */,
+				208A6BDE21EC79B200C89BA0 /* ShareUserModel.m in Sources */,
 				84756E0C219578AD0018AB35 /* creatGroupView.m in Sources */,
 				8403A6EE219D5C4F000DAFD1 /* skBeforeLoginViewController.m in Sources */,
 				84211A5C215CB67F003BE4A5 /* skColorConfig.m in Sources */,
@@ -2881,6 +2947,7 @@
 				84B7F3BE218C2B9C00793DDD /* groupCellModel.m in Sources */,
 				84995A2F2181C5C900FD8A20 /* myClientTableViewCell.m in Sources */,
 				8434776C21E2F709001CF8B3 /* skSubmitOrderViews.m in Sources */,
+				208A6BDD21EC79B200C89BA0 /* skModShareConfig.m in Sources */,
 				84537BA32154D83200E4CB29 /* skBaseViewController.m in Sources */,
 				20F703DE21EB172E005EA277 /* skSellerViewController2.m in Sources */,
 				84537BAB2154E9CE00E4CB29 /* skConfig.m in Sources */,
@@ -2897,6 +2964,7 @@
 				84995A282181C11E00FD8A20 /* skMyClientViewController.m in Sources */,
 				842EAAE32188338300CA9E25 /* activityModel.m in Sources */,
 				8472396321A25A8E009055C7 /* CombineCheckTableViewCell.m in Sources */,
+				208A6BEA21EC7EB300C89BA0 /* ShareViews.m in Sources */,
 				202286A221E87802006789E2 /* skOrderListTableViewCell.m in Sources */,
 				8419CDEF216DD9B700DBE8F4 /* skUserCenterViewController.m in Sources */,
 				84D8022F2175990800E1894F /* UserCenterLoginOutTableViewCell.m in Sources */,

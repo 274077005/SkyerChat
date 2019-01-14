@@ -18,6 +18,7 @@
 #import "skAddressListViewController.h"
 #import "skMyPayCodeViewController.h"
 #import "skOrderListViewController.h"
+#import "ShareViewController.h"
 
 @interface skUserCenterViewController ()
 @property (nonatomic,strong) UserCenterHeaderTableViewCell *cellHeader;
@@ -331,7 +332,8 @@
             break;
         case 2:
         {
-            
+            ShareViewController * view=[[ShareViewController alloc] init];
+            [self.navigationController pushViewController:view animated:YES];
         }
             break;
         case 3:
