@@ -11,6 +11,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "skUserInfoSetViewController.h"
 #import "UIView+skBoard.h"
+#import <SDWebImage/SDImageCache.h>
 
 @interface skMyPayCodeViewController ()
 @property(nonatomic ,strong) skMyPayCodeViews *viewCode;
@@ -28,8 +29,47 @@
         [_viewCode.viewZFB skSetShadowWithColor:[UIColor grayColor] andSizeMake:CGSizeMake(0, 0) Radius:5];
         _viewCode.btnSaveVX.hidden=!self.isShow;
         _viewCode.btnSaveZFB.hidden=!self.isShow;
+        
+        @weakify(self)
+        [[_viewCode.btnSaveVX rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            [self loadImageFinished:self.viewCode.imageVX.image];
+            NSURL *url;
+        
+            url = [NSURL URLWithString:@"weixin://scanqrcode"];
+            
+            if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                [[UIApplication sharedApplication] openURL:url];
+            }
+            
+
+        }];
+        
+        [[_viewCode.btnSaveZFB rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            [self loadImageFinished:self.viewCode.imageVX.image];
+            NSURL * myURL_APP_A = [NSURL URLWithString:@"alipay://"];
+            
+            if ([[UIApplication sharedApplication] canOpenURL:myURL_APP_A]) {
+                // 跳转扫一扫
+                NSURL * url2 = [NSURL URLWithString:@"alipay://platformapi/startapp?saId=10000007"];
+                [[UIApplication sharedApplication] openURL:url2];
+            }
+            
+        }];
+        
     }
     return _viewCode;
+}
+- (void)loadImageFinished:(UIImage *)image
+{
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), (__bridge void *)self);
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    
+    NSLog(@"image = %@, error = %@, contextInfo = %@", image, error, contextInfo);
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

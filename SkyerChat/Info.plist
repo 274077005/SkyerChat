@@ -56,6 +56,8 @@
 	<string>1</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>alipay</string>
+		<string>alipayqr</string>
 		<string>mqqapi</string>
 		<string>mqq</string>
 		<string>mqqOpensdkSSoLogin</string>
@@ -97,6 +99,8 @@
 	</dict>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>App需要您的同意,才能访问媒体资料库</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>是否允许保存图片</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>App需要您的同意,才能访问蓝牙</string>
 	<key>NSCameraUsageDescription</key>
