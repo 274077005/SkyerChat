@@ -44,6 +44,9 @@
 		20F703F021EB9877005EA277 /* skOrderState.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703EF21EB9877005EA277 /* skOrderState.m */; };
 		20F703F621EC75EE005EA277 /* skJPUSHSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703F221EC75ED005EA277 /* skJPUSHSet.m */; };
 		20F703F721EC75EE005EA277 /* AppDelegate+Jpush.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F703F521EC75ED005EA277 /* AppDelegate+Jpush.m */; };
+		20F7CE2C21FEB478008A9BDC /* skUserPrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F7CE2B21FEB478008A9BDC /* skUserPrivacyViewController.m */; };
+		20F7CE2F21FEB4A7008A9BDC /* skUserPrivacyViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F7CE2E21FEB4A7008A9BDC /* skUserPrivacyViews.m */; };
+		20F7CE3121FEB4B1008A9BDC /* skUserPrivacyViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F7CE3021FEB4B1008A9BDC /* skUserPrivacyViews.xib */; };
 		20FF8D612194864A000D686D /* skAddGroupFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FF8D602194864A000D686D /* skAddGroupFriendViewController.m */; };
 		84011AA1217483560005436B /* skAddressBookSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 84011AA0217483560005436B /* skAddressBookSearch.m */; };
 		84011AA3217483620005436B /* skAddressBookSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84011AA2217483620005436B /* skAddressBookSearch.xib */; };
@@ -302,6 +305,11 @@
 		20F703F321EC75ED005EA277 /* AppDelegate+Jpush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Jpush.h"; sourceTree = "<group>"; };
 		20F703F421EC75ED005EA277 /* skJPUSHSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skJPUSHSet.h; sourceTree = "<group>"; };
 		20F703F521EC75ED005EA277 /* AppDelegate+Jpush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Jpush.m"; sourceTree = "<group>"; };
+		20F7CE2A21FEB478008A9BDC /* skUserPrivacyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skUserPrivacyViewController.h; sourceTree = "<group>"; };
+		20F7CE2B21FEB478008A9BDC /* skUserPrivacyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skUserPrivacyViewController.m; sourceTree = "<group>"; };
+		20F7CE2D21FEB4A7008A9BDC /* skUserPrivacyViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skUserPrivacyViews.h; sourceTree = "<group>"; };
+		20F7CE2E21FEB4A7008A9BDC /* skUserPrivacyViews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skUserPrivacyViews.m; sourceTree = "<group>"; };
+		20F7CE3021FEB4B1008A9BDC /* skUserPrivacyViews.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = skUserPrivacyViews.xib; sourceTree = "<group>"; };
 		20FF8D5F2194864A000D686D /* skAddGroupFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skAddGroupFriendViewController.h; sourceTree = "<group>"; };
 		20FF8D602194864A000D686D /* skAddGroupFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skAddGroupFriendViewController.m; sourceTree = "<group>"; };
 		61CC84636590AF7642696194 /* Pods-SkyerChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyerChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyerChat/Pods-SkyerChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -983,6 +991,42 @@
 				20F703F521EC75ED005EA277 /* AppDelegate+Jpush.m */,
 			);
 			path = JPUSHSet;
+			sourceTree = "<group>";
+		};
+		20F7CE2621FEB43B008A9BDC /* 隐私协议 */ = {
+			isa = PBXGroup;
+			children = (
+				20F7CE2721FEB43B008A9BDC /* Controller */,
+				20F7CE2821FEB43B008A9BDC /* Model */,
+				20F7CE2921FEB43B008A9BDC /* View */,
+			);
+			path = "隐私协议";
+			sourceTree = "<group>";
+		};
+		20F7CE2721FEB43B008A9BDC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				20F7CE2A21FEB478008A9BDC /* skUserPrivacyViewController.h */,
+				20F7CE2B21FEB478008A9BDC /* skUserPrivacyViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		20F7CE2821FEB43B008A9BDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		20F7CE2921FEB43B008A9BDC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20F7CE2D21FEB4A7008A9BDC /* skUserPrivacyViews.h */,
+				20F7CE2E21FEB4A7008A9BDC /* skUserPrivacyViews.m */,
+				20F7CE3021FEB4B1008A9BDC /* skUserPrivacyViews.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		20FF8D5D219485EE000D686D /* 邀请群好友 */ = {
@@ -1721,6 +1765,7 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				20F7CE2621FEB43B008A9BDC /* 隐私协议 */,
 				208A6BDF21EC7EB300C89BA0 /* 推荐分享 */,
 				20F703E221EB2765005EA277 /* 订单支付详情 */,
 				209E9ECE21E879C100A72082 /* 买家订单管理 */,
@@ -2690,6 +2735,7 @@
 				84B38DFE21C1FF3500446372 /* chatGonggaoView.xib in Resources */,
 				842CFAA1216F233B00A847AB /* UserCenterOrderTableViewCell.xib in Resources */,
 				842EAAF421894DF800CA9E25 /* skGroupChatHeadersTableViewCell.xib in Resources */,
+				20F7CE3121FEB4B1008A9BDC /* skUserPrivacyViews.xib in Resources */,
 				202286A321E87802006789E2 /* skOrderListTableViewCell.xib in Resources */,
 				84EEBABA2179C03A00EDBA1E /* AddressListTableViewCell.xib in Resources */,
 				84D802302175990800E1894F /* UserCenterLoginOutTableViewCell.xib in Resources */,
@@ -2838,6 +2884,7 @@
 				8434775D21D620F0001CF8B3 /* CombineGroupInfoView.m in Sources */,
 				2035B08C219C6AD800BF8AE2 /* CombineGroupHeaderTableViewCell.m in Sources */,
 				20F703D521EB0C86005EA277 /* skOrderBuyModel.m in Sources */,
+				20F7CE2F21FEB4A7008A9BDC /* skUserPrivacyViews.m in Sources */,
 				84637F422179D1C1009DB4FF /* AddAddressModel.m in Sources */,
 				208A6BE821EC7EB300C89BA0 /* ShareViewController.m in Sources */,
 				8440AFBD219A7BBC00044584 /* skQRcodeGroupViewController.m in Sources */,
@@ -2963,6 +3010,7 @@
 				84369E2F21D31C5400B32344 /* skFriendHeaderTableViewCell.m in Sources */,
 				84995A282181C11E00FD8A20 /* skMyClientViewController.m in Sources */,
 				842EAAE32188338300CA9E25 /* activityModel.m in Sources */,
+				20F7CE2C21FEB478008A9BDC /* skUserPrivacyViewController.m in Sources */,
 				8472396321A25A8E009055C7 /* CombineCheckTableViewCell.m in Sources */,
 				208A6BEA21EC7EB300C89BA0 /* ShareViews.m in Sources */,
 				202286A221E87802006789E2 /* skOrderListTableViewCell.m in Sources */,

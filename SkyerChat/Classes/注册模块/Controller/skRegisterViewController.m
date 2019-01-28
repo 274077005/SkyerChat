@@ -12,6 +12,7 @@
 #import "SFHFKeychainUtils.h"
 #import "skRootViewController.h"
 #import "UserModel.h"
+#import "skUserPrivacyViewController.h"
 
 @interface skRegisterViewController ()
 @property (nonatomic,strong) RegisterView *viewRegister;
@@ -93,6 +94,9 @@
     }];
     [[_viewRegister.btnXieyi rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)//协议
+        skUserPrivacyViewController *view=[[skUserPrivacyViewController alloc] init];
+        
+        [self.navigationController pushViewController:view animated:YES];
     }];
     [[_viewRegister.btnSelect rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self)//同意协议
