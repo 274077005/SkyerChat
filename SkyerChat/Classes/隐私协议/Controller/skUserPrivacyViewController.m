@@ -19,8 +19,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.viewPrivacy=skXibView(@"skUserPrivacyViews");
+    [self.view addSubview:self.viewPrivacy];
     [self.viewPrivacy mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.bottom.equalTo(0);
+        make.top.left.right.bottom.mas_equalTo(0);
     }];
 }
 
