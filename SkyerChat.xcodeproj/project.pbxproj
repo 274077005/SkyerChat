@@ -130,6 +130,7 @@
 		843B40C2216C552300356306 /* skRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B40C1216C552300356306 /* skRegisterViewController.m */; };
 		843B40C4216C553D00356306 /* RegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843B40C3216C553D00356306 /* RegisterView.xib */; };
 		843B40C7216C555200356306 /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B40C6216C555200356306 /* RegisterView.m */; };
+		84409B452223EB4400DD1C1D /* skBlankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84409B442223EB4400DD1C1D /* skBlankViewController.m */; };
 		8440AFBD219A7BBC00044584 /* skQRcodeGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440AFBC219A7BBC00044584 /* skQRcodeGroupViewController.m */; };
 		8440AFC0219A7C5E00044584 /* QRCodeViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440AFBF219A7C5E00044584 /* QRCodeViews.m */; };
 		8440AFC2219A7CE700044584 /* QRCodeViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AFC1219A7CE700044584 /* QRCodeViews.xib */; };
@@ -456,6 +457,8 @@
 		843B40C3216C553D00356306 /* RegisterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterView.xib; sourceTree = "<group>"; };
 		843B40C5216C555200356306 /* RegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterView.h; sourceTree = "<group>"; };
 		843B40C6216C555200356306 /* RegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterView.m; sourceTree = "<group>"; };
+		84409B432223EB4400DD1C1D /* skBlankViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skBlankViewController.h; sourceTree = "<group>"; };
+		84409B442223EB4400DD1C1D /* skBlankViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skBlankViewController.m; sourceTree = "<group>"; };
 		8440AFBB219A7BBC00044584 /* skQRcodeGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skQRcodeGroupViewController.h; sourceTree = "<group>"; };
 		8440AFBC219A7BBC00044584 /* skQRcodeGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skQRcodeGroupViewController.m; sourceTree = "<group>"; };
 		8440AFBE219A7C5E00044584 /* QRCodeViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeViews.h; sourceTree = "<group>"; };
@@ -1674,6 +1677,39 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		84409B3F2223EB1200DD1C1D /* 空白页 */ = {
+			isa = PBXGroup;
+			children = (
+				84409B402223EB1200DD1C1D /* Controller */,
+				84409B412223EB1200DD1C1D /* Model */,
+				84409B422223EB1200DD1C1D /* View */,
+			);
+			path = "空白页";
+			sourceTree = "<group>";
+		};
+		84409B402223EB1200DD1C1D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84409B432223EB4400DD1C1D /* skBlankViewController.h */,
+				84409B442223EB4400DD1C1D /* skBlankViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84409B412223EB1200DD1C1D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84409B422223EB1200DD1C1D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8440AFB7219A7B8A00044584 /* 二维码邀请入群 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1765,6 +1801,7 @@
 		84537B8E2154913B00E4CB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				84409B3F2223EB1200DD1C1D /* 空白页 */,
 				20F7CE2621FEB43B008A9BDC /* 隐私协议 */,
 				208A6BDF21EC7EB300C89BA0 /* 推荐分享 */,
 				20F703E221EB2765005EA277 /* 订单支付详情 */,
@@ -2896,6 +2933,7 @@
 				84EEBAB92179C03A00EDBA1E /* AddressListTableViewCell.m in Sources */,
 				205BC09A219914E6009DF53A /* skCombineGroupViewController.m in Sources */,
 				8403A6F8219D632A000DAFD1 /* skGonggaoViewController.m in Sources */,
+				84409B452223EB4400DD1C1D /* skBlankViewController.m in Sources */,
 				20F703E121EB173A005EA277 /* skSellerViewController3.m in Sources */,
 				84D160D5215F6FBF002188DB /* skNetConfigModel.m in Sources */,
 				849959ED217D7F3D00FD8A20 /* skSafeTableViewCell.m in Sources */,

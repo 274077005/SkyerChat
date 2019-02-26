@@ -10,6 +10,7 @@
 #import "UserCenterHeaderTableViewCell.h"
 #import "UserCenterOrderTableViewCell.h"
 #import "UserCenterTitleTableViewCell.h"
+#import "skBlankViewController.h"
 #import <SDWebImage/UIButton+WebCache.h>
 #import "skChangeUserinfoViewController.h"
 #import "UserCenterLoginOutTableViewCell.h"
@@ -188,6 +189,12 @@
                             skOrderListViewController *view=[[skOrderListViewController alloc] init];
                             
                             [self.navigationController pushViewController:view animated:YES];
+                        }];
+                        [[cell.btnScore rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+                            @strongify(self)
+                            //我的积分
+                            skBlankViewController *blankView=[[skBlankViewController alloc] init];
+                            [self.navigationController pushViewController:blankView animated:YES];
                         }];
                     }
                     cell.labOrderCount.text=[NSString stringWithFormat:@"%ld",skUser.orderNum];
