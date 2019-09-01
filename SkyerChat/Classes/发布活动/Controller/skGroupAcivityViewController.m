@@ -27,6 +27,12 @@
 - (ActivityView *)viewActivity{
     if (nil==_viewActivity) {
         _viewActivity=skXibView(@"ActivityView");
+        [self.view addSubview:_viewActivity];
+        [_viewActivity mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.mas_topLayoutGuide);
+            make.bottom.mas_equalTo(self.mas_bottomLayoutGuide);
+            make.right.left.mas_equalTo(0);
+        }];
         @weakify(self)
         
         [[_viewActivity.btnAddImage rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
@@ -47,7 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view addSubview:self.viewActivity];
+    [self viewActivity];
     self.title=@"发布活动";
     @weakify(self)
     [[[self skCreatBtn:@"发布" btnTitleOrImage:(btntypeTitle) btnLeftOrRight:(btnStateRight)] rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {

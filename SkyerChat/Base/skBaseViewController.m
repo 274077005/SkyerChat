@@ -77,6 +77,7 @@
     if(!cell){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:baseCellIdentifier];
     }
+    
     return cell;
 }
 #pragma mark - 上下拉加载

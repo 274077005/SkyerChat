@@ -59,7 +59,7 @@
 }
 
 - (void)reloadData{
-    NSArray *titles = @[@"未支付",@"待收货",@"已完成"];
+    NSArray *titles = @[@"未支付",@"待收货",@"已完成",@"售后处理"];
     self.titleView.segmentTitles = titles;
     NSMutableArray *vcs = [[NSMutableArray alloc] init];
     for (int i = 0; i<titles.count; ++i) {

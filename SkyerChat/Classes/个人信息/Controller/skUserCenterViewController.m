@@ -193,8 +193,8 @@
                         [[cell.btnScore rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
                             @strongify(self)
                             //我的积分
-                            skBlankViewController *blankView=[[skBlankViewController alloc] init];
-                            [self.navigationController pushViewController:blankView animated:YES];
+//                            skBlankViewController *blankView=[[skBlankViewController alloc] init];
+//                            [self.navigationController pushViewController:blankView animated:YES];
                         }];
                     }
                     cell.labOrderCount.text=[NSString stringWithFormat:@"%ld",skUser.orderNum];

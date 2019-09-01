@@ -24,6 +24,12 @@
 - (LoginView *)viewLogin{
     if (nil==_viewLogin) {
         _viewLogin=skXibView(@"LoginView");
+        [self.view addSubview:_viewLogin];
+        [_viewLogin mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.mas_topLayoutGuide);
+            make.bottom.mas_equalTo(self.mas_bottomLayoutGuide);
+            make.right.left.mas_equalTo(0);
+        }];
     }
     return _viewLogin;
 }
@@ -82,7 +88,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view addSubview:self.viewLogin];
+    [self viewLogin];
     [self racAction];
     
 }

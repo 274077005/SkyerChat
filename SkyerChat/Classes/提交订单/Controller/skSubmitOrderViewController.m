@@ -72,7 +72,7 @@
     //价格
     self.viewSubmit.labMeney.text=[NSString stringWithFormat:@"￥%ld",self.modelGoods.activityPrice];
     //购买个数
-    self.viewSubmit.labTotalMeney.text=[NSString stringWithFormat:@"%ld",self.bayCount*self.modelGoods.activityPrice];
+    self.viewSubmit.labTotalMeney.text=[NSString stringWithFormat:@"￥%ld",self.bayCount*self.modelGoods.activityPrice];
     
 }
 
@@ -106,7 +106,7 @@
             self.bayCount+=1;
             self.viewSubmit.labCount.text=[NSString stringWithFormat:@"%d",self.bayCount];
             
-            self.viewSubmit.labTotalMeney.text=[NSString stringWithFormat:@"%ld",self.bayCount*self.modelGoods.activityPrice];
+            self.viewSubmit.labTotalMeney.text=[NSString stringWithFormat:@"%ld￥",self.bayCount*self.modelGoods.activityPrice];
         }];
         //减
         [[_viewSubmit.btnSub rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
@@ -114,7 +114,7 @@
             if (self.bayCount>0) {
                 self.bayCount-=1;
                 self.viewSubmit.labCount.text=[NSString stringWithFormat:@"%d",self.bayCount];
-                self.viewSubmit.labTotalMeney.text=[NSString stringWithFormat:@"%ld",self.bayCount*self.modelGoods.activityPrice];
+                self.viewSubmit.labTotalMeney.text=[NSString stringWithFormat:@"%ld￥",self.bayCount*self.modelGoods.activityPrice];
             }
         }];
     }
@@ -137,10 +137,16 @@
     skAddressModel *modelAddress=[self.arrList firstObject];
     NSString *remark=self.viewSubmit.txtMessage.text;
     
-    NSDictionary *dic=@{@"goodsNo":self.modelGoods.goodsNo,
-                        @"goodsAmount":[NSNumber numberWithInt:self.bayCount],
-                        @"revAddrId":[NSNumber numberWithInteger:modelAddress.raId],
-                        @"groupNo":self.modelGoods.groupNo,
+    NSString *goodsNo=self.modelGoods.goodsNo;
+    NSNumber *goodsAmount=[NSNumber numberWithInt:self.bayCount];
+    NSNumber *revAddrId=[NSNumber numberWithInteger:modelAddress.raId];
+    NSString *groupNo=self.modelGoods.goodsNo;
+    
+    
+    NSDictionary *dic=@{@"goodsNo":goodsNo,
+                        @"goodsAmount":goodsAmount,
+                        @"revAddrId":revAddrId,
+                        @"groupNo":groupNo,
                         @"remark":remark
                         };
     

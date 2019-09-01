@@ -31,7 +31,7 @@
 
 - (SDCycleScrollView *)viewCycle{
     if (nil==_viewCycle) {
-        _viewCycle = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, skScreenWidth, 150) delegate:self placeholderImage:[UIImage imageNamed:@""]];
+        _viewCycle = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, skScreenWidth, 200) delegate:self placeholderImage:[UIImage imageNamed:@""]];
         
     }
     return _viewCycle;
@@ -195,7 +195,7 @@
     switch (indexPath.section) {
         case 0:
         {
-            return 150;
+            return 200;
         }
             break;
         case 1:

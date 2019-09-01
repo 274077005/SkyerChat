@@ -24,6 +24,12 @@
 -(RegisterView *)viewRegister{
     if (nil==_viewRegister) {
         _viewRegister=skXibView(@"RegisterView");
+        [self.view addSubview:_viewRegister];
+        [_viewRegister mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.mas_topLayoutGuide);
+            make.bottom.mas_equalTo(self.mas_bottomLayoutGuide);
+            make.right.left.mas_equalTo(0);
+        }];
     }
     return _viewRegister;
 }
@@ -114,7 +120,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title=@"用户注册";
-    [self.view addSubview:self.viewRegister];
+    [self viewRegister];
     [self racAction];
 }
 

@@ -23,12 +23,10 @@
 -(void)addTableView{
     [self.view addSubview:self.tableView];
     self.tableView.backgroundColor=[UIColor whiteColor];
-    
-
     self.tableView.bounces = NO;
     CGFloat hight=self.arrTitle.count*40;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(50);
+        make.top.mas_equalTo(self.mas_topLayoutGuide).offset(50);
         make.right.mas_equalTo(-30);
         make.size.mas_equalTo(CGSizeMake(120, hight));
     }];

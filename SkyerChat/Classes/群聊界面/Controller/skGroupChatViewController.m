@@ -53,14 +53,14 @@
 - (SDCycleScrollView *)viewCycle{
     if (nil==_viewCycle) {
         
-        _viewCycle = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, skScreenWidth, 150) delegate:self placeholderImage:[UIImage imageNamed:@""]];
+        _viewCycle = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, skScreenWidth, 200) delegate:self placeholderImage:[UIImage imageNamed:@""]];
         
         [self.viewImage.imageContainView addSubview:_viewCycle];
         
         [_viewCycle mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(self.mas_topLayoutGuide);
             make.left.right.mas_equalTo(0);
-            make.size.mas_equalTo(CGSizeMake(skScreenWidth, 150));
+            make.size.mas_equalTo(CGSizeMake(skScreenWidth, 200));
         }];
         
         _viewCycle.pageControlBottomOffset=20;
@@ -76,7 +76,7 @@
         [_viewImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.mas_equalTo(0);
             make.top.mas_equalTo(self.mas_topLayoutGuide);
-            make.size.mas_equalTo(CGSizeMake(skScreenWidth, 150));
+            make.size.mas_equalTo(CGSizeMake(skScreenWidth, 200));
         }];
         
         @weakify(self)
@@ -89,6 +89,8 @@
         [_viewImage.btnBuy skSetBoardRadius:5 Width:0 andBorderColor:nil];
         if (self.model.memberType==1) {
             [_viewImage.btnBuy setTitle:@"设置" forState:(UIControlStateNormal)];
+        }else{
+            [_viewImage.btnBuy setTitle:@"响应" forState:(UIControlStateNormal)];
         }
         [[_viewImage.btnMore rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
@@ -100,9 +102,14 @@
         }];
         [[_viewImage.btnBuy rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
-            skActivityDesViewController *view=[[skActivityDesViewController alloc] init];
-            view.modelOther=[self.arrList objectAtIndex:self.indexSelect];
-            [self.navigationController pushViewController:view animated:YES];
+            if (self.model.memberType==1) {
+                skActivityDesViewController *view=[[skActivityDesViewController alloc] init];
+                view.modelOther=[self.arrList objectAtIndex:self.indexSelect];
+                [self.navigationController pushViewController:view animated:YES];
+            }else{
+                //响应
+            }
+            
         }];
 
     }
@@ -157,14 +164,12 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    self.navigationController.navigationBarHidden = YES;
     self.indexSelect=0;
     [self bizGoodsMyGoods];//查询群活动
     
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBarHidden = NO;
 }
 /*
 #pragma mark - Navigation
@@ -232,11 +237,9 @@
             [self getNewest];
             
         }else{
-            self.navigationController.navigationBarHidden = NO;
         }
         
     } failure:^(NSError * _Nullable error) {
-        self.navigationController.navigationBarHidden = NO;
     }];
 }
 /**
@@ -265,8 +268,11 @@
             
             [self.viewGonggao.viewContain addSubview:self.paoView];
             if (self.arrList.count>0) {
-                self.navigationController.navigationBarHidden = YES;
-                self.conversationMessageCollectionView.frame=CGRectMake(0, 150, skScreenWidth, skScreenHeight-150);
+                [self.conversationMessageCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.mas_equalTo(self.viewImage.mas_bottom);
+                    make.bottom.mas_equalTo(self.mas_bottomLayoutGuide);
+                    make.right.left.mas_equalTo(0);
+                }];
                 [self viewCycle];
                 [self.viewCycle setHidden:NO];
                 [self.viewImage setHidden:NO];
@@ -277,16 +283,12 @@
                 }else{
                     loopArrs = [NSArray arrayWithObjects:@"群主暂无发布公告",nil];
                 }
-                
-                CGFloat maxY=CGRectGetMaxY(self.viewImage.frame);
-                
-                self.viewGonggao.frame=CGRectMake(0, maxY, skScreenWidth, 24);
-                [self.viewGonggao setHidden:NO];
-                
-                
             }else{
-                self.navigationController.navigationBarHidden = NO;
-                self.conversationMessageCollectionView.frame=CGRectMake(0, 0, skScreenWidth, skScreenHeight-0);
+                [self.conversationMessageCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.mas_equalTo(self.mas_topLayoutGuide);
+                    make.bottom.mas_equalTo(self.mas_bottomLayoutGuide);
+                    make.right.left.mas_equalTo(0);
+                }];
                 [self.viewCycle setHidden:YES];
                 [self.viewImage setHidden:YES];
                 
@@ -295,18 +297,19 @@
                 }else{
                     loopArrs = [NSArray arrayWithObjects:@"群主暂无发布公告",nil];
                 }
-                self.viewGonggao.frame=CGRectMake(0, 64, skScreenWidth, 24);
-                [self.viewGonggao setHidden:NO];
             }
-            
+            [self.viewGonggao mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(self.conversationMessageCollectionView.mas_top);
+                make.right.left.mas_equalTo(0);
+                make.height.mas_equalTo(24);
+            }];
+            [self.viewGonggao setHidden:NO];
             [self.paoView setTickerArrs:loopArrs];
             
         }else{
-            self.navigationController.navigationBarHidden = NO;
         }
         
     } failure:^(NSError * _Nullable error) {
-        self.navigationController.navigationBarHidden = NO;
     }];
 }
 
